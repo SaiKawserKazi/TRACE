@@ -23,7 +23,8 @@ foreach ($k in $files.Keys) {
   $p = Join-Path $D $k
   if ((Test-Path $p) -and ((Get-Item $p).Length -gt 0)) { "have $k"; continue }
   $t = Get-Date
-  curl.exe -sSL --retry 5 --retry-delay 5 -C - -A "Mozilla/5.0" -o "$p.part" $files[$k]
+  curl.exe --doh-url https://1.1.1.1/dns-query -sSL --retry 5 --retry-delay 5 -C - -A "Mozilla/5.0" -o "$p.part" $files[$k]
   if ($LASTEXITCODE -eq 0) { Move-Item -Force "$p.part" $p; "ok $k $((Get-Item $p).Length) $([int]((Get-Date)-$t).TotalSeconds)s" } else { "FAIL $k code $LASTEXITCODE" }
 }
 "DONE"
+
