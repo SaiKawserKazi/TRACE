@@ -492,6 +492,15 @@ def main():
     P["identity_shift"] = line_mean("identity").reindex(P.index)
     P["prolif_shift"] = line_mean("prolif").reindex(P.index)
     P["stress_shift"] = line_mean("stress").reindex(P.index)
+    P["magnitude"] = line_mean("magnitude").reindex(P.index)
+    ont = {}
+    for c, (shift, nt, gm, nc) in ctx.items():
+        for g in P.index:
+            if g in shift.index and g in shift.columns:
+                ont.setdefault(g, []).append(float(shift.at[g, g]))
+    P["ontarget_z"] = pd.Series({g: np.mean(v) for g, v in ont.items()}).reindex(P.index)
+    # annotation only (not an objective): target not measured or knockdown weaker than z = -0.5
+    P["flag_weak_or_unmeasured_knockdown"] = ~(P.ontarget_z < -0.5)
     P["obj_identity"] = -P.identity_shift.abs()
     P["obj_prolif"] = -P.prolif_shift.clip(lower=0)
     P["obj_stress"] = -P.stress_shift.clip(lower=0)
@@ -510,12 +519,14 @@ def main():
     F = P[P.pareto].sort_values("R_rob", ascending=False)
     R["pareto"] = {"n_candidates_ge2_lines": len(P), "n_positive": int((P.R_rob > 0).sum()), "n_front": len(F),
                    "front_top": F.head(25)[["R_rob", "sign_consistency", "identity_shift", "prolif_shift",
-                                            "stress_shift", "bootstrap_top5_support", "flag_tumour_suppressor",
+                                            "stress_shift", "magnitude", "ontarget_z", "flag_weak_or_unmeasured_knockdown", "bootstrap_top5_support", "flag_tumour_suppressor",
                                             "cellage", "genage"]].round(3).reset_index().to_dict("records")}
     # top robust by R_raw vs R_adj overlap across lines (what disappears)
     rraw = robust({c: per[c].assign(R_adj=per[c].R_raw) for c in per})
     k = max(1, int(0.05 * len(P)))
     t_raw = set(rraw.R_rob.reindex(P.index).nlargest(k).index); t_adj = set(P.R_rob.nlargest(k).index)
+    R["pareto"]["n_front_weak_kd"] = int(F.flag_weak_or_unmeasured_knockdown.sum())
+    R["pareto"]["front_magnitude_median"] = float(F.magnitude.median()); R["pareto"]["all_magnitude_median"] = float(P.magnitude.median())
     R["pareto"]["top5_raw_vs_adj_overlap"] = len(t_raw & t_adj) / k
     R["pareto"]["top5_raw_prolif_mean"] = float(P.prolif_shift[list(t_raw)].mean())
     R["pareto"]["top5_adj_prolif_mean"] = float(P.prolif_shift[list(t_adj)].mean())
@@ -528,6 +539,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
