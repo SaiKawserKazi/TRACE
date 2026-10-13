@@ -68,6 +68,46 @@ def age_tstats(expr, meta, min_mean=1.0):
     return out
 
 
+def age_tstats_cov(expr, meta, covars=(), min_mean=1.0, age_col="age"):
+    """OLS expression ~ age + covariates per gene (review-round sensitivity analyses). Categorical covariates are
+    dummy-coded (first level dropped); numeric covariates are entered linearly after median imputation."""
+    expr = expr[expr.mean(axis=1) >= min_mean]
+    cols = [np.ones(len(meta)), meta[age_col].values.astype(float)]
+    for c in covars:
+        v = meta[c]
+        if v.dtype.kind in "biuf":
+            cols.append(v.fillna(v.median()).values.astype(float))
+        else:
+            d = pd.get_dummies(v.astype(str), drop_first=True).values.astype(float)
+            d = d[:, d.sum(0) > 0]
+            cols.extend(d.T)
+    X = np.column_stack(cols)
+    rank = np.linalg.matrix_rank(X)
+    if rank < X.shape[1]:  # drop collinear dummies
+        q, r = np.linalg.qr(X)
+        keep = np.abs(np.diag(r)) > 1e-8 * np.abs(np.diag(r)).max()
+        keep[:2] = True
+        X = X[:, keep]
+    Y = expr.values.T
+    XtXi = np.linalg.pinv(X.T @ X)
+    B = XtXi @ X.T @ Y
+    resid = Y - X @ B
+    dof = X.shape[0] - X.shape[1]
+    s2 = (resid ** 2).sum(0) / dof
+    se = np.sqrt(s2 * XtXi[1, 1])
+    t = B[1] / np.where(se > 0, se, np.nan)
+    p = 2 * stats.t.sf(np.abs(t), dof)
+    out = pd.DataFrame({"t": t, "p": p, "beta_per_decade": B[1] * 10}, index=expr.index).dropna()
+    out["q"] = stats.false_discovery_control(out.p.values)
+    out.attrs["n_params"] = X.shape[1]; out.attrs["dof"] = dof
+    return out
+
+
+def signature_topk(ts, cap=250):
+    """Top-k signature without an FDR filter (sensitivity analysis for cohorts with few FDR genes)."""
+    return pd.concat([ts.nlargest(cap, "t"), ts.nsmallest(cap, "t")])
+
+
 def signature(ts, q=0.05, cap=250):
     sig = ts[ts.q < q]
     up = sig[sig.t > 0].nlargest(cap, "t")
