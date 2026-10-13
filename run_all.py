@@ -1,4 +1,4 @@
-﻿"""Reproduce every result, figure and the manuscript from the raw inputs listed in DATA_MANIFEST.csv.
+"""Reproduce every result, figure and the manuscript from the raw inputs listed in DATA_MANIFEST.csv.
 
     python run_all.py            # full pipeline (about 90 min on 8 CPU cores / 8 GB RAM, after downloads)
     python run_all.py --tests    # unit and smoke tests only (seconds; no downloads needed)
@@ -19,8 +19,8 @@ import subprocess, sys, os
 ROOT = os.path.dirname(os.path.abspath(__file__))
 PY = [sys.executable, "-I"]
 STEPS = [["tests/test_core.py"], ["src/orthologs.py"], ["src/pseudobulk_sc.py", "hepg2"], ["src/pseudobulk_sc.py", "jurkat"],
-         ["src/trace_analysis.py"], ["src/rev_cohorts.py"], ["src/rev_scores.py"], ["src/rev_network_evidence.py"],
-         ["src/figures_v1.py"], ["src/build_v1.py"]]
+         ["src/trace_analysis.py"], ["src/rev_cohorts.py"], ["src/rev_scores.py"], ["src/rev_network_evidence.py"], ["src/rev_network_null.py"], ["src/rev_h5_boot.py"],
+         ["src/figures_v1.py"], ["src/build_v1.py"], ["src/build_review2_md.py"], ["src/make_deposit.py"]]
 
 if __name__ == "__main__":
     steps = STEPS[:1] if "--tests" in sys.argv else STEPS

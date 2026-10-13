@@ -1,4 +1,4 @@
-"""Review round (AMENDMENT-R1), item P0.2: alternative score definitions (exploratory).
+﻿"""Review round (AMENDMENT-R1), item P0.2: alternative score definitions (exploratory).
 
 V0 raw            R = -Spearman(d[S], a[S])
 V1 protocol       proliferation genes removed from S, then residualised on proliferation, identity and magnitude shifts
@@ -57,7 +57,7 @@ def ov(a, b, frac=0.05):
     return len(A & B) / max(1, len(A))
 
 
-def auc_ci(x, y, nb=1000):
+def auc_ci(x, y, nb=2000):
     x, y = np.asarray(x), np.asarray(y)
     if len(x) < 3 or len(y) < 3: return [np.nan] * 4
     u = stats.mannwhitneyu(x, y, alternative="greater")
@@ -142,3 +142,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

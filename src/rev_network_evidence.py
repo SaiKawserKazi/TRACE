@@ -43,7 +43,7 @@ def network_part(out):
                 r = {"screen": c, "task": task, "predictor": col, "n": n, "mae": err.mean(),
                      "rho": stats.spearmanr(pred, y)[0]}
                 r["mae_lo"], r["mae_hi"] = boot_ci(lambda i: err[i].mean(), n)
-                r["rho_lo"], r["rho_hi"] = boot_ci(lambda i: stats.spearmanr(pred[i], y[i])[0], n, 500)
+                r["rho_lo"], r["rho_hi"] = boot_ci(lambda i: stats.spearmanr(pred[i], y[i])[0], n, 2000)
                 ref = "null" if task.startswith("H3a") else "transfer_cal"
                 if col != ref:
                     e0 = np.abs(d[ref].values - y); dd = err - e0
@@ -131,9 +131,9 @@ def evidence_part(out):
         x = score.reindex(pos).dropna().values; y = score.reindex(neg).dropna().values
         if len(x) < 5 or len(y) < 5: return None
         a = stats.mannwhitneyu(x, y, alternative="greater").statistic / (len(x) * len(y))
-        bs = [stats.mannwhitneyu(rng.choice(x, len(x)), rng.choice(y, len(y))).statistic / (len(x) * len(y)) for _ in range(1000)]
+        bs = [stats.mannwhitneyu(rng.choice(x, len(x)), rng.choice(y, len(y))).statistic / (len(x) * len(y)) for _ in range(2000)]
         allv = np.r_[x, y]; perm = []
-        for _ in range(2000):
+        for _ in range(10000):
             p_ = rng.permutation(allv); perm.append(stats.mannwhitneyu(p_[:len(x)], p_[len(x):]).statistic / (len(x) * len(y)))
         return {"analysis": label, "n_pos": len(x), "n_neg": len(y), "auroc": a, "lo": float(np.quantile(bs, 0.025)),
                 "hi": float(np.quantile(bs, 0.975)), "perm_p_one_sided": float((np.sum(np.array(perm) >= a) + 1) / (len(perm) + 1))}
@@ -168,4 +168,5 @@ if __name__ == "__main__":
     network_part(out)
     json.dump(out, open(os.path.join(RES, "rev_network_evidence.json"), "w"), indent=1, default=lambda o: o.item() if hasattr(o, "item") else str(o))
     print("done")
+
 

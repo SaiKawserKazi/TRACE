@@ -87,6 +87,49 @@ def compare(tf, tg, sig):
             "rho_sig": stats.spearmanr(sig.t[ss], tg.t[ss])[0]}
 
 
+import multiprocessing as mp
+NPROC = int(os.environ.get("TRACE_NPROC", 5))
+NSPLIT = int(os.environ.get("TRACE_NSPLIT", 200))
+_W = {}
+
+
+def _init():
+    _W["f"] = fleischer()
+    _W["g"] = {"fibroblast": gtex("gtex_fibroblasts_tpm.gct.gz"), "skin": gtex("gtex_skin_ns_tpm.gct.gz")}
+
+
+def _boot_task(b):
+    """One donor-level bootstrap replicate (seeded by b) of every specification; returns all 48 comparisons."""
+    r = np.random.default_rng(10_000 + b)
+    ef, mf = _W["f"]
+    Fb = {}
+    for name, (mask, cov, mm) in FL_SPECS.items():
+        k = mask(mf).values; e_, m_ = ef.loc[:, k], mf[k]
+        Fb[name] = fit(e_, m_, cov, mm, r.integers(0, k.sum(), k.sum()))
+    Gb = {}
+    for coh, (e_, m_) in _W["g"].items():
+        idx = r.integers(0, len(m_), len(m_))  # same donor resample for all models of a cohort
+        for name, cov in GT_SPECS.items():
+            Gb[f"{coh}: {name}"] = fit(e_, m_, cov + (SKIN_EXTRA if coh == "skin" else []), 1.0, idx)
+    out = []
+    for fn, tfb in Fb.items():
+        sig = sig_from(tfb)
+        for gn, tgb in Gb.items():
+            c = compare(tfb, tgb, sig); out.append((b, fn, gn, c["rho_all"], c["sig_sign_agree"]))
+    return out
+
+
+def _half_task(s):
+    r = np.random.default_rng(20_000 + s)
+    res = []
+    for lab, (e_, m_) in {"Fleischer split-half": _W["f"], "GTEx fibroblast split-half": _W["g"]["fibroblast"],
+                          "GTEx skin split-half": _W["g"]["skin"]}.items():
+        perm = r.permutation(len(m_)); a, c = perm[: len(m_) // 2], perm[len(m_) // 2:]
+        ta, tc = fit(e_, m_, ["sex"], 1.0, a), fit(e_, m_, ["sex"], 1.0, c)
+        sh = ta.index.intersection(tc.index); res.append((s, lab, stats.spearmanr(ta.t[sh], tc.t[sh])[0]))
+    return res
+
+
 def main():
     ef, mf = fleischer()
     eg, mg = gtex("gtex_fibroblasts_tpm.gct.gz")
@@ -110,44 +153,37 @@ def main():
     pd.DataFrame(tab).to_csv(os.path.join(RES, "rev_cohort_table.csv"), index=False)
     log("cohort table done")
 
-    # point estimates and donor bootstraps for every specification
-    F, Fb = {}, {}
+    # point estimates for every specification
+    F = {}
     for name, (mask, cov, mm) in FL_SPECS.items():
         k = mask(mf).values
-        e_, m_ = ef.loc[:, k], mf[k]
-        F[name] = (fit(e_, m_, cov, mm), int(k.sum()))
-        Fb[name] = [fit(e_, m_, cov, mm, rng.integers(0, k.sum(), k.sum())) for _ in range(NB)]
+        F[name] = (fit(ef.loc[:, k], mf[k], cov, mm), int(k.sum()))
         log(name, "n", k.sum(), "FDR<0.05", int((F[name][0].q < 0.05).sum()))
-    G, Gb = {}, {}
+    G = {}
     for coh, (e_, m_) in {"fibroblast": (eg, mg), "skin": (es, ms)}.items():
         for name, cov in GT_SPECS.items():
             cov = cov + (SKIN_EXTRA if coh == "skin" else [])
-            key = f"{coh}: {name}"
-            G[key] = (fit(e_, m_, cov, 1.0), len(m_))
-            Gb[key] = [fit(e_, m_, cov, 1.0, rng.integers(0, len(m_), len(m_))) for _ in range(NB)]
-            log(key, "FDR<0.05", int((G[key][0].q < 0.05).sum()))
-    # within-cohort split-half reference (Fleischer F0 and GTEx fibroblast G0): what replication looks like inside one cohort
-    ref = {}
-    for lab, (e_, m_, cov) in {"Fleischer split-half": (ef, mf, ["sex"]), "GTEx fibroblast split-half": (eg, mg, ["sex"]),
-                               "GTEx skin split-half": (es, ms, ["sex"])}.items():
-        vals = []
-        for b in range(min(NB, 50)):
-            perm = rng.permutation(len(m_)); a, c = perm[: len(m_) // 2], perm[len(m_) // 2:]
-            ta, tc = fit(e_, m_, cov, 1.0, a), fit(e_, m_, cov, 1.0, c)
-            sh = ta.index.intersection(tc.index); vals.append(stats.spearmanr(ta.t[sh], tc.t[sh])[0])
-        ref[lab] = {"median": float(np.median(vals)), "q025": float(np.quantile(vals, 0.025)), "q975": float(np.quantile(vals, 0.975)), "n_splits": len(vals)}
-        log(lab, ref[lab])
-    # GTEx fibroblast vs GTEx skin (same donors' cohort, different sample type)
+            G[f"{coh}: {name}"] = (fit(e_, m_, cov, 1.0), len(m_))
+            log(f"{coh}: {name}", "FDR<0.05", int((G[f'{coh}: {name}'][0].q < 0.05).sum()))
+    # donor-level bootstraps and split halves, streamed in parallel (each task re-fits every specification once)
+    with mp.Pool(NPROC, initializer=_init) as pool:
+        boot = []
+        for i, res in enumerate(pool.imap_unordered(_boot_task, range(NB), chunksize=4)):
+            boot.extend(res)
+            if i % 50 == 0: log("bootstrap", i)
+        halves = list(pool.imap_unordered(_half_task, range(NSPLIT), chunksize=4))
+    BT = pd.DataFrame(boot, columns=["b", "fn", "gn", "rho_all", "sig_sign_agree"])
+    BT.to_csv(os.path.join(RES, "rev_cohort_bootstrap.csv.gz"), index=False)
+    HV = pd.DataFrame([r for h in halves for r in h], columns=["split", "cohort", "rho"])
+    ref = {lab: {"median": float(g.rho.median()), "q025": float(g.rho.quantile(0.025)), "q975": float(g.rho.quantile(0.975)), "n_splits": len(g)}
+           for lab, g in HV.groupby("cohort")}
+    log("split halves", ref)
     rows = []
     for fn, (tf, nf) in F.items():
         sig = sig_from(tf)
         for gn, (tg, ng) in G.items():
             pt = compare(tf, tg, sig)
-            bs = []
-            for b in range(NB):
-                tfb, tgb = Fb[fn][b], Gb[gn][b]
-                bs.append(compare(tfb, tgb, sig_from(tfb)))
-            B = pd.DataFrame(bs)
+            B = BT[(BT.fn == fn) & (BT.gn == gn)]
             rows.append({"discovery_spec": fn, "n_discovery": nf, "fdr05_discovery": int((tf.q < 0.05).sum()),
                          "signature_rule": "FDR<0.05 top 250/250" if (tf.q < 0.05).sum() >= 100 else "top 250/250 by t (few FDR genes)",
                          "replication_spec": gn, "n_replication": ng, "fdr05_replication": int((tg.q < 0.05).sum()),
