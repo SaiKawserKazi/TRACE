@@ -1,0 +1,455 @@
+{
+ "evidence": [
+  {
+   "analysis": "CellAge, all (pre-registered H4a)",
+   "n_pos": 257,
+   "n_neg": 394,
+   "auroc": 0.538,
+   "lo": 0.4929,
+   "hi": 0.5828,
+   "perm_p_one_sided": 0.048
+  },
+  {
+   "analysis": "CellAge, non-cancer-cell evidence only",
+   "n_pos": 154,
+   "n_neg": 179,
+   "auroc": 0.5545,
+   "lo": 0.491,
+   "hi": 0.6191,
+   "perm_p_one_sided": 0.0425
+  },
+  {
+   "analysis": "CellAge, replicative senescence only",
+   "n_pos": 40,
+   "n_neg": 73,
+   "auroc": 0.5894,
+   "lo": 0.477,
+   "hi": 0.6925,
+   "perm_p_one_sided": 0.0602
+  },
+  {
+   "analysis": "GenAge, human consensus (pre-registered H4b)",
+   "n_pos": 573,
+   "n_neg": 376,
+   "auroc": 0.5118,
+   "lo": 0.4732,
+   "hi": 0.5504,
+   "perm_p_one_sided": 0.2657
+  },
+  {
+   "analysis": "GenAge, Mus musculus only",
+   "n_pos": 23,
+   "n_neg": 66,
+   "auroc": 0.5448,
+   "lo": 0.415,
+   "hi": 0.6719,
+   "perm_p_one_sided": 0.2566
+  },
+  {
+   "analysis": "GenAge, Caenorhabditis elegans only",
+   "n_pos": 345,
+   "n_neg": 258,
+   "auroc": 0.5213,
+   "lo": 0.4725,
+   "hi": 0.5686,
+   "perm_p_one_sided": 0.1833
+  },
+  {
+   "analysis": "GenAge, Drosophila melanogaster only",
+   "n_pos": 55,
+   "n_neg": 91,
+   "auroc": 0.4927,
+   "lo": 0.4022,
+   "hi": 0.5866,
+   "perm_p_one_sided": 0.5505
+  },
+  {
+   "analysis": "GenAge, Saccharomyces cerevisiae only",
+   "n_pos": 246,
+   "n_neg": 30,
+   "auroc": 0.4335,
+   "lo": 0.3431,
+   "hi": 0.5316,
+   "perm_p_one_sided": 0.8819
+  },
+  {
+   "analysis": "CellAge, proliferation shift alone as score",
+   "n_pos": 257,
+   "n_neg": 394,
+   "auroc": 0.5814,
+   "lo": 0.54,
+   "hi": 0.6236,
+   "perm_p_one_sided": 0.0003
+  },
+  {
+   "analysis": "GenAge, proliferation shift alone as score",
+   "n_pos": 573,
+   "n_neg": 376,
+   "auroc": 0.4231,
+   "lo": 0.3858,
+   "hi": 0.4589,
+   "perm_p_one_sided": 1.0
+  },
+  {
+   "analysis": "CellAge, mean raw score (no adjustment)",
+   "n_pos": 257,
+   "n_neg": 394,
+   "auroc": 0.5727,
+   "lo": 0.5261,
+   "hi": 0.6184,
+   "perm_p_one_sided": 0.001
+  },
+  {
+   "analysis": "GenAge, mean raw score (no adjustment)",
+   "n_pos": 573,
+   "n_neg": 376,
+   "auroc": 0.4374,
+   "lo": 0.3998,
+   "hi": 0.4738,
+   "perm_p_one_sided": 0.9997
+  }
+ ],
+ "coverage": [
+  {
+   "source": "CellAge",
+   "subset": "all records",
+   "records": 949.0,
+   "genes": 866,
+   "induces": 370.0,
+   "inhibits": 475.0,
+   "conflicting_or_unclear_dropped": 21.0,
+   "evaluable_pos": 257.0,
+   "evaluable_neg": 394.0,
+   "mapped_model_genes": NaN,
+   "human_orthologs": NaN,
+   "conflicting_resolved_by_majority": NaN
+  },
+  {
+   "source": "GenAge",
+   "subset": "Mus musculus",
+   "records": 136.0,
+   "genes": 136,
+   "induces": 45.0,
+   "inhibits": 85.0,
+   "conflicting_or_unclear_dropped": NaN,
+   "evaluable_pos": NaN,
+   "evaluable_neg": NaN,
+   "mapped_model_genes": 123.0,
+   "human_orthologs": 138.0,
+   "conflicting_resolved_by_majority": NaN
+  },
+  {
+   "source": "GenAge",
+   "subset": "Caenorhabditis elegans",
+   "records": 889.0,
+   "genes": 887,
+   "induces": 578.0,
+   "inhibits": 283.0,
+   "conflicting_or_unclear_dropped": NaN,
+   "evaluable_pos": NaN,
+   "evaluable_neg": NaN,
+   "mapped_model_genes": 520.0,
+   "human_orthologs": 982.0,
+   "conflicting_resolved_by_majority": NaN
+  },
+  {
+   "source": "GenAge",
+   "subset": "Drosophila melanogaster",
+   "records": 202.0,
+   "genes": 201,
+   "induces": 73.0,
+   "inhibits": 125.0,
+   "conflicting_or_unclear_dropped": NaN,
+   "evaluable_pos": NaN,
+   "evaluable_neg": NaN,
+   "mapped_model_genes": 125.0,
+   "human_orthologs": 220.0,
+   "conflicting_resolved_by_majority": NaN
+  },
+  {
+   "source": "GenAge",
+   "subset": "Saccharomyces cerevisiae",
+   "records": 911.0,
+   "genes": 911,
+   "induces": 349.0,
+   "inhibits": 51.0,
+   "conflicting_or_unclear_dropped": NaN,
+   "evaluable_pos": NaN,
+   "evaluable_neg": NaN,
+   "mapped_model_genes": 246.0,
+   "human_orthologs": 400.0,
+   "conflicting_resolved_by_majority": NaN
+  },
+  {
+   "source": "GenAge",
+   "subset": "human consensus",
+   "records": NaN,
+   "genes": 1539,
+   "induces": 942.0,
+   "inhibits": 548.0,
+   "conflicting_or_unclear_dropped": 49.0,
+   "evaluable_pos": 573.0,
+   "evaluable_neg": 376.0,
+   "mapped_model_genes": NaN,
+   "human_orthologs": NaN,
+   "conflicting_resolved_by_majority": 16.0
+  },
+  {
+   "source": "coverage",
+   "subset": "K562",
+   "records": NaN,
+   "genes": 2057,
+   "induces": NaN,
+   "inhibits": NaN,
+   "conflicting_or_unclear_dropped": NaN,
+   "evaluable_pos": 37.0,
+   "evaluable_neg": 131.0,
+   "mapped_model_genes": 170.0,
+   "human_orthologs": 69.0,
+   "conflicting_resolved_by_majority": NaN
+  },
+  {
+   "source": "coverage",
+   "subset": "K562gw",
+   "records": NaN,
+   "genes": 9866,
+   "induces": NaN,
+   "inhibits": NaN,
+   "conflicting_or_unclear_dropped": NaN,
+   "evaluable_pos": 257.0,
+   "evaluable_neg": 393.0,
+   "mapped_model_genes": 573.0,
+   "human_orthologs": 376.0,
+   "conflicting_resolved_by_majority": NaN
+  },
+  {
+   "source": "coverage",
+   "subset": "RPE1",
+   "records": NaN,
+   "genes": 2393,
+   "induces": NaN,
+   "inhibits": NaN,
+   "conflicting_or_unclear_dropped": NaN,
+   "evaluable_pos": 53.0,
+   "evaluable_neg": 146.0,
+   "mapped_model_genes": 197.0,
+   "human_orthologs": 88.0,
+   "conflicting_resolved_by_majority": NaN
+  },
+  {
+   "source": "coverage",
+   "subset": "HepG2",
+   "records": NaN,
+   "genes": 2160,
+   "induces": NaN,
+   "inhibits": NaN,
+   "conflicting_or_unclear_dropped": NaN,
+   "evaluable_pos": 48.0,
+   "evaluable_neg": 128.0,
+   "mapped_model_genes": 177.0,
+   "human_orthologs": 82.0,
+   "conflicting_resolved_by_majority": NaN
+  },
+  {
+   "source": "coverage",
+   "subset": "Jurkat",
+   "records": NaN,
+   "genes": 2270,
+   "induces": NaN,
+   "inhibits": NaN,
+   "conflicting_or_unclear_dropped": NaN,
+   "evaluable_pos": 51.0,
+   "evaluable_neg": 123.0,
+   "mapped_model_genes": 187.0,
+   "human_orthologs": 82.0,
+   "conflicting_resolved_by_majority": NaN
+  }
+ ],
+ "network_table": "results/rev_network.csv",
+ "combined_vs_cal_rel_change_pct": {
+  "K562": -2.17,
+  "K562gw": -0.29,
+  "RPE1": -2.59,
+  "HepG2": -3.39,
+  "Jurkat": -1.42
+ },
+ "combined_vs_cal_diff_ci": {
+  "K562": [
+   -0.002135093503684051,
+   -0.0009187422050685825
+  ],
+  "K562gw": [
+   -0.0004481503288114954,
+   3.0282442982112227e-05
+  ],
+  "RPE1": [
+   -0.002725014431179682,
+   -0.0012628856142303207
+  ],
+  "HepG2": [
+   -0.003409765151798741,
+   -0.0017089294584284036
+  ],
+  "Jurkat": [
+   -0.0013263995751841785,
+   -0.0005883704487359871
+  ]
+ },
+ "combined_rho_ci": {
+  "K562": [
+   0.32793865182120024,
+   0.28664207802501673,
+   0.3696274067138619
+  ],
+  "K562gw": [
+   0.27429366789802545,
+   0.2335432352703348,
+   0.3165644711917529
+  ],
+  "RPE1": [
+   0.39454727431681874,
+   0.3570338609744704,
+   0.432695615914228
+  ],
+  "HepG2": [
+   0.4020587445778804,
+   0.35961903610708673,
+   0.438542183262795
+  ],
+  "Jurkat": [
+   0.2636728379592419,
+   0.22127026840511874,
+   0.3054667166762517
+  ]
+ },
+ "transfer_cal_rho_ci": {
+  "K562": [
+   0.25741278868443285,
+   0.21233975048315748,
+   0.3021889179777562
+  ],
+  "K562gw": [
+   0.2666728412048921,
+   0.2281865906887902,
+   0.30478080213941433
+  ],
+  "RPE1": [
+   0.3221759865247511,
+   0.28278125313855706,
+   0.36204058293836106
+  ],
+  "HepG2": [
+   0.3100845709382526,
+   0.2665197050529662,
+   0.35028439276116624
+  ],
+  "Jurkat": [
+   0.20955890694661347,
+   0.1673833328199539,
+   0.25218646504578784
+  ]
+ },
+ "network_vs_null_rel_change_pct": {
+  "K562": -1.7,
+  "K562gw": 6.27,
+  "RPE1": -1.25,
+  "HepG2": -3.74,
+  "Jurkat": -1.01
+ },
+ "network_rho_ci": {
+  "K562": [
+   0.2484092956203087,
+   0.20469887358860261,
+   0.2908879062293321
+  ],
+  "K562gw": [
+   0.0654170576546521,
+   0.04442275094545063,
+   0.08644392343265203
+  ],
+  "RPE1": [
+   0.29428788453507737,
+   0.253226897954594,
+   0.331792631761879
+  ],
+  "HepG2": [
+   0.3291071389782587,
+   0.2878602634788795,
+   0.3720243211371957
+  ],
+  "Jurkat": [
+   0.22194686305845154,
+   0.17752750496475794,
+   0.26294977897889393
+  ]
+ },
+ "mean_vs_null_rel_change_pct": {
+  "K562": -1.27,
+  "K562gw": -2.16,
+  "RPE1": -0.08,
+  "HepG2": -0.66,
+  "Jurkat": -1.26
+ },
+ "null_checks": [
+  {
+   "seed": 0,
+   "degrees_identical": true,
+   "edges": 236930,
+   "frac_edges_rewired": 0.9575022158443423
+  },
+  {
+   "seed": 1,
+   "degrees_identical": true,
+   "edges": 236930,
+   "frac_edges_rewired": 0.9573502722323048
+  },
+  {
+   "seed": 2,
+   "degrees_identical": true,
+   "edges": 236930,
+   "frac_edges_rewired": 0.9574726712531128
+  },
+  {
+   "seed": 3,
+   "degrees_identical": true,
+   "edges": 236930,
+   "frac_edges_rewired": 0.9574895538766725
+  },
+  {
+   "seed": 4,
+   "degrees_identical": true,
+   "edges": 236930,
+   "frac_edges_rewired": 0.9580888870130418
+  },
+  {
+   "seed": 5,
+   "degrees_identical": true,
+   "edges": 236930,
+   "frac_edges_rewired": 0.9577174692947285
+  },
+  {
+   "seed": 6,
+   "degrees_identical": true,
+   "edges": 236930,
+   "frac_edges_rewired": 0.9578989574979951
+  },
+  {
+   "seed": 7,
+   "degrees_identical": true,
+   "edges": 236930,
+   "frac_edges_rewired": 0.9576710420799392
+  },
+  {
+   "seed": 8,
+   "degrees_identical": true,
+   "edges": 236930,
+   "frac_edges_rewired": 0.956949309922762
+  },
+  {
+   "seed": 9,
+   "degrees_identical": true,
+   "edges": 236930,
+   "frac_edges_rewired": 0.9574684505972229
+  }
+ ]
+}

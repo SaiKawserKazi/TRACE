@@ -1,0 +1,4 @@
+cohort,age_18-29,age_30-39,age_40-49,age_50-59,age_60-69,age_70-79,age_80+,n_donors
+Fleischer (discovery),21,14,14,6,19,4,33,111
+GTEx v10 cultured fibroblasts,60,53,106,202,210,21,0,652
+"GTEx v10 skin, not sun-exposed",53,57,98,201,216,26,0,651

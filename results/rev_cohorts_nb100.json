@@ -1,0 +1,215 @@
+{
+ "n_boot": 100,
+ "split_half": {
+  "Fleischer split-half": {
+   "median": 0.8279107146006677,
+   "q025": 0.7278658161834097,
+   "q975": 0.8986458854382039,
+   "n_splits": 50
+  },
+  "GTEx fibroblast split-half": {
+   "median": 0.7646529204139301,
+   "q025": 0.5707388080607863,
+   "q975": 0.8568377208761696,
+   "n_splits": 50
+  },
+  "GTEx skin split-half": {
+   "median": 0.8395273586093346,
+   "q025": 0.7484519654335843,
+   "q975": 0.8881134731357972,
+   "n_splits": 50
+  }
+ },
+ "gtex_fibro_vs_skin_rho": 0.018054069707186034,
+ "fdr05": {
+  "F0 protocol (>=18 y; age+sex)": 6495,
+  "F1 age 20-79 (GTEx range)": 198,
+  "F2 + platform, repository, site": 6298,
+  "F3 age 20-79 + platform, repository, site": 2100,
+  "F4 NextSeq only": 6491,
+  "F5 arm biopsies only": 5862,
+  "F6 gene filter mean log2 >= 0.5": 6960,
+  "F7 gene filter mean log2 >= 2": 5229,
+  "fibroblast: G0 protocol (age+sex)": 5548,
+  "fibroblast: G1 + centre, batch type, RIN, Hardy": 1895,
+  "fibroblast: G2 G1 + nucleic-acid batch": 515,
+  "skin: G0 protocol (age+sex)": 5720,
+  "skin: G1 + centre, batch type, RIN, Hardy": 2529,
+  "skin: G2 G1 + nucleic-acid batch": 31
+ },
+ "n": {
+  "F0 protocol (>=18 y; age+sex)": 111,
+  "F1 age 20-79 (GTEx range)": 74,
+  "F2 + platform, repository, site": 111,
+  "F3 age 20-79 + platform, repository, site": 74,
+  "F4 NextSeq only": 98,
+  "F5 arm biopsies only": 89,
+  "F6 gene filter mean log2 >= 0.5": 111,
+  "F7 gene filter mean log2 >= 2": 111,
+  "fibroblast: G0 protocol (age+sex)": 652,
+  "fibroblast: G1 + centre, batch type, RIN, Hardy": 652,
+  "fibroblast: G2 G1 + nucleic-acid batch": 652,
+  "skin: G0 protocol (age+sex)": 651,
+  "skin: G1 + centre, batch type, RIN, Hardy": 651,
+  "skin: G2 G1 + nucleic-acid batch": 651
+ },
+ "fleischer_crosstab_age_repository": {
+  "AG": {
+   "(17, 39]": 12,
+   "(39, 59]": 16,
+   "(59, 79]": 15,
+   "(79, 120]": 31
+  },
+  "GM": {
+   "(17, 39]": 23,
+   "(39, 59]": 4,
+   "(59, 79]": 8,
+   "(79, 120]": 2
+  }
+ },
+ "fleischer_crosstab_age_platform": {
+  "HiSeq 2500": {
+   "(17, 39]": 3,
+   "(39, 59]": 10,
+   "(59, 79]": 0,
+   "(79, 120]": 0
+  },
+  "NextSeq 500": {
+   "(17, 39]": 32,
+   "(39, 59]": 10,
+   "(59, 79]": 23,
+   "(79, 120]": 33
+  }
+ },
+ "fleischer_age_repository_test": 4.987315553400618e-06,
+ "rho_all_range_over_specs": [
+  -0.2856217529070616,
+  0.2607282093218082
+ ],
+ "fibro_rho_range": [
+  -0.2856217529070616,
+  0.06915810484445223
+ ],
+ "skin_rho_range": [
+  -0.07040624654165785,
+  0.2607282093218082
+ ],
+ "fibro_sign_range": [
+  0.1786492374727669,
+  0.6
+ ],
+ "skin_sign_range": [
+  0.35428571428571426,
+  0.6039823008849557
+ ],
+ "key": {
+  "F0_G0_fibro": {
+   "discovery_spec": "F0 protocol (>=18 y; age+sex)",
+   "n_discovery": 111,
+   "fdr05_discovery": 6495,
+   "signature_rule": "FDR<0.05 top 250/250",
+   "replication_spec": "fibroblast: G0 protocol (age+sex)",
+   "n_replication": 652,
+   "fdr05_replication": 5548,
+   "rho_all": -0.2754168245456749,
+   "n_shared": 10538,
+   "sig_sign_agree": 0.2205240174672489,
+   "sig_n": 458,
+   "rho_sig": -0.5747812456341088,
+   "rho_all_lo": -0.39442609834179027,
+   "rho_all_hi": 0.008530397572186436,
+   "sig_sign_agree_lo": 0.12141267208257128,
+   "sig_sign_agree_hi": 0.4364568465486349
+  },
+  "F0_G0_skin": {
+   "discovery_spec": "F0 protocol (>=18 y; age+sex)",
+   "n_discovery": 111,
+   "fdr05_discovery": 6495,
+   "signature_rule": "FDR<0.05 top 250/250",
+   "replication_spec": "skin: G0 protocol (age+sex)",
+   "n_replication": 651,
+   "fdr05_replication": 5720,
+   "rho_all": 0.20689391369274385,
+   "n_shared": 10379,
+   "sig_sign_agree": 0.5748898678414097,
+   "sig_n": 454,
+   "rho_sig": 0.27325643985795106,
+   "rho_all_lo": 0.010163295384964795,
+   "rho_all_hi": 0.33709041264449896,
+   "sig_sign_agree_lo": 0.4683156581864862,
+   "sig_sign_agree_hi": 0.6894358407079645
+  },
+  "F3_G2_fibro": {
+   "discovery_spec": "F3 age 20-79 + platform, repository, site",
+   "n_discovery": 74,
+   "fdr05_discovery": 2100,
+   "signature_rule": "FDR<0.05 top 250/250",
+   "replication_spec": "fibroblast: G2 G1 + nucleic-acid batch",
+   "n_replication": 652,
+   "fdr05_replication": 515,
+   "rho_all": 0.06915810484445223,
+   "n_shared": 10537,
+   "sig_sign_agree": 0.5484581497797357,
+   "sig_n": 454,
+   "rho_sig": 0.07506696413543569,
+   "rho_all_lo": -0.2498789757479315,
+   "rho_all_hi": 0.3973773402041473,
+   "sig_sign_agree_lo": 0.2780746633377997,
+   "sig_sign_agree_hi": 0.7768218020722378
+  },
+  "F3_G2_skin": {
+   "discovery_spec": "F3 age 20-79 + platform, repository, site",
+   "n_discovery": 74,
+   "fdr05_discovery": 2100,
+   "signature_rule": "FDR<0.05 top 250/250",
+   "replication_spec": "skin: G2 G1 + nucleic-acid batch",
+   "n_replication": 651,
+   "fdr05_replication": 31,
+   "rho_all": -0.07040624654165785,
+   "n_shared": 10373,
+   "sig_sign_agree": 0.47149122807017546,
+   "sig_n": 456,
+   "rho_sig": -0.12426846446194599,
+   "rho_all_lo": -0.22545170991997449,
+   "rho_all_hi": 0.1393813857002705,
+   "sig_sign_agree_lo": 0.2835535278298716,
+   "sig_sign_agree_hi": 0.6110609119438443
+  },
+  "F1_G0_fibro": {
+   "discovery_spec": "F1 age 20-79 (GTEx range)",
+   "n_discovery": 74,
+   "fdr05_discovery": 198,
+   "signature_rule": "FDR<0.05 top 250/250",
+   "replication_spec": "fibroblast: G0 protocol (age+sex)",
+   "n_replication": 652,
+   "fdr05_replication": 5548,
+   "rho_all": -0.21697610052368607,
+   "n_shared": 10537,
+   "sig_sign_agree": 0.3142857142857143,
+   "sig_n": 175,
+   "rho_sig": -0.33871249440214957,
+   "rho_all_lo": -0.3855564609091742,
+   "rho_all_hi": 0.13987113204555573,
+   "sig_sign_agree_lo": 0.21230576692030437,
+   "sig_sign_agree_hi": 0.5881754259803038
+  },
+  "F2_G1_fibro": {
+   "discovery_spec": "F2 + platform, repository, site",
+   "n_discovery": 111,
+   "fdr05_discovery": 6298,
+   "signature_rule": "FDR<0.05 top 250/250",
+   "replication_spec": "fibroblast: G1 + centre, batch type, RIN, Hardy",
+   "n_replication": 652,
+   "fdr05_replication": 1895,
+   "rho_all": -0.14722003518958732,
+   "n_shared": 10538,
+   "sig_sign_agree": 0.2735229759299781,
+   "sig_n": 457,
+   "rho_sig": -0.37179284723902106,
+   "rho_all_lo": -0.37028296949385653,
+   "rho_all_hi": 0.1987121851514379,
+   "sig_sign_agree_lo": 0.17607113316790737,
+   "sig_sign_agree_hi": 0.5850658451129636
+  }
+ }
+}

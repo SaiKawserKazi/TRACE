@@ -1,0 +1,490 @@
+{
+ "variants": [
+  "V0 raw",
+  "V1 protocol",
+  "V2 removal only",
+  "V3 resid only",
+  "V4 prolif resid",
+  "V5 stratified"
+ ],
+ "per_variant": {
+  "V0 raw": {
+   "cross_line_rho": {
+    "K562-RPE1": 0.5177341808933235,
+    "K562-HepG2": 0.5549443401225744,
+    "K562-Jurkat": 0.43398736745918826,
+    "RPE1-HepG2": 0.6367538706653149,
+    "RPE1-Jurkat": 0.4196573575328312,
+    "HepG2-Jurkat": 0.42181809457679814
+   },
+   "cross_line_median": 0.47586077417625583,
+   "within_K562_rho": 0.49144112181353466,
+   "cellage_auroc": 0.5728041241185882,
+   "cellage_lo": 0.5299018349167474,
+   "cellage_hi": 0.6173934405182799,
+   "cellage_p": 0.0008368811004408319,
+   "cellage_n": [
+    257,
+    394
+   ],
+   "genage_auroc": 0.4367132672384984,
+   "genage_lo": 0.3984512504177342,
+   "genage_hi": 0.47366684768482414,
+   "genage_p": 0.9995193793955061,
+   "genage_n": [
+    573,
+    376
+   ],
+   "swap_gtex_fibroblast_rho": -0.13365313939170875,
+   "swap_gtex_fibroblast_top5": 0.028397565922920892,
+   "swap_gtex_skin_rho": 0.25001785685482036,
+   "swap_gtex_skin_top5": 0.08519269776876268
+  },
+  "V1 protocol": {
+   "cross_line_rho": {
+    "K562-RPE1": 0.2174207375332771,
+    "K562-HepG2": 0.2164803067502827,
+    "K562-Jurkat": 0.15113488297580044,
+    "RPE1-HepG2": 0.2554380072336073,
+    "RPE1-Jurkat": 0.2029544961514513,
+    "HepG2-Jurkat": 0.16334159496356704
+   },
+   "cross_line_median": 0.209717401450867,
+   "within_K562_rho": 0.382937134919658,
+   "cellage_auroc": 0.5380019356495289,
+   "cellage_lo": 0.49360667799087476,
+   "cellage_hi": 0.5863346599774832,
+   "cellage_p": 0.05046846090107782,
+   "cellage_n": [
+    257,
+    394
+   ],
+   "genage_auroc": 0.5117708217296053,
+   "genage_lo": 0.47400300768630943,
+   "genage_hi": 0.5498149205376702,
+   "genage_p": 0.26962969669495945,
+   "genage_n": [
+    573,
+    376
+   ],
+   "swap_gtex_fibroblast_rho": -0.05263162880474365,
+   "swap_gtex_fibroblast_top5": 0.04259634888438134,
+   "swap_gtex_skin_rho": 0.19197088396941955,
+   "swap_gtex_skin_top5": 0.10547667342799188
+  },
+  "V2 removal only": {
+   "cross_line_rho": {
+    "K562-RPE1": 0.5228153649083316,
+    "K562-HepG2": 0.5516474904069931,
+    "K562-Jurkat": 0.46344233585148176,
+    "RPE1-HepG2": 0.635314318697342,
+    "RPE1-Jurkat": 0.48838603732540026,
+    "HepG2-Jurkat": 0.48256910067049313
+   },
+   "cross_line_median": 0.505600701116866,
+   "within_K562_rho": 0.513454027610526,
+   "cellage_auroc": 0.5799146734085208,
+   "cellage_lo": 0.5370822552292165,
+   "cellage_hi": 0.6244057259673309,
+   "cellage_p": 0.0002806060588634028,
+   "cellage_n": [
+    257,
+    394
+   ],
+   "genage_auroc": 0.4477553748468308,
+   "genage_lo": 0.40973146652556536,
+   "genage_hi": 0.48416845364078576,
+   "genage_p": 0.9967906928380824,
+   "genage_n": [
+    573,
+    376
+   ],
+   "swap_gtex_fibroblast_rho": -0.1342948581271832,
+   "swap_gtex_fibroblast_top5": 0.032454361054766734,
+   "swap_gtex_skin_rho": 0.3031408980554002,
+   "swap_gtex_skin_top5": 0.09939148073022312
+  },
+  "V3 resid only": {
+   "cross_line_rho": {
+    "K562-RPE1": 0.17069313571486308,
+    "K562-HepG2": 0.14606869767537184,
+    "K562-Jurkat": 0.11305102427199218,
+    "RPE1-HepG2": 0.2440435658243811,
+    "RPE1-Jurkat": 0.13275228767272088,
+    "HepG2-Jurkat": 0.10450645808864302
+   },
+   "cross_line_median": 0.13941049267404637,
+   "within_K562_rho": 0.34474142839859734,
+   "cellage_auroc": 0.5315826897627842,
+   "cellage_lo": 0.4882154990222995,
+   "cellage_hi": 0.5769724367457386,
+   "cellage_p": 0.08640819672150918,
+   "cellage_n": [
+    257,
+    394
+   ],
+   "genage_auroc": 0.49512643422078645,
+   "genage_lo": 0.4559396002747763,
+   "genage_hi": 0.5329876582748505,
+   "genage_p": 0.6003923669056178,
+   "genage_n": [
+    573,
+    376
+   ],
+   "swap_gtex_fibroblast_rho": -0.056149000786832916,
+   "swap_gtex_fibroblast_top5": 0.036511156186612576,
+   "swap_gtex_skin_rho": 0.16519232538087303,
+   "swap_gtex_skin_top5": 0.11359026369168357
+  },
+  "V4 prolif resid": {
+   "cross_line_rho": {
+    "K562-RPE1": 0.1762047650746994,
+    "K562-HepG2": 0.16498286970238538,
+    "K562-Jurkat": 0.3898111991528391,
+    "RPE1-HepG2": 0.24526630271197045,
+    "RPE1-Jurkat": 0.15759939497314215,
+    "HepG2-Jurkat": 0.14951819051488824
+   },
+   "cross_line_median": 0.1705938173885424,
+   "within_K562_rho": 0.5009057509827414,
+   "cellage_auroc": 0.5216377965197811,
+   "cellage_lo": 0.47584264946967153,
+   "cellage_hi": 0.5689244306622686,
+   "cellage_p": 0.1751804935457022,
+   "cellage_n": [
+    257,
+    394
+   ],
+   "genage_auroc": 0.4761520181203817,
+   "genage_lo": 0.43548106735732056,
+   "genage_hi": 0.5144099736363298,
+   "genage_p": 0.8932889950227717,
+   "genage_n": [
+    573,
+    376
+   ],
+   "swap_gtex_fibroblast_rho": -0.06197084817022205,
+   "swap_gtex_fibroblast_top5": 0.038539553752535496,
+   "swap_gtex_skin_rho": 0.20430489367247526,
+   "swap_gtex_skin_top5": 0.09330628803245436
+  },
+  "V5 stratified": {
+   "cross_line_rho": {
+    "K562-RPE1": 0.2991352791164323,
+    "K562-HepG2": 0.22298831724795137,
+    "K562-Jurkat": 0.30881996897843794,
+    "RPE1-HepG2": 0.2840735607936696,
+    "RPE1-Jurkat": 0.20744702149707292,
+    "HepG2-Jurkat": 0.15800439410020647
+   },
+   "cross_line_median": 0.2535309390208105,
+   "within_K562_rho": 0.4546992672976879,
+   "cellage_auroc": 0.5117225305654862,
+   "cellage_lo": 0.46677114400837466,
+   "cellage_hi": 0.5561975350095795,
+   "cellage_p": 0.3064816700756686,
+   "cellage_n": [
+    257,
+    394
+   ],
+   "genage_auroc": 0.4815825628457911,
+   "genage_lo": 0.44330876824106047,
+   "genage_hi": 0.5185981071998811,
+   "genage_p": 0.831702055976663,
+   "genage_n": [
+    573,
+    376
+   ],
+   "swap_gtex_fibroblast_rho": -0.08740221477378843,
+   "swap_gtex_fibroblast_top5": 0.04462474645030426,
+   "swap_gtex_skin_rho": 0.2138386058119298,
+   "swap_gtex_skin_top5": 0.09533468559837728
+  }
+ },
+ "variant_rho_matrix": {
+  "V0 raw": {
+   "V0 raw": 1.0,
+   "V1 protocol": 0.627,
+   "V2 removal only": 0.944,
+   "V3 resid only": 0.716,
+   "V4 prolif resid": 0.804,
+   "V5 stratified": 0.672
+  },
+  "V1 protocol": {
+   "V0 raw": 0.627,
+   "V1 protocol": 1.0,
+   "V2 removal only": 0.754,
+   "V3 resid only": 0.901,
+   "V4 prolif resid": 0.851,
+   "V5 stratified": 0.811
+  },
+  "V2 removal only": {
+   "V0 raw": 0.944,
+   "V1 protocol": 0.754,
+   "V2 removal only": 1.0,
+   "V3 resid only": 0.711,
+   "V4 prolif resid": 0.789,
+   "V5 stratified": 0.69
+  },
+  "V3 resid only": {
+   "V0 raw": 0.716,
+   "V1 protocol": 0.901,
+   "V2 removal only": 0.711,
+   "V3 resid only": 1.0,
+   "V4 prolif resid": 0.944,
+   "V5 stratified": 0.867
+  },
+  "V4 prolif resid": {
+   "V0 raw": 0.804,
+   "V1 protocol": 0.851,
+   "V2 removal only": 0.789,
+   "V3 resid only": 0.944,
+   "V4 prolif resid": 1.0,
+   "V5 stratified": 0.909
+  },
+  "V5 stratified": {
+   "V0 raw": 0.672,
+   "V1 protocol": 0.811,
+   "V2 removal only": 0.69,
+   "V3 resid only": 0.867,
+   "V4 prolif resid": 0.909,
+   "V5 stratified": 1.0
+  }
+ },
+ "variant_top5_matrix": {
+  "V0 raw": {
+   "V0 raw": 1.0,
+   "V1 protocol": 0.452,
+   "V2 removal only": 0.686,
+   "V3 resid only": 0.623,
+   "V4 prolif resid": 0.675,
+   "V5 stratified": 0.515
+  },
+  "V1 protocol": {
+   "V0 raw": 0.452,
+   "V1 protocol": 1.0,
+   "V2 removal only": 0.651,
+   "V3 resid only": 0.635,
+   "V4 prolif resid": 0.59,
+   "V5 stratified": 0.546
+  },
+  "V2 removal only": {
+   "V0 raw": 0.686,
+   "V1 protocol": 0.651,
+   "V2 removal only": 1.0,
+   "V3 resid only": 0.588,
+   "V4 prolif resid": 0.627,
+   "V5 stratified": 0.527
+  },
+  "V3 resid only": {
+   "V0 raw": 0.623,
+   "V1 protocol": 0.635,
+   "V2 removal only": 0.588,
+   "V3 resid only": 1.0,
+   "V4 prolif resid": 0.793,
+   "V5 stratified": 0.649
+  },
+  "V4 prolif resid": {
+   "V0 raw": 0.675,
+   "V1 protocol": 0.59,
+   "V2 removal only": 0.627,
+   "V3 resid only": 0.793,
+   "V4 prolif resid": 1.0,
+   "V5 stratified": 0.718
+  },
+  "V5 stratified": {
+   "V0 raw": 0.515,
+   "V1 protocol": 0.546,
+   "V2 removal only": 0.527,
+   "V3 resid only": 0.649,
+   "V4 prolif resid": 0.718,
+   "V5 stratified": 1.0
+  }
+ },
+ "examples_drop": [
+  {
+   "gene": "CCDC6",
+   "R_rob_raw": 0.1638,
+   "R_rob_protocol": 0.0767,
+   "R_rob_stratified": 0.3872,
+   "n_lines": 4,
+   "prolif_shift_mean": 0.033399999141693115,
+   "rank_raw": 1.0,
+   "rank_protocol": 178.0,
+   "rank_stratified": 12.0
+  },
+  {
+   "gene": "HNRNPA1",
+   "R_rob_raw": 0.1292,
+   "R_rob_protocol": 0.0357,
+   "R_rob_stratified": 0.2634,
+   "n_lines": 4,
+   "prolif_shift_mean": 0.06239999830722809,
+   "rank_raw": 6.0,
+   "rank_protocol": 604.0,
+   "rank_stratified": 90.0
+  },
+  {
+   "gene": "HIST1H2BC",
+   "R_rob_raw": 0.109,
+   "R_rob_protocol": 0.0769,
+   "R_rob_stratified": 0.2128,
+   "n_lines": 4,
+   "prolif_shift_mean": 0.029400000348687172,
+   "rank_raw": 12.0,
+   "rank_protocol": 176.0,
+   "rank_stratified": 184.0
+  },
+  {
+   "gene": "FBXO42",
+   "R_rob_raw": 0.1073,
+   "R_rob_protocol": 0.0565,
+   "R_rob_stratified": 0.2734,
+   "n_lines": 4,
+   "prolif_shift_mean": 0.016200000420212746,
+   "rank_raw": 13.0,
+   "rank_protocol": 345.0,
+   "rank_stratified": 73.0
+  },
+  {
+   "gene": "MON1A",
+   "R_rob_raw": 0.1006,
+   "R_rob_protocol": 0.0375,
+   "R_rob_stratified": 0.1243,
+   "n_lines": 4,
+   "prolif_shift_mean": 0.040300000458955765,
+   "rank_raw": 16.0,
+   "rank_protocol": 582.0,
+   "rank_stratified": 489.0
+  },
+  {
+   "gene": "ABHD17A",
+   "R_rob_raw": 0.1,
+   "R_rob_protocol": 0.0543,
+   "R_rob_stratified": 0.2253,
+   "n_lines": 4,
+   "prolif_shift_mean": 0.03620000183582306,
+   "rank_raw": 17.0,
+   "rank_protocol": 366.0,
+   "rank_stratified": 155.0
+  },
+  {
+   "gene": "OTOP1",
+   "R_rob_raw": 0.0998,
+   "R_rob_protocol": 0.0584,
+   "R_rob_stratified": 0.2081,
+   "n_lines": 4,
+   "prolif_shift_mean": 0.026900000870227814,
+   "rank_raw": 18.0,
+   "rank_protocol": 323.0,
+   "rank_stratified": 197.0
+  },
+  {
+   "gene": "COMTD1",
+   "R_rob_raw": 0.0958,
+   "R_rob_protocol": 0.072,
+   "R_rob_stratified": 0.2209,
+   "n_lines": 4,
+   "prolif_shift_mean": 0.03530000150203705,
+   "rank_raw": 20.0,
+   "rank_protocol": 209.0,
+   "rank_stratified": 161.0
+  }
+ ],
+ "examples_keep": [
+  {
+   "gene": "GSDMA",
+   "R_rob_raw": 0.1637,
+   "R_rob_protocol": 0.1125,
+   "R_rob_stratified": 0.3842,
+   "n_lines": 4,
+   "prolif_shift_mean": 0.040699999779462814,
+   "rank_raw": 2.0,
+   "rank_protocol": 40.0,
+   "rank_stratified": 13.0
+  },
+  {
+   "gene": "GPS2",
+   "R_rob_raw": 0.1533,
+   "R_rob_protocol": 0.1572,
+   "R_rob_stratified": 0.3757,
+   "n_lines": 4,
+   "prolif_shift_mean": 0.01119999960064888,
+   "rank_raw": 3.0,
+   "rank_protocol": 9.0,
+   "rank_stratified": 17.0
+  },
+  {
+   "gene": "REXO2",
+   "R_rob_raw": 0.1456,
+   "R_rob_protocol": 0.1192,
+   "R_rob_stratified": 0.2554,
+   "n_lines": 4,
+   "prolif_shift_mean": 0.05490000173449516,
+   "rank_raw": 4.0,
+   "rank_protocol": 30.0,
+   "rank_stratified": 105.0
+  },
+  {
+   "gene": "TREML2",
+   "R_rob_raw": 0.1394,
+   "R_rob_protocol": 0.1397,
+   "R_rob_stratified": 0.3432,
+   "n_lines": 3,
+   "prolif_shift_mean": 0.017400000244379044,
+   "rank_raw": 5.0,
+   "rank_protocol": 14.0,
+   "rank_stratified": 28.0
+  },
+  {
+   "gene": "MCL1",
+   "R_rob_raw": 0.1225,
+   "R_rob_protocol": 0.1097,
+   "R_rob_stratified": 0.169,
+   "n_lines": 3,
+   "prolif_shift_mean": 0.032999999821186066,
+   "rank_raw": 7.0,
+   "rank_protocol": 45.0,
+   "rank_stratified": 321.0
+  },
+  {
+   "gene": "TOR2A",
+   "R_rob_raw": 0.1184,
+   "R_rob_protocol": 0.1004,
+   "R_rob_stratified": 0.2515,
+   "n_lines": 4,
+   "prolif_shift_mean": 0.03790000081062317,
+   "rank_raw": 8.0,
+   "rank_protocol": 65.0,
+   "rank_stratified": 108.0
+  },
+  {
+   "gene": "TBC1D3",
+   "R_rob_raw": 0.1179,
+   "R_rob_protocol": 0.0978,
+   "R_rob_stratified": 0.2877,
+   "n_lines": 4,
+   "prolif_shift_mean": 0.0203000009059906,
+   "rank_raw": 9.0,
+   "rank_protocol": 74.0,
+   "rank_stratified": 53.0
+  },
+  {
+   "gene": "OR2T5",
+   "R_rob_raw": 0.1169,
+   "R_rob_protocol": 0.1013,
+   "R_rob_stratified": 0.2117,
+   "n_lines": 4,
+   "prolif_shift_mean": 0.04129999876022339,
+   "rank_raw": 10.0,
+   "rank_protocol": 62.0,
+   "rank_stratified": 186.0
+  }
+ ],
+ "n_candidates_ge2": 2393,
+ "k_top5": 119,
+ "top_raw_prolif_mean": 0.018392832949757576,
+ "top_protocol_prolif_mean": -0.05508268624544144,
+ "top_stratified_prolif_mean": -0.041243139654397964,
+ "all_prolif_mean": -0.06888991594314575
+}

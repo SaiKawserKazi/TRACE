@@ -1,0 +1,7 @@
+,V0 raw,V1 protocol,V2 removal only,V3 resid only,V4 prolif resid,V5 stratified
+V0 raw,1.0,0.452,0.686,0.623,0.675,0.515
+V1 protocol,0.452,1.0,0.651,0.635,0.59,0.546
+V2 removal only,0.686,0.651,1.0,0.588,0.627,0.527
+V3 resid only,0.623,0.635,0.588,1.0,0.793,0.649
+V4 prolif resid,0.675,0.59,0.627,0.793,1.0,0.718
+V5 stratified,0.515,0.546,0.527,0.649,0.718,1.0

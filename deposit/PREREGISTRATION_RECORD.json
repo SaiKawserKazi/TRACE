@@ -1,0 +1,11 @@
+{
+ "protocol_file": "RESEARCH_PROTOCOL.md",
+ "tag": "protocol-v1.0",
+ "commit": "6ab7550d98016bfb19b25c65c80a231c7f98c5a1",
+ "commit_time_local": "2026-10-12 16:08:26 +0600",
+ "git_blob": "cbdc939d7bfe271c5984e20fb6a7363903a3c836",
+ "sha256_of_frozen_protocol": "01a573574e8225e5ba68ddd2757b81dcd765083274d9b3290b8a1bb0ca879fa7",
+ "unchanged_since_freeze": true,
+ "first_analysis_commit": "c930e83 2026-10-12 17:56:26 +0600 Analysis pipeline, figures and manuscript builder",
+ "note": "Commit times are recorded by the authors' local version control and are self-attested. Independent verification of the content is provided by the public archive; independent verification of the freeze time before analysis is not possible retrospectively."
+}
