@@ -1,0 +1,161 @@
+{
+ "E10": {
+  "n_genes_total": 9870,
+  "n_single_line": 7477,
+  "n_multi_line": 2393,
+  "single_line_equals_radj": true,
+  "single_line_by_line": {
+   "K562": 7477
+  }
+ },
+ "CEGv2_size": 684,
+ "top5_overlap_with_V1_multi": {
+  "V0 raw": 0.33613445378151263,
+  "V1 pre-specified": 1.0,
+  "V2 genes removed": 0.453781512605042,
+  "V3 resid. (all 3)": 0.6050420168067226,
+  "V4 resid. (prolif.)": 0.5378151260504201,
+  "V5 stratified": 0.40336134453781514,
+  "V6 spline resid.": 0.6638655462184874,
+  "V7 resid. (prolif. + identity)": 0.8235294117647058
+ },
+ "k_top5_multi": 119,
+ "nt_magnitude_95th": {
+  "K562": 0.11230250895023344,
+  "K562gw": 0.12323911786079406,
+  "RPE1": 0.1307133749127388,
+  "HepG2": 0.12617667242884636,
+  "Jurkat": 0.08095307536423206
+ },
+ "E14_filter": {
+  "n_before": 2393,
+  "n_after": 1013,
+  "rule": "on-target z < -0.5; magnitude above the screen's non-targeting 95th percentile in at least half of the measured screens; >= 25 cells (mean over screens)"
+ },
+ "E14_front": {
+  "unfiltered": {
+   "n": 16,
+   "genes": [
+    "ANLN",
+    "UFL1",
+    "LSM12",
+    "GPS2",
+    "CRLS1",
+    "TREML2",
+    "ZRANB2",
+    "ADNP2",
+    "CCDC144A",
+    "EGLN2",
+    "OR4F4",
+    "COQ5",
+    "MRPS25",
+    "NR2C2AP",
+    "OR4K1",
+    "NDUFB7"
+   ]
+  },
+  "filtered": {
+   "n": 15,
+   "genes": [
+    "ANLN",
+    "LSM12",
+    "GPS2",
+    "SMG7",
+    "ZRANB2",
+    "TFB1M",
+    "EIF4G1",
+    "SUMO2",
+    "SDHD",
+    "MRPS17",
+    "MRPS30",
+    "MTOR",
+    "HNRNPR",
+    "TERF1",
+    "SAE1"
+   ]
+  }
+ },
+ "E5_real": {
+  "H1_median_rho_raw": 0.47586077417625583,
+  "H1_median_rho_adj": 0.209717401450867,
+  "H2_rho_K562": 0.48759231594732255,
+  "H2_rho_K562gw": 0.5945024036082479,
+  "H2_rho_RPE1": 0.8505061941694079,
+  "H2_rho_HepG2": 0.8988647652745124,
+  "H2_rho_Jurkat": 0.6487921625164654,
+  "H4_CellAge_auroc_raw": 0.5728041241185882,
+  "H4_CellAge_auroc_adj": 0.5380019356495289,
+  "H4_GenAge_auroc_raw": 0.4367132672384984,
+  "H4_GenAge_auroc_adj": 0.5117708217296053
+ },
+ "E5_real_noprolif_genes": 434,
+ "E5_null": {
+  "H1_median_rho_raw": {
+   "median": 0.21300025746756507,
+   "q025": 0.12298261718744374,
+   "q975": 0.36211100623714654,
+   "frac_null_ge_real": 0.0
+  },
+  "H1_median_rho_adj": {
+   "median": 0.11234550756884161,
+   "q025": 0.072761172269761,
+   "q975": 0.16514103979089284,
+   "frac_null_ge_real": 0.0
+  },
+  "H2_rho_K562": {
+   "median": 0.09643763215069699,
+   "q025": -0.19677181114821168,
+   "q975": 0.3788265403322741,
+   "frac_null_ge_real": 0.0
+  },
+  "H2_rho_K562gw": {
+   "median": 0.08732025951212063,
+   "q025": -0.10804436794158037,
+   "q975": 0.26602349754077315,
+   "frac_null_ge_real": 0.0
+  },
+  "H2_rho_RPE1": {
+   "median": 0.30063905228275767,
+   "q025": -0.20945383583356497,
+   "q975": 0.6559862016139686,
+   "frac_null_ge_real": 0.0
+  },
+  "H2_rho_HepG2": {
+   "median": 0.41354221255048573,
+   "q025": 0.07614463032744802,
+   "q975": 0.6566795282401633,
+   "frac_null_ge_real": 0.0
+  },
+  "H2_rho_Jurkat": {
+   "median": 0.22490114135295908,
+   "q025": -0.03495053121727506,
+   "q975": 0.4040903627038805,
+   "frac_null_ge_real": 0.0
+  },
+  "H4_CellAge_auroc_raw": {
+   "median": 0.5094708566236741,
+   "q025": 0.46068853818957517,
+   "q975": 0.5570730213909024,
+   "frac_null_ge_real": 0.01
+  },
+  "H4_CellAge_auroc_adj": {
+   "median": 0.4886379347804618,
+   "q025": 0.4502357838393016,
+   "q975": 0.5358265519761402,
+   "frac_null_ge_real": 0.03
+  },
+  "H4_GenAge_auroc_raw": {
+   "median": 0.47833351899298204,
+   "q025": 0.44227481805354424,
+   "q975": 0.5219443902937135,
+   "frac_null_ge_real": 0.98
+  },
+  "H4_GenAge_auroc_adj": {
+   "median": 0.5036017971853997,
+   "q025": 0.47155369277041326,
+   "q975": 0.5439088550369463,
+   "frac_null_ge_real": 0.31
+  }
+ },
+ "E5_frac_exact_bin_mean": 0.9976958525345622
+}

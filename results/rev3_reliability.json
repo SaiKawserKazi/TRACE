@@ -1,0 +1,27 @@
+{
+ "HepG2": {
+  "median_knockdown_cells": 49,
+  "nt_groups": 200,
+  "nt_sd_R": 0.12655630418979746,
+  "kd_sd_R": 0.21571947596642585,
+  "nt_q95_R": 0.22167170438659448
+ },
+ "Jurkat": {
+  "median_knockdown_cells": 86,
+  "nt_groups": 200,
+  "nt_sd_R": 0.09576919217509461,
+  "kd_sd_R": 0.14994375202406313,
+  "nt_q95_R": 0.151722740913246
+ },
+ "heldout_prolif": {
+  "hepg2": {
+   "rho_R_B_prolif_A": 0.68,
+   "rho_R_B_prolif_B": 0.886
+  },
+  "jurkat": {
+   "rho_R_B_prolif_A": 0.367,
+   "rho_R_B_prolif_B": 0.624
+  }
+ },
+ "n_splits": 20
+}

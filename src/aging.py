@@ -24,7 +24,7 @@ def parse_fleischer_sample(name):
 def load_fleischer():
     df = pd.read_csv(os.path.join(RAW, "GSE113957_fpkm.txt.gz"), sep="\t")
     df["gene"] = df["Annotation/Divergence"].str.split("|").str[0]
-    samples = df.columns[8:-1]
+    samples = [c for c in df.columns[8:] if c != "gene"]  # was [8:-1], which dropped sample 99 (age 17, excluded anyway)
     expr = df.groupby("gene")[list(samples)].sum()
     meta = pd.DataFrame([parse_fleischer_sample(s) for s in samples], index=samples,
                         columns=["age", "sex", "hgps"])
@@ -47,6 +47,16 @@ def load_gtex(fname):
     # one sample per donor
     first = ~meta.donor.duplicated()
     return expr.loc[:, first.values], meta[first.values]
+
+
+def load_table(expr_csv, meta_csv, log_transform=True):
+    """Generic aging cohort: genes x samples expression CSV (first column gene symbol) and a sample CSV with columns
+    sample, age, sex (M/F) and any covariates. Values are summed per symbol and log2(x + 1) transformed unless already logged."""
+    expr = pd.read_csv(expr_csv, index_col=0); expr = expr.groupby(expr.index).sum()
+    meta = pd.read_csv(meta_csv).set_index("sample")
+    meta = meta[meta.age.notna() & meta.sex.isin(["M", "F"])]
+    expr = expr.loc[:, [s for s in meta.index if s in expr.columns]]; meta = meta.loc[expr.columns]
+    return (np.log2(expr + 1) if log_transform else expr), meta
 
 
 def age_tstats(expr, meta, min_mean=1.0):

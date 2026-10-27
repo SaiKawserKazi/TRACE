@@ -1,0 +1,6 @@
+gene,measured_lines,V0 raw,V1 pre-specified,V2 genes removed,V3 resid. (all 3),V4 resid. (prolif.),V5 stratified,V6 spline resid.,V7 resid. (prolif. + identity),n_ranked
+CDKN1A,0,,,,,,,,,9870
+CDKN2A,0,,,,,,,,,9870
+TP53,1,8006.0,7696.0,7054.0,8836.0,9235.0,9057.0,7731.0,7373.0,9870
+RB1,1,128.0,1937.0,404.0,764.0,548.0,455.0,1757.0,1860.0,9870
+LMNB1,1,8744.0,9456.0,8730.0,9445.0,9603.0,9660.0,9385.0,9331.0,9870

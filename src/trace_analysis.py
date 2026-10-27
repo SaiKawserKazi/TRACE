@@ -1,4 +1,4 @@
-﻿"""TRACE main analysis. Implements RESEARCH_PROTOCOL.md v1.0 sections 3-7.
+"""TRACE main analysis. Implements RESEARCH_PROTOCOL.md v1.0 sections 3-7.
 
 Every number reported in the manuscript is written to results/results.json.
 """
@@ -11,7 +11,10 @@ sys.path.insert(0, os.path.dirname(__file__))
 import aging, perturb
 
 ROOT = r"D:\Study\RejuvBench"
-RAW, PROC, RES = (os.path.join(ROOT, d) for d in ("data/raw", "data/proc", "results"))
+RAW, PROC = (os.path.join(ROOT, d) for d in ("data/raw", "data/proc"))
+# TRACE_RESULTS / TRACE_DISCOVERY let the same pipeline run on another input (E18) without code changes
+RES = os.path.join(ROOT, os.environ.get("TRACE_RESULTS", "results"))
+DISCOVERY = os.environ.get("TRACE_DISCOVERY", "fleischer")
 os.makedirs(RES, exist_ok=True)
 RNG = np.random.default_rng(0)
 LINE_OF = {"K562": "K562", "K562gw": "K562", "RPE1": "RPE1", "HepG2": "HepG2", "Jurkat": "Jurkat"}
@@ -273,7 +276,9 @@ def pareto(df, cols):
 # ================================================================ main
 def main():
     # ---------------- Aim 1
-    e, m = aging.load_fleischer()
+    if DISCOVERY == "fleischer": e, m = aging.load_fleischer()
+    elif DISCOVERY == "table": e, m = aging.load_table(os.environ["TRACE_EXPR"], os.environ["TRACE_META"])  # any cohort as two CSV files
+    else: e, m = aging.load_gtex(f"{DISCOVERY}_tpm.gct.gz")
     ts_f = aging.age_tstats(e, m)
     sig_f = aging.signature(ts_f)
     R["aging"] = {"fleischer_n_donors": len(m), "fleischer_age_min": float(m.age.min()),
@@ -287,6 +292,7 @@ def main():
     gt = {}
     for key, fn in [("gtex_fibroblast", "gtex_fibroblasts_tpm.gct.gz"), ("gtex_skin", "gtex_skin_ns_tpm.gct.gz")]:
         if not os.path.exists(os.path.join(RAW, fn)): log("missing", fn); continue
+        if fn.startswith(DISCOVERY): continue  # the discovery cohort is not its own replication
         ge, gmeta = aging.load_gtex(fn)
         tsg = aging.age_tstats(ge, gmeta)
         tsg.to_csv(os.path.join(RES, f"age_t_{key}.csv"))

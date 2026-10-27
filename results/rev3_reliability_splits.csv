@@ -1,0 +1,321 @@
+screen,split,variant,r_half
+hepg2,0,V0 raw,0.728862854599282
+hepg2,0,V1 pre-specified,0.46545197447673203
+hepg2,0,V2 genes removed,0.7332652900080359
+hepg2,0,V3 resid. (all 3),0.46286233438502633
+hepg2,0,V4 resid. (prolif.),0.46022233277132385
+hepg2,0,V5 stratified,0.37102447179608083
+hepg2,0,V6 spline resid.,0.4515595079836242
+hepg2,0,V7 resid. (prolif. + identity),0.45595641631438966
+hepg2,1,V0 raw,0.7238026147458354
+hepg2,1,V1 pre-specified,0.46084296523935675
+hepg2,1,V2 genes removed,0.7293333160226269
+hepg2,1,V3 resid. (all 3),0.45850892886422523
+hepg2,1,V4 resid. (prolif.),0.4556252191126298
+hepg2,1,V5 stratified,0.4053088609418751
+hepg2,1,V6 spline resid.,0.45534364397797583
+hepg2,1,V7 resid. (prolif. + identity),0.45294339364451264
+hepg2,2,V0 raw,0.7353071946672595
+hepg2,2,V1 pre-specified,0.4989481403019086
+hepg2,2,V2 genes removed,0.7418640755214687
+hepg2,2,V3 resid. (all 3),0.4917129730942491
+hepg2,2,V4 resid. (prolif.),0.48968774189313935
+hepg2,2,V5 stratified,0.4177027125988401
+hepg2,2,V6 spline resid.,0.4871469403559495
+hepg2,2,V7 resid. (prolif. + identity),0.49159367913482876
+hepg2,3,V0 raw,0.7259554170161083
+hepg2,3,V1 pre-specified,0.45754631696570774
+hepg2,3,V2 genes removed,0.7300497646771436
+hepg2,3,V3 resid. (all 3),0.4548278188216918
+hepg2,3,V4 resid. (prolif.),0.45255958678736763
+hepg2,3,V5 stratified,0.35753701705422664
+hepg2,3,V6 spline resid.,0.4482507700392692
+hepg2,3,V7 resid. (prolif. + identity),0.45049580867203637
+hepg2,4,V0 raw,0.7293090281059779
+hepg2,4,V1 pre-specified,0.47343732164818375
+hepg2,4,V2 genes removed,0.7379039411474829
+hepg2,4,V3 resid. (all 3),0.4920174915732507
+hepg2,4,V4 resid. (prolif.),0.48843544467113914
+hepg2,4,V5 stratified,0.42517871740234475
+hepg2,4,V6 spline resid.,0.4556860270722414
+hepg2,4,V7 resid. (prolif. + identity),0.4568099627841046
+hepg2,5,V0 raw,0.7263339510222708
+hepg2,5,V1 pre-specified,0.4652436827749472
+hepg2,5,V2 genes removed,0.7296044206875807
+hepg2,5,V3 resid. (all 3),0.46361815254351885
+hepg2,5,V4 resid. (prolif.),0.46261012787425576
+hepg2,5,V5 stratified,0.39521260032852923
+hepg2,5,V6 spline resid.,0.4527280848611293
+hepg2,5,V7 resid. (prolif. + identity),0.4581483904258
+hepg2,6,V0 raw,0.7285595780710877
+hepg2,6,V1 pre-specified,0.4721960555213691
+hepg2,6,V2 genes removed,0.7410110458366534
+hepg2,6,V3 resid. (all 3),0.46878686602370523
+hepg2,6,V4 resid. (prolif.),0.464505001870547
+hepg2,6,V5 stratified,0.39470343360083643
+hepg2,6,V6 spline resid.,0.46017846440153415
+hepg2,6,V7 resid. (prolif. + identity),0.46011711822354784
+hepg2,7,V0 raw,0.7335283386620525
+hepg2,7,V1 pre-specified,0.46718582710982615
+hepg2,7,V2 genes removed,0.7410444106128947
+hepg2,7,V3 resid. (all 3),0.471755758359097
+hepg2,7,V4 resid. (prolif.),0.4687561661428682
+hepg2,7,V5 stratified,0.3956583593662089
+hepg2,7,V6 spline resid.,0.4533774834342457
+hepg2,7,V7 resid. (prolif. + identity),0.4552924489319473
+hepg2,8,V0 raw,0.7362944560340007
+hepg2,8,V1 pre-specified,0.4900796875170798
+hepg2,8,V2 genes removed,0.7493498726887302
+hepg2,8,V3 resid. (all 3),0.47411277261028595
+hepg2,8,V4 resid. (prolif.),0.46995658006613944
+hepg2,8,V5 stratified,0.37901732369536445
+hepg2,8,V6 spline resid.,0.4807693133888655
+hepg2,8,V7 resid. (prolif. + identity),0.47859120911734304
+hepg2,9,V0 raw,0.7256326536706934
+hepg2,9,V1 pre-specified,0.480244078937012
+hepg2,9,V2 genes removed,0.7400008324166361
+hepg2,9,V3 resid. (all 3),0.47897078405390414
+hepg2,9,V4 resid. (prolif.),0.4770216857471034
+hepg2,9,V5 stratified,0.38647752122966866
+hepg2,9,V6 spline resid.,0.4621649164924423
+hepg2,9,V7 resid. (prolif. + identity),0.47240804568835754
+hepg2,10,V0 raw,0.7485634189498259
+hepg2,10,V1 pre-specified,0.4866175454284291
+hepg2,10,V2 genes removed,0.7540415746545441
+hepg2,10,V3 resid. (all 3),0.49652707806412183
+hepg2,10,V4 resid. (prolif.),0.49369379413494874
+hepg2,10,V5 stratified,0.4146033268496738
+hepg2,10,V6 spline resid.,0.46666737158984783
+hepg2,10,V7 resid. (prolif. + identity),0.47542517882245966
+hepg2,11,V0 raw,0.7262918830643896
+hepg2,11,V1 pre-specified,0.4630591818018555
+hepg2,11,V2 genes removed,0.7350012184930595
+hepg2,11,V3 resid. (all 3),0.45639276971724313
+hepg2,11,V4 resid. (prolif.),0.45539513671115844
+hepg2,11,V5 stratified,0.388339563957521
+hepg2,11,V6 spline resid.,0.45091154902558533
+hepg2,11,V7 resid. (prolif. + identity),0.45539657513548754
+hepg2,12,V0 raw,0.7255096195698678
+hepg2,12,V1 pre-specified,0.4669505470906427
+hepg2,12,V2 genes removed,0.7313843743441208
+hepg2,12,V3 resid. (all 3),0.4618306400147596
+hepg2,12,V4 resid. (prolif.),0.46034331283078544
+hepg2,12,V5 stratified,0.38963605772064536
+hepg2,12,V6 spline resid.,0.4595339478977465
+hepg2,12,V7 resid. (prolif. + identity),0.45909975927587815
+hepg2,13,V0 raw,0.7284356852788272
+hepg2,13,V1 pre-specified,0.46200537046678125
+hepg2,13,V2 genes removed,0.7357986225752812
+hepg2,13,V3 resid. (all 3),0.45786849305594707
+hepg2,13,V4 resid. (prolif.),0.4553690355014794
+hepg2,13,V5 stratified,0.3591077118566884
+hepg2,13,V6 spline resid.,0.45078787311125534
+hepg2,13,V7 resid. (prolif. + identity),0.45260221082485275
+hepg2,14,V0 raw,0.7288586175373012
+hepg2,14,V1 pre-specified,0.4548414612285939
+hepg2,14,V2 genes removed,0.7308584683100473
+hepg2,14,V3 resid. (all 3),0.4677877040963967
+hepg2,14,V4 resid. (prolif.),0.46695982778536166
+hepg2,14,V5 stratified,0.3869361947908685
+hepg2,14,V6 spline resid.,0.4411739104787093
+hepg2,14,V7 resid. (prolif. + identity),0.44647780012336635
+hepg2,15,V0 raw,0.7383074880155319
+hepg2,15,V1 pre-specified,0.4738327097263753
+hepg2,15,V2 genes removed,0.7481993678029815
+hepg2,15,V3 resid. (all 3),0.4618917051760723
+hepg2,15,V4 resid. (prolif.),0.45969092786013827
+hepg2,15,V5 stratified,0.4110770257566205
+hepg2,15,V6 spline resid.,0.4619658233237219
+hepg2,15,V7 resid. (prolif. + identity),0.4649251849071851
+hepg2,16,V0 raw,0.7322870689629921
+hepg2,16,V1 pre-specified,0.4499076860227379
+hepg2,16,V2 genes removed,0.7369723202675621
+hepg2,16,V3 resid. (all 3),0.4476591156295734
+hepg2,16,V4 resid. (prolif.),0.4443824755049316
+hepg2,16,V5 stratified,0.3805249978119881
+hepg2,16,V6 spline resid.,0.44526903548004587
+hepg2,16,V7 resid. (prolif. + identity),0.44160987450676514
+hepg2,17,V0 raw,0.7242915411064794
+hepg2,17,V1 pre-specified,0.4678152365859132
+hepg2,17,V2 genes removed,0.7251309519837527
+hepg2,17,V3 resid. (all 3),0.48705164831639697
+hepg2,17,V4 resid. (prolif.),0.48463639812260856
+hepg2,17,V5 stratified,0.42588569826155764
+hepg2,17,V6 spline resid.,0.4501486113811134
+hepg2,17,V7 resid. (prolif. + identity),0.4587573297424166
+hepg2,18,V0 raw,0.7358407700942817
+hepg2,18,V1 pre-specified,0.45896030832387347
+hepg2,18,V2 genes removed,0.7423207419049753
+hepg2,18,V3 resid. (all 3),0.4680074734240984
+hepg2,18,V4 resid. (prolif.),0.4659687736653846
+hepg2,18,V5 stratified,0.392704275464439
+hepg2,18,V6 spline resid.,0.4472333658431521
+hepg2,18,V7 resid. (prolif. + identity),0.4524958198174435
+hepg2,19,V0 raw,0.734307890821974
+hepg2,19,V1 pre-specified,0.47018922495863397
+hepg2,19,V2 genes removed,0.7380851224801898
+hepg2,19,V3 resid. (all 3),0.4782398132467973
+hepg2,19,V4 resid. (prolif.),0.47592677096052755
+hepg2,19,V5 stratified,0.3940097891947343
+hepg2,19,V6 spline resid.,0.4544882363681729
+hepg2,19,V7 resid. (prolif. + identity),0.46308609986508575
+jurkat,0,V0 raw,0.5624008083596427
+jurkat,0,V1 pre-specified,0.4466139327055837
+jurkat,0,V2 genes removed,0.6054801704356535
+jurkat,0,V3 resid. (all 3),0.42766726275300315
+jurkat,0,V4 resid. (prolif.),0.5528474041744943
+jurkat,0,V5 stratified,0.479375520765374
+jurkat,0,V6 spline resid.,0.4323552355272151
+jurkat,0,V7 resid. (prolif. + identity),0.47736937163124116
+jurkat,1,V0 raw,0.559551253263856
+jurkat,1,V1 pre-specified,0.4590569573678576
+jurkat,1,V2 genes removed,0.6199394940466874
+jurkat,1,V3 resid. (all 3),0.42064823861397765
+jurkat,1,V4 resid. (prolif.),0.5493188314517172
+jurkat,1,V5 stratified,0.4879697307681087
+jurkat,1,V6 spline resid.,0.4475416646970513
+jurkat,1,V7 resid. (prolif. + identity),0.4902737216553347
+jurkat,2,V0 raw,0.5634463143523162
+jurkat,2,V1 pre-specified,0.4554595428529627
+jurkat,2,V2 genes removed,0.616466527699976
+jurkat,2,V3 resid. (all 3),0.42564763678432777
+jurkat,2,V4 resid. (prolif.),0.5550931009091189
+jurkat,2,V5 stratified,0.4831820523613854
+jurkat,2,V6 spline resid.,0.44227691724241003
+jurkat,2,V7 resid. (prolif. + identity),0.4888928201831774
+jurkat,3,V0 raw,0.5605594227612037
+jurkat,3,V1 pre-specified,0.4403473250201292
+jurkat,3,V2 genes removed,0.611967210871067
+jurkat,3,V3 resid. (all 3),0.40017841528567444
+jurkat,3,V4 resid. (prolif.),0.5297460196292926
+jurkat,3,V5 stratified,0.45844735536948966
+jurkat,3,V6 spline resid.,0.4232122414359022
+jurkat,3,V7 resid. (prolif. + identity),0.4725858416812003
+jurkat,4,V0 raw,0.5520905712343492
+jurkat,4,V1 pre-specified,0.45305501058980896
+jurkat,4,V2 genes removed,0.6174272600750016
+jurkat,4,V3 resid. (all 3),0.41988654907744655
+jurkat,4,V4 resid. (prolif.),0.5487092844917041
+jurkat,4,V5 stratified,0.4844675585813958
+jurkat,4,V6 spline resid.,0.43926796032295146
+jurkat,4,V7 resid. (prolif. + identity),0.48424219211146713
+jurkat,5,V0 raw,0.566856971645486
+jurkat,5,V1 pre-specified,0.4546707491177587
+jurkat,5,V2 genes removed,0.6151901583054219
+jurkat,5,V3 resid. (all 3),0.4244843732048005
+jurkat,5,V4 resid. (prolif.),0.5439043081649313
+jurkat,5,V5 stratified,0.48262285895100904
+jurkat,5,V6 spline resid.,0.43920664964069195
+jurkat,5,V7 resid. (prolif. + identity),0.4805401997084446
+jurkat,6,V0 raw,0.5356348901258635
+jurkat,6,V1 pre-specified,0.4328451239132381
+jurkat,6,V2 genes removed,0.5907559765982738
+jurkat,6,V3 resid. (all 3),0.3929264458449198
+jurkat,6,V4 resid. (prolif.),0.5259227415796419
+jurkat,6,V5 stratified,0.4577542561298432
+jurkat,6,V6 spline resid.,0.4207208341632092
+jurkat,6,V7 resid. (prolif. + identity),0.4632566462589508
+jurkat,7,V0 raw,0.5569136525913333
+jurkat,7,V1 pre-specified,0.4456973645252425
+jurkat,7,V2 genes removed,0.6085326457049421
+jurkat,7,V3 resid. (all 3),0.4178004747343485
+jurkat,7,V4 resid. (prolif.),0.5464402783514002
+jurkat,7,V5 stratified,0.47278140886449654
+jurkat,7,V6 spline resid.,0.43104672750258083
+jurkat,7,V7 resid. (prolif. + identity),0.47879005738896013
+jurkat,8,V0 raw,0.5644456438400025
+jurkat,8,V1 pre-specified,0.4321900712401084
+jurkat,8,V2 genes removed,0.6099870629566838
+jurkat,8,V3 resid. (all 3),0.41176435737910816
+jurkat,8,V4 resid. (prolif.),0.5452163883629108
+jurkat,8,V5 stratified,0.4914935494822882
+jurkat,8,V6 spline resid.,0.4192242792189398
+jurkat,8,V7 resid. (prolif. + identity),0.46690063854932456
+jurkat,9,V0 raw,0.564689050068649
+jurkat,9,V1 pre-specified,0.4564016763864807
+jurkat,9,V2 genes removed,0.6182986690996184
+jurkat,9,V3 resid. (all 3),0.42263112515937984
+jurkat,9,V4 resid. (prolif.),0.5498150280783776
+jurkat,9,V5 stratified,0.47136032972483066
+jurkat,9,V6 spline resid.,0.43828960339234996
+jurkat,9,V7 resid. (prolif. + identity),0.4835599316240677
+jurkat,10,V0 raw,0.5654009784713181
+jurkat,10,V1 pre-specified,0.46198170558407353
+jurkat,10,V2 genes removed,0.6196135438416933
+jurkat,10,V3 resid. (all 3),0.42412954621028764
+jurkat,10,V4 resid. (prolif.),0.5402034914398679
+jurkat,10,V5 stratified,0.48671425782258115
+jurkat,10,V6 spline resid.,0.44912082281576254
+jurkat,10,V7 resid. (prolif. + identity),0.4874032669859157
+jurkat,11,V0 raw,0.5589446701202685
+jurkat,11,V1 pre-specified,0.4475835233463418
+jurkat,11,V2 genes removed,0.6107152785004581
+jurkat,11,V3 resid. (all 3),0.4209066210317589
+jurkat,11,V4 resid. (prolif.),0.5478728522035259
+jurkat,11,V5 stratified,0.47783869425786746
+jurkat,11,V6 spline resid.,0.4289045078686056
+jurkat,11,V7 resid. (prolif. + identity),0.47603005591977304
+jurkat,12,V0 raw,0.5682656799103754
+jurkat,12,V1 pre-specified,0.46688880687925277
+jurkat,12,V2 genes removed,0.6219261569548901
+jurkat,12,V3 resid. (all 3),0.429748566675063
+jurkat,12,V4 resid. (prolif.),0.5575370645492672
+jurkat,12,V5 stratified,0.4846191612162963
+jurkat,12,V6 spline resid.,0.45425416722758655
+jurkat,12,V7 resid. (prolif. + identity),0.4959884808797074
+jurkat,13,V0 raw,0.5744079345171792
+jurkat,13,V1 pre-specified,0.45080243213812543
+jurkat,13,V2 genes removed,0.617984112861637
+jurkat,13,V3 resid. (all 3),0.4276539076258902
+jurkat,13,V4 resid. (prolif.),0.5535172379715635
+jurkat,13,V5 stratified,0.4789291765503219
+jurkat,13,V6 spline resid.,0.43279976079980426
+jurkat,13,V7 resid. (prolif. + identity),0.4802130729587603
+jurkat,14,V0 raw,0.551921617283734
+jurkat,14,V1 pre-specified,0.44607424933109785
+jurkat,14,V2 genes removed,0.6073748277874799
+jurkat,14,V3 resid. (all 3),0.4157442570715676
+jurkat,14,V4 resid. (prolif.),0.5445584303494843
+jurkat,14,V5 stratified,0.49224751034477665
+jurkat,14,V6 spline resid.,0.43144028210874796
+jurkat,14,V7 resid. (prolif. + identity),0.47473047422491377
+jurkat,15,V0 raw,0.5613840018354733
+jurkat,15,V1 pre-specified,0.455035881247611
+jurkat,15,V2 genes removed,0.6078257731234792
+jurkat,15,V3 resid. (all 3),0.4358246283557965
+jurkat,15,V4 resid. (prolif.),0.5527862555839606
+jurkat,15,V5 stratified,0.48876965203014733
+jurkat,15,V6 spline resid.,0.4412215739234279
+jurkat,15,V7 resid. (prolif. + identity),0.48483466814544246
+jurkat,16,V0 raw,0.5489592678907671
+jurkat,16,V1 pre-specified,0.4321224194885077
+jurkat,16,V2 genes removed,0.6036615217923694
+jurkat,16,V3 resid. (all 3),0.3993680818171116
+jurkat,16,V4 resid. (prolif.),0.5263322468323256
+jurkat,16,V5 stratified,0.46222921402779615
+jurkat,16,V6 spline resid.,0.41731266481564244
+jurkat,16,V7 resid. (prolif. + identity),0.4648535595769971
+jurkat,17,V0 raw,0.566196411444156
+jurkat,17,V1 pre-specified,0.4510416231007751
+jurkat,17,V2 genes removed,0.6140351733591998
+jurkat,17,V3 resid. (all 3),0.4182455898977111
+jurkat,17,V4 resid. (prolif.),0.5500447438563588
+jurkat,17,V5 stratified,0.47561792468406233
+jurkat,17,V6 spline resid.,0.4348043235228658
+jurkat,17,V7 resid. (prolif. + identity),0.48274314218569986
+jurkat,18,V0 raw,0.5659678963333956
+jurkat,18,V1 pre-specified,0.4355851368053267
+jurkat,18,V2 genes removed,0.6250370760457445
+jurkat,18,V3 resid. (all 3),0.4035609351565106
+jurkat,18,V4 resid. (prolif.),0.537371842350275
+jurkat,18,V5 stratified,0.4672609544669526
+jurkat,18,V6 spline resid.,0.41996418178093564
+jurkat,18,V7 resid. (prolif. + identity),0.4682055631157467
+jurkat,19,V0 raw,0.5581930098959468
+jurkat,19,V1 pre-specified,0.45323176340939897
+jurkat,19,V2 genes removed,0.617020096945163
+jurkat,19,V3 resid. (all 3),0.4211544151666293
+jurkat,19,V4 resid. (prolif.),0.544239768275926
+jurkat,19,V5 stratified,0.4668228818748778
+jurkat,19,V6 spline resid.,0.43340992637570697
+jurkat,19,V7 resid. (prolif. + identity),0.4837627042692045

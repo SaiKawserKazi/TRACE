@@ -1,0 +1,153 @@
+{
+ "n_boot": 2000,
+ "n_perm": 1000,
+ "n_subsets": 1000,
+ "hidden_factors": 5,
+ "cellcycle_median_t": [
+  {
+   "cohort": "Discovery",
+   "set": "E2F Targets",
+   "t": -4.316
+  },
+  {
+   "cohort": "Discovery",
+   "set": "G2-M Checkpoint",
+   "t": -4.225
+  },
+  {
+   "cohort": "GTEx fibroblasts",
+   "set": "E2F Targets",
+   "t": 1.996
+  },
+  {
+   "cohort": "GTEx fibroblasts",
+   "set": "G2-M Checkpoint",
+   "t": 1.757
+  },
+  {
+   "cohort": "GTEx skin",
+   "set": "E2F Targets",
+   "t": 3.066
+  },
+  {
+   "cohort": "GTEx skin",
+   "set": "G2-M Checkpoint",
+   "t": 3.282
+  }
+ ],
+ "signature_frac_cellcycle": {
+  "down": 0.232,
+  "up": 0.016
+ },
+ "vif_age_F2": 1.4345044291805173,
+ "age_by_repository": [
+  {
+   "repository": "AG",
+   "count": 74.0,
+   "min": 24.0,
+   "50%": 67.5,
+   "max": 96.0
+  },
+  {
+   "repository": "GM",
+   "count": 37.0,
+   "min": 19.0,
+   "50%": 33.0,
+   "max": 82.0
+  }
+ ],
+ "nia80_n": 31,
+ "n80_total": 33,
+ "power_matched_fdr05": {
+  "median": 5127.5,
+  "q025": 2617.5,
+  "q975": 6596.025,
+  "frac_le_observed_20_79": 0.0
+ },
+ "perm": {
+  "fdr05_discovery": {
+   "median": 0.0,
+   "q025": 0.0,
+   "q975": 1.0,
+   "max": 3178.0
+  },
+  "rho_fibroblasts": {
+   "median": 0.017302430487403066,
+   "q025": -0.3688978886162156,
+   "q975": 0.376644674013907,
+   "max": 0.6133854347663735
+  },
+  "fdr05_fibroblasts": {
+   "median": 0.0,
+   "q025": 0.0,
+   "q975": 1.0,
+   "max": 4193.0
+  },
+  "top_rho_fibroblasts": {
+   "median": 0.014345608640216008,
+   "q025": -0.42973258081452037,
+   "q975": 0.44726933173329303,
+   "max": 0.6178024450611267
+  },
+  "rho_skin": {
+   "median": 0.004633873330646399,
+   "q025": -0.2637591409076421,
+   "q975": 0.29371142956245716,
+   "max": 0.5392768043219308
+  },
+  "fdr05_skin": {
+   "median": 0.0,
+   "q025": 0.0,
+   "q975": 2.0249999999999773,
+   "max": 2241.0
+  },
+  "top_rho_skin": {
+   "median": 0.016334658366459164,
+   "q025": -0.32963226580664523,
+   "q975": 0.33861850296257406,
+   "max": 0.6185839645991151
+  }
+ },
+ "gtex_fibro_vs_skin_rho_G0": 0.06329098469596872,
+ "gtex_fibro_vs_skin_sex_rho_G0": -0.06509545931555936,
+ "fdr05": {
+  "F0 pre-specified (age 18+; age + sex)": 6495,
+  "F1 ages 20-79 (GTEx range)": 198,
+  "F2 + platform, repository, site": 6298,
+  "F3 ages 20-79 + platform, repository, site": 2100,
+  "F4 NextSeq only": 6491,
+  "F5 arm biopsies only": 5862,
+  "F6 expression filter 0.5": 6960,
+  "F7 expression filter 2": 5229,
+  "F8 without NIA donors aged 80+": 0,
+  "F9 + 5 hidden factors": 8059,
+  "fibroblasts: G0 pre-specified (age + sex)": 5548,
+  "fibroblasts: G1 + center, batch type, RIN, Hardy": 1895,
+  "fibroblasts: G2 G1 + nucleic-acid batch": 515,
+  "fibroblasts: G3 age + sex + 5 hidden factors": 9239,
+  "skin: G0 pre-specified (age + sex)": 9778,
+  "skin: G1 + center, batch type, RIN, Hardy": 2529,
+  "skin: G2 G1 + nucleic-acid batch": 31,
+  "skin: G3 age + sex + 5 hidden factors": 11698
+ },
+ "n": {
+  "F0 pre-specified (age 18+; age + sex)": 111,
+  "F1 ages 20-79 (GTEx range)": 74,
+  "F2 + platform, repository, site": 111,
+  "F3 ages 20-79 + platform, repository, site": 74,
+  "F4 NextSeq only": 98,
+  "F5 arm biopsies only": 89,
+  "F6 expression filter 0.5": 111,
+  "F7 expression filter 2": 111,
+  "F8 without NIA donors aged 80+": 80,
+  "F9 + 5 hidden factors": 111,
+  "fibroblasts: G0 pre-specified (age + sex)": 652,
+  "fibroblasts: G1 + center, batch type, RIN, Hardy": 652,
+  "fibroblasts: G2 G1 + nucleic-acid batch": 652,
+  "fibroblasts: G3 age + sex + 5 hidden factors": 652,
+  "skin: G0 pre-specified (age + sex)": 651,
+  "skin: G1 + center, batch type, RIN, Hardy": 651,
+  "skin: G2 G1 + nucleic-acid batch": 651,
+  "skin: G3 age + sex + 5 hidden factors": 651
+ }
+}
