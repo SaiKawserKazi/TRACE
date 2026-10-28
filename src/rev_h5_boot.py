@@ -1,9 +1,12 @@
-"""Review round 2 (AMENDMENT-R2): H5 donor bootstrap extended from the pre-registered 200 to 2,000 replicates.
+"""Exploratory (Amendment 2): H5 donor bootstrap extended from the pre-specified 200 to 2,000 replicates.
 
-The pre-registered 200-replicate result (results.json) is kept as the confirmatory test; this run tightens the
+The pre-specified 200-replicate result (results.json) is kept as the confirmatory test; this run tightens the
 uncertainty estimate. Each replicate resamples discovery donors with replacement, re-derives the signature and
 recomputes R_rob in every screen exactly as in trace_analysis. Outputs results/rev_h5_boot.json and .csv.
 """
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+import config as _cfg
 import os, sys, json, time
 import multiprocessing as mp
 import numpy as np, pandas as pd
@@ -14,8 +17,8 @@ import aging, perturb
 import trace_analysis as T
 
 RES = T.RES
-NB = int(os.environ.get("TRACE_NBOOT_H5", 2000))
-NPROC = int(os.environ.get("TRACE_NPROC", 4))
+NB = _cfg.N_H5_BOOT_EXTENDED
+NPROC = _cfg.N_PROC
 _W = {}
 
 

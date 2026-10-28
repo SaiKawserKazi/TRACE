@@ -1,0 +1,19 @@
+signature,subset,score,n_pos,n_neg,auroc,min_detectable_auroc_80pct
+Discovery signature,all CellAge genes,R_rob (V1),257,394,0.5380019356495289,0.558
+Discovery signature,all CellAge genes,mean raw score,257,394,0.5726658634379506,0.558
+Discovery signature,all CellAge genes,proliferation shift alone,257,394,0.5814059136068261,0.558
+Discovery signature,loss-of-function evidence,R_rob (V1),129,343,0.5418446448346781,0.575
+Discovery signature,loss-of-function evidence,mean raw score,129,343,0.5953849978529617,0.575
+Discovery signature,loss-of-function evidence,proliferation shift alone,129,343,0.6049449680204307,0.575
+Discovery signature,overexpression only,R_rob (V1),128,51,0.538296568627451,0.612
+Discovery signature,overexpression only,mean raw score,128,51,0.5179227941176471,0.612
+Discovery signature,overexpression only,proliferation shift alone,128,51,0.5392156862745098,0.612
+GTEx-fibroblast signature,all CellAge genes,R_rob (V1),257,394,0.5753026921329673,0.558
+GTEx-fibroblast signature,all CellAge genes,mean raw score,257,394,0.5498133480811392,0.558
+GTEx-fibroblast signature,all CellAge genes,proliferation shift alone,257,394,0.5814059136068261,0.558
+GTEx-fibroblast signature,loss-of-function evidence,R_rob (V1),129,343,0.5583881393088796,0.575
+GTEx-fibroblast signature,loss-of-function evidence,mean raw score,129,343,0.5297534296110471,0.575
+GTEx-fibroblast signature,loss-of-function evidence,proliferation shift alone,129,343,0.6049449680204307,0.575
+GTEx-fibroblast signature,overexpression only,R_rob (V1),128,51,0.5958946078431373,0.612
+GTEx-fibroblast signature,overexpression only,mean raw score,128,51,0.6047794117647058,0.612
+GTEx-fibroblast signature,overexpression only,proliferation shift alone,128,51,0.5392156862745098,0.612

@@ -1,4 +1,4 @@
-"""E8/E9 with DepMap (exploratory, added in revision): overlap of CellAge and GenAge label classes with DepMap 24Q2
+"""DepMap common essentials (exploratory, Amendment 3): overlap of CellAge and GenAge label classes with DepMap 24Q2
 CRISPR-inferred common-essential genes (Broad DepMap, Figshare+ doi:10.25452/figshare.plus.25880521.v1, CC BY 4.0),
 next to the Hart CEGv2 overlap. Adds columns to results/rev3_scores_label_essential_overlap.csv and writes a Fisher test per label set."""
 import os, sys, json

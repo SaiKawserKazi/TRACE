@@ -1,4 +1,4 @@
-"""v0.1 revision (exploratory, added in revision; AMENDMENT-R3), E6 and part of E13: score reliability.
+"""Exploratory (Amendment 3): score reliability.
 
 * Split-cell reliability for HepG2 and Jurkat (raw single-cell data in hand): for 20 random splits, the cells of each
   knockdown are split in two halves; pseudobulk shifts, program shifts and scores V0..V7 are recomputed per half and
@@ -10,6 +10,9 @@
 * Disattenuated between-line agreement for pairs whose reliabilities are known (K562, HepG2, Jurkat).
 Outputs: results/rev3_reliability.json, results/rev3_reliability_*.csv
 """
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+import config as _cfg
 import os, sys, json, time
 import numpy as np, pandas as pd, h5py
 from scipy import stats
@@ -20,7 +23,7 @@ import trace_analysis as T
 from rev3_scores import spline_basis
 
 RAW, RES = T.RAW, T.RES
-NSPLIT = int(os.environ.get("TRACE_NSPLIT", 20)); BLOCK = 4000
+NSPLIT = _cfg.N_RELIABILITY_SPLITS; BLOCK = 4000
 VAR = ["V0 raw", "V1 pre-specified", "V2 genes removed", "V3 resid. (all 3)", "V4 resid. (prolif.)", "V5 stratified",
        "V6 spline resid.", "V7 resid. (prolif. + identity)"]
 

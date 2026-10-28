@@ -1,4 +1,4 @@
-"""v0.1 revision (exploratory, added in revision; AMENDMENT-R3): score-level controls.
+"""Exploratory (Amendment 3): score-level controls.
 
 E5  random expression-matched signature null (100 signatures through H1, H2 and H4)
 E7  paired AUROC tests (DeLong), incremental logistic regression, paired drops V0 -> V1..V7, minimum detectable AUROC
@@ -11,6 +11,9 @@ E15 ranks of known senescence genes under V0..V7
 E16 up-minus-down score form; per-arm coverage
 Outputs: results/rev3_scores_*.csv, results/rev3_scores.json
 """
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+import config as _cfg
 import os, sys, json, time, io, zipfile
 import multiprocessing as mp
 import numpy as np, pandas as pd
@@ -22,7 +25,7 @@ import trace_analysis as T
 
 RES, RAW = T.RES, T.RAW
 CTX = ["K562", "K562gw", "RPE1", "HepG2", "Jurkat"]; LINES = ["K562", "RPE1", "HepG2", "Jurkat"]
-NSIG = int(os.environ.get("TRACE_NSIG", 100)); NPROC = int(os.environ.get("TRACE_NPROC", 3))
+NSIG = _cfg.N_RANDOM_SIGNATURES; NPROC = _cfg.N_PROC
 VAR = ["V0 raw", "V1 pre-specified", "V2 genes removed", "V3 resid. (all 3)", "V4 resid. (prolif.)", "V5 stratified",
        "V6 spline resid.", "V7 resid. (prolif. + identity)"]
 SEN = ["CDKN1A", "CDKN2A", "TP53", "RB1", "LMNB1"]
@@ -126,7 +129,7 @@ def dcor(x, y, n=1500, reps=5, seed=0):
     return float(np.mean(vals))
 
 
-# ------------------------------------------------------------------ E5 random signatures (parallel)
+# ------------------------------------------------------------------ X11 random signatures (parallel)
 _W = {}
 
 
@@ -179,13 +182,13 @@ def main():
     Vd = variants(ctx, sig_f.t, progs)
     ROB = {v: robust_of(Vd[v]) for v in VAR}
     rob1 = ROB["V1 pre-specified"]
-    # ---------- E10 Rrob definition and gene sets
+    # ---------- X14 Rrob definition and gene sets
     n_lines = rob1.n_lines
     out["E10"] = {"n_genes_total": int(len(rob1)), "n_single_line": int((n_lines == 1).sum()), "n_multi_line": int((n_lines >= 2).sum()),
                   "single_line_equals_radj": bool(np.allclose(rob1[n_lines == 1].R_rob, rob1[n_lines == 1].filter(like="Radj_").max(axis=1, skipna=True)))}
     single = rob1[n_lines == 1].filter(like="Radj_").notna().idxmax(axis=1).str.replace("Radj_", "").value_counts().to_dict()
     out["E10"]["single_line_by_line"] = single
-    # ---------- H4 / evidence on all and multi-line genes (+ E7 paired tests)
+    # ---------- H4 / evidence on all and multi-line genes (+ X13 paired tests)
     raw_mean = pd.concat([Vd["V0 raw"][c] for c in CTX], axis=1).mean(axis=1)
     pro_mean = pd.concat([progs[c].prolif for c in CTX], axis=1).mean(axis=1)
     rows, paired, logit = [], [], []
@@ -198,7 +201,7 @@ def main():
                 if len(x) >= 5 and len(y) >= 5:
                     rows.append({"labels": nm, "gene_set": gs_name, "score": sname, "n_pos": len(x), "n_neg": len(y), "auroc": auc(x, y),
                                  "min_detectable_auroc_80pct": min_detectable_auc(len(x), len(y))})
-            # E7 paired DeLong: raw vs proliferation alone; V0 vs each other definition
+            # X13 paired DeLong: raw vs proliferation alone; V0 vs each other definition
             common = rob1.index.intersection(gs)
             for a_name, a_s, b_name, b_s in [("mean raw score", raw_mean, "proliferation shift alone", pro_mean)] + \
                                              [("R_rob (V0 raw)", ROB["V0 raw"].R_rob, f"R_rob ({v})", ROB[v].R_rob) for v in VAR[1:]]:
@@ -223,7 +226,7 @@ def main():
     pd.DataFrame(paired).to_csv(os.path.join(RES, "rev3_scores_paired_auroc.csv"), index=False)
     pd.DataFrame(logit).to_csv(os.path.join(RES, "rev3_scores_logistic.csv"), index=False)
     log("evidence done")
-    # ---------- E8 / E9 overlaps with core-essential genes (Hart CEGv2) and the essential-gene library
+    # ---------- X13 / X13 overlaps with core-essential genes (Hart CEGv2) and the essential-gene library
     ceg = set(pd.read_csv(os.path.join(RAW, "hart_CEGv2.txt"), sep="\t").iloc[:, 0])
     esslib = set(ctx["K562"][0].index)
     ov = []
@@ -234,7 +237,7 @@ def main():
                        "in_essential_library": len(g & esslib), "frac_essential_library": len(g & esslib) / max(1, len(g))})
     pd.DataFrame(ov).to_csv(os.path.join(RES, "rev3_scores_label_essential_overlap.csv"), index=False)
     out["CEGv2_size"] = len(ceg)
-    # ---------- E13 deciles, distance correlation, mutual information
+    # ---------- X16 deciles, distance correlation, mutual information
     from sklearn.feature_selection import mutual_info_regression
     dec, dep = [], []
     for c in CTX:
@@ -255,7 +258,7 @@ def main():
     top = {v: set(Mm[v].nlargest(k).index) for v in VAR}
     out["top5_overlap_with_V1_multi"] = {v: len(top[v] & top["V1 pre-specified"]) / k for v in VAR}
     out["k_top5_multi"] = k
-    # ---------- E14 Pareto before / after filtering, for V1, V6, V7
+    # ---------- X16 Pareto before / after filtering, for V1, V6, V7
     P0 = pd.read_csv(os.path.join(RES, "prioritisation.csv"), index_col=0)
     ncells = {}
     for c in CTX:
@@ -277,7 +280,7 @@ def main():
         f = T.pareto(sub[sub.R_rob > 0], objs); fronts[lbl] = list(f)
     out["E14_front"] = {k_: {"n": len(v_), "genes": v_} for k_, v_ in fronts.items()}
     P0.assign(passes_filter=filt, pareto_filtered=P0.index.isin(fronts["filtered"]), cells_mean=cells_mean.reindex(P0.index)).to_csv(os.path.join(RES, "rev3_scores_pareto_filtered.csv"))
-    # ---------- E15 known senescence genes
+    # ---------- X16 known senescence genes
     rk = []
     for g in SEN:
         row = {"gene": g, "measured_lines": int(rob1.n_lines.get(g, 0)) if g in rob1.index else 0}
@@ -287,7 +290,7 @@ def main():
         row["n_ranked"] = int(ROB["V1 pre-specified"].R_rob.notna().sum())
         rk.append(row)
     pd.DataFrame(rk).to_csv(os.path.join(RES, "rev3_scores_senescence_gene_ranks.csv"), index=False)
-    # ---------- E16 up-minus-down score and arm coverage
+    # ---------- X16 up-minus-down score and arm coverage
     ud = []
     up = sig_f[sig_f.t > 0].index; dn = sig_f[sig_f.t < 0].index
     for c in CTX:
@@ -297,7 +300,7 @@ def main():
                    "rho_ud_with_prolif": float(stats.spearmanr(s_ud, progs[c].prolif)[0])})
     pd.DataFrame(ud).to_csv(os.path.join(RES, "rev3_scores_updown.csv"), index=False)
     log("E14-E16 done")
-    # ---------- real values of the E5 statistics, and E5 null
+    # ---------- real values of the X11 statistics, and X11 null
     out["E5_real"] = summarize(Vd["V0 raw"], Vd["V1 pre-specified"], progs, labs)
     gmean = e.loc[e.mean(axis=1) >= 1].mean(axis=1); gvar = e.loc[gmean.index].var(axis=1)
     measured = set.intersection(*[set(ctx[c][0].columns) for c in LINES])

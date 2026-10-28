@@ -1,9 +1,9 @@
-﻿"""Review round (AMENDMENT-R1), items P0.3 and P0.4 (exploratory).
+"""Exploratory (Amendment 1): network confidence intervals and evidence audit.
 
-P0.4 network: bootstrap (over held-out knockdowns) 95% CIs for every predictor's MAE and Spearman rho, paired
+Network: bootstrap (over held-out knockdowns) 95% CIs for every predictor's MAE and Spearman rho, paired
 differences against the transfer-only and constant baselines, relative error change, and a check that the
 randomised networks preserve every node degree.
-P0.3 evidence: label coverage and mapping table, AUROC with bootstrap CIs, label-permutation p values, and
+Evidence: label coverage and mapping table, AUROC with bootstrap CIs, label-permutation p values, and
 label-subset sensitivity (CellAge non-cancer / replicative evidence; GenAge per organism).
 Outputs: results/rev_network.csv, results/rev_evidence_coverage.csv, results/rev_evidence_sensitivity.csv,
 results/rev_network_evidence.json
@@ -139,12 +139,12 @@ def evidence_part(out):
                 "hi": float(np.quantile(bs, 0.975)), "perm_p_one_sided": float((np.sum(np.array(perm) >= a) + 1) / (len(perm) + 1))}
     rows = []
     ind = ca[ca == "Induces"].index; inh = ca[ca == "Inhibits"].index
-    rows.append(test(R, ind, inh, "CellAge, all (pre-registered H4a)"))
+    rows.append(test(R, ind, inh, "CellAge, all (pre-specified H4a)"))
     nc = cdf[cdf["Cancer Cell"] == "No"].groupby("Gene symbol")["Senescence Effect"].agg(lambda s: s.mode()[0] if s.nunique() == 1 else "Mixed")
     rows.append(test(R, nc[nc == "Induces"].index, nc[nc == "Inhibits"].index, "CellAge, non-cancer-cell evidence only"))
     rep = cdf[cdf["Type of senescence"].astype(str).str.contains("Replicative")].groupby("Gene symbol")["Senescence Effect"].agg(lambda s: s.mode()[0] if s.nunique() == 1 else "Mixed")
     rows.append(test(R, rep[rep == "Induces"].index, rep[rep == "Inhibits"].index, "CellAge, replicative senescence only"))
-    rows.append(test(R, gl[gl == "Anti"].index, gl[gl == "Pro"].index, "GenAge, human consensus (pre-registered H4b)"))
+    rows.append(test(R, gl[gl == "Anti"].index, gl[gl == "Pro"].index, "GenAge, human consensus (pre-specified H4b)"))
     for o in org:
         sub = Vt[Vt.org == o].groupby("human")["longevity influence"].agg(lambda s: s.mode()[0] if s.nunique() == 1 else "Mixed")
         rows.append(test(R, sub[sub == "Anti-Longevity"].index, sub[sub == "Pro-Longevity"].index, f"GenAge, {o} only"))

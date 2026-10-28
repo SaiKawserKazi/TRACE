@@ -1,9 +1,12 @@
-﻿"""Load CRISPRi Perturb-seq pseudobulk z-shift matrices per context."""
+"""Load CRISPRi Perturb-seq pseudobulk z-shift matrices per context."""
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+import config as _cfg
 import os
 import numpy as np, pandas as pd, anndata as ad
 
-RAW = r"D:\Study\RejuvBench\data\raw"
-PROC = r"D:\Study\RejuvBench\data\proc"
+RAW = str(_cfg.RAW)
+PROC = str(_cfg.PROC)
 
 CONTEXTS = {
     "K562": "K562_essential_normalized_bulk_01.h5ad",

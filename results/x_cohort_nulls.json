@@ -1,0 +1,89 @@
+{
+ "n_perm": 1000,
+ "n_plant": 200,
+ "topk": 200,
+ "n_genes_planted": 500,
+ "sex_perm": {
+  "sex_rho_all_fibroblasts": {
+   "observed": 0.1866525650846374,
+   "p": 0.3116883116883117,
+   "null_lo": -0.38017504320431145,
+   "null_hi": 0.36690936710848915
+  },
+  "sex_top_rho_fibroblasts": {
+   "observed": 0.6482937073426837,
+   "p": 0.001998001998001998,
+   "null_lo": -0.46121015525388137,
+   "null_hi": 0.4562947948698718
+  },
+  "sex_top_autosomal_rho_fibroblasts": {
+   "observed": 0.3422005550138753,
+   "p": 0.13586413586413587,
+   "null_lo": -0.46395979899497497,
+   "null_hi": 0.4523541588539714
+  },
+  "sex_rho_autosomes_all_genes_fibroblasts": 0.1745617856150016,
+  "sex_rho_all_skin": {
+   "observed": -0.1152510062322483,
+   "p": 0.3676323676323676,
+   "null_lo": -0.26376073119034626,
+   "null_hi": 0.2462489099131882
+  },
+  "sex_top_rho_skin": {
+   "observed": 0.3183994599864996,
+   "p": 0.056943056943056944,
+   "null_lo": -0.32244843621090535,
+   "null_hi": 0.3360033000825021
+  },
+  "sex_top_autosomal_rho_skin": {
+   "observed": -0.177862446561164,
+   "p": 0.24775224775224775,
+   "null_lo": -0.3142409810245257,
+   "null_hi": 0.3366243906097652
+  },
+  "sex_rho_autosomes_all_genes_skin": -0.1321226211057689
+ },
+ "planted": {
+  "0.2": {
+   "median_abs_t_planted_discovery": 2.0885640076931704,
+   "fibroblasts": {
+    "frac_rho_all_beyond_null": 0.05,
+    "frac_top_rho_beyond_null": 1.0,
+    "median_rho_all": 0.12420199896641332,
+    "median_top_rho": 0.7586012150303758,
+    "median_top_frac_planted": 0.795
+   },
+   "skin": {
+    "frac_rho_all_beyond_null": 0.09,
+    "frac_top_rho_beyond_null": 1.0,
+    "median_rho_all": 0.11537235799503923,
+    "median_top_rho": 0.7572691817295434,
+    "median_top_frac_planted": 0.795
+   }
+  },
+  "0.41": {
+   "median_abs_t_planted_discovery": 4.281374585584931,
+   "fibroblasts": {
+    "frac_rho_all_beyond_null": 0.055,
+    "frac_top_rho_beyond_null": 1.0,
+    "median_rho_all": 0.1426466067794338,
+    "median_top_rho": 0.7280732018300459,
+    "median_top_frac_planted": 1.0
+   },
+   "skin": {
+    "frac_rho_all_beyond_null": 0.11,
+    "frac_top_rho_beyond_null": 1.0,
+    "median_rho_all": 0.13369071472444058,
+    "median_top_rho": 0.7305332633315834,
+    "median_top_frac_planted": 1.0
+   }
+  }
+ },
+ "perm_fdr05_discovery_quantiles": {
+  "0.5": 0.0,
+  "0.95": 0.0,
+  "0.99": 4.009999999999991,
+  "max": 3178,
+  "frac_zero": 0.971
+ }
+}

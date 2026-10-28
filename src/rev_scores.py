@@ -1,4 +1,4 @@
-﻿"""Review round (AMENDMENT-R1), item P0.2: alternative score definitions (exploratory).
+"""Exploratory (Amendment 1): alternative score definitions (exploratory).
 
 V0 raw            R = -Spearman(d[S], a[S])
 V1 protocol       proliferation genes removed from S, then residualised on proliferation, identity and magnitude shifts

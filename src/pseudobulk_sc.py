@@ -1,10 +1,13 @@
-﻿"""Pseudobulk HepG2 / Jurkat raw single-cell CRISPRi Perturb-seq (Nadig et al. 2025) with the
+"""Pseudobulk HepG2 / Jurkat raw single-cell CRISPRi Perturb-seq (Nadig et al. 2025) with the
 Replogle et al. 2022 normalisation: library-size normalisation, per-gem-group z-score against
 non-targeting cells, mean per perturbation. Streams the CSR matrix in row blocks (8 GB RAM)."""
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+import config as _cfg
 import sys, os
 import numpy as np, pandas as pd, h5py, anndata as ad
 
-RAW = r"D:\Study\RejuvBench\data\raw"
+RAW = str(_cfg.RAW)
 name = sys.argv[1]  # hepg2 | jurkat
 f = h5py.File(os.path.join(RAW, f"{name}_raw_singlecell.h5ad"), "r")
 
@@ -40,8 +43,8 @@ is_nt = tgt == "non-targeting"
 print("NT cells", is_nt.sum(), "gem groups", len(set(gem)))
 
 # keep genes present in the Replogle bulk gene space
-keepg = set(pd.read_pickle(r"D:\Study\RejuvBench\data\proc\ctx_K562.pkl")[0].columns) | \
-        set(pd.read_pickle(r"D:\Study\RejuvBench\data\proc\ctx_RPE1.pkl")[0].columns)
+keepg = set(pd.read_pickle(_cfg.PROC / "ctx_K562.pkl")[0].columns) | \
+        set(pd.read_pickle(_cfg.PROC / "ctx_RPE1.pkl")[0].columns)
 gmask = np.array([g in keepg for g in gname])
 gsel = np.where(gmask)[0]; G = len(gsel)
 remap = -np.ones(n_genes, int); remap[gsel] = np.arange(G)

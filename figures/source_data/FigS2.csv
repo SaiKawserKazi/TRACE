@@ -1,0 +1,81 @@
+tissue,replication,discovery,sign_agree,bc_lo,bc_hi
+GTEx fibroblasts,fibroblasts: G0 pre-specified (age + sex),F0 pre-specified (age 18+; age + sex),0.2205240174672489,0.148471615720524,0.3580786026200873
+GTEx fibroblasts,fibroblasts: G0 pre-specified (age + sex),F1 ages 20-79 (GTEx range),0.3142857142857143,0.16,0.5028571428571429
+GTEx fibroblasts,fibroblasts: G0 pre-specified (age + sex),"F2 + platform, repository, site",0.2363238512035011,0.1378555798687089,0.4091903719912472
+GTEx fibroblasts,fibroblasts: G0 pre-specified (age + sex),"F3 ages 20-79 + platform, repository, site",0.3127753303964757,0.1651982378854625,0.5221154622479073
+GTEx fibroblasts,fibroblasts: G0 pre-specified (age + sex),F4 NextSeq only,0.1786492374727669,0.0980392156862745,0.3254600464155286
+GTEx fibroblasts,fibroblasts: G0 pre-specified (age + sex),F5 arm biopsies only,0.2729306487695749,0.2013422818791946,0.3860624223671114
+GTEx fibroblasts,fibroblasts: G0 pre-specified (age + sex),F6 expression filter 0.5,0.2217294900221729,0.1475053599966111,0.3727804362167262
+GTEx fibroblasts,fibroblasts: G0 pre-specified (age + sex),F7 expression filter 2,0.2391304347826087,0.1652173913043478,0.4074168148598039
+GTEx fibroblasts,fibroblasts: G0 pre-specified (age + sex),F8 without NIA donors aged 80+,0.3452115812917594,0.22271714922049,0.5011135857461024
+GTEx fibroblasts,fibroblasts: G0 pre-specified (age + sex),F9 + 5 hidden factors,0.2008281573498964,0.10351966873706,0.4016563146997929
+GTEx fibroblasts,"fibroblasts: G1 + center, batch type, RIN, Hardy",F0 pre-specified (age 18+; age + sex),0.2576419213973799,0.1503548733955469,0.4301310043668122
+GTEx fibroblasts,"fibroblasts: G1 + center, batch type, RIN, Hardy",F1 ages 20-79 (GTEx range),0.3828571428571428,0.1714285714285714,0.6457142857142857
+GTEx fibroblasts,"fibroblasts: G1 + center, batch type, RIN, Hardy","F2 + platform, repository, site",0.2735229759299781,0.1356393806891216,0.474835886214442
+GTEx fibroblasts,"fibroblasts: G1 + center, batch type, RIN, Hardy","F3 ages 20-79 + platform, repository, site",0.3832599118942731,0.1784140969162995,0.6483472654826538
+GTEx fibroblasts,"fibroblasts: G1 + center, batch type, RIN, Hardy",F4 NextSeq only,0.2244008714596949,0.1074284492449774,0.4080170422591475
+GTEx fibroblasts,"fibroblasts: G1 + center, batch type, RIN, Hardy",F5 arm biopsies only,0.2975391498881432,0.1998825234592149,0.4250559284116331
+GTEx fibroblasts,"fibroblasts: G1 + center, batch type, RIN, Hardy",F6 expression filter 0.5,0.2638580931263858,0.1526901212311862,0.4748890358290179
+GTEx fibroblasts,"fibroblasts: G1 + center, batch type, RIN, Hardy",F7 expression filter 2,0.2695652173913043,0.158695652173913,0.4630434782608695
+GTEx fibroblasts,"fibroblasts: G1 + center, batch type, RIN, Hardy",F8 without NIA donors aged 80+,0.3875278396436525,0.22271714922049,0.5857461024498887
+GTEx fibroblasts,"fibroblasts: G1 + center, batch type, RIN, Hardy",F9 + 5 hidden factors,0.2712215320910973,0.1180124223602484,0.5859213250517599
+GTEx fibroblasts,fibroblasts: G2 G1 + nucleic-acid batch,F0 pre-specified (age 18+; age + sex),0.3427947598253275,0.1613763156294047,0.6586748775397203
+GTEx fibroblasts,fibroblasts: G2 G1 + nucleic-acid batch,F1 ages 20-79 (GTEx range),0.6,0.2718519136531243,0.8571428571428571
+GTEx fibroblasts,fibroblasts: G2 G1 + nucleic-acid batch,"F2 + platform, repository, site",0.4026258205689278,0.1684901531728665,0.737417943107221
+GTEx fibroblasts,fibroblasts: G2 G1 + nucleic-acid batch,"F3 ages 20-79 + platform, repository, site",0.5484581497797357,0.2577092511013216,0.7863436123348018
+GTEx fibroblasts,fibroblasts: G2 G1 + nucleic-acid batch,F4 NextSeq only,0.3616557734204793,0.139732206191959,0.7211328976034859
+GTEx fibroblasts,fibroblasts: G2 G1 + nucleic-acid batch,F5 arm biopsies only,0.3758389261744966,0.2237136465324384,0.6241610738255033
+GTEx fibroblasts,fibroblasts: G2 G1 + nucleic-acid batch,F6 expression filter 0.5,0.3414634146341463,0.1652053096717975,0.661504424778761
+GTEx fibroblasts,fibroblasts: G2 G1 + nucleic-acid batch,F7 expression filter 2,0.3695652173913043,0.1747752392965321,0.6978260869565217
+GTEx fibroblasts,fibroblasts: G2 G1 + nucleic-acid batch,F8 without NIA donors aged 80+,0.5278396436525612,0.2888552260447131,0.7438752783964365
+GTEx fibroblasts,fibroblasts: G2 G1 + nucleic-acid batch,F9 + 5 hidden factors,0.4016563146997929,0.1180124223602484,0.7929606625258799
+GTEx fibroblasts,fibroblasts: G3 age + sex + 5 hidden factors,F0 pre-specified (age 18+; age + sex),0.2205240174672489,0.148471615720524,0.3580786026200873
+GTEx fibroblasts,fibroblasts: G3 age + sex + 5 hidden factors,F1 ages 20-79 (GTEx range),0.3142857142857143,0.16,0.5028571428571429
+GTEx fibroblasts,fibroblasts: G3 age + sex + 5 hidden factors,"F2 + platform, repository, site",0.2363238512035011,0.1378555798687089,0.4091903719912472
+GTEx fibroblasts,fibroblasts: G3 age + sex + 5 hidden factors,"F3 ages 20-79 + platform, repository, site",0.3127753303964757,0.1651982378854625,0.5221154622479073
+GTEx fibroblasts,fibroblasts: G3 age + sex + 5 hidden factors,F4 NextSeq only,0.1786492374727669,0.0980392156862745,0.3254600464155286
+GTEx fibroblasts,fibroblasts: G3 age + sex + 5 hidden factors,F5 arm biopsies only,0.2729306487695749,0.2013422818791946,0.3860624223671114
+GTEx fibroblasts,fibroblasts: G3 age + sex + 5 hidden factors,F6 expression filter 0.5,0.2217294900221729,0.1475053599966111,0.3727804362167262
+GTEx fibroblasts,fibroblasts: G3 age + sex + 5 hidden factors,F7 expression filter 2,0.2391304347826087,0.1652173913043478,0.4074168148598039
+GTEx fibroblasts,fibroblasts: G3 age + sex + 5 hidden factors,F8 without NIA donors aged 80+,0.3452115812917594,0.22271714922049,0.5011135857461024
+GTEx fibroblasts,fibroblasts: G3 age + sex + 5 hidden factors,F9 + 5 hidden factors,0.2008281573498964,0.10351966873706,0.4016563146997929
+GTEx skin,skin: G0 pre-specified (age + sex),F0 pre-specified (age 18+; age + sex),0.5066079295154186,0.4427312775330396,0.5506607929515418
+GTEx skin,skin: G0 pre-specified (age + sex),F1 ages 20-79 (GTEx range),0.3371428571428571,0.2971428571428571,0.4087702687359355
+GTEx skin,skin: G0 pre-specified (age + sex),"F2 + platform, repository, site",0.5055679287305123,0.44543429844098,0.546875
+GTEx skin,skin: G0 pre-specified (age + sex),"F3 ages 20-79 + platform, repository, site",0.4824561403508772,0.4276315789473684,0.5328947368421053
+GTEx skin,skin: G0 pre-specified (age + sex),F4 NextSeq only,0.5110619469026548,0.4507692986839564,0.5553097345132744
+GTEx skin,skin: G0 pre-specified (age + sex),F5 arm biopsies only,0.510158013544018,0.455981941309255,0.5553047404063205
+GTEx skin,skin: G0 pre-specified (age + sex),F6 expression filter 0.5,0.5089285714285714,0.4419642857142857,0.5533724777939926
+GTEx skin,skin: G0 pre-specified (age + sex),F7 expression filter 2,0.5,0.4361233480176211,0.5440528634361234
+GTEx skin,skin: G0 pre-specified (age + sex),F8 without NIA donors aged 80+,0.5617977528089888,0.5325842696629214,0.6059844165978789
+GTEx skin,skin: G0 pre-specified (age + sex),F9 + 5 hidden factors,0.587737843551797,0.5221987315010571,0.6553911205073996
+GTEx skin,"skin: G1 + center, batch type, RIN, Hardy",F0 pre-specified (age 18+; age + sex),0.5947136563876652,0.5044052863436124,0.7092511013215859
+GTEx skin,"skin: G1 + center, batch type, RIN, Hardy",F1 ages 20-79 (GTEx range),0.3771428571428571,0.2857142857142857,0.5142857142857142
+GTEx skin,"skin: G1 + center, batch type, RIN, Hardy","F2 + platform, repository, site",0.5567928730512249,0.4481987838604196,0.6532438478747203
+GTEx skin,"skin: G1 + center, batch type, RIN, Hardy","F3 ages 20-79 + platform, repository, site",0.5109649122807017,0.418859649122807,0.6096491228070176
+GTEx skin,"skin: G1 + center, batch type, RIN, Hardy",F4 NextSeq only,0.6039823008849557,0.5128755894581396,0.7273714400729125
+GTEx skin,"skin: G1 + center, batch type, RIN, Hardy",F5 arm biopsies only,0.5801354401805869,0.4916382215642736,0.6749435665914221
+GTEx skin,"skin: G1 + center, batch type, RIN, Hardy",F6 expression filter 0.5,0.5959821428571429,0.5066964285714286,0.7098214285714286
+GTEx skin,"skin: G1 + center, batch type, RIN, Hardy",F7 expression filter 2,0.5833333333333334,0.4824561403508772,0.6959478981804709
+GTEx skin,"skin: G1 + center, batch type, RIN, Hardy",F8 without NIA donors aged 80+,0.5865168539325842,0.5303370786516854,0.672499472451855
+GTEx skin,"skin: G1 + center, batch type, RIN, Hardy",F9 + 5 hidden factors,0.6194503171247357,0.4735729386892177,0.758985200845666
+GTEx skin,skin: G2 G1 + nucleic-acid batch,F0 pre-specified (age 18+; age + sex),0.5330396475770925,0.3647788208270294,0.6691603592862634
+GTEx skin,skin: G2 G1 + nucleic-acid batch,F1 ages 20-79 (GTEx range),0.3542857142857142,0.2285714285714285,0.4857142857142857
+GTEx skin,skin: G2 G1 + nucleic-acid batch,"F2 + platform, repository, site",0.4966592427616926,0.3140232114174437,0.6223988749567312
+GTEx skin,skin: G2 G1 + nucleic-acid batch,"F3 ages 20-79 + platform, repository, site",0.4714912280701754,0.3421052631578947,0.5964912280701754
+GTEx skin,skin: G2 G1 + nucleic-acid batch,F4 NextSeq only,0.5243362831858407,0.3517699115044247,0.668141592920354
+GTEx skin,skin: G2 G1 + nucleic-acid batch,F5 arm biopsies only,0.5395033860045146,0.417607223476298,0.6686688797589758
+GTEx skin,skin: G2 G1 + nucleic-acid batch,F6 expression filter 0.5,0.5267857142857143,0.3496486090834756,0.6584821428571429
+GTEx skin,skin: G2 G1 + nucleic-acid batch,F7 expression filter 2,0.5328947368421053,0.3552631578947368,0.6733808127115833
+GTEx skin,skin: G2 G1 + nucleic-acid batch,F8 without NIA donors aged 80+,0.5438202247191011,0.4382022471910112,0.6584269662921348
+GTEx skin,skin: G2 G1 + nucleic-acid batch,F9 + 5 hidden factors,0.5412262156448203,0.2929666606194869,0.7099484815559179
+GTEx skin,skin: G3 age + sex + 5 hidden factors,F0 pre-specified (age 18+; age + sex),0.5066079295154186,0.4427312775330396,0.5506607929515418
+GTEx skin,skin: G3 age + sex + 5 hidden factors,F1 ages 20-79 (GTEx range),0.3371428571428571,0.2971428571428571,0.4087702687359355
+GTEx skin,skin: G3 age + sex + 5 hidden factors,"F2 + platform, repository, site",0.5055679287305123,0.44543429844098,0.546875
+GTEx skin,skin: G3 age + sex + 5 hidden factors,"F3 ages 20-79 + platform, repository, site",0.4824561403508772,0.4276315789473684,0.5328947368421053
+GTEx skin,skin: G3 age + sex + 5 hidden factors,F4 NextSeq only,0.5110619469026548,0.4507692986839564,0.5553097345132744
+GTEx skin,skin: G3 age + sex + 5 hidden factors,F5 arm biopsies only,0.510158013544018,0.455981941309255,0.5553047404063205
+GTEx skin,skin: G3 age + sex + 5 hidden factors,F6 expression filter 0.5,0.5089285714285714,0.4419642857142857,0.5533724777939926
+GTEx skin,skin: G3 age + sex + 5 hidden factors,F7 expression filter 2,0.5,0.4361233480176211,0.5440528634361234
+GTEx skin,skin: G3 age + sex + 5 hidden factors,F8 without NIA donors aged 80+,0.5617977528089888,0.5325842696629214,0.6059844165978789
+GTEx skin,skin: G3 age + sex + 5 hidden factors,F9 + 5 hidden factors,0.587737843551797,0.5221987315010571,0.6553911205073996

@@ -1,10 +1,13 @@
 """Aim 1: donor-aware aging signatures (protocol section 3)."""
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+import config as _cfg
 import gzip, re, os
 import numpy as np, pandas as pd
 from scipy import stats
 
-RAW = r"D:\Study\RejuvBench\data\raw"
-OUT = r"D:\Study\RejuvBench\data\proc"
+RAW = str(_cfg.RAW)
+OUT = str(_cfg.PROC)
 os.makedirs(OUT, exist_ok=True)
 
 
@@ -79,7 +82,7 @@ def age_tstats(expr, meta, min_mean=1.0):
 
 
 def age_tstats_cov(expr, meta, covars=(), min_mean=1.0, age_col="age"):
-    """OLS expression ~ age + covariates per gene (review-round sensitivity analyses). Categorical covariates are
+    """OLS expression ~ age + covariates per gene (also used by the exploratory sensitivity analyses). Categorical covariates are
     dummy-coded (first level dropped); numeric covariates are entered linearly after median imputation."""
     expr = expr[expr.mean(axis=1) >= min_mean]
     cols = [np.ones(len(meta)), meta[age_col].values.astype(float)]

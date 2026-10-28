@@ -1,7 +1,10 @@
-"""v0.1 revision (exploratory, added in revision; AMENDMENT-R3), E10: H5 donor-bootstrap stability of Rrob on all genes
+"""Exploratory (Amendment 3): H5 donor-bootstrap stability of Rrob on all genes
 and on the genes measured in at least two cell lines (Rrob equals Radj for genes measured in one line).
 Same design as rev_h5_boot.py (2,000 donor bootstraps, seeds 50,000 + b). Outputs results/rev3_h5_multiline.json/.csv
 """
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+import config as _cfg
 import os, sys, json, time
 import multiprocessing as mp
 import numpy as np, pandas as pd
@@ -11,7 +14,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 import aging, perturb
 import trace_analysis as T
 
-RES = T.RES; NB = int(os.environ.get("TRACE_NBOOT_H5", 2000)); NPROC = int(os.environ.get("TRACE_NPROC", 4))
+RES = T.RES; NB = _cfg.N_H5_BOOT_EXTENDED; NPROC = _cfg.N_PROC
 _W = {}
 
 

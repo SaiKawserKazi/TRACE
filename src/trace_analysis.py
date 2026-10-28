@@ -2,6 +2,9 @@
 
 Every number reported in the manuscript is written to results/results.json.
 """
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+import config as _cfg
 import os, json, zipfile, io, sys, time
 import numpy as np, pandas as pd
 from scipy import stats
@@ -10,9 +13,9 @@ import networkx as nx
 sys.path.insert(0, os.path.dirname(__file__))
 import aging, perturb
 
-ROOT = r"D:\Study\RejuvBench"
+ROOT = str(_cfg.ROOT)
 RAW, PROC = (os.path.join(ROOT, d) for d in ("data/raw", "data/proc"))
-# TRACE_RESULTS / TRACE_DISCOVERY let the same pipeline run on another input (E18) without code changes
+# TRACE_RESULTS / TRACE_DISCOVERY let the same pipeline run on another input (X18) without code changes
 RES = os.path.join(ROOT, os.environ.get("TRACE_RESULTS", "results"))
 DISCOVERY = os.environ.get("TRACE_DISCOVERY", "fleischer")
 os.makedirs(RES, exist_ok=True)
@@ -34,11 +37,12 @@ def hallmark():
     return sets
 
 
-HM = hallmark()
-PROLIF_REMOVE = set().union(*[HM[k] for k in ["E2F Targets", "G2-M Checkpoint", "Mitotic Spindle",
+# gene sets load only if the input exists, so the pure functions can be imported (and unit-tested) without any downloads
+HM = hallmark() if os.path.exists(os.path.join(RAW, "hallmark.txt")) else {}
+PROLIF_REMOVE = set().union(*[HM.get(k, set()) for k in ["E2F Targets", "G2-M Checkpoint", "Mitotic Spindle",
                                                "Myc Targets V1", "Myc Targets V2"]])
-PROLIF = HM["E2F Targets"] | HM["G2-M Checkpoint"]
-STRESS = HM["TNF-alpha Signaling via NF-kB"] | HM["Inflammatory Response"] | HM["p53 Pathway"]
+PROLIF = HM.get("E2F Targets", set()) | HM.get("G2-M Checkpoint", set())
+STRESS = HM.get("TNF-alpha Signaling via NF-kB", set()) | HM.get("Inflammatory Response", set()) | HM.get("p53 Pathway", set())
 
 
 # ---------------------------------------------------------------- scoring
@@ -240,7 +244,8 @@ def genage_human_labels():
     votes = []
     for o, key in org.items():
         f = os.path.join(RAW, f"ortho_{key}.tsv")
-        if not os.path.exists(f) or os.path.getsize(f) < 1000: continue
+        if not os.path.exists(f) or os.path.getsize(f) < 1000:  # D6: never skip an organism silently
+            raise FileNotFoundError(f"ortholog table missing or truncated: {f}")
         orth = pd.read_csv(f, sep="\t").dropna()
         orth.columns = ["human", "model", "type"]
         orth = orth[orth.type.isin(["best"])]
@@ -453,7 +458,7 @@ def main():
     k = max(1, int(0.05 * rob.R_rob.notna().sum()))
     top_full = set(rob.R_rob.nlargest(k).index)
     topcount = pd.Series(0, index=rob.index, dtype=float)
-    NB = int(os.environ.get("TRACE_NBOOT", 200))
+    NB = _cfg.N_H5_BOOT_PRESPECIFIED
     for b in range(NB):
         ix = RNG.integers(0, len(m), len(m))
         mb = m.iloc[ix].copy(); eb = e.iloc[:, ix]

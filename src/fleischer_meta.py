@@ -1,9 +1,12 @@
-﻿"""Sample metadata for GSE113957 (Fleischer et al. 2018) from the two GEO series matrices:
+"""Sample metadata for GSE113957 (Fleischer et al. 2018) from the two GEO series matrices:
 platform, biopsy site and repository cell ID, matched to FPKM column titles."""
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+import config as _cfg
 import gzip, os
 import pandas as pd
 
-RAW = r"D:\Study\RejuvBench\data\raw"
+RAW = str(_cfg.RAW)
 
 
 def load_meta():

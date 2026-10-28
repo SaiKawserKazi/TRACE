@@ -1,7 +1,7 @@
-"""v0.1 revision (exploratory, added in revision; AMENDMENT-R3): cohort analyses.
+"""Exploratory (Amendment 3): cohort analyses.
 
-Fixes and additions requested in the v0.0 internal review:
-  * bug fix: the GTEx-skin G0 model now contains age + sex only (v0.0 also included ischemic time in G0)
+Analyses:
+  * bug fix: the GTEx-skin G0 model now contains age + sex only (Amendments 1 and 2 also included ischemic time in G0; deviation D8)
   * E1  sex as a positive control for cohort transfer (all genes, autosomes only, X/Y only)
   * E2  permuted-age null (age shuffled within cohort, covariates fixed)
   * E3  sign check on a pre-named list of age genes
@@ -11,6 +11,9 @@ Fixes and additions requested in the v0.0 internal review:
   * E17 cross-cohort age prediction (elastic net)
 Outputs: results/rev3_cohort_*.csv and results/rev3_cohort.json
 """
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+import config as _cfg
 import os, sys, json, time, gzip
 import multiprocessing as mp
 import numpy as np, pandas as pd
@@ -20,9 +23,9 @@ sys.path.insert(0, os.path.dirname(__file__))
 import aging
 from fleischer_meta import load_meta
 
-ROOT = r"D:\Study\RejuvBench"; RAW, RES = os.path.join(ROOT, "data", "raw"), os.path.join(ROOT, "results")
-NB = int(os.environ.get("TRACE_NBOOT", 2000)); NPERM = int(os.environ.get("TRACE_NPERM", 1000))
-NSUB = int(os.environ.get("TRACE_NSUB", 1000)); NPROC = int(os.environ.get("TRACE_NPROC", 5)); KPC = 5
+ROOT = str(_cfg.ROOT); RAW, RES = os.path.join(ROOT, "data", "raw"), os.path.join(ROOT, "results")
+NB = _cfg.N_COHORT_BOOT; NPERM = _cfg.N_COHORT_PERM
+NSUB = _cfg.N_POWER_SUBSETS; NPROC = _cfg.N_PROC; KPC = 5
 KNOWN = ["LMNB1", "CDKN2A", "CDKN1A", "COL1A1", "COL1A2", "COL3A1", "MKI67", "TOP2A", "IL6", "MMP1"]
 SEXGENES = ["XIST", "RPS4Y1", "DDX3Y", "KDM5D", "UTY", "EIF1AY", "USP9Y", "ZFY", "KDM5C", "KDM6A"]
 TOPK = 200
@@ -216,7 +219,7 @@ def vif_age(meta, covars):
 
 
 def age_predict(ef, mf, cohorts):
-    """E17: elastic net on z-scored expression of shared high-variance genes; cross-cohort and within-cohort CV error."""
+    """X17: elastic net on z-scored expression of shared high-variance genes; cross-cohort and within-cohort CV error."""
     from sklearn.linear_model import ElasticNetCV, ElasticNet
     from sklearn.model_selection import cross_val_predict, KFold
     data = {"Discovery": (ef.loc[:, mf.age >= 18], mf[mf.age >= 18].age.values)}
@@ -256,7 +259,7 @@ def main():
     pd.to_pickle({**{fn: v[0] for fn, v in F.items()}, **{gn: v[0] for gn, v in G.items()}}, os.path.join(RES, "rev3_point_tstats.pkl"))
     log("point estimates", {k: int((v[0].q < 0.05).sum()) for k, v in {**F, **G}.items()})
     out = {"n_boot": NB, "n_perm": NPERM, "n_subsets": NSUB, "hidden_factors": KPC}
-    # E3 known genes
+    # X08 known genes
     rows = []
     for g in KNOWN + SEXGENES:
         row = {"gene": g, "set": "age" if g in KNOWN else "sex"}
@@ -265,7 +268,7 @@ def main():
             row[f"t_{lab}"] = float(ts.t.get(g, np.nan)); row[f"q_{lab}"] = float(ts.q.get(g, np.nan)); row[f"t_sex_{lab}"] = float(ts.t_sex.get(g, np.nan))
         rows.append(row)
     pd.DataFrame(rows).to_csv(os.path.join(RES, "rev3_cohort_known_genes.csv"), index=False)
-    # E15 E2F/G2-M age t per cohort
+    # X16 E2F/G2-M age t per cohort
     cc = []
     for lab, ts in [("Discovery", F["F0 pre-specified (age 18+; age + sex)"][0]), ("GTEx fibroblasts", G["fibroblasts: G0 pre-specified (age + sex)"][0]),
                     ("GTEx skin", G["skin: G0 pre-specified (age + sex)"][0])]:
@@ -276,12 +279,12 @@ def main():
     out["cellcycle_median_t"] = CC.groupby(["cohort", "set"]).t.median().round(3).reset_index().to_dict("records")
     sigF0 = F["F0 pre-specified (age 18+; age + sex)"][0]; sig = sig_from(sigF0)
     out["signature_frac_cellcycle"] = {"down": float(np.mean([g in CELLCYCLE for g in sig[sig.t < 0].index])), "up": float(np.mean([g in CELLCYCLE for g in sig[sig.t > 0].index]))}
-    # E4 VIF and age per repository
+    # X09 VIF and age per repository
     m18 = mf[mf.age >= 18]
     out["vif_age_F2"] = vif_age(m18, ["sex", "platform", "repository", "site2"])
     out["age_by_repository"] = m18.groupby("repository").age.describe()[["count", "min", "50%", "max"]].round(1).reset_index().to_dict("records")
     out["nia80_n"] = int(((m18.repository == "AG") & (m18.age >= 80)).sum()); out["n80_total"] = int((m18.age >= 80).sum())
-    # E17 age prediction
+    # X17 age prediction
     AP = age_predict(ef, mf, cohorts); AP.to_csv(os.path.join(RES, "rev3_cohort_age_prediction.csv"), index=False)
     log("age prediction done")
     with mp.Pool(NPROC, initializer=_init) as pool:

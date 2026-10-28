@@ -1,7 +1,10 @@
-﻿"""Human orthologs of model-organism genes from the Alliance of Genome Resources combined orthology file
+"""Human orthologs of model-organism genes from the Alliance of Genome Resources combined orthology file
 (pairs supported by >= 3 algorithms and best score in at least one direction)."""
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+import config as _cfg
 import pandas as pd
-RAW = r"D:\Study\RejuvBench\data\raw"
+RAW = str(_cfg.RAW)
 df = pd.read_csv(RAW + r"\alliance_orthology.tsv.gz", sep="\t", comment="#")
 tax = {"NCBITaxon:10090": "mmusculus", "NCBITaxon:6239": "celegans", "NCBITaxon:7227": "dmelanogaster", "NCBITaxon:559292": "scerevisiae"}
 ok = (df.AlgorithmsMatch >= 3) & ((df.IsBestScore == "Yes") | (df.IsBestRevScore == "Yes"))

@@ -1,0 +1,94 @@
+{
+ "composition": {
+  "discovery": {
+   "n_up": 250,
+   "n_down": 250,
+   "frac_cellcycle_all": 0.124,
+   "frac_cellcycle_up": 0.016,
+   "frac_cellcycle_down": 0.232
+  },
+  "gtex_fibroblast": {
+   "n_up": 250,
+   "n_down": 250,
+   "frac_cellcycle_all": 0.026,
+   "frac_cellcycle_up": 0.016,
+   "frac_cellcycle_down": 0.036
+  },
+  "gtex_top_sets": {
+   "up": [
+    {
+     "set": "Oxidative Phosphorylation",
+     "overlap": 12,
+     "size": 200,
+     "p": 0.0001431136152007,
+     "q": 0.014311361520076
+    },
+    {
+     "set": "Complement",
+     "overlap": 9,
+     "size": 141,
+     "p": 0.0006203584446292,
+     "q": 0.0203641767031734
+    },
+    {
+     "set": "Hypoxia",
+     "overlap": 9,
+     "size": 169,
+     "p": 0.0022108922496851,
+     "q": 0.0442178449937037
+    },
+    {
+     "set": "Reactive Oxygen Species Pathway",
+     "overlap": 4,
+     "size": 47,
+     "p": 0.007818486106672,
+     "q": 0.1116926586667441
+    },
+    {
+     "set": "Estrogen Response Late",
+     "overlap": 7,
+     "size": 143,
+     "p": 0.0104143472844651,
+     "q": 0.1301793410558148
+    }
+   ],
+   "down": [
+    {
+     "set": "IL-6/JAK/STAT3 Signaling",
+     "overlap": 6,
+     "size": 63,
+     "p": 0.0006387638183444,
+     "q": 0.0203641767031734
+    },
+    {
+     "set": "TNF-alpha Signaling via NF-kB",
+     "overlap": 10,
+     "size": 177,
+     "p": 0.0008145670681269,
+     "q": 0.0203641767031734
+    },
+    {
+     "set": "Inflammatory Response",
+     "overlap": 7,
+     "size": 127,
+     "p": 0.0055676440945663,
+     "q": 0.0927940682427721
+    },
+    {
+     "set": "Cholesterol Homeostasis",
+     "overlap": 4,
+     "size": 68,
+     "p": 0.0272272562625872,
+     "q": 0.2094404327891327
+    },
+    {
+     "set": "Complement",
+     "overlap": 6,
+     "size": 141,
+     "p": 0.0315395820518254,
+     "q": 0.2252827289416105
+    }
+   ]
+  }
+ }
+}

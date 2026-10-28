@@ -1,11 +1,14 @@
-"""Bias-corrected (BC) bootstrap intervals for Table S3 from the saved donor bootstraps (exploratory, added in revision).
+"""Bias-corrected (BC) bootstrap intervals for Table S3 from the saved donor bootstraps (exploratory).
 BC adjusts percentile intervals for the median bias of the bootstrap distribution (Efron 1987); the acceleration term of
 BCa would need a jackknife refit of every model per donor and is not computed. Output: results/rev3_cohort_sensitivity_bc.csv"""
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+import config as _cfg
 import os
 import numpy as np, pandas as pd
 from scipy import stats
 
-RES = r"D:\Study\RejuvBench\results"
+RES = str(_cfg.RES)
 S = pd.read_csv(os.path.join(RES, "rev3_cohort_sensitivity.csv"))
 BT = pd.read_csv(os.path.join(RES, "rev3_cohort_bootstrap.csv.gz"))
 METRICS = ["rho_all", "rho_no_cellcycle", "sig_sign_agree_fixed", "top_rho", "sex_top_rho", "sex_top_autosomal_rho", "sex_rho_all"]

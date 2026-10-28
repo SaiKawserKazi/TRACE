@@ -1,4 +1,4 @@
-"""v0.1 revision (exploratory, added in revision; AMENDMENT-R3), E11 and E12: network prediction, redone.
+"""Exploratory (Amendment 3): network prediction, redone.
 
 E11 in-fold fitting: the target (V1 adjusted score) is residualized on proliferation, identity and magnitude with
     coefficients fitted on the training fold only; ridge penalties tuned by inner 5-fold CV; 10 CV seeds; one common
@@ -10,6 +10,9 @@ E12 baselines: constant, line transfer, calibrated transfer, STRING network (com
     reliability ceiling. Block bootstrap over response clusters for the network increment.
 Outputs: results/rev3_network_*.csv, results/rev3_network.json
 """
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+import config as _cfg
 import os, sys, json, time
 import numpy as np, pandas as pd, networkx as nx
 from scipy import stats
@@ -20,8 +23,8 @@ import trace_analysis as T
 
 RAW, RES = T.RAW, T.RES
 CTX = ["K562", "K562gw", "RPE1", "HepG2", "Jurkat"]; LINE = T.LINE_OF
-NSEED = int(os.environ.get("TRACE_NSEED", 10)); NBLOCK = int(os.environ.get("TRACE_NBLOCK", 2000)); KNN = 20
-LAMBDAS = np.logspace(-3, 2, 11)
+NSEED = _cfg.N_NETWORK_SEEDS; NBLOCK = _cfg.N_BLOCK_BOOT; KNN = 20
+LAMBDAS = np.logspace(-6, 3, 19)  # widened (Amendment 4): the old lower edge 1e-3 was chosen almost always
 
 
 def log(*a): print(time.strftime("%H:%M:%S"), *a, flush=True)
@@ -82,13 +85,23 @@ def main():
                            index=shift.index)
         common = [p for p in shift.index if p in G and pd.notna(transfer.get(p, np.nan))]
         common = np.array(common)
+        # fair kNN (Amendment 4): the held-out gene's response profile in the OTHER cell lines (never its profile in this screen)
+        ors = []
+        for o in other:
+            so = ctx[o][0]; cols = [g for g in nonsig if g in so.columns]
+            ro = so[cols].reindex(common); ro = ro.sub(ro.mean(axis=1), axis=0); ors.append(ro)
+        cols_o = sorted(set.intersection(*[set(r_.columns) for r_ in ors]))
+        OP = pd.concat([r_[cols_o] for r_ in ors]).groupby(level=0).mean().reindex(common)
+        OP = OP.div(np.sqrt((OP ** 2).sum(axis=1)) + 1e-12, axis=0).fillna(0.0)
+        RT = resp.reindex(index=common, columns=cols_o).fillna(0.0); RT = RT.sub(RT.mean(axis=1), axis=0)
+        RT = RT.div(np.sqrt((RT ** 2).sum(axis=1)) + 1e-12, axis=0)
         # response clusters for the block bootstrap
         from sklearn.cluster import KMeans
         cl = pd.Series(KMeans(100, n_init=3, random_state=0).fit_predict(resp.loc[common].values), index=common)
         for seed in range(NSEED):
             rng = np.random.default_rng(seed); folds = rng.permutation(len(common)) % 5
             pred = {k: pd.Series(np.nan, index=common) for k in ["constant", "transfer", "transfer_calibrated", "network", "network_calibrated",
-                                                                   "physical_network", "transfer_plus_network", "knn_response", "gene_covariates"]}
+                                                                   "physical_network", "transfer_plus_network", "knn_response", "knn_other_lines", "gene_covariates"]}
             ytrue = pd.Series(np.nan, index=common); praw = pd.Series(np.nan, index=common); rawtrue = raw[c].reindex(common)
             lams = []
             for k in range(5):
@@ -110,6 +123,8 @@ def main():
                 f_, _ = ridge_cv(Xa, ytr, rng); pred["transfer_plus_network"][te] = f_(Xb)
                 sim = resp.loc[te].values @ resp.loc[tr].values.T
                 nn = np.argsort(-sim, axis=1)[:, :KNN]; pred["knn_response"][te] = ytr[nn].mean(axis=1)
+                sim_o = OP.loc[te].values @ RT.loc[tr].values.T
+                nn_o = np.argsort(-sim_o, axis=1)[:, :KNN]; pred["knn_other_lines"][te] = ytr[nn_o].mean(axis=1)
                 f_, _ = ridge_cv(cov.loc[tr].values, ytr, rng); pred["gene_covariates"][te] = f_(cov.loc[te].values)
                 f_, _ = ridge_cv(P.loc[tr, ["prolif"]].values, rawtrue[tr].values, rng); praw[te] = f_(P.loc[te, ["prolif"]].values)
             for nm, p in pred.items():
@@ -126,7 +141,8 @@ def main():
                     pick = r2.choice(ucl, len(ucl)); idx = np.concatenate([cl.index[cl == u] for u in pick]); bs.append(d[idx].mean())
                 blocks.append({"screen": c, "n": len(common), "n_clusters": len(ucl), "delta_mae": d.mean(), "rel_change_pct": 100 * d.mean() / base,
                                "block_lo": float(np.quantile(bs, 0.025)), "block_hi": float(np.quantile(bs, 0.975)),
-                               "lambda_transfer_median": float(np.median(lams))})
+                               "lambda_transfer_median": float(np.median(lams)), "frac_lambda_at_lower_edge": float(np.mean(np.isclose(lams, LAMBDAS[0]))),
+                               "frac_lambda_at_upper_edge": float(np.mean(np.isclose(lams, LAMBDAS[-1])))})
         log(c, "done", len(common))
     S = pd.DataFrame(seeds_rows); S.to_csv(os.path.join(RES, "rev3_network_seeds.csv"), index=False)
     A = S.groupby(["screen", "predictor"]).agg(n=("n", "first"), mae=("mae", "mean"), mae_sd=("mae", "std"), rho=("rho", "mean"), rho_sd=("rho", "std"),

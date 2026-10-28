@@ -1,7 +1,7 @@
 {
  "evidence": [
   {
-   "analysis": "CellAge, all (pre-registered H4a)",
+   "analysis": "CellAge, all (pre-specified H4a)",
    "n_pos": 257,
    "n_neg": 394,
    "auroc": 0.538,
@@ -28,7 +28,7 @@
    "perm_p_one_sided": 0.0602
   },
   {
-   "analysis": "GenAge, human consensus (pre-registered H4b)",
+   "analysis": "GenAge, human consensus (pre-specified H4b)",
    "n_pos": 573,
    "n_neg": 376,
    "auroc": 0.5118,

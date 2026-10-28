@@ -1,0 +1,75 @@
+{
+ "V1 pre-specified": {
+  "n_genes": 2393,
+  "n_front": 16,
+  "front": [
+   "ADNP2",
+   "ANLN",
+   "CCDC144A",
+   "COQ5",
+   "CRLS1",
+   "EGLN2",
+   "GPS2",
+   "LSM12",
+   "MRPS25",
+   "NDUFB7",
+   "NR2C2AP",
+   "OR4F4",
+   "OR4K1",
+   "TREML2",
+   "UFL1",
+   "ZRANB2"
+  ],
+  "k_top5": 119
+ },
+ "V6 spline resid.": {
+  "n_genes": 2393,
+  "n_front": 17,
+  "front": [
+   "ADNP2",
+   "BAP1",
+   "COQ5",
+   "CRLS1",
+   "GPS2",
+   "LSM12",
+   "MRPL21",
+   "MRPS24",
+   "MRPS25",
+   "NDUFB7",
+   "NR2C2AP",
+   "OR4K1",
+   "RPL7A",
+   "SIGLEC14",
+   "SMG7",
+   "UFL1",
+   "ZRANB2"
+  ],
+  "k_top5": 119,
+  "front_shared_with_V1": 11,
+  "top5_shared_with_V1": 79
+ },
+ "V7 resid. (prolif. + identity)": {
+  "n_genes": 2393,
+  "n_front": 15,
+  "front": [
+   "ADNP2",
+   "ANLN",
+   "CCDC144A",
+   "COQ5",
+   "CRLS1",
+   "EGLN2",
+   "GPS2",
+   "LSM12",
+   "MRPS25",
+   "NDUFB7",
+   "NR2C2AP",
+   "OR4K1",
+   "TREML2",
+   "UFL1",
+   "ZRANB2"
+  ],
+  "k_top5": 119,
+  "front_shared_with_V1": 15,
+  "top5_shared_with_V1": 98
+ }
+}

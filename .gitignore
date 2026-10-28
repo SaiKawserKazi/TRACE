@@ -1,2 +1,7 @@
-﻿data/
+data/
 *.part
+__pycache__/
+*.pyc
+src/dev/
+manuscript/
+deposit/

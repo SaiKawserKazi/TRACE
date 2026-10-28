@@ -1,35 +1,71 @@
-# TRACE — Transferable Rejuvenation Assessment across Contexts and Evidence
+# TRACE: Transferable Rejuvenation Assessment across Contexts and Evidence
 
-Code, frozen protocol and outputs for the manuscript *"Transcriptomic rejuvenation scores from perturbation
-atlases are dominated by proliferation and do not replicate across aging cohorts: a pre-registered,
-network-constrained benchmark"*.
+Code, pre-specified protocol, results and figures for the paper *"TRACE audits transcriptomic rejuvenation rankings from
+perturbation screens"*. TRACE is a pre-specified audit of rankings that score gene knockdowns by how well they reverse an aging
+expression signature: it swaps the aging cohort, compares score definitions with random signatures and a proliferation-only
+baseline, compares lines and replicate screens, and tests rankings against held-out labels.
+
+## Install
+
+Python 3.13.7 on Linux, macOS or Windows.
+
+```bash
+pip install -r requirements.txt
+```
+
+or `conda env create -f environment.yml`.
+
+## Run
+
+```bash
+python run_all.py --tests     # unit tests on synthetic data (seconds; no downloads)
+python run_all.py             # everything: download and check inputs, preprocess, confirmatory H1-H5, exploratory analyses, figures
+python run_all.py --from x19  # resume at a step
+```
+
+Inputs (about 16 GB) are listed with URL, version, access date and SHA-256 in `DATA_MANIFEST.csv`; `src/download.py` fetches and
+checks them. Resample counts and seeds are in `src/config.py` with the paper's values as defaults. Set `TRACE_ROOT` to run from
+another folder. Each step prints its wall time; the analyses were run on one 8-core, 8 GB workstation.
+
+To audit another aging cohort, give `src/trace_analysis.py` two CSV files (genes × samples expression and a sample table with
+`age` and `sex`): `TRACE_DISCOVERY=table TRACE_EXPR=expr.csv TRACE_META=meta.csv TRACE_RESULTS=results/my_run python src/trace_analysis.py`.
 
 ## Layout
 
 | Path | Content |
 |---|---|
-| `RESEARCH_PROTOCOL.md` | Pre-registered protocol v1.0 (git tag `protocol-v1.0`, committed before any scoring) |
-| `src/download.ps1`, `src/pardl.py` | Data download (all public) |
-| `src/orthologs.py` | Human orthologs from the Alliance of Genome Resources |
-| `src/aging.py` | Aim 1: donor-aware aging signatures (Fleischer, GTEx) |
-| `src/perturb.py`, `src/pseudobulk_sc.py` | Perturb-seq pseudobulk shifts (Replogle release; HepG2/Jurkat pseudobulked here) |
-| `src/trace_analysis.py` | All hypothesis tests (H1–H5), network model, prioritisation → `results/results.json` |
-| `src/figures.py` | Figures 1–5, S1–S2 and per-panel source data (`figures/source_data/`) |
-| `src/build_manuscript.py` | Builds `manuscript/TRACE_manuscript.pdf` from `results/results.json` |
+| `RESEARCH_PROTOCOL.md` | Protocol v1.0, frozen at tag `protocol-v1.0` (commit `6ab7550`) before any knockdown was scored |
+| `PROTOCOL_FREEZE_RECORD.json` | Hashes and commit time of the frozen protocol |
+| `PROTOCOL_AMENDMENTS.md` | Deviations (D1–D11) and dated exploratory analyses (X01–X25) |
+| `DATA_MANIFEST.csv` | Every input file with URL, version, access date, size and SHA-256 |
+| `src/config.py` | Paths, resample counts and seeds |
+| `src/download.py` | Cross-platform download and checksum check |
+| `src/aging.py`, `src/fleischer_meta.py` | Aging cohorts, age models and signatures |
+| `src/perturb.py`, `src/pseudobulk_sc.py`, `src/orthologs.py` | Perturb-seq pseudobulk shifts (HepG2 and Jurkat pseudobulked here) and orthologs |
+| `src/trace_analysis.py` | Confirmatory tests H1–H5 → `results/results.json` |
+| `src/rev_*.py`, `src/rev3_*.py`, `src/x_*.py` | Exploratory analyses, in the order of the amendment log |
+| `src/make_figures.py`, `src/make_figures_supp.py` | Figures 1–5, S1–S10 and the graphical abstract, with per-panel source data |
+| `src/figstyle.py`, `src/schematics.py`, `src/icons.py` | Figure style, schematic panels, licensed icons (`figures/icons/CREDITS.md`) |
+| `results/` | Machine-readable results; data dictionary in `results/README.md` |
+| `figures/` | Final figures (PDF and PNG) and `figures/source_data/` |
+| `tests/test_core.py` | Unit tests |
 
-## Reproduce
+## Figures and tables → scripts
 
-```
-powershell -File src/download.ps1          # small/medium files
-python src/pardl.py <url> <out> <bytes>     # HepG2 / Jurkat single-cell files (GEO GSE264667)
-python src/orthologs.py
-python src/pseudobulk_sc.py hepg2
-python src/pseudobulk_sc.py jurkat
-python src/trace_analysis.py                # TRACE_NBOOT=200 by default
-python src/figures.py
-python src/build_manuscript.py
-```
+| Item | Script (function) | Main inputs |
+|---|---|---|
+| Figure 1A, 2A, graphical abstract | `src/schematics.py` via `make_figures.py` | – |
+| Figure 1B–1H | `make_figures.py` (`fig1`) | `rev_cohort_table.csv`, `rev3_point_tstats.pkl`, `rev_cohorts.json`, `x_cohort_*`, `rev3_cohort_sensitivity*.csv`, `signature_hallmark_enrichment.csv`, `rev3_cohort_age_prediction.csv` |
+| Figure 2B–2F | `make_figures.py` (`fig2`) | `scores_*.csv`, `rev3_scores_prolif_dependence.csv`, `rev_scores.json`, `rev3_scores_random_signatures.csv` |
+| Figure 3A–3E | `make_figures.py` (`fig3`) | `results.json`, `rev_scores.json`, `rev3_reliability_*.csv`, `rev_h5_boot.csv`, `rev3_h5_multiline.csv` |
+| Figure 4A–4E | `make_figures.py` (`fig4`) | `rev_network*.{csv,json}`, `rev3_network_*.csv` |
+| Figure 5A–5D | `make_figures.py` (`fig5`) | `rev3_scores_evidence.csv`, `rev3_scores_paired_auroc.csv`, `rev3_depmap_label_fisher.csv`, `rev3_scores_label_essential_overlap.csv` |
+| Figures S1–S10 | `make_figures_supp.py` (`S1` … `S10`) | see the function for each figure |
+| Table 1 | – | `results.json` |
+| Supplementary tables | – | see `results/README.md`; `x_exploratory_tests.csv` lists every exploratory test |
 
-Requirements: Python 3.13, numpy, scipy, pandas, statsmodels, networkx, anndata, h5py, matplotlib, pymupdf;
-Microsoft Edge (headless) for HTML→PDF. 8 GB RAM is sufficient.
-# TRACE
+## License and citation
+
+Code: MIT (`LICENSE`). Results, figures and source data: CC BY 4.0. Third-party input data keep their own terms (OncoKB, GTEx
+and the Perturb-seq releases are not redistributed here). Icons: Servier Medical Art (CC BY 3.0) and Bioicons (CC0, CC BY 4.0).
+Please cite the paper (see `CITATION.cff`).

@@ -1,8 +1,11 @@
-﻿"""Review round (AMENDMENT-R1), item P0.1: cohort comparability and sensitivity of the age-effect replication.
+"""Exploratory (Amendment 1): cohort comparability and sensitivity of the age-effect replication.
 
-All analyses here are exploratory and were added after the pre-registered results were known.
+All analyses here are exploratory and were added after the pre-specified results were known.
 Outputs: results/rev_cohort_table.csv, results/rev_cohort_sensitivity.csv, results/rev_cohorts.json
 """
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+import config as _cfg
 import os, sys, json, time
 import numpy as np, pandas as pd
 from scipy import stats
@@ -11,9 +14,9 @@ sys.path.insert(0, os.path.dirname(__file__))
 import aging
 from fleischer_meta import load_meta
 
-ROOT = r"D:\Study\RejuvBench"
+ROOT = str(_cfg.ROOT)
 RAW, RES = os.path.join(ROOT, "data", "raw"), os.path.join(ROOT, "results")
-NB = int(os.environ.get("TRACE_NBOOT_REV", 100))
+NB = _cfg.N_COHORT_BOOT
 rng = np.random.default_rng(1)
 
 
@@ -88,8 +91,8 @@ def compare(tf, tg, sig):
 
 
 import multiprocessing as mp
-NPROC = int(os.environ.get("TRACE_NPROC", 5))
-NSPLIT = int(os.environ.get("TRACE_NSPLIT", 200))
+NPROC = _cfg.N_PROC
+NSPLIT = _cfg.N_SPLIT_HALVES
 _W = {}
 
 

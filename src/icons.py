@@ -1,0 +1,41 @@
+"""Licensed icons (figures/icons, see CREDITS.md) rasterized for matplotlib: icon(name, px) -> RGBA array; place(ax, name, x, y, w)
+draws the icon centred at (x, y) with width w in data coordinates, keeping its aspect ratio."""
+import io, os, re
+from functools import lru_cache
+import numpy as np
+from PIL import Image
+import resvg_py
+
+ICON_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "figures", "icons")
+
+
+def _svg_text(name):
+    s = open(os.path.join(ICON_DIR, name if name.endswith(".svg") else name + ".svg"), encoding="utf-8", errors="ignore").read()
+    head = re.search(r"<svg\b[^>]*>", s, flags=re.S).group(0)
+    vb = re.search(r'viewBox\s*=\s*"([^"]+)"', head)
+    has_w = re.search(r'\swidth\s*=\s*"([0-9.]+)(px)?"', head) and re.search(r'\sheight\s*=\s*"([0-9.]+)(px)?"', head)
+    if vb and not has_w:
+        x0, y0, w, h = [float(v) for v in re.split(r"[ ,]+", vb.group(1).strip())]
+        new = re.sub(r'\s(width|height)\s*=\s*"[^"]*"', "", head)
+        new = new[:-1] + f' width="{w}" height="{h}">'
+        s = s.replace(head, new, 1)
+    return s
+
+
+@lru_cache(maxsize=64)
+def icon(name, px=400, tint=None):
+    png = bytes(resvg_py.svg_to_bytes(svg_string=_svg_text(name), width=px))
+    im = np.asarray(Image.open(io.BytesIO(png)).convert("RGBA")).astype(float) / 255
+    if tint is not None:  # recolor all non-transparent pixels to one color, keeping shading through luminance
+        from matplotlib.colors import to_rgb
+        lum = im[..., :3].mean(axis=2, keepdims=True); c = np.array(to_rgb(tint))[None, None, :]
+        im = np.concatenate([1 - (1 - c) * (1 - 0.55 * lum), im[..., 3:]], axis=2)
+    return im
+
+
+def place(ax, name, x, y, w, px=500, tint=None, zorder=5, transform=None):
+    im = icon(name, px, tint); h = w * im.shape[0] / im.shape[1]
+    if transform is None:
+        # keep the icon's aspect in data units on an axes with equal aspect
+        ax.imshow(im, extent=(x - w / 2, x + w / 2, y - h / 2, y + h / 2), zorder=zorder, interpolation="lanczos")
+    return h

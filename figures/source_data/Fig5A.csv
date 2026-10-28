@@ -1,13 +1,25 @@
-analysis,n_pos,n_neg,auroc,lo,hi,perm_p_one_sided
-"CellAge, all (pre-specified H4a)",257,394,0.538,0.4929,0.5828,0.048
-"CellAge, non-cancer-cell evidence only",154,179,0.5545,0.491,0.6191,0.0425
-"CellAge, replicative senescence only",40,73,0.5894,0.477,0.6925,0.0602
-"GenAge, human consensus (pre-specified H4b)",573,376,0.5118,0.4732,0.5504,0.2657
-"GenAge, Mus musculus only",23,66,0.5448,0.415,0.6719,0.2566
-"GenAge, Caenorhabditis elegans only",345,258,0.5213,0.4725,0.5686,0.1833
-"GenAge, Drosophila melanogaster only",55,91,0.4927,0.4022,0.5866,0.5505
-"GenAge, Saccharomyces cerevisiae only",246,30,0.4335,0.3431,0.5316,0.8819
-"CellAge, proliferation shift alone as score",257,394,0.5814,0.54,0.6236,0.0003
-"GenAge, proliferation shift alone as score",573,376,0.4231,0.3858,0.4589,1.0
-"CellAge, mean raw score (no adjustment)",257,394,0.5727,0.5261,0.6184,0.001
-"GenAge, mean raw score (no adjustment)",573,376,0.4374,0.3998,0.4738,0.9997
+labels,score,gene_set,auroc,lo,hi,n_pos,n_neg,mda
+CellAge,"R_rob (V1, pre-specified)",all genes,0.5380019356495289,0.4925195917506585,0.5834842795483993,257,394,0.558
+CellAge,"R_rob (V1, pre-specified)",genes in >= 2 lines,0.5376066166968209,0.44590454995122,0.6293086834424217,53,146,0.616
+CellAge,mean raw score,all genes,0.5726658634379506,0.5273941745077316,0.6179375523681695,257,394,0.558
+CellAge,mean raw score,genes in >= 2 lines,0.5712070302403722,0.47939675444265495,0.6630173060380895,53,146,0.616
+CellAge,proliferation shift alone,all genes,0.5814059376716614,0.5362307538569001,0.6265811214864226,257,394,0.558
+CellAge,proliferation shift alone,genes in >= 2 lines,0.6010597348213196,0.5096019100842368,0.6925175595584023,53,146,0.616
+GenAge,"R_rob (V1, pre-specified)",all genes,0.5117708217296053,0.4742734367314201,0.5492682067277905,573,376,0.547
+GenAge,"R_rob (V1, pre-specified)",genes in >= 2 lines,0.5442431933548685,0.47273729566131173,0.6157490910484252,197,88,0.588
+GenAge,mean raw score,all genes,0.4373584345178419,0.39982561572338765,0.47489125331229615,573,376,0.547
+GenAge,mean raw score,genes in >= 2 lines,0.4393747115828334,0.3662483322312626,0.5125010909344043,197,88,0.588
+GenAge,proliferation shift alone,all genes,0.4230533540248871,0.3856325209039475,0.46047418714582666,573,376,0.547
+GenAge,proliferation shift alone,genes in >= 2 lines,0.4480849206447601,0.3749409355011883,0.5212289057883319,197,88,0.588
+GenAge without yeast,"R_rob (V1, pre-specified)",all genes,0.5142246239309188,0.47324810374383386,0.5552011441180038,391,372,0.552
+GenAge without yeast,"R_rob (V1, pre-specified)",genes in >= 2 lines,0.5828991978830729,0.5076640258990204,0.6581343698671254,139,87,0.595
+GenAge without yeast,mean raw score,all genes,0.4382407942138987,0.3975754498394217,0.4789061385883757,391,372,0.552
+GenAge without yeast,mean raw score,genes in >= 2 lines,0.4710989828826594,0.3933963133278746,0.5488016524374442,139,87,0.595
+GenAge without yeast,proliferation shift alone,all genes,0.420042335987091,0.3796247240965358,0.4604599478776462,391,372,0.552
+GenAge without yeast,proliferation shift alone,genes in >= 2 lines,0.4599354863166809,0.3822476278489091,0.5376233447844527,139,87,0.595
+GenAge mammal-only,"R_rob (V1, pre-specified)",all genes,0.5447957839262187,0.40575205099026024,0.6838395168621773,23,66,0.671
+GenAge mammal-only,"R_rob (V1, pre-specified)",genes in >= 2 lines,0.4537037037037037,0.1869315907157783,0.7204758166916292,6,18,0.796
+GenAge mammal-only,mean raw score,all genes,0.567193675889328,0.42803771199321494,0.7063496397854411,23,66,0.671
+GenAge mammal-only,mean raw score,genes in >= 2 lines,0.5925925925925926,0.31811329990584475,0.8670718852793404,6,18,0.796
+GenAge mammal-only,proliferation shift alone,all genes,0.5164690613746643,0.378070495091236,0.6548676276580926,23,66,0.671
+GenAge mammal-only,proliferation shift alone,genes in >= 2 lines,0.5,0.22777777777777775,0.7722222222222223,6,18,0.796

@@ -1,46 +1,71 @@
-# Protocol amendments and deviations (public log)
+# Deviations and exploratory analysis log
 
-The protocol `RESEARCH_PROTOCOL.md` was frozen at commit `6ab7550` (tag `protocol-v1.0`, local time 2026-10-12 16:08:26 +0600)
-and has not been modified since. Its SHA-256 and git blob ID are in `deposit/PREREGISTRATION_RECORD.json`.
-Commit times are recorded by local version control and are self-attested. The public archive verifies the content of the
-protocol, but it cannot independently prove the freeze time.
+Protocol: `RESEARCH_PROTOCOL.md` v1.0, frozen at commit `6ab7550` (tag `protocol-v1.0`, 2026-10-12 16:08 +0600, self-attested
+local time). SHA-256 `01a573574e8225e5ba68ddd2757b81dcd765083274d9b3290b8a1bb0ca879fa7`. Unchanged since.
 
-**Confirmatory** = the pre-specified test in protocol v1.0, run as specified (H1–H5, Table 1 of the manuscript).
-**Exploratory** = everything else, including every analysis listed under the amendments below.
+Confirmatory = H1–H5 exactly as written in the protocol. Everything else is exploratory.
+Dates below come from the authors' records; the repository history shows when each change was committed.
 
-| ID | Change | When (relative to results) | Possible influence |
-|---|---|---|---|
-| D1 | Orthologs from the Alliance of Genome Resources instead of Ensembl BioMart (service returned HTTP 405) | 2026-10-12, before any H4 result | Changes the mapped label set; not tuned to results |
-| D2 | The K562 essential-gene and genome-wide screens are averaged into one line for R_rob and the Pareto ranking (protocol silent) | Before results | Defines R_rob |
-| D3 | H1 uses the K562 essential-gene screen as "K562" (protocol silent) | Before results | None expected |
-| D4 | HepG2/Jurkat were pseudobulked by us; their non-targeting controls are 100 random groups of non-targeting cells | Before those screens' results | Normalisation may differ slightly from the published release |
-| D5 | Ridge penalty λ = 1 for the H3 models (protocol said "ridge" without λ) | Before results | Untuned; may understate the combined model |
-| D6 | Bug fix: an ortholog-file size threshold excluded yeast from H4b | 2026-10-12, **after** first H4 results | H4b AUROC 0.52 (P_Holm = 0.184) before → 0.51 (0.270) after; conclusion unchanged |
-| D7 | First-draft exploratory additions: 18–80-year sensitivity, adjusted within-K562 agreement, calibrated transfer-only model, single-screen evidence tests, on-target annotation | 2026-10-12, after pre-specified results | Labelled exploratory |
-| AMENDMENT-R1 | Review round 1: GEO metadata; cohort sensitivity (8 × 3 specifications) with donor-bootstrap CIs and split-half references; score definitions V2–V5; network baselines and CIs; evidence coverage, permutation, subsets and proliferation-only baseline; reproducibility package | 2026-10-13, after all pre-specified results | All exploratory |
-| AMENDMENT-R2 | Review round 2: 2,000 donor bootstraps for cohort sensitivity (500 split halves); 2,000 donor bootstraps for H5 (the pre-specified 200 is kept as confirmatory); 500 degree-preserving randomised networks for H3a (pre-specified 10 kept as confirmatory); 2,000 bootstrap resamples for all CIs and 10,000 label permutations; GTEx-skin comparison relabelled exploratory (it was never part of H5) | 2026-10-13, after all pre-specified results | All exploratory. Confirmatory outcomes kept as specified; H3a is fragile (2/5 screens against the mean of 500 nulls versus 3/5 with the pre-specified 10) |
+## A. Deviations from the protocol
 
-## AMENDMENT-R3 (v0.1 internal review by the senior author; logged 2026-10-26 before the analyses were run)
+| ID | Date | Before or after the related result | Change | Reason | Possible influence |
+|---|---|---|---|---|---|
+| D1 | 2026-10-12 | Before any H4 result | Orthologs from the Alliance of Genome Resources instead of Ensembl BioMart | The Ensembl BioMart service was unavailable on 12 October 2026 | Changes the mapped label set; not tuned to results |
+| D2 | 2026-10-12 | Before results | The K562 essential-gene and genome-wide screens are averaged into one line for R_rob, sign consistency and the Pareto ranking | Protocol silent | Defines R_rob |
+| D3 | 2026-10-12 | Before results | H1 uses the K562 essential-gene screen as "K562"; H1b uses the 1,784 knockdowns measured in all screens rather than the 2,053 shared by the two K562 screens | Protocol silent on the first point; the second keeps one knockdown set for within- and between-line agreement | None expected |
+| D4 | 2026-10-12 | Before those screens' results | HepG2 and Jurkat pseudobulked by us; their non-targeting controls are 100 random groups of non-targeting cells | No processed release with the same format | Normalization may differ slightly from the published release |
+| D5 | 2026-10-12 | Before results | Ridge penalty λ = 1 for the H3 models | Protocol said "ridge" without λ | Untuned; may understate the combined model |
+| D6 | 2026-10-12 | After the first H4 results | A file-size check (files under 1,000 bytes were skipped) silently dropped the yeast ortholog table in the first H4b run; in the corrected run the table passed the check and H4b was rerun. The check now raises an error instead of skipping | Bug | H4b AUROC 0.52 (Holm P = 0.18) before, 0.51 (Holm P = 0.27) after; conclusion unchanged |
+| D7 | 2026-10-12 | After the pre-specified results | Early exploratory additions: 18–80-year sensitivity, adjusted within-K562 agreement, calibrated line-transfer model, single-screen evidence tests, on-target annotation | – | Labeled exploratory |
+| D8 | 2026-10-26 | After Amendment 2 results | In Amendments 1 and 2 the GTEx-skin G0 model also contained ischemic time by mistake. G0 is now age + sex for both GTEx tissues; ischemic time enters the skin models from G1 | Bug | Skin G0 values changed (0.21 to 0.15; fibroblasts versus skin 0.02 to 0.06). No pre-specified result changed |
+| D9 | 2026-10-26 | – | Exclusion flow written out: 143 GEO samples = 133 healthy donors + 10 progeria samples; 22 donors under 18 excluded, leaving 111 donors aged 19–96 years (GEO age field) | Clarity | None |
+| D10 | 2026-10-26 | – | Loader fix: the fibroblast loader read sample columns [8:-1] and dropped the last column (one donor aged 17). All sample columns are now read | Bug | None: the donor is under 18 and excluded by the pre-specified age filter |
+| D11 | 2026-10-28 | – | Identity genes: log-normalized gene mean of a line minus the mean of the other lines, among genes above that line's median expression, top 100 (protocol: z-score of the line's mean relative to the other lines on control expression). K562 and RPE1 use the gene means distributed with the Replogle release; HepG2 and Jurkat use non-targeting cells only | The code has used this rule since the first analysis; recorded here | Defines the identity program ι used by V1, V3 and V7 |
 
-| ID | Change | When | Possible influence |
-|---|---|---|---|
-| D8 | Bug fix: in AMENDMENT-R1/R2 the GTEx-skin "G0 (age + sex)" model also contained ischemic time. G0 is now age + sex for both GTEx tissues; ischemic time enters skin models from G1. | 2026-10-26, after R2 results | Changes the reported skin G0 values (0.21 → 0.15; fibroblasts vs skin 0.02 → 0.06). Pre-specified analyses (H1–H5) were not affected. |
-| D9 | Exclusion flow made explicit: 143 GEO samples = 133 healthy donors + 10 progeria samples; 22 donors under 18 excluded, leaving 111 donors aged 19–96 years (GEO age field). No change to the analysis. | 2026-10-26 | None |
-| E1 | Sex as a positive control (same models and bootstraps; all genes, autosomes, X/Y; top-200 genes) | 2026-10-26 | Exploratory |
-| E2 | Permuted-age null (1,000 permutations, age shuffled within cohort, covariates fixed) | 2026-10-26 | Exploratory |
-| E3 | Sign check of pre-named age genes and canonical sex genes | 2026-10-26 | Exploratory |
-| E4 | Hidden-factor adjustment (5 residual principal components); discovery without the 31 NIA donors aged 80+; 1,000 power-matched 74-donor subsets; VIF of age; age per repository | 2026-10-26 | Exploratory |
-| E5 | 100 random expression-matched signatures through H1, H2, H4 | 2026-10-26 | Exploratory |
-| E6 | Split-cell reliability (HepG2, Jurkat; 20 splits); test-retest reliability for K562 (two screens); size-matched non-targeting groups; disattenuated agreement | 2026-10-26 | Exploratory; RPE1 has no replicate or single-cell data in hand |
-| E7 | Paired DeLong tests, incremental logistic regression, minimum detectable AUROC | 2026-10-26 | Exploratory |
-| E8/E9 | CellAge Build 3 convention documented (labels are gene-function based); overlaps with core-essential genes (Hart CEGv2; DepMap download is behind a CAPTCHA); GenAge mammal-only and without yeast | 2026-10-26 | Exploratory |
-| E10 | Rrob for single-line genes stated (equals Radj); H4 and H5 on genes measured in ≥2 lines | 2026-10-26 | Exploratory |
-| E11–E12 | In-fold residualization, inner-CV ridge penalty, 10 CV seeds, common subset per screen; kNN, gene-covariate, physical-network, calibrated-network and proliferation baselines; block bootstrap over gene clusters | 2026-10-26 | Exploratory |
-| E13–E16 | Proliferation deciles, distance correlation, mutual information, V6 spline and V7 variants; filtered Pareto front; ranks of senescence genes; up-minus-down score | 2026-10-26 | Exploratory |
-| E17 | Cross-cohort elastic-net age prediction | 2026-10-26 | Exploratory |
-| E18 | TRACE run end to end with a GTEx-derived discovery signature | 2026-10-26 | Exploratory |
-| D10 | Loader fix: load_fleischer read sample columns [8:-1], which dropped the last column (sample 99, age 17). Now all sample columns are read. A generic two-CSV cohort loader (load_table) was added for reuse. | 2026-10-26 | None: the dropped sample is under 18 and excluded by the pre-specified age filter; all results are unchanged |
-| Bootstrap count | Revised cohort sensitivity rerun with 2,000 donor bootstraps (as in AMENDMENT-R2), 1,000 permutations and 1,000 power-matched subsets; the count is also stored in rev3_cohort.json (n_boot) | 2026-10-26 | Exploratory |
-| E8/E9 update | DepMap 24Q2 CRISPR-inferred common essentials obtained from the official Figshare+ release (doi:10.25452/figshare.plus.25880521.v1); overlaps and Fisher tests added next to Hart CEGv2 | 2026-10-27 | Exploratory |
-| Table S3 intervals | Bias-corrected (BC) bootstrap intervals computed from the saved 2,000 donor bootstraps and reported next to percentile intervals; BCa acceleration not computed (needs a jackknife refit per donor) | 2026-10-27 | Exploratory |
-| E6 update | RPE1 split-cell reliability (20 splits) from the Replogle RPE1 normalized single-cell release (Figshare 20029387, file 35775554; cells already z-scored per gem group, so the standardization step is skipped); RPE1 pairs added to the disattenuated table | 2026-10-27, before running | Exploratory |
+## B. Exploratory analyses (added after the pre-specified results were known)
+
+### Amendment 1 (13 October 2026)
+
+| ID | Analysis | Outputs |
+|---|---|---|
+| X01 | GEO metadata (platform, repository, biopsy site); cohort sensitivity F0–F7 × G0–G2 with donor-bootstrap CIs and split-half references | results/rev_cohorts.json, rev_cohort_sensitivity.csv |
+| X02 | Score definitions V2–V5 | results/rev_scores.json |
+| X03 | Network baselines and CIs; calibrated line transfer | results/rev_network.csv, rev_network_evidence.json |
+| X04 | Evidence coverage, label permutations, label subsets and proliferation-only baseline | results/rev_evidence_*.csv |
+
+### Amendment 2 (13 October 2026)
+
+| ID | Analysis | Outputs |
+|---|---|---|
+| X05 | 2,000 donor bootstraps for every cohort specification (500 split halves) | results/rev_cohort_sensitivity.csv |
+| X06 | 2,000 donor bootstraps for H5 (the pre-specified 200 is kept as confirmatory) | results/rev_h5_boot.json |
+| X07 | 500 degree-preserving randomized networks for H3a (the pre-specified 10 are kept as confirmatory); 2,000 bootstrap resamples for all CIs; 10,000 label permutations | results/rev_network_null.json |
+
+### Amendment 3 (26 to 27 October 2026)
+
+| ID | Analysis | Outputs |
+|---|---|---|
+| X08 | Sex as a positive control (all genes, autosomes, X/Y, top-200 genes); sign check of pre-named age genes and canonical sex genes | results/rev3_cohort_sensitivity.csv, rev3_cohort_known_genes.csv |
+| X09 | Permuted-age null (1,000 permutations, pre-specified model); power-matched 74-donor subsets; age per repository; variance inflation factor of age | results/rev3_cohort.json, rev3_cohort_permutations.csv |
+| X10 | F8 (without AG donors aged 80+), F9 and G3 (five hidden factors); 2,000 donor bootstraps for all specifications; bias-corrected intervals (27 October) | results/rev3_cohort_sensitivity*.csv |
+| X11 | 100 random expression-matched signatures through H1, H2 and H4 | results/rev3_scores_random_signatures.csv |
+| X12 | Split-cell reliability (HepG2, Jurkat; 20 splits); test–retest reliability (two K562 screens); size-matched non-targeting groups; disattenuated agreement; proliferation measured in held-out cells | results/rev3_reliability*.csv |
+| X13 | Paired DeLong tests, incremental logistic regression, minimum detectable AUROC; GenAge mouse-only and without yeast; label overlap with Hart CEGv2 and (27 October) DepMap 24Q2 common essentials | results/rev3_scores_*.csv, rev3_depmap*.{json,csv} |
+| X14 | R_rob for single-line genes (equals R_adj); H4 and H5 on genes measured in at least two lines | results/rev3_h5_multiline.*, rev3_scores_evidence.csv |
+| X15 | In-fold network analysis: in-fold residualization, inner-CV ridge penalty, 10 CV seeds, common subset per screen; nearest-neighbor, gene-covariate, physical-network, calibrated-network and proliferation baselines; block bootstrap over response clusters | results/rev3_network*.csv |
+| X16 | Proliferation deciles, distance correlation, mutual information; definitions V6 (spline) and V7 (no magnitude); filtered Pareto front; ranks of senescence genes; up-minus-down score | results/rev3_scores_*.csv |
+| X17 | Cross-cohort elastic-net age prediction | results/rev3_cohort_age_prediction.csv |
+| X18 | TRACE run end to end with a GTEx-derived discovery signature | results/e18_gtex_discovery/ |
+| – | RPE1 split-cell reliability from the single-cell RPE1 release | Planned, not run |
+
+### Amendment 4 (28 October 2026)
+
+| ID | Analysis | Outputs |
+|---|---|---|
+| X19 | Permuted-age null for every discovery specification (F0–F9) against GTEx G0, both tissues; empirical two-sided P for genome-wide and top-200 agreement | results/x_cohort_perm_p.csv, x_cohort_perm_by_spec.csv |
+| X20 | Permuted-sex null for the sex positive control; planted shared age-like effect (500 genes, two effect sizes, 200 replicates each) on age-permuted data | results/x_cohort_nulls.json, x_cohort_sex_perm.csv, x_cohort_planted.csv |
+| X21 | Discovery hidden factors: association with age, repository and platform; Hallmark enrichment of the factor loadings | results/x_cohort_hidden_factors.csv, x_cohort_hidden_factor_hallmark.csv |
+| X22 | Network baselines rerun with a wider ridge grid (10^-6 to 10^3) and a nearest-neighbor predictor that uses the gene's response in the other lines only; the own-profile predictor kept as an upper reference | results/rev3_network*.csv |
+| X23 | GTEx-derived signature (X18): proliferation-only baseline, paired AUROC tests, oxidative-phosphorylation and stress program tests, Hallmark composition | results/x_gtex_signature*.{json,csv} |
+| X24 | Random-signature null compared with the real signature without proliferation genes (V2 input) | results/rev3_scores.json, figures/source_data/Fig2E.csv |
+| X25 | CellAge labels by manipulation method (CellAge web table); V6 and V7 effects on the top-5% lists and the Pareto front; table of all exploratory tests with family sizes | results/x_cellage_method.csv, x_v6v7_effects.json, x_exploratory_tests.csv |

@@ -1,10 +1,13 @@
-"""Review round 2 (AMENDMENT-R2): 500 degree-preserving randomised STRING networks for the H3a network test.
+"""Exploratory (Amendment 2): 500 degree-preserving randomised STRING networks for the H3a network test.
 
-For every randomisation and screen we recompute the network predictor exactly as in the pre-registered analysis
+For every randomisation and screen we recompute the network predictor exactly as in the pre-specified analysis
 (same five folds, same training-fold rule) and record its Spearman rho and MAE against held-out R_adj. Outputs:
 results/rev_network_null_dist.csv (one row per randomisation x screen), results/rev_network_null.json (empirical
 P values, null quantiles, and H3a re-tested against the mean prediction over all randomisations).
 """
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+import config as _cfg
 import os, sys, json, time
 import multiprocessing as mp
 import numpy as np, pandas as pd
@@ -15,8 +18,8 @@ import trace_analysis as T
 
 RES = T.RES
 CTX = ["K562", "K562gw", "RPE1", "HepG2", "Jurkat"]
-NNULL = int(os.environ.get("TRACE_NNULL", 500))
-NPROC = int(os.environ.get("TRACE_NPROC", 5))
+NNULL = _cfg.N_NETWORK_NULLS
+NPROC = _cfg.N_PROC
 _W = {}
 
 

@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use TRACE, please cite the paper and this software."
+title: "TRACE: Transferable Rejuvenation Assessment across Contexts and Evidence"
+type: software
+authors:
+  - name: "The TRACE authors"   # replace with each author (family-names, given-names, orcid) before release
+license: MIT
+version: "1.0.0"
+date-released: "2026-10-28"
+repository-code: "https://github.com/SaiKawserKazi/TRACE"
+# doi: add the Zenodo concept DOI once minted
+keywords:
+  - aging
+  - Perturb-seq
+  - CRISPRi
+  - reproducibility
+preferred-citation:
+  type: article
+  title: "TRACE audits transcriptomic rejuvenation rankings from perturbation screens"
+  authors:
+    - name: "The TRACE authors"
+  year: 2026
