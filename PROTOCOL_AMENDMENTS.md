@@ -1,6 +1,6 @@
 # Deviations and exploratory analysis log
 
-Protocol: `RESEARCH_PROTOCOL.md` v1.0, frozen at commit `6ab7550` (tag `protocol-v1.0`, 2026-10-12 16:08 +0600, self-attested
+Protocol: `RESEARCH_PROTOCOL.md` v1.0, frozen at commit `1eb8681` (tag `protocol-v1.0`, 2026-10-12 16:08 +0600, self-attested
 local time). SHA-256 `01a573574e8225e5ba68ddd2757b81dcd765083274d9b3290b8a1bb0ca879fa7`. Unchanged since.
 
 Confirmatory = H1–H5 exactly as written in the protocol. Everything else is exploratory.

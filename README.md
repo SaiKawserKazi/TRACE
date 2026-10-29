@@ -38,7 +38,7 @@ To audit another aging cohort, give `src/trace_analysis.py` two CSV files (genes
 
 | Path | Content |
 |---|---|
-| `RESEARCH_PROTOCOL.md` | Protocol v1.0, frozen at tag `protocol-v1.0` (commit `6ab7550`) before any knockdown was scored |
+| `RESEARCH_PROTOCOL.md` | Protocol v1.0, frozen at tag `protocol-v1.0` (commit `1eb8681`) before any knockdown was scored |
 | `PROTOCOL_FREEZE_RECORD.json` | Hashes and commit time of the frozen protocol |
 | `PROTOCOL_AMENDMENTS.md` | Deviations (D1–D11) and dated exploratory analyses (X01–X25) |
 | `DATA_MANIFEST.csv` | Every input file with URL, version, access date, size and SHA-256 |
