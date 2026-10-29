@@ -72,4 +72,4 @@ To audit another aging cohort, give `src/trace_analysis.py` two CSV files (genes
 
 Code: MIT (`LICENSE`). Results, figures and source data: CC BY 4.0. Third-party input data keep their own terms (OncoKB, GTEx
 and the Perturb-seq releases are not redistributed here). Icons: Servier Medical Art (CC BY 3.0) and Bioicons (CC0, CC BY 4.0).
-Please cite the paper (see `CITATION.cff`).
+Please cite the paper (see `CITATION.cff`). Code archive: Zenodo, https://doi.org/10.5281/zenodo.23763631 (all versions).

@@ -8,7 +8,7 @@ license: MIT
 version: "1.0.0"
 date-released: "2026-10-28"
 repository-code: "https://github.com/SaiKawserKazi/TRACE"
-# doi: add the Zenodo concept DOI once minted
+doi: "10.5281/zenodo.23763631"
 keywords:
   - aging
   - Perturb-seq
