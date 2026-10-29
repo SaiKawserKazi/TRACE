@@ -54,132 +54,146 @@ def cc_wheel(ax, x, y, r, paused=True):
         for dx in (-0.32 * r, 0.32 * r): ax.add_patch(Rectangle((x + dx - 0.12 * r, y - 0.32 * r), 0.24 * r, 0.64 * r, fc=INK, ec="none", zorder=6))
 
 
-def cell_glyphs(ax, x, y, size):
-    for i, (c, ic) in enumerate([("K562", "myeloid_cell"), ("RPE1", "fibroblast_flat"), ("HepG2", "liver"), ("Jurkat", "lymphocyte")]):
-        cx = x + (i % 2) * size * 1.9; cy = y - (i // 2) * size * 1.45
-        place(ax, ic, cx, cy, size, tint=SCREEN_C[c])
-        T(ax, cx, cy - size * 0.62, {"K562": "K562", "RPE1": "RPE1", "HepG2": "HepG2", "Jurkat": "Jurkat"}[c], 6.5, color=SCREEN_C[c])
+CELL_ICON = {"K562": "myeloid_cell", "RPE1": "cuboid_cell_2", "HepG2": "hepatocyte_like", "Jurkat": "lymphocyte"}   # suspension, epithelial, hepatocyte-like, T cell
+
+
+def cell_row(ax, x0, y, dx, size, labels=True):
+    """The four cell lines in their screen colors, each label 1 mm below its icon."""
+    for i, c in enumerate(["K562", "RPE1", "HepG2", "Jurkat"]):
+        h = place(ax, CELL_ICON[c], x0 + i * dx, y, size, tint=SCREEN_C[c])
+        if labels: T(ax, x0 + i * dx, y - h / 2 - 1.0 - 1.1, c, 6.5, color=INK)
+
+
+def dcas9_krab(ax, x, y, w):
+    """dCas9 (no cut marks) on DNA with its KRAB repressor domain; returns the icon height."""
+    h = place(ax, "dcas9", x, y, w)
+    kx, ky = x + 0.30 * w, y + 0.36 * h
+    ax.add_patch(FancyBboxPatch((kx - 3.2, ky - 1.3), 6.4, 2.6, boxstyle="round,pad=0,rounding_size=0.8", fc="#f4a582", ec="#b2182b", lw=0.5, zorder=7))
+    T(ax, kx, ky, "KRAB", 6.5, zorder=8)
+    return h
+
+
+def down_bars(ax, x, y, n=4, w=11, h=4.5):
+    """Genes down with age: blue bars hanging below a baseline, as in the age-signature icon."""
+    bw = w / n
+    for i in range(n):
+        hh = h * (1 - 0.15 * i); ax.add_patch(Rectangle((x + i * bw + 0.12 * bw, y - hh), 0.76 * bw, hh, fc=DOWN, ec="none", zorder=5))
+    ax.plot([x, x + w], [y, y], color=INK, lw=0.6, zorder=6)
 
 
 # ------------------------------------------------------------------ Figure 1A: study design
 def fig1a(ax, w=174, h=46):
-    mm_axes(ax, w, h, x0=-4.5)
+    mm_axes(ax, w, h, x0=-4)
+    A = dict(col=GRAY, lw=0.9, ms=7)                                        # one arrow style
     # inputs: cohorts (top) and screens (bottom)
-    box(ax, 0.5, 24.5, 64, 21); T(ax, 3, 43, "Aging cohorts", 7, ha="left", fontweight="bold")
-    rows = [("Discovery fibroblasts", "n = 111 donors", "fibroblast", "Discovery"), ("GTEx fibroblasts", "n = 652 donors", "fibroblast", "GTEx fibroblasts"),
-            ("GTEx skin", "n = 651 donors", "skin", "GTEx skin")]
-    for i, (nm, n, ic, coh) in enumerate(rows):
-        cx = 8 + i * 20.5
-        place(ax, ic, cx + 2, 36.0 if ic == "fibroblast" else 34.0, 10 if ic == "fibroblast" else 8.0, tint=None)
-        if ic == "fibroblast": place(ax, "dish", cx + 2, 32.0, 6.0)
-        ax.add_patch(Circle((cx - 5.6, 26.8), 0.9, fc=COHORT_C[coh], ec="none", zorder=6))
-        T(ax, cx + 2, 26.8, nm.replace(" fibroblasts", "\nfibroblasts"), 6.5, linespacing=1.0)
-        T(ax, cx + 2, 40.4, n, 6.5, color=GRAY)
-    box(ax, 0.5, 0.5, 64, 21.5); T(ax, 3, 19.5, "CRISPRi Perturb-seq screens", 7, ha="left", fontweight="bold")
-    place(ax, "cas9", 14, 10.5, 20); T(ax, 14, 3.4, "dCas9-KRAB silences\none gene per cell", 6.5, linespacing=1.05)
-    cell_glyphs(ax, 31, 15.2, 4.6)
-    T(ax, 55.5, 10.5, "5 screens\n4 cell lines\n18,746\nknockdown\nprofiles", 6.5, linespacing=1.1)
+    box(ax, 1, 24, 62, 21.5); T(ax, 32, 43.2, "Aging cohorts", 7, fontweight="bold")
+    for cx, (nm, n, ic, coh) in zip([11.5, 32, 52.5], [("Discovery", "n = 111", "fibroblast", "Discovery"), ("GTEx fibroblasts", "n = 652", "fibroblast", "GTEx fibroblasts"),
+                                                      ("GTEx skin", "n = 651", "skin", "GTEx skin")]):
+        if ic == "fibroblast": place(ax, "fibroblast", cx, 38.4, 8.5); place(ax, "dish", cx, 35.0, 5.6)
+        else: place(ax, "skin", cx, 36.6, 7.0)
+        tw = 0.59 * len(nm) * 6.5 / 2.835 / 1.0
+        ax.add_patch(Circle((cx - tw / 2 - 1.6, 30.2), 0.85, fc=COHORT_C[coh], ec="none", zorder=6))
+        T(ax, cx, 30.2, nm, 6.5); T(ax, cx, 26.9, n, 6.5, color=GRAY)
+    box(ax, 1, 0.5, 62, 21.5); T(ax, 32, 19.7, "CRISPRi Perturb-seq screens", 7, fontweight="bold")
+    dcas9_krab(ax, 13.5, 12.0, 15.5); T(ax, 13.5, 4.2, "dCas9-KRAB\nsilences one gene", 6.5, linespacing=1.05)
+    cell_row(ax, 32.5, 14.0, 7.6, 4.6)
+    T(ax, 44, 4.4, "5 screens, 4 cell lines\n18,746 knockdown profiles", 6.5, linespacing=1.05)
     # age signature
-    arrow(ax, 67, 35, 74.5, 35)
-    box(ax, 76.5, 24.5, 26, 21); T(ax, 89.5, 43, "Age signature", 7, fontweight="bold")
-    updown_bars(ax, 81, 34, 17, 12)
-    T(ax, 89.5, 27.2, "250 up, 250 down", 6.5)
+    arrow(ax, 65, 34.75, 73, 34.75, **A)
+    box(ax, 75, 24, 24, 21.5); T(ax, 87, 43.2, "Age signature", 7, fontweight="bold")
+    updown_bars(ax, 80, 34.5, 14, 10.5)
+    T(ax, 87, 26.8, "250 up, 250 down", 6.5)
     # reversal score
-    arrow(ax, 104.5, 35, 108, 28.5); arrow(ax, 67, 11, 108, 20.5)
-    box(ax, 110, 13.5, 26, 21); T(ax, 123, 32, "Reversal score", 7, fontweight="bold")
-    score_bar(ax, 113, 22, 20, 3.4, "older", "younger")
-    T(ax, 123, 16.3, "per knockdown", 6.5, color=GRAY)
+    arrow(ax, 101, 34.75, 105, 34.75, **A)
+    arrow(ax, 65, 11.25, 105, 11.25, **A); T(ax, 85, 13.6, "expression shift per knockdown", 6.5, color=GRAY)
+    box(ax, 107, 0.5, 26, 45); T(ax, 120, 43.2, "Reversal score", 7, fontweight="bold")
+    score_bar(ax, 110, 24, 20, 3.6, "older", "younger")
+    T(ax, 120, 15.5, "one score per\nknockdown", 6.5, color=GRAY, linespacing=1.05)
     # five tests
-    arrow(ax, 138, 24, 141.5, 24)
-    box(ax, 143.5, 0.5, 30, 45); T(ax, 158.5, 43, "Five tests", 7, fontweight="bold")
-    tests = [("network", "Cell lines"), ("mitosis", "Proliferation"), ("network", "Network"), ("fibroblast_flat", "Labels"), ("old_man", "Cohorts")]
-    for i, (ic, lab) in enumerate(tests):
-        y = 36.5 - i * 7.6
+    arrow(ax, 135, 23, 139, 23, **A)
+    box(ax, 141, 0.5, 32, 45); T(ax, 157, 43.2, "Five tests", 7, fontweight="bold")
+    for i, lab in enumerate(["Cell lines", "Proliferation", "Network", "Labels", "Cohorts"]):
+        y = 36.6 - i * 7.6; ix = 147.5
         if lab == "Cell lines":
-            for k, c in enumerate(["K562", "HepG2", "Jurkat"]): place(ax, "lymphocyte", 147.5 + k * 2.4, y, 2.6, tint=SCREEN_C[c])
-        elif lab == "Labels":
-            place(ax, "fibroblast_flat", 149, y, 7)
-        elif lab == "Cohorts":
-            place(ax, "old_man", 148, y, 2.6); place(ax, "old_woman", 151, y, 2.6)
-        elif lab == "Proliferation":
-            place(ax, "mitosis", 149.5, y, 6)
-        else:
-            place(ax, "network", 149.5, y, 6.5)
-        T(ax, 155, y, lab, 6.5, ha="left")
+            for k, c in enumerate(["K562", "RPE1", "HepG2", "Jurkat"]): ax.add_patch(Circle((143.9 + k * 2.4, y), 1.05, fc=SCREEN_C[c], ec="white", lw=0.3, zorder=6))
+        elif lab == "Proliferation": cc_wheel(ax, ix, y, 2.5)
+        elif lab == "Network": place(ax, "network", ix, y, 6.0)
+        elif lab == "Labels": place(ax, "worm", ix - 2.0, y, 3.6); place(ax, "mouse", ix + 2.2, y, 3.8)
+        else: place(ax, "old_man", ix - 1.4, y, 2.4); place(ax, "old_woman", ix + 1.4, y, 2.4)
+        T(ax, 153, y, lab, 6.5, ha="left")
 
 
-# ------------------------------------------------------------------ Figure 2A: two lanes that meet
+# ------------------------------------------------------------------ Figure 2A: two lanes that meet (working model)
 def fig2a(ax, w=174, h=46):
-    mm_axes(ax, w, h)
-    T(ax, 5, 43.5, "Aging", 7, ha="left", fontweight="bold"); T(ax, 5, 20.5, "Knockdown", 7, ha="left", fontweight="bold")
-    yt, yb = 34, 12
-    # top lane
-    place(ax, "mitosis", 22, yt + 1.5, 11); T(ax, 22, yt - 8.5, "young: cycling\nfibroblasts", 6.5, linespacing=1.05)
-    arrow(ax, 31, yt, 37, yt)
-    place(ax, "fibroblast_flat", 47, yt, 15); T(ax, 47, yt - 8, "old: flat, fewer\ncycling cells", 6.5, linespacing=1.05)
-    arrow(ax, 57, yt, 62, yt)
-    cc_wheel(ax, 68, yt, 3.6); T(ax, 68, yt - 8, "cell cycle\nslowed", 6.5, linespacing=1.05)
-    arrow(ax, 74, yt, 79, yt)
-    [ax.add_patch(Rectangle((81 + i * 2.25, yt - 4), 1.6, 4 - i * 0.6, fc=DOWN, ec="none", zorder=5)) for i in range(4)]
-    T(ax, 85.5, yt - 8, "cell-cycle\ngenes down", 6.5, linespacing=1.05)
-    # bottom lane
-    place(ax, "cas9", 22, yb + 1.5, 15); T(ax, 22, yb - 5.2, "dCas9-KRAB silences\nan essential gene", 6.5, linespacing=1.05)
-    arrow(ax, 31, yb, 37, yb)
-    place(ax, "myeloid_cell", 47, yb + 1, 7, tint="#7f7f7f"); T(ax, 47, yb - 5.2, "slower-growing\ncells", 6.5, linespacing=1.05)
-    arrow(ax, 57, yb, 62, yb)
-    cc_wheel(ax, 68, yb + 1, 3.6); T(ax, 68, yb - 5.2, "cell cycle\nslowed", 6.5, linespacing=1.05)
-    arrow(ax, 74, yb, 79, yb)
-    [ax.add_patch(Rectangle((81 + i * 2.25, yb - 2.5), 1.6, 4 - i * 0.6, fc=DOWN, ec="none", zorder=5)) for i in range(4)]
-    T(ax, 85.5, yb - 5.2, "same genes\ndown", 6.5, linespacing=1.05)
-    # lanes meet
-    arrow(ax, 92, yt - 1, 102, 25.5, rad=-0.25); arrow(ax, 92, yb + 1, 102, 20.5, rad=0.25)
-    box(ax, 103.5, 18, 24, 10, fc="white", ec=INK, lw=0.6)
-    T(ax, 115.5, 23, "same genes,\nsame direction", 6.5, linespacing=1.05)
-    arrow(ax, 129.5, 23, 134, 23)
-    score_bar(ax, 136, 21.5, 36, 3.6, "looks older", "looks younger")
-    ax.annotate("", xy=(141, 25.6), xytext=(141, 30.5), arrowprops=dict(arrowstyle="-|>", color=INK, lw=0.8, mutation_scale=6))
-    T(ax, 141, 33, "most essential-gene\nknockdowns", 6.5, linespacing=1.05)
-    T(ax, 154, 13.4, "R > 0 only if the knockdown\nkeeps cells growing", 6.5, linespacing=1.05)
-    T(ax, 154, 4.6, "Holds for a signature with a\ncell-cycle arm; the GTEx-derived\nsignature has none", 6.5, color=GRAY, linespacing=1.05, style="italic")
+    mm_axes(ax, w, h, x0=-2)
+    A = dict(col=GRAY, lw=0.9, ms=7)
+    T(ax, 4, 43.8, "Aging", 7, ha="left", fontweight="bold"); T(ax, 4, 20.8, "Knockdown", 7, ha="left", fontweight="bold")
+    yt, yb = 33.5, 11.5
+    # aging lane: young spindle fibroblasts with one dividing -> old, large, flat cell -> paused cycle -> cell-cycle genes down
+    place(ax, "fibroblast_5", 12.5, yt + 2.8, 9.0); place(ax, "fibroblast_5", 15.0, yt - 1.8, 9.0)
+    place(ax, "fibroblast_5", 22.0, yt + 1.4, 6.0); place(ax, "fibroblast_5", 23.5, yt - 1.2, 6.0)   # a pair of daughter cells
+    T(ax, 17.5, yt - 8.6, "young: cycling\nfibroblasts", 6.5, linespacing=1.05)
+    arrow(ax, 29, yt, 35, yt, **A)
+    place(ax, "fibroblast_4", 45, yt, 15.5); T(ax, 45, yt - 8.6, "old: large, flat,\nfewer cycling", 6.5, linespacing=1.05)
+    arrow(ax, 55, yt, 61, yt, **A)
+    cc_wheel(ax, 66.5, yt, 3.5); T(ax, 66.5, yt - 8.6, "cell cycle\npaused", 6.5, linespacing=1.05)
+    arrow(ax, 72, yt, 78, yt, **A)
+    down_bars(ax, 79.5, yt + 2.5); T(ax, 85, yt - 8.6, "cell-cycle\ngenes down", 6.5, linespacing=1.05)
+    # knockdown lane: dCas9-KRAB switches an essential gene off -> slower-growing cell -> paused cycle -> the same genes down
+    dcas9_krab(ax, 15, yb + 1.2, 15.5); T(ax, 15, yb - 8.4, "dCas9-KRAB silences\nan essential gene", 6.5, linespacing=1.05)
+    arrow(ax, 29, yb, 35, yb, **A)
+    place(ax, "lymphocyte", 45, yb, 6.5, tint="#8c8c8c"); T(ax, 45, yb - 8.4, "slower-growing\ncells", 6.5, linespacing=1.05)
+    arrow(ax, 55, yb, 61, yb, **A)
+    cc_wheel(ax, 66.5, yb, 3.5); T(ax, 66.5, yb - 8.4, "cell cycle\npaused", 6.5, linespacing=1.05)
+    arrow(ax, 72, yb, 78, yb, **A)
+    down_bars(ax, 79.5, yb + 2.5); T(ax, 85, yb - 8.4, "same genes\ndown", 6.5, linespacing=1.05)
+    # the lanes meet
+    arrow(ax, 93, yt, 101, 26.5, rad=-0.2, **A); arrow(ax, 93, yb, 101, 18.5, rad=0.2, **A)
+    box(ax, 103, 17.5, 23, 10, fc="white", ec=INK, lw=0.6); T(ax, 114.5, 22.5, "same genes,\nsame direction", 6.5, linespacing=1.05)
+    arrow(ax, 128, 22.5, 132, 22.5, **A)
+    x0, wb = 134, 38
+    score_bar(ax, x0, 21, wb, 3.6, "", "")
+    T(ax, x0 + wb / 2, 27.0, "0", 6.5)
+    T(ax, x0 + wb / 4, 17.4, "R < 0\nlooks older", 6.5, linespacing=1.05); T(ax, x0 + 3 * wb / 4, 17.4, "R > 0\nlooks younger", 6.5, linespacing=1.05)
+    ax.annotate("", xy=(x0 + 6, 25.2), xytext=(x0 + 6, 31.2), arrowprops=dict(arrowstyle="-|>", color=GRAY, lw=0.9, mutation_scale=7))
+    T(ax, x0 + 6, 34.4, "most essential-gene\nknockdowns", 6.5, linespacing=1.05)
+    T(ax, x0 + wb / 2, 10.6, "R > 0 only if the knockdown\nkeeps cells growing", 6.5, linespacing=1.05)
+    T(ax, x0 + wb / 2, 3.0, "Holds for a signature with a cell-\ncycle arm; the GTEx-derived\nsignature has none", 6.5, color=GRAY, linespacing=1.05, style="italic")
 
 
-# ------------------------------------------------------------------ graphical abstract (square, ~15 words)
+# ------------------------------------------------------------------ graphical abstract (square, about 20 words)
 def graphical_abstract(path):
     from PIL import Image
     S = 152.4  # 6 inches in mm
     fig = plt.figure(figsize=(6, 6)); ax = fig.add_axes([0, 0, 1, 1]); mm_axes(ax, S, S)
     big, mid = 23, 21
+    A = dict(col=INK, lw=2.2, ms=18)
     # row 1: inputs
     box(ax, 4, 104, 68, 44, fc="white"); T(ax, 38, 140, "Aging cohorts", big, fontweight="bold")
-    for i, (ic, tint) in enumerate([("fibroblast", None), ("fibroblast", None), ("skin", None)]):
+    for i, ic in enumerate(["fibroblast", "fibroblast", "skin"]):
         place(ax, ic, 17 + i * 21, 121, 18 if ic == "fibroblast" else 15)
     for i, coh in enumerate(["Discovery", "GTEx fibroblasts", "GTEx skin"]):
         ax.add_patch(Circle((17 + i * 21, 108.5), 2.4, fc=COHORT_C[coh], ec="none", zorder=6))
     box(ax, 80.4, 104, 68, 44, fc="white"); T(ax, 114.4, 140, "CRISPRi screens", big, fontweight="bold")
-    place(ax, "cas9", 98, 121, 28)
-    for i, (c, ic) in enumerate([("K562", "myeloid_cell"), ("RPE1", "fibroblast_flat"), ("HepG2", "liver"), ("Jurkat", "lymphocyte")]):
-        place(ax, ic, 121 + (i % 2) * 14, 126 - (i // 2) * 13, 11, tint=SCREEN_C[c])
+    dcas9_krab(ax, 98, 121, 28)
+    for i, c in enumerate(["K562", "RPE1", "HepG2", "Jurkat"]):
+        place(ax, CELL_ICON[c], 124 + (i % 2) * 14, 127 - (i // 2) * 14, 10.5, tint=SCREEN_C[c])
     # row 2: score
-    arrow(ax, 38, 101, 66, 86, lw=2.2, ms=18); arrow(ax, 114.4, 101, 86.4, 86, lw=2.2, ms=18)
-    T(ax, 76.2, 79, "Reversal score", big, fontweight="bold")
+    arrow(ax, 38, 101, 66, 87, **A); arrow(ax, 114.4, 101, 86.4, 87, **A)
+    T(ax, 76.2, 80, "Reversal score", big, fontweight="bold")
     score_bar(ax, 36, 66, 80.4, 7, "", "", size=big)
     T(ax, 36, 61, "older", mid, ha="left", color=GRAY); T(ax, 116.4, 61, "younger", mid, ha="right", color=GRAY)
-    for x in (30, 76.2, 122.4): arrow(ax, 76.2, 55, x, 47, lw=2.2, ms=18)
+    for x in (25.4, 76.2, 127): arrow(ax, 76.2, 55, x, 48, **A)
     # row 3: findings
-    cards = [(4, "Cohort\ndecides\nranking"), (54.8, "Growth\ndrives\nscore"), (105.6, "Little left\nafter\nadjustment")]
-    for x, lab in cards:
+    for x, lab in [(4, "Cohort\ndecides\nranking"), (54.8, "Growth\ndrives\nscore"), (105.6, "Labels\nmatch\ngrowth")]:
         box(ax, x, 3, 42.8, 42, fc="#f5f5f5"); T(ax, x + 21.4, 13.5, lab, mid, fontweight="bold", linespacing=1.0)
-    # icon 1: two donor icons with crossed arrows
-    place(ax, "old_man", 16, 35, 7); place(ax, "old_woman", 34, 35, 7.5)
+    place(ax, "old_man", 16, 35, 7); place(ax, "old_woman", 34, 35, 7.5)                       # two cohorts, crossed arrows
     arrow(ax, 20, 38, 30, 29, col=INK, lw=1.6, ms=12); arrow(ax, 30, 38, 20, 29, col=INK, lw=1.6, ms=12)
-    # icon 2: dividing cell -> slowed cell -> older end of the bar
-    place(ax, "mitosis", 66, 34, 14); arrow(ax, 74.5, 34, 79, 34, col=INK, lw=1.6, ms=12)
-    cc_wheel(ax, 84, 34, 4.2); arrow(ax, 89, 34, 92.5, 34, col=INK, lw=1.6, ms=12)
-    score_bar(ax, 93.5, 32.5, 5, 3, "", "")
-    # icon 3: near-flat bars
-    for i, hgt in enumerate([1.6, 1.2, 1.9, 1.4, 1.7]):
-        ax.add_patch(Rectangle((115 + i * 5, 29), 3.4, hgt, fc="#7f7f7f", ec="none", zorder=5))
-    ax.plot([113, 141], [29, 29], color=INK, lw=1.2, zorder=6); ax.plot([113, 141], [38, 38], color=GRAY, lw=0.8, ls=":", zorder=6)
+    place(ax, "mitosis", 65, 34, 13); arrow(ax, 73, 34, 78, 34, col=INK, lw=1.6, ms=12)          # dividing cell slows
+    cc_wheel(ax, 84, 34, 4.2); arrow(ax, 89.5, 34, 93, 34, col=INK, lw=1.6, ms=12)
+    score_bar(ax, 94, 32.5, 4.5, 3, "", "")
+    place(ax, "worm", 117, 35, 8); place(ax, "mouse", 128, 35, 8.5)                              # labels track the growth baseline
+    T(ax, 137.5, 35, "=", mid, fontweight="bold"); cc_wheel(ax, 143.5, 35, 3.6, paused=False)
     fig.savefig(str(path) + ".pdf", facecolor="white"); fig.savefig(str(path) + ".png", dpi=300, facecolor="white")
     Image.open(str(path) + ".png").convert("RGB").save(str(path) + ".png", dpi=(300, 300))
     Image.open(str(path) + ".png").save(str(path) + ".tif", dpi=(300, 300), compression="tiff_lzw")

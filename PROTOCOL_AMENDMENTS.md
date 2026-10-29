@@ -56,7 +56,6 @@ Dates below come from the authors' records; the repository history shows when ea
 | X16 | Proliferation deciles, distance correlation, mutual information; definitions V6 (spline) and V7 (no magnitude); filtered Pareto front; ranks of senescence genes; up-minus-down score | results/rev3_scores_*.csv |
 | X17 | Cross-cohort elastic-net age prediction | results/rev3_cohort_age_prediction.csv |
 | X18 | TRACE run end to end with a GTEx-derived discovery signature | results/e18_gtex_discovery/ |
-| – | RPE1 split-cell reliability from the single-cell RPE1 release | Planned, not run |
 
 ### Amendment 4 (28 October 2026)
 
@@ -69,3 +68,12 @@ Dates below come from the authors' records; the repository history shows when ea
 | X23 | GTEx-derived signature (X18): proliferation-only baseline, paired AUROC tests, oxidative-phosphorylation and stress program tests, Hallmark composition | results/x_gtex_signature*.{json,csv} |
 | X24 | Random-signature null compared with the real signature without proliferation genes (V2 input) | results/rev3_scores.json, figures/source_data/Fig2E.csv |
 | X25 | CellAge labels by manipulation method (CellAge web table); V6 and V7 effects on the top-5% lists and the Pareto front; table of all exploratory tests with family sizes | results/x_cellage_method.csv, x_v6v7_effects.json, x_exploratory_tests.csv |
+
+### Amendment 5 (29 October 2026)
+
+| ID | Analysis | Outputs |
+|---|---|---|
+| X26 | Random-signature null: every raw-score statistic compared with the real signature without proliferation genes (V2 input), with one-sided empirical P | results/x_random_signature_v2.csv |
+| X27 | Agreement among the k strongest discovery age genes, k = 50 to 1,000 (the choice k = 200 was made after the first results) | results/x_topk_sweep.csv |
+| X28 | Permuted-age null for the agreement between GTEx fibroblasts and GTEx skin | results/x_gtex_pair_null.json |
+| X29 | Per-family Holm and Benjamini–Hochberg values for every exploratory test; audit report with one row per check | results/x_exploratory_tests.csv, results/trace_report.csv |

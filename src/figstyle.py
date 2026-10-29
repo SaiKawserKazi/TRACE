@@ -1,4 +1,4 @@
-"""Figure standards for TRACE: built at final width (174 / 114 / 85 mm), Arial, text 6.5-7 pt, subscripts >= 5.5 pt,
+"""Figure standards for TRACE: built at final width (174 / 114 / 85 mm), Arial, text 6.5-7 pt, subscripts >= 6 pt,
 9 pt panel letters on a fixed grid, vector PDF with embedded fonts plus RGB 600 dpi PNG.
 Colors: screen colors only for screens, cohort colors only for cohorts, red/blue only for age direction; everything else in
 black and grays, told apart by line style, marker shape and fill."""
@@ -10,7 +10,7 @@ import matplotlib._mathtext as _mt
 from matplotlib.patches import Rectangle, FancyBboxPatch
 from config import FIG, RES
 
-_mt.SHRINK_FACTOR = 0.84            # subscripts at >= 5.5 pt for 6.5-7 pt labels
+_mt.SHRINK_FACTOR = 0.93            # subscripts at >= 6 pt for 6.5-7 pt labels
 SRC = FIG / "source_data"; SRC.mkdir(parents=True, exist_ok=True)
 MM = 1 / 25.4
 W1, W15, W2 = 85 * MM, 114 * MM, 174 * MM
@@ -22,7 +22,7 @@ plt.rcParams.update({
     "axes.spines.top": False, "axes.spines.right": False, "legend.frameon": True, "legend.framealpha": 1.0, "legend.edgecolor": "none",
     "legend.borderpad": 0.25, "legend.handlelength": 1.2, "legend.handletextpad": 0.4, "legend.borderaxespad": 0.3,
     "pdf.fonttype": 42, "ps.fonttype": 42, "savefig.dpi": 600, "figure.dpi": 150, "axes.titlepad": 3, "axes.labelpad": 2,
-    "axes.titlelocation": "left", "mathtext.fontset": "custom", "mathtext.rm": "Arial", "mathtext.it": "Arial:italic",
+    "axes.titlelocation": "center", "mathtext.fontset": "custom", "mathtext.rm": "Arial", "mathtext.it": "Arial:italic",
     "mathtext.bf": "Arial:bold", "axes.unicode_minus": True, "axes.edgecolor": "#222222", "xtick.color": "#222222",
     "ytick.color": "#222222", "text.color": "#111111", "axes.labelcolor": "#111111", "hatch.linewidth": 0.5,
     "errorbar.capsize": 0, "lines.markersize": 3})
@@ -34,7 +34,9 @@ SCREEN_L = {"K562": "K562 ess.", "K562gw": "K562 gw", "RPE1": "RPE1", "HepG2": "
 SCREENS = ["K562", "K562gw", "RPE1", "HepG2", "Jurkat"]
 COHORT_C = {"Discovery": "#000000", "GTEx fibroblasts": "#CC79A7", "GTEx skin": "#E69F00"}
 UP, DOWN = "#B2182B", "#2166AC"
-CORR_CMAP, COUNT_CMAP = "RdBu_r", "Greys"
+CORR_CMAP, COUNT_CMAP = "RdBu_r", "Blues"
+ACCENT = "#6A51A3"                                              # one accent for "real" values against gray nulls
+CORR_LIM = 0.6                                                  # one diverging scale for every correlation heatmap
 VARS = ["V0 raw", "V1 pre-specified", "V2 genes removed", "V3 resid. (all 3)", "V4 resid. (prolif.)", "V5 stratified",
         "V6 spline resid.", "V7 resid. (prolif. + identity)"]
 VSHORT = {v: v.split(" ", 1)[0] for v in VARS}
@@ -64,10 +66,11 @@ def gridx(ax): ax.xaxis.grid(True, color=GRID, lw=0.4); ax.set_axisbelow(True)
 def gridy(ax): ax.yaxis.grid(True, color=GRID, lw=0.4); ax.set_axisbelow(True)
 
 
-def title(ax, text, kind=None, tag=None):
-    """Plain panel title (left) and, on the same baseline, a status tag right-aligned to the axes."""
-    t = ax.set_title(text, loc="left")
-    if kind:
+def title(ax, text, kind=None, tag=None, pill=False):
+    """Plain panel title centered over the plot. The status (pre-specified or exploratory) is stated in the legend, so the
+    in-figure tag is off unless pill=True."""
+    t = ax.set_title(text, loc="center")
+    if kind and pill:
         lab = tag or ("Pre-specified" if kind == "pre" else "Exploratory")
         box = dict(boxstyle="round,pad=0.16,rounding_size=0.12", fc="#111111" if kind == "pre" else "white", ec="#111111" if kind == "pre" else "#8c8c8c", lw=0.5)
         ax.annotate(lab, xy=(1.0, 1.0), xycoords="axes fraction", xytext=(0, 3 + 0.5), textcoords="offset points", ha="right", va="bottom",
@@ -105,8 +108,8 @@ def save(fig, name):
     Image.open(p).convert("RGB").save(p, dpi=(600, 600)); plt.close(fig)
 
 
-def cbar(fig, im, ax, label, ticks=None, frac=0.05, pad=0.03, ticklabels=None):
-    cb = fig.colorbar(im, ax=ax, fraction=frac, pad=pad)
+def cbar(fig, im, ax, label, ticks=None, frac=0.05, pad=0.03, ticklabels=None, extend="neither"):
+    cb = fig.colorbar(im, ax=ax, fraction=frac, pad=pad, extend=extend)
     cb.ax.tick_params(labelsize=6.5, width=0.4, length=1.5); cb.outline.set_linewidth(0.4); cb.set_label(label, fontsize=6.5)
     if ticks is not None: cb.set_ticks(ticks)
     if ticklabels is not None: cb.set_ticklabels(ticklabels)

@@ -33,6 +33,10 @@ Confirmatory results are in `results.json` only; everything else is exploratory 
 | `x_gtex_signature*.{json,csv}` | x_gtex_signature.py | X23 | Both signatures side by side: H1–H5, programs, evidence, paired tests, composition |
 | `x_cellage_method.csv` | x_cellage_method.py | X25 | CellAge AUROC by manipulation method |
 | `x_v6v7_effects.json` | x_v6v7_effects.py | X25 | V6 and V7 effects on top-5% lists and the Pareto front |
-| `x_exploratory_tests.csv` | x_exploratory_tests.py | X25 | Every exploratory test with P value and family size |
+| `x_exploratory_tests.csv` | x_exploratory_tests.py | X25, X29 | Every exploratory test once, with P value, family size, and Holm and Benjamini–Hochberg values within the family |
+| `x_random_signature_v2.csv` | x_random_signature_v2.py | X26 | Random-signature null against the real signature without proliferation genes (V2 input) |
+| `x_topk_sweep.csv` | x_topk_sweep.py | X27 | Cross-cohort agreement among the k strongest discovery genes, k = 50 to 1,000 |
+| `x_gtex_pair_null.json` | x_gtex_pair_null.py | X28 | Permuted-age null for the agreement between GTEx fibroblasts and GTEx skin |
+| `trace_report.csv` | report.py | X29 | The audit report: one row per check with value, reference, rule and pass/fail |
 
 Figure source data (one CSV per panel, final numbering) are in `figures/source_data/`.

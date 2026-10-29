@@ -13,11 +13,11 @@ MINUS = lambda v, d=1: f"{v:.{d}f}".replace("-", "−")
 
 # S1 cohort controls
 def S1():
-    fig = plt.figure(figsize=(W2, 120 * MM)); gs = fig.add_gridspec(2, 3, hspace=0.75, wspace=0.6, left=0.08, right=0.98, top=0.93, bottom=0.1)
+    fig = plt.figure(figsize=(W2, 126 * MM)); gs = fig.add_gridspec(2, 3, hspace=0.75, wspace=0.6, left=0.08, right=0.98, top=0.93, bottom=0.15)
     PM, SUB, C3 = CSV("rev3_cohort_permutations.csv"), CSV("rev3_cohort_power_subsets.csv").iloc[:, 0], J("rev3_cohort.json"); fd = C3["fdr05"]
     ax = a1 = fig.add_subplot(gs[0, 0]); v = PM.fdr05_discovery
     bins = np.r_[0, 0.5, np.logspace(0, 4, 30)]; ax.hist(v.clip(lower=0) + 0.0, bins=bins, color=LIGHT)
-    ax.set_xscale("symlog", linthresh=1); ax.set_xticks([0, 10, 100, 1000, 10000]); ax.set_xticklabels(["0", "10", "100", "1,000", "10,000"])
+    ax.set_xscale("symlog", linthresh=1); ax.set_xticks([0, 10, 100, 1000, 10000]); ax.set_xticklabels(["0", "10", "100", "1k", "10k"])
     obs = fd[F0]; ax.axvline(obs, color=INK, lw=1)
     ax.text(obs * 0.8, ax.get_ylim()[1] * 0.92, f"observed\n{obs:,}", ha="right", va="top", fontsize=6.5)
     ax.set_xlabel("FDR < 0.05 age genes, Discovery"); ax.set_ylabel("Permutations"); title(ax, f"Permuted age (n = {len(PM):,})")
@@ -27,7 +27,7 @@ def S1():
     ax.set_xlabel("Cross-cohort ρ, permuted age"); ax.set_ylabel("Permutations"); ax.legend(loc="upper left", fontsize=6.5); title(ax, "Null for agreement")
     ax = a3 = fig.add_subplot(gs[0, 2]); obs20 = fd["F1 ages 20-79 (GTEx range)"]
     ax.hist(SUB, bins=40, color=LIGHT); ax.axvline(obs20, color=INK, lw=1)
-    ax.text(obs20 + 150, ax.get_ylim()[1] * 0.95, f"observed, ages 20–79: {obs20}", ha="left", va="top", fontsize=6.5)
+    ax.text(obs20 + 150, ax.get_ylim()[1] * 0.62, f"observed\n(ages 20–79)\n{obs20}", ha="left", va="center", fontsize=6.5, linespacing=1.05)
     ax.set_xlabel("FDR < 0.05 genes, 74 random donors"); ax.set_ylabel("Subsets"); title(ax, f"Power-matched (n = {len(SUB):,})")
     ax = a4 = fig.add_subplot(gs[1, 0:2]); CC = CSV("rev3_cohort_cellcycle_t.csv"); pos = 0; ticks = []
     for coh in ["Discovery", "GTEx fibroblasts", "GTEx skin"]:
@@ -35,7 +35,8 @@ def S1():
             vv = CC[(CC.cohort == coh) & (CC.set == st)].t.values
             ax.boxplot(vv, positions=[pos], widths=0.55, showfliers=False, medianprops=dict(color=INK, lw=1), boxprops=dict(lw=0.6), whiskerprops=dict(lw=0.6), capprops=dict(lw=0))
             ax.scatter(pos + np.random.default_rng(int(pos * 10)).uniform(-0.18, 0.18, len(vv)), vv, s=1.2, color=COHORT_C[coh], lw=0, alpha=0.6, zorder=3)
-            ticks.append((pos, f"{coh}\n{'E2F targets' if st.startswith('E2F') else 'G2M checkpoint'}\nn = {len(vv)}")); pos += 1
+            ticks.append((pos, f"{'E2F' if st.startswith('E2F') else 'G2M'}\nn = {len(vv)}")); pos += 1
+        ax.text(pos - 1.5, -0.3, coh, transform=ax.get_xaxis_transform(), ha="center", va="top", fontsize=6.5, color=COHORT_C[coh] if coh != "Discovery" else INK)
         pos += 0.5
     ax.axhline(0, **REF); ax.set_xticks([t for t, _ in ticks]); ax.set_xticklabels([l for _, l in ticks]); ax.set_ylabel("Age t-statistic")
     title(ax, "Cell-cycle gene age effects")
@@ -56,16 +57,16 @@ def S1():
 def S2():
     specs = list(dict.fromkeys(SENS.discovery_spec))
     fig, axs = plt.subplots(1, 2, figsize=(W2, 112 * MM), sharey=True, gridspec_kw={"wspace": 0.08, "left": 0.2, "right": 0.98, "top": 0.8, "bottom": 0.11})
-    shades = {"GTEx fibroblasts": ["#e8c3d8", "#CC79A7", "#8c4f74", "#4a2a3d"], "GTEx skin": ["#f6d58f", "#E69F00", "#9c6c00", "#4f3700"]}
+    shades = {"GTEx fibroblasts": ["#e8c3d8", "#CC79A7", "#8c4f74", "#4a2a3d"], "GTEx skin": ["#e9c46a", "#E69F00", "#9c6c00", "#4f3700"]}
     rows = []
     for ax, coh, key in [(axs[0], "GTEx fibroblasts", "fibroblasts"), (axs[1], "GTEx skin", "skin")]:
         reps = [r for r in dict.fromkeys(SENS.replication_spec) if r.startswith(key)]
         for k, rp in enumerate(reps):
             d = BC[BC.replication_spec == rp].set_index("discovery_spec").reindex(specs); yy = np.arange(len(specs)) + (k - 1.5) * 0.19
             ax.errorbar(d.sig_sign_agree_fixed, yy, xerr=EB(d.sig_sign_agree_fixed, d.sig_sign_agree_fixed_bc_lo, d.sig_sign_agree_fixed_bc_hi), fmt="o", ms=2.6,
-                        color=shades[coh][k], elinewidth=0.75, label=rp.split(": ", 1)[1].replace("G2 G1", "G2: G1").replace("G1 +", "G1:").replace("G0 pre-specified (age + sex)", "G0: age + sex").replace("G3 age + sex + 5 hidden factors", "G3: + 5 hidden factors"))
+                        color=shades[coh][k], elinewidth=0.75, label=rp.split(": ", 1)[1].replace("G2 G1 + nucleic-acid batch", "G2: G1 + nucleic-acid batch").replace("G2 G1", "G2: G1").replace("G1 +", "G1:").replace("G0 pre-specified (age + sex)", "G0: age + sex").replace("G3 age + sex + 5 hidden factors", "G3: + 5 hidden factors"))
             rows += [{"tissue": coh, "replication": rp, "discovery": f_, "sign_agree": v, "bc_lo": l, "bc_hi": h} for f_, v, l, h in zip(specs, d.sig_sign_agree_fixed, d.sig_sign_agree_fixed_bc_lo, d.sig_sign_agree_fixed_bc_hi)]
-        ax.axvline(0.5, **REF); ax.set_xlim(0.1, 0.85); title(ax, coh)
+        ax.axvline(0.5, **REF); ax.set_xlim(0.0, 0.9); title(ax, coh)
         ax.set_xlabel("Fraction of signature genes with the\nsame age direction (95% CI)")
         ax.legend(loc="lower left", bbox_to_anchor=(0.0, 1.06), ncol=1, fontsize=6.5, frameon=False, handletextpad=0.2, labelspacing=0.25)
     axs[0].set_yticks(range(len(specs))); axs[0].set_yticklabels([FSHORT[s[:2]] for s in specs]); axs[0].invert_yaxis()
@@ -75,20 +76,20 @@ def S2():
 
 # S3 score distributions
 def S3():
-    fig, axs = plt.subplots(1, 5, figsize=(W2, 66 * MM), sharey=True, gridspec_kw={"wspace": 0.12, "left": 0.07, "right": 0.99, "top": 0.74, "bottom": 0.27})
+    fig, axs = plt.subplots(1, 5, figsize=(W2, 66 * MM), sharey=True, gridspec_kw={"wspace": 0.12, "left": 0.07, "right": 0.99, "top": 0.66, "bottom": 0.16})
     ntm = CSV("rev3_reliability_nt_sizematched.csv"); ntm.columns = ["screen", "i", "R"]
     nc = R["negctrl"]; bins = np.linspace(-0.75, 0.45, 50); rows = []
     for ax, c in zip(axs, SC):
         s = scores(c); ax.hist(s.R_raw, bins=bins, color=SCREEN_C[c], density=True)
         xx = np.linspace(-0.75, 0.45, 200); ax.plot(xx, stats.norm.pdf(xx, nc[c]["nt_mean"], nc[c]["nt_sd"]), color=INK, lw=0.9)
         if c in ("HepG2", "Jurkat"): ax.hist(ntm[ntm.screen == c].R.values, bins=bins, histtype="step", density=True, color=GRAY, lw=0.9)
-        ax.set_title(f"{SCREEN_L[c]} (n = {len(s):,})\nSD, knockdowns: {fmt(nc[c]['pert_sd'])}\nSD, non-targeting: {fmt(nc[c]['nt_sd'])}", fontsize=6.5, loc="left")
+        ax.set_title(f"{SCREEN_L[c]} (n = {len(s):,})\nSD, knockdowns: {fmt(nc[c]['pert_sd'])}\nSD, non-targeting: {fmt(nc[c]['nt_sd'])}", fontsize=6.5)
         ax.set_xticks([-0.6, -0.3, 0, 0.3]); ax.set_xticklabels(["−0.6", "−0.3", "0", "0.3"])
         if c == "RPE1": ax.set_xlabel("Raw score R")
         rows.append({"screen": c, "n": len(s), "sd_knockdowns": nc[c]["pert_sd"], "sd_nt": nc[c]["nt_sd"]})
     axs[0].set_ylabel("Density")
     fig.legend([Rectangle((0, 0), 1, 1, fc=LIGHT), Line2D([], [], color=INK), Line2D([], [], color=GRAY)],
-               ["knockdowns (screen color)", "non-targeting, normal fit", "non-targeting, size-matched (HepG2, Jurkat)"], loc="lower center", ncol=3, fontsize=6.5, frameon=False)
+               ["knockdowns (screen color)", "non-targeting, normal fit", "non-targeting, size-matched (HepG2, Jurkat)"], loc="upper center", bbox_to_anchor=(0.5, 1.0), ncol=3, fontsize=6.5, frameon=False)
     src(pd.DataFrame(rows), "FigS3", index=False); letters(fig, [[(a, L) for a, L in zip(axs, "ABCDE")]]); save(fig, "FigS3")
 
 
@@ -100,7 +101,7 @@ def S4():
         ax.scatter(s.stress, s.R_raw, s=1, c=SCREEN_C[c], lw=0, alpha=0.35, rasterized=True)
         q = pd.qcut(s.stress.rank(method="first"), 10, labels=False); g = s.groupby(q.values).agg(x=("stress", "median"), y=("R_raw", "median"))
         ax.plot(g.x, g.y, color=INK, lw=1.0, marker="o", ms=1.6)
-        ax.set_title(f"{SCREEN_L[c]}\nρ = {fmt(H2[c]['rho_raw_stress'])}, n = {len(s):,}", fontsize=6.5, loc="left"); ax.set_ylim(-0.7, 0.45)
+        ax.set_title(f"{SCREEN_L[c]}\nρ = {fmt(H2[c]['rho_raw_stress'])}, n = {len(s):,}", fontsize=6.5); ax.set_ylim(-0.7, 0.45)
         ax.xaxis.set_major_formatter(plt.FuncFormatter(lambda v, _: f"{v:.1f}".replace("-", "−")))
         src(s[["stress", "R_raw"]], f"FigS4_{c}")
     fig.supxlabel("Stress/inflammation shift (mean z; x clipped at the 99.5th percentile)", fontsize=6.5, y=0.04)
@@ -110,20 +111,21 @@ def S4():
 # S5 proliferation dependence by decile (V0 on its own row)
 def S5():
     dec = CSV("rev3_scores_prolif_deciles.csv"); dep = CSV("rev3_scores_prolif_dependence.csv")
-    fig, axs = plt.subplots(2, 5, figsize=(W2, 92 * MM), sharex=True, gridspec_kw={"hspace": 0.62, "wspace": 0.35, "left": 0.08, "right": 0.99, "top": 0.92, "bottom": 0.17},
+    fig, axs = plt.subplots(2, 5, figsize=(W2, 92 * MM), sharex=True, gridspec_kw={"hspace": 0.62, "wspace": 0.35, "left": 0.08, "right": 0.965, "top": 0.92, "bottom": 0.17},
                             height_ratios=[0.8, 1])
     sty = {"V1 pre-specified": ("-", "o", INK), "V6 spline resid.": ("--", "s", GRAY), "V7 resid. (prolif. + identity)": (":", "D", GRAY)}
     for j, c in enumerate(SC):
         d0 = dec[(dec.screen == c) & (dec.variant == "V0 raw")]
         axs[0, j].plot(d0.decile, d0["mean"], color=INK, marker="o", ms=1.8); axs[0, j].fill_between(d0.decile, d0["mean"] - d0["sd"], d0["mean"] + d0["sd"], color="#eeeeee", lw=0)
-        axs[0, j].set_title(SCREEN_L[c], fontsize=6.5, loc="left"); axs[0, j].axhline(0, **REF)
+        axs[0, j].set_title(SCREEN_L[c], fontsize=6.5); axs[0, j].axhline(0, **REF)
         for v, (ls, mk, col) in sty.items():
             d = dec[(dec.screen == c) & (dec.variant == v)]
-            axs[1, j].plot(d.decile, d["mean"], color=col, ls=ls, marker=mk, ms=1.8, label=VLABEL[v], mfc="white" if v != "V1 pre-specified" else col)
+            axs[1, j].plot(d.decile, d["mean"], color=col, ls=ls, marker=mk, ms=1.8, label=VLABEL[v], mfc="white" if v != "V1 pre-specified" else col,
+                           zorder=5 if v == "V1 pre-specified" else 3)
         axs[1, j].axhline(0, **REF)
         dc = {v: dep[(dep.screen == c) & (dep.variant == v)].distance_corr.iloc[0] for v in sty}
         vs = [f"{VSHORT[v]} {fmt(dc[v])}" for v in sty]
-        axs[1, j].set_title("Distance correlation\n" +", ".join(vs), fontsize=6.5, loc="left")
+        axs[1, j].set_title("Distance correlation\n" +", ".join(vs), fontsize=6.5)
         axs[1, j].set_xticks([1, 5, 10])
     axs[0, 0].set_ylabel("V0 raw: mean (± SD)"); axs[1, 0].set_ylabel("Adjusted: decile mean"); axs[1, 2].set_xlabel("Proliferation decile")
     h, l = axs[1, 0].get_legend_handles_labels(); fig.legend(h, l, loc="lower center", ncol=3, fontsize=6.5, frameon=False)
@@ -132,7 +134,7 @@ def S5():
 
 # S6 random-signature nulls
 def S6():
-    N = CSV("rev3_scores_random_signatures.csv"); real = J("rev3_scores.json")["E5_real"]; dep = CSV("rev3_scores_prolif_dependence.csv")
+    N = CSV("rev3_scores_random_signatures.csv"); real = CSV("x_random_signature_v2.csv").set_index("statistic").real_V2_input; dep = CSV("rev3_scores_prolif_dependence.csv")
     panels = [(f"H2_rho_{c}", f"{SCREEN_L[c]}: ρ(score, proliferation)", dep[(dep.screen == c) & (dep.variant == "V2 genes removed")].spearman.iloc[0], "ρ") for c in SC] + \
              [("H1_median_rho_raw", "Cross-line ρ, raw", real["H1_median_rho_raw"], "median ρ"), ("H1_median_rho_adj", f"Cross-line ρ, {RADJ}", real["H1_median_rho_adj"], "median ρ"),
               ("H4_CellAge_auroc_raw", f"CellAge, raw {RROB}", real["H4_CellAge_auroc_raw"], "AUROC"), ("H4_CellAge_auroc_adj", "CellAge, V1", real["H4_CellAge_auroc_adj"], "AUROC"),
@@ -140,12 +142,14 @@ def S6():
     fig, axs = plt.subplots(3, 4, figsize=(W2, 120 * MM), gridspec_kw={"hspace": 0.9, "wspace": 0.45, "left": 0.07, "right": 0.99, "top": 0.94, "bottom": 0.08})
     rows = []
     for ax, (k, lab, obs, xl), L in zip(axs.ravel(), panels, "ABCDEFGHIJK"):
-        ax.hist(N[k], bins=25, color=LIGHT); ax.axvline(obs, color=INK, lw=1.4)
-        ax.set_title(lab, fontsize=6.5, loc="left"); ax.set_xlabel(xl); ax.set_ylabel("Signatures")
+        ax.hist(N[k], bins=25, color=LIGHT); ax.axvline(obs, color=ACCENT, lw=1.4)
+        lo_, hi_ = min(N[k].min(), obs), max(N[k].max(), obs); pad = 0.06 * (hi_ - lo_); ax.set_xlim(lo_ - pad, hi_ + pad)
+        ax.xaxis.set_major_formatter(plt.FuncFormatter(lambda v, _: f"{v:.2f}".rstrip("0").rstrip(".").replace("-", "−") if abs(v) > 1e-9 else "0"))
+        ax.set_title(lab, fontsize=6.5); ax.set_xlabel(xl); ax.set_ylabel("Signatures")
         ax.yaxis.set_major_locator(plt.MaxNLocator(integer=True, nbins=4))
         rows.append({"statistic": k, "observed": obs, "null_median": N[k].median(), "frac_null_ge_obs": float((N[k] >= obs).mean())})
     axs.ravel()[-1].axis("off")
-    axs.ravel()[-1].legend([Rectangle((0, 0), 1, 1, fc=LIGHT), Line2D([], [], color=INK, lw=1.4)], [f"{len(N)} random signatures", "real signature\n(H2 panels: V2, without\nproliferation genes)"],
+    axs.ravel()[-1].legend([Rectangle((0, 0), 1, 1, fc=LIGHT), Line2D([], [], color=ACCENT, lw=1.4)], [f"{len(N)} random signatures", "real signature without\nproliferation genes (V2 input)"],
                            loc="center", fontsize=6.5)
     src(pd.DataFrame(rows), "FigS6", index=False)
     letters(fig, [[(axs[r, c], "ABCDEFGHIJK"[r * 4 + c]) for c in range(4) if r * 4 + c < 11] for r in range(3)]); save(fig, "FigS6")
@@ -159,8 +163,8 @@ def S7():
     R0, R1 = R, J("e18_gtex_discovery/results.json")
     rho_rows = [("Cross-line ρ, raw (median)", np.median([v["rho_raw"] for v in R0["H1"]["pairs"].values()]), np.median([v["rho_raw"] for v in R1["H1"]["pairs"].values()])),
                 (f"Cross-line ρ, {RADJ} (median)", np.median([v["rho_adj"] for v in R0["H1"]["pairs"].values()]), np.median([v["rho_adj"] for v in R1["H1"]["pairs"].values()])),
-                ("Within K562 (H1b)", R0["H1b"]["rho_within_K562"], R1["H1b"]["rho_within_K562"]),
-                ("Donor bootstrap median (H5a)", R0["H5"]["median_rho"], R1["H5"]["median_rho"])]
+                ("Within K562", R0["H1b"]["rho_within_K562"], R1["H1b"]["rho_within_K562"]),
+                ("Donor-bootstrap median", R0["H5"]["median_rho"], R1["H5"]["median_rho"])]
     ax = a = fig.add_subplot(gs[0]); y = np.arange(len(rho_rows))
     ax.scatter([r[1] for r in rho_rows], y - 0.12, marker="o", color=COHORT_C["Discovery"], s=16, label="Discovery signature", zorder=3)
     ax.scatter([r[2] for r in rho_rows], y + 0.12, marker="s", color=COHORT_C["GTEx fibroblasts"], s=16, label="GTEx-fibroblast signature", zorder=3)
@@ -169,13 +173,14 @@ def S7():
     ax = b = fig.add_subplot(G[1].subgridspec(1, 3, width_ratios=[0.25, 1, 0.08])[1]); progs = ["prolif", "stress", "oxphos", "magnitude", "identity"]
     M = PR.pivot_table(index=["program"], columns=["signature", "screen"], values="rho")
     mat = np.array([[PR[(PR.signature == sg) & (PR.program == p) & (PR.screen == c)].rho.iloc[0] for sg in ["Discovery signature", "GTEx-fibroblast signature"] for c in SC] for p in progs])
-    im = ax.imshow(mat, cmap=CORR_CMAP, vmin=-1, vmax=1, aspect="auto")
-    for (i, j), v in np.ndenumerate(mat): ax.text(j, i, fmt(v, 1), ha="center", va="center", fontsize=6.5, color="white" if abs(v) > 0.55 else INK)
+    im = ax.imshow(mat, cmap=CORR_CMAP, vmin=-CORR_LIM, vmax=CORR_LIM, aspect="auto")
+    for (i, j), v in np.ndenumerate(mat): ax.text(j, i, fmt(v), ha="center", va="center", fontsize=6.5, color="white" if abs(v) > 0.45 else INK)
     ax.axvline(4.5, color="white", lw=2.5)
     ax.set_xticks(range(10)); ax.set_xticklabels([SCREEN_L[c] for c in SC] * 2, rotation=45, ha="right", rotation_mode="anchor"); ax.set_yticks(range(5))
     ax.set_yticklabels(["proliferation", "stress", "oxidative\nphosphorylation", "response size", "identity"]); ax.spines[:].set_visible(False)
     ax.text(2, -0.75, "Discovery signature", ha="center", fontsize=6.5); ax.text(7, -0.75, "GTEx-fibroblast signature", ha="center", fontsize=6.5)
-    cb = fig.colorbar(im, ax=ax, fraction=0.03, pad=0.02); cb.set_label("Spearman ρ with score"); cb.outline.set_visible(False)
+    cb = fig.colorbar(im, ax=ax, fraction=0.03, pad=0.02, extend="both"); cb.set_label("Spearman ρ with score"); cb.outline.set_visible(False)
+    cb.set_ticks([-0.6, 0, 0.6]); cb.set_ticklabels(["−0.6", "0", "0.6"])
     title(ax, " ")
     ax = c_ = fig.add_subplot(gs[2]); rows = []
     for k, (lab, gsn) in enumerate([("CellAge", "all genes"), ("CellAge", "genes in >= 2 lines"), ("GenAge", "all genes"), ("GenAge", "genes in >= 2 lines")]):
@@ -191,9 +196,9 @@ def S7():
     ax.legend([Line2D([], [], marker="o", ls="none", color=INK), Line2D([], [], marker="D", ls="none", mfc="white", mec=INK),
                Line2D([], [], color=COHORT_C["Discovery"]), Line2D([], [], color=COHORT_C["GTEx fibroblasts"])],
               [f"{RROB} (V1)", "proliferation only", "discovery signature", "GTEx-fibroblast signature"],
-              loc="lower center", bbox_to_anchor=(0.5, 1.03), ncol=2, fontsize=6.5, frameon=False); title(ax, " ")
+              loc="lower center", bbox_to_anchor=(0.45, 1.03), ncol=2, fontsize=6.5, frameon=False, columnspacing=0.6); title(ax, " ")
     src(PR, "FigS7C", index=False); src(pd.DataFrame(rows), "FigS7B", index=False); src(pd.DataFrame(rho_rows, columns=["statistic", "discovery", "gtex"]), "FigS7A", index=False)
-    letters(fig, [[(a, "A"), (c_, "B")], [(b, "C")]]); save(fig, "FigS7")
+    letters(fig, [[(a, "A"), (c_, "B")], [(b, "C", a.get_tightbbox(fig.canvas.get_renderer()).transformed(fig.transFigure.inverted()).x0)]]); save(fig, "FigS7")
 
 
 # S8 prediction error of every baseline, relative to the constant predictor
@@ -204,7 +209,7 @@ def S8():
     for k, (p, lab, mk, fc, ec) in enumerate(PRED):
         if p == "constant" or p not in set(NS.predictor): continue
         d = NS[NS.predictor == p].set_index("screen").reindex(SC); v = 100 * (d.mae / base - 1); e = 100 * d.mae_sd / base
-        ax.errorbar(v, x + (k - 4) * 0.075, xerr=e, fmt=mk, ms=3.2, mfc=fc, mec=ec, ecolor=ec, elinewidth=0.6, label=lab)
+        ax.errorbar(v, x + (k - 4) * 0.11, xerr=e, fmt=mk, ms=3.2, mfc=fc, mec=ec, ecolor=ec, elinewidth=0.6, label=lab)
         rows += [{"screen": c, "predictor": p, "mae_rel_constant_pct": vv} for c, vv in zip(SC, v)]
     ax.axvline(0, **REF); ax.set_yticks(x); ax.set_yticklabels([f"{SCREEN_L[c]} (n = {int(NS[NS.screen == c].n.iloc[0]):,})" for c in SC]); ax.invert_yaxis()
     ax.set_xlabel("Mean absolute error relative to the constant predictor (%; mean ± SD over 10 seeds)"); gridx(ax)
@@ -224,7 +229,7 @@ def S9():
                 rows.append({"labels": lab, "screen": c, "score": typ, "auroc": A_, "lo": A_ - 1.96 * se, "hi": A_ + 1.96 * se, "n_pos": n1, "n_neg": n2})
             ax.text(-0.03, i, f"{n1}/{n2}", transform=ax.get_yaxis_transform(), fontsize=6.5, va="center", ha="right", color=GRAY)
         ax.text(-0.03, -0.75, "n (+/−)", transform=ax.get_yaxis_transform(), fontsize=6.5, va="center", ha="right", color=GRAY)
-        ax.axvline(0.5, **REF); ax.set_xlim(0.3, 0.75); ax.set_xlabel("AUROC (95% CI)"); title(ax, lab)
+        ax.axvline(0.5, **REF); ax.set_xlim(0.25, 0.75); ax.set_xlabel("AUROC (95% CI)"); title(ax, lab)
     axs[0].set_yticks(range(5)); axs[0].set_yticklabels([SCREEN_L[c] for c in SC]); axs[0].invert_yaxis(); axs[0].tick_params(axis="y", pad=34)
     fig.legend([Line2D([], [], marker="s", ls="none", mfc="white", mec=INK), Line2D([], [], marker="o", ls="none", color=INK)], ["raw R", f"{RADJ} (V1)"],
                loc="upper center", ncol=2, fontsize=6.5, frameon=False)
@@ -239,7 +244,7 @@ def S10():
         ax.scatter(sub.prolif_shift, sub.R_rob, s=2, color=LIGHT, lw=0, rasterized=True)
         F = sub[sub[pcol].astype(bool)]; weak = F.flag_weak_or_unmeasured_knockdown.astype(bool)
         ax.scatter(F.prolif_shift[~weak], F.R_rob[~weak], s=11, color=INK, lw=0); ax.scatter(F.prolif_shift[weak], F.R_rob[weak], s=11, facecolors="white", edgecolors=INK, lw=0.7)
-        ax.set_title(f"{lab}: {len(sub):,} genes, {len(F)} on the front", fontsize=6.5, loc="left")
+        ax.set_title(f"{lab}: {len(sub):,} genes, {len(F)} on the front", fontsize=6.5)
         ax.axhline(0, color=LIGHT, lw=0.4, zorder=0); ax.axvline(0, color=LIGHT, lw=0.4, zorder=0); ax.set_xlim(-0.33, 0.16)
         if "ANLN" in F.index:
             ax.annotate("$\\it{ANLN}$", (F.prolif_shift["ANLN"], F.R_rob["ANLN"]), xytext=(F.prolif_shift["ANLN"] + 0.06, F.R_rob["ANLN"] - 0.02), fontsize=6.5,

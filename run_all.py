@@ -1,10 +1,11 @@
 """Reproduce every result and figure of TRACE from the inputs listed in DATA_MANIFEST.csv.
 
-    python run_all.py              # full pipeline: download and check, preprocess, confirmatory, exploratory, figures
+    python run_all.py              # full pipeline: download and check, preprocess, confirmatory, exploratory, report, figures
     python run_all.py --tests      # unit tests only (seconds; no downloads needed)
     python run_all.py --from X     # start at the step whose name starts with X (for example --from x19)
 
 Resample counts and seeds are in src/config.py (the paper's values are the defaults). Each step prints its wall time.
+The audit summary (one row per check, with value, reference, rule and pass/fail) is written to results/trace_report.csv.
 The manuscript text itself is not built here; every number it reports is in results/ (see results/README.md)."""
 import os, subprocess, sys, time
 from pathlib import Path
@@ -39,7 +40,11 @@ STEPS = [
     ("x23-gtex-signature", ["src/x_gtex_signature.py"], {}),
     ("x25-cellage-method", ["src/x_cellage_method.py"], {}),
     ("x25-v6-v7", ["src/x_v6v7_effects.py"], {}),
+    ("x26-random-signatures-v2", ["src/x_random_signature_v2.py"], {}),
+    ("x27-top-k-sweep", ["src/x_topk_sweep.py"], {}),
+    ("x28-gtex-pair-null", ["src/x_gtex_pair_null.py"], {}),
     ("x25-exploratory-tests", ["src/x_exploratory_tests.py"], {}),
+    ("report", ["src/report.py"], {}),
     # figures (final numbering) and their source data
     ("figures-main", ["src/make_figures.py"], {}),
     ("figures-supplement", ["src/make_figures_supp.py"], {}),

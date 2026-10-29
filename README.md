@@ -1,7 +1,7 @@
 # TRACE: Transferable Rejuvenation Assessment across Contexts and Evidence
 
-Code, pre-specified protocol, results and figures for the paper *"TRACE audits transcriptomic rejuvenation rankings from
-perturbation screens"*. TRACE is a pre-specified audit of rankings that score gene knockdowns by how well they reverse an aging
+Code, pre-specified protocol, results and figures for the paper *"Rejuvenation rankings from CRISPRi screens change with the
+aging cohort and track cell growth programs"*. TRACE is a pre-specified audit of rankings that score gene knockdowns by how well they reverse an aging
 expression signature: it swaps the aging cohort, compares score definitions with random signatures and a proliferation-only
 baseline, compares lines and replicate screens, and tests rankings against held-out labels.
 
@@ -19,9 +19,13 @@ or `conda env create -f environment.yml`.
 
 ```bash
 python run_all.py --tests     # unit tests on synthetic data (seconds; no downloads)
-python run_all.py             # everything: download and check inputs, preprocess, confirmatory H1-H5, exploratory analyses, figures
+python run_all.py             # everything: download and check inputs, preprocess, confirmatory H1-H5, exploratory analyses, report, figures
 python run_all.py --from x19  # resume at a step
 ```
+
+The audit summary is written to `results/trace_report.csv`: one row per check (cohort transfer with its power check, programs inside the
+signature, random signatures, replicates, labels against a proliferation-only baseline, knockdown quality), with its value, the reference
+it is judged against, the rule and pass or fail.
 
 Inputs (about 16 GB) are listed with URL, version, access date and SHA-256 in `DATA_MANIFEST.csv`; `src/download.py` fetches and
 checks them. Resample counts and seeds are in `src/config.py` with the paper's values as defaults. Set `TRACE_ROOT` to run from

@@ -13,11 +13,11 @@ def _svg_text(name):
     s = open(os.path.join(ICON_DIR, name if name.endswith(".svg") else name + ".svg"), encoding="utf-8", errors="ignore").read()
     head = re.search(r"<svg\b[^>]*>", s, flags=re.S).group(0)
     vb = re.search(r'viewBox\s*=\s*"([^"]+)"', head)
-    has_w = re.search(r'\swidth\s*=\s*"([0-9.]+)(px)?"', head) and re.search(r'\sheight\s*=\s*"([0-9.]+)(px)?"', head)
-    if vb and not has_w:
+    if vb:  # pad the viewBox by 4% on every side so strokes at the edge of the artwork are never clipped
         x0, y0, w, h = [float(v) for v in re.split(r"[ ,]+", vb.group(1).strip())]
-        new = re.sub(r'\s(width|height)\s*=\s*"[^"]*"', "", head)
-        new = new[:-1] + f' width="{w}" height="{h}">'
+        px_, py_ = 0.04 * w, 0.04 * h; x0, y0, w, h = x0 - px_, y0 - py_, w + 2 * px_, h + 2 * py_
+        new = re.sub(r'\s(width|height|viewBox)\s*=\s*"[^"]*"', "", head)
+        new = new[:-1] + f' viewBox="{x0} {y0} {w} {h}" width="{w}" height="{h}">'
         s = s.replace(head, new, 1)
     return s
 

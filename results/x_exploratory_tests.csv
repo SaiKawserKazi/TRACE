@@ -1,295 +1,399 @@
-family,family_size,test,statistic,value,n,p,p_holm,source
-"Cohort agreement, permuted-age null",40,"F0 pre-specified (age 18+; age + sex) vs GTEx fibroblasts, all genes",Spearman rho,-0.2754168245456749,,0.1638361638361638,,x_cohort_perm_p.csv
-"Cohort agreement, permuted-age null",40,"F0 pre-specified (age 18+; age + sex) vs GTEx fibroblasts, 200 strongest genes",Spearman rho,-0.5547588689717243,,0.0109890109890109,,x_cohort_perm_p.csv
-"Cohort agreement, permuted-age null",40,"F0 pre-specified (age 18+; age + sex) vs GTEx skin, all genes",Spearman rho,0.1460723614505741,,0.2797202797202797,,x_cohort_perm_p.csv
-"Cohort agreement, permuted-age null",40,"F0 pre-specified (age 18+; age + sex) vs GTEx skin, 200 strongest genes",Spearman rho,0.1863016575414385,,0.2547452547452547,,x_cohort_perm_p.csv
-"Cohort agreement, permuted-age null",40,"F1 ages 20-79 (GTEx range) vs GTEx fibroblasts, all genes",Spearman rho,-0.216976100523686,,0.2477522477522477,,x_cohort_perm_p.csv
-"Cohort agreement, permuted-age null",40,"F1 ages 20-79 (GTEx range) vs GTEx fibroblasts, 200 strongest genes",Spearman rho,-0.3271326783169579,,0.1518481518481518,,x_cohort_perm_p.csv
-"Cohort agreement, permuted-age null",40,"F1 ages 20-79 (GTEx range) vs GTEx skin, all genes",Spearman rho,-0.0363263714466472,,0.7262737262737263,,x_cohort_perm_p.csv
-"Cohort agreement, permuted-age null",40,"F1 ages 20-79 (GTEx range) vs GTEx skin, 200 strongest genes",Spearman rho,-0.2272556813920348,,0.1798201798201798,,x_cohort_perm_p.csv
-"Cohort agreement, permuted-age null",40,"F2 + platform, repository, site vs GTEx fibroblasts, all genes",Spearman rho,-0.2625119057414459,,0.1908091908091908,,x_cohort_perm_p.csv
-"Cohort agreement, permuted-age null",40,"F2 + platform, repository, site vs GTEx fibroblasts, 200 strongest genes",Spearman rho,-0.1861816545413635,,0.4135864135864135,,x_cohort_perm_p.csv
-"Cohort agreement, permuted-age null",40,"F2 + platform, repository, site vs GTEx skin, all genes",Spearman rho,0.0979800746972772,,0.4395604395604395,,x_cohort_perm_p.csv
-"Cohort agreement, permuted-age null",40,"F2 + platform, repository, site vs GTEx skin, 200 strongest genes",Spearman rho,0.0994524863121578,,0.5284715284715285,,x_cohort_perm_p.csv
-"Cohort agreement, permuted-age null",40,"F3 ages 20-79 + platform, repository, site vs GTEx fibroblasts, all genes",Spearman rho,-0.2116199066938489,,0.2447552447552447,,x_cohort_perm_p.csv
-"Cohort agreement, permuted-age null",40,"F3 ages 20-79 + platform, repository, site vs GTEx fibroblasts, 200 strongest genes",Spearman rho,-0.14254406360159,,0.5154845154845155,,x_cohort_perm_p.csv
-"Cohort agreement, permuted-age null",40,"F3 ages 20-79 + platform, repository, site vs GTEx skin, all genes",Spearman rho,-0.0363118720697345,,0.7122877122877123,,x_cohort_perm_p.csv
-"Cohort agreement, permuted-age null",40,"F3 ages 20-79 + platform, repository, site vs GTEx skin, 200 strongest genes",Spearman rho,-0.128929723243081,,0.4175824175824176,,x_cohort_perm_p.csv
-"Cohort agreement, permuted-age null",40,"F4 NextSeq only vs GTEx fibroblasts, all genes",Spearman rho,-0.2856217529070616,,0.1778221778221778,,x_cohort_perm_p.csv
-"Cohort agreement, permuted-age null",40,"F4 NextSeq only vs GTEx fibroblasts, 200 strongest genes",Spearman rho,-0.6088757218930474,,0.0069930069930069,,x_cohort_perm_p.csv
-"Cohort agreement, permuted-age null",40,"F4 NextSeq only vs GTEx skin, all genes",Spearman rho,0.1512639693188622,,0.2787212787212787,,x_cohort_perm_p.csv
-"Cohort agreement, permuted-age null",40,"F4 NextSeq only vs GTEx skin, 200 strongest genes",Spearman rho,0.1173194329858246,,0.4635364635364635,,x_cohort_perm_p.csv
-"Cohort agreement, permuted-age null",40,"F5 arm biopsies only vs GTEx fibroblasts, all genes",Spearman rho,-0.2435219786240283,,0.2037962037962038,,x_cohort_perm_p.csv
-"Cohort agreement, permuted-age null",40,"F5 arm biopsies only vs GTEx fibroblasts, 200 strongest genes",Spearman rho,-0.4123723093077328,,0.0739260739260739,,x_cohort_perm_p.csv
-"Cohort agreement, permuted-age null",40,"F5 arm biopsies only vs GTEx skin, all genes",Spearman rho,0.139082362953532,,0.3226773226773227,,x_cohort_perm_p.csv
-"Cohort agreement, permuted-age null",40,"F5 arm biopsies only vs GTEx skin, 200 strongest genes",Spearman rho,0.1128358208955224,,0.5014985014985015,,x_cohort_perm_p.csv
-"Cohort agreement, permuted-age null",40,"F6 expression filter 0.5 vs GTEx fibroblasts, all genes",Spearman rho,-0.2721492393578826,,0.1708291708291708,,x_cohort_perm_p.csv
-"Cohort agreement, permuted-age null",40,"F6 expression filter 0.5 vs GTEx fibroblasts, 200 strongest genes",Spearman rho,-0.5570299257481438,,0.0079920079920079,,x_cohort_perm_p.csv
-"Cohort agreement, permuted-age null",40,"F6 expression filter 0.5 vs GTEx skin, all genes",Spearman rho,0.1377342953674158,,0.2967032967032967,,x_cohort_perm_p.csv
-"Cohort agreement, permuted-age null",40,"F6 expression filter 0.5 vs GTEx skin, 200 strongest genes",Spearman rho,0.1805235130878272,,0.2457542457542457,,x_cohort_perm_p.csv
-"Cohort agreement, permuted-age null",40,"F7 expression filter 2 vs GTEx fibroblasts, all genes",Spearman rho,-0.261825251962952,,0.1898101898101898,,x_cohort_perm_p.csv
-"Cohort agreement, permuted-age null",40,"F7 expression filter 2 vs GTEx fibroblasts, 200 strongest genes",Spearman rho,-0.5518007950198756,,0.0189810189810189,,x_cohort_perm_p.csv
-"Cohort agreement, permuted-age null",40,"F7 expression filter 2 vs GTEx skin, all genes",Spearman rho,0.148301847094307,,0.3116883116883117,,x_cohort_perm_p.csv
-"Cohort agreement, permuted-age null",40,"F7 expression filter 2 vs GTEx skin, 200 strongest genes",Spearman rho,0.1254361359033976,,0.4695304695304695,,x_cohort_perm_p.csv
-"Cohort agreement, permuted-age null",40,"F8 without NIA donors aged 80+ vs GTEx fibroblasts, all genes",Spearman rho,-0.2149432237606894,,0.2697302697302697,,x_cohort_perm_p.csv
-"Cohort agreement, permuted-age null",40,"F8 without NIA donors aged 80+ vs GTEx fibroblasts, 200 strongest genes",Spearman rho,-0.3739203480087003,,0.1088911088911089,,x_cohort_perm_p.csv
-"Cohort agreement, permuted-age null",40,"F8 without NIA donors aged 80+ vs GTEx skin, all genes",Spearman rho,0.0204150596832845,,0.8511488511488512,,x_cohort_perm_p.csv
-"Cohort agreement, permuted-age null",40,"F8 without NIA donors aged 80+ vs GTEx skin, 200 strongest genes",Spearman rho,0.0576134403360084,,0.7122877122877123,,x_cohort_perm_p.csv
-"Cohort agreement, permuted-age null",40,"F9 + 5 hidden factors vs GTEx fibroblasts, all genes",Spearman rho,-0.2714093043259284,,0.2267732267732267,,x_cohort_perm_p.csv
-"Cohort agreement, permuted-age null",40,"F9 + 5 hidden factors vs GTEx fibroblasts, 200 strongest genes",Spearman rho,-0.0758163954098852,,0.7382617382617382,,x_cohort_perm_p.csv
-"Cohort agreement, permuted-age null",40,"F9 + 5 hidden factors vs GTEx skin, all genes",Spearman rho,0.1589028473261685,,0.2397602397602397,,x_cohort_perm_p.csv
-"Cohort agreement, permuted-age null",40,"F9 + 5 hidden factors vs GTEx skin, 200 strongest genes",Spearman rho,0.0755013875346883,,0.6573426573426573,,x_cohort_perm_p.csv
-"Sex positive control, permuted-sex null",6,sex_rho_all_fibroblasts,Spearman rho,0.1866525650846374,,0.3116883116883117,,x_cohort_nulls.json
-"Sex positive control, permuted-sex null",6,sex_top_rho_fibroblasts,Spearman rho,0.6482937073426837,,0.001998001998001998,,x_cohort_nulls.json
-"Sex positive control, permuted-sex null",6,sex_top_autosomal_rho_fibroblasts,Spearman rho,0.3422005550138753,,0.13586413586413587,,x_cohort_nulls.json
-"Sex positive control, permuted-sex null",6,sex_rho_all_skin,Spearman rho,-0.1152510062322483,,0.3676323676323676,,x_cohort_nulls.json
-"Sex positive control, permuted-sex null",6,sex_top_rho_skin,Spearman rho,0.3183994599864996,,0.056943056943056944,,x_cohort_nulls.json
-"Sex positive control, permuted-sex null",6,sex_top_autosomal_rho_skin,Spearman rho,-0.177862446561164,,0.24775224775224775,,x_cohort_nulls.json
-"Network vs 500 randomized networks, rank",5,K562,Spearman rho,0.2484092956203087,1823,0.001996007984031936,,rev_network_null.json
-"Network vs mean of 500 randomized networks, absolute error",5,K562,MAE,0.07282893976598458,1823,0.19889850865934489,0.39779701731868977,rev_network_null.json
-"Network vs 500 randomized networks, rank",5,K562gw,Spearman rho,0.06541451516235655,8246,0.001996007984031936,,rev_network_null.json
-"Network vs mean of 500 randomized networks, absolute error",5,K562gw,MAE,0.07311315252581302,8246,1.0,1.0,rev_network_null.json
-"Network vs 500 randomized networks, rank",5,RPE1,Spearman rho,0.29428602967500167,2093,0.001996007984031936,,rev_network_null.json
-"Network vs mean of 500 randomized networks, absolute error",5,RPE1,MAE,0.08114281059550876,2093,0.011921747901088043,0.04768699160435217,rev_network_null.json
-"Network vs 500 randomized networks, rank",5,HepG2,Spearman rho,0.3291077295943609,1882,0.001996007984031936,,rev_network_null.json
-"Network vs mean of 500 randomized networks, absolute error",5,HepG2,MAE,0.07741582770317275,1882,0.00034270252971800385,0.0017135126485900193,rev_network_null.json
-"Network vs 500 randomized networks, rank",5,Jurkat,Spearman rho,0.22194874172316703,1965,0.001996007984031936,,rev_network_null.json
-"Network vs mean of 500 randomized networks, absolute error",5,Jurkat,MAE,0.06939596185164792,1965,0.04349716990492406,0.1304915097147722,rev_network_null.json
-"Held-out labels, discovery signature",80,"CellAge, all genes, R_rob (V1, pre-specified)",AUROC,0.5380019356495289,257/394,0.10089263103453948,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"CellAge, all genes, mean raw score",AUROC,0.5726658634379506,257/394,0.0017069698762954806,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"CellAge, all genes, proliferation shift alone",AUROC,0.5814059376716614,257/394,0.000440931367108496,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"CellAge, all genes, R_rob (V0 raw)",AUROC,0.5728041241185882,257/394,0.001672543778297028,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"CellAge, all genes, R_rob (V2 genes removed)",AUROC,0.5799146734085208,257/394,0.0005607691637346254,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"CellAge, all genes, R_rob (V3 resid. (all 3))",AUROC,0.5315826897627842,257/394,0.17274924043179163,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"CellAge, all genes, R_rob (V4 resid. (prolif.))",AUROC,0.5216377965197811,257/394,0.3502510272309306,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"CellAge, all genes, R_rob (V5 stratified)",AUROC,0.5117225305654862,257/394,0.6128138259983938,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"CellAge, all genes, R_rob (V6 spline resid.)",AUROC,0.536155167986727,257/394,0.1185670243805377,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"CellAge, all genes, R_rob (V7 resid. (prolif. + identity))",AUROC,0.5421398803057537,257/394,0.06888453355009042,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"CellAge, genes in >= 2 lines, R_rob (V1, pre-specified)",AUROC,0.5376066166968209,53/146,0.4177587563988481,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"CellAge, genes in >= 2 lines, mean raw score",AUROC,0.5712070302403722,53/146,0.12495362763951812,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"CellAge, genes in >= 2 lines, proliferation shift alone",AUROC,0.6010597348213196,53/146,0.029439553116108425,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"CellAge, genes in >= 2 lines, R_rob (V0 raw)",AUROC,0.5781855776686482,53/146,0.09205091350598718,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"CellAge, genes in >= 2 lines, R_rob (V2 genes removed)",AUROC,0.5916257430860687,53/146,0.04835055867141179,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"CellAge, genes in >= 2 lines, R_rob (V3 resid. (all 3))",AUROC,0.5284311191522357,53/146,0.5401343736580302,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"CellAge, genes in >= 2 lines, R_rob (V4 resid. (prolif.))",AUROC,0.5124063065391574,53/146,0.78922229483493,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"CellAge, genes in >= 2 lines, R_rob (V5 stratified)",AUROC,0.4927629878521581,53/146,0.8760826477813797,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"CellAge, genes in >= 2 lines, R_rob (V6 spline resid.)",AUROC,0.535151201860946,53/146,0.44880517378464513,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"CellAge, genes in >= 2 lines, R_rob (V7 resid. (prolif. + identity))",AUROC,0.5518221762729387,53/146,0.2641565804655407,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge, all genes, R_rob (V1, pre-specified)",AUROC,0.5117708217296053,573/376,0.539179390504399,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge, all genes, mean raw score",AUROC,0.4373584345178419,573/376,0.0010836621848206917,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge, all genes, proliferation shift alone",AUROC,0.4230533540248871,573/376,5.966939710970909e-05,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge, all genes, R_rob (V0 raw)",AUROC,0.4367132672384984,573/376,0.0009616561454488682,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge, all genes, R_rob (V2 genes removed)",AUROC,0.4477553748468308,573/376,0.006420968742974375,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge, all genes, R_rob (V3 resid. (all 3))",AUROC,0.4951264342207864,573/376,0.7993087905638522,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge, all genes, R_rob (V4 resid. (prolif.))",AUROC,0.4761520181203817,573/376,0.21346655950445548,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge, all genes, R_rob (V5 stratified)",AUROC,0.4815825628457911,573/376,0.33665690408721904,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge, all genes, R_rob (V6 spline resid.)",AUROC,0.5169321599643534,573/376,0.37706960487795016,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge, all genes, R_rob (V7 resid. (prolif. + identity))",AUROC,0.5094779250677658,573/376,0.6209956900341533,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge, genes in >= 2 lines, R_rob (V1, pre-specified)",AUROC,0.5442431933548685,197/88,0.23277462105993008,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge, genes in >= 2 lines, mean raw score",AUROC,0.4393747115828334,197/88,0.10203475061091852,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge, genes in >= 2 lines, proliferation shift alone",AUROC,0.4480849206447601,197/88,0.1614674270976485,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge, genes in >= 2 lines, R_rob (V0 raw)",AUROC,0.4328564836179049,197/88,0.07016171107160045,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge, genes in >= 2 lines, R_rob (V2 genes removed)",AUROC,0.4588140286109829,197/88,0.2666594040010035,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge, genes in >= 2 lines, R_rob (V3 resid. (all 3))",AUROC,0.4927895708352561,197/88,0.8458111946976034,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge, genes in >= 2 lines, R_rob (V4 resid. (prolif.))",AUROC,0.4513728657129672,197/88,0.18969660490556395,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge, genes in >= 2 lines, R_rob (V5 stratified)",AUROC,0.4661975080756806,197/88,0.3619500776884993,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge, genes in >= 2 lines, R_rob (V6 spline resid.)",AUROC,0.5487425011536686,197/88,0.18864819895820328,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge, genes in >= 2 lines, R_rob (V7 resid. (prolif. + identity))",AUROC,0.533052607291186,197/88,0.3726979419988734,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge mammal-only, all genes, R_rob (V1, pre-specified)",AUROC,0.5447957839262187,23/66,0.5239309066730056,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge mammal-only, all genes, mean raw score",AUROC,0.567193675889328,23/66,0.33909919018183354,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge mammal-only, all genes, proliferation shift alone",AUROC,0.5164690613746643,23/66,0.8147513264225494,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge mammal-only, all genes, R_rob (V0 raw)",AUROC,0.5665349143610013,23/66,0.3438555812038019,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge mammal-only, all genes, R_rob (V2 genes removed)",AUROC,0.5447957839262187,23/66,0.5239309066730056,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge mammal-only, all genes, R_rob (V3 resid. (all 3))",AUROC,0.5882740447957839,23/66,0.2091698237248123,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge mammal-only, all genes, R_rob (V4 resid. (prolif.))",AUROC,0.5691699604743083,23/66,0.3250846730075089,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge mammal-only, all genes, R_rob (V5 stratified)",AUROC,0.5223978919631094,23/66,0.7499927813461286,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge mammal-only, all genes, R_rob (V6 spline resid.)",AUROC,0.5349143610013175,23/66,0.6193883677639634,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge mammal-only, all genes, R_rob (V7 resid. (prolif. + identity))",AUROC,0.5520421607378129,23/66,0.459063354385865,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge mammal-only, genes in >= 2 lines, R_rob (V1, pre-specified)",AUROC,0.4537037037037037,6/18,0.7388826803635273,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge mammal-only, genes in >= 2 lines, mean raw score",AUROC,0.5925925925925926,6/18,0.504985075093846,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge mammal-only, genes in >= 2 lines, proliferation shift alone",AUROC,0.5,6/18,1.0,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge mammal-only, genes in >= 2 lines, R_rob (V0 raw)",AUROC,0.5740740740740741,6/18,0.5938028572077024,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge mammal-only, genes in >= 2 lines, R_rob (V2 genes removed)",AUROC,0.5,6/18,1.0,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge mammal-only, genes in >= 2 lines, R_rob (V3 resid. (all 3))",AUROC,0.4814814814814814,6/18,0.8939297667527715,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge mammal-only, genes in >= 2 lines, R_rob (V4 resid. (prolif.))",AUROC,0.4907407407407407,6/18,0.9468470713992696,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge mammal-only, genes in >= 2 lines, R_rob (V5 stratified)",AUROC,0.4259259259259259,6/18,0.5938028572077021,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge mammal-only, genes in >= 2 lines, R_rob (V6 spline resid.)",AUROC,0.4444444444444444,6/18,0.6891565167793515,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge mammal-only, genes in >= 2 lines, R_rob (V7 resid. (prolif. + identity))",AUROC,0.4444444444444444,6/18,0.6891565167793515,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge without yeast, all genes, R_rob (V1, pre-specified)",AUROC,0.5142246239309188,391/372,0.49656823310751874,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge without yeast, all genes, mean raw score",AUROC,0.4382407942138987,391/372,0.003157984038778781,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge without yeast, all genes, proliferation shift alone",AUROC,0.420042335987091,391/372,0.00013250034640211852,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge without yeast, all genes, R_rob (V0 raw)",AUROC,0.4379795396419437,391/372,0.003032605174379132,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge without yeast, all genes, R_rob (V2 genes removed)",AUROC,0.4477147100074251,391/372,0.012450982015441906,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge without yeast, all genes, R_rob (V3 resid. (all 3))",AUROC,0.4984943486511013,391/372,0.9426288542433205,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge without yeast, all genes, R_rob (V4 resid. (prolif.))",AUROC,0.4856653741440475,391/372,0.4932447997467705,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge without yeast, all genes, R_rob (V5 stratified)",AUROC,0.4870094601655529,391/372,0.5346566427203714,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge without yeast, all genes, R_rob (V6 spline resid.)",AUROC,0.5215878777878613,391/372,0.3021455371853876,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge without yeast, all genes, R_rob (V7 resid. (prolif. + identity))",AUROC,0.5121070868740203,391/372,0.5628006367240854,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge without yeast, genes in >= 2 lines, R_rob (V1, pre-specified)",AUROC,0.5828991978830729,139/87,0.03608057651503557,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge without yeast, genes in >= 2 lines, mean raw score",AUROC,0.4710989828826594,139/87,0.4649431515934894,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge without yeast, genes in >= 2 lines, proliferation shift alone",AUROC,0.4599354863166809,139/87,0.3110655633425401,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge without yeast, genes in >= 2 lines, R_rob (V0 raw)",AUROC,0.4601008848093939,139/87,0.3130673163265869,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge without yeast, genes in >= 2 lines, R_rob (V2 genes removed)",AUROC,0.4921855618953113,139/87,0.8433738636311898,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge without yeast, genes in >= 2 lines, R_rob (V3 resid. (all 3))",AUROC,0.5306375589183825,139/87,0.4385535091467567,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge without yeast, genes in >= 2 lines, R_rob (V4 resid. (prolif.))",AUROC,0.4968990324981394,139/87,0.9375061582030877,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge without yeast, genes in >= 2 lines, R_rob (V5 stratified)",AUROC,0.5174067642437774,139/87,0.6598563154636055,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge without yeast, genes in >= 2 lines, R_rob (V6 spline resid.)",AUROC,0.5974530720251385,139/87,0.013739708716987497,,rev3_scores_evidence.csv
-"Held-out labels, discovery signature",80,"GenAge without yeast, genes in >= 2 lines, R_rob (V7 resid. (prolif. + identity))",AUROC,0.5748780286115935,139/87,0.05832975518014712,,rev3_scores_evidence.csv
-"Held-out labels, GTEx-derived signature",24,"CellAge, all genes, R_rob (V1)",AUROC,0.5753026921329673,257/394,0.001150754820972341,,x_gtex_signature_evidence.csv
-"Held-out labels, GTEx-derived signature",24,"CellAge, all genes, mean raw score",AUROC,0.5498133480811392,257/394,0.03152046602562885,,x_gtex_signature_evidence.csv
-"Held-out labels, GTEx-derived signature",24,"CellAge, all genes, proliferation shift alone",AUROC,0.5814059376716614,257/394,0.000440931367108496,,x_gtex_signature_evidence.csv
-"Held-out labels, GTEx-derived signature",24,"CellAge, genes in >= 2 lines, R_rob (V1)",AUROC,0.6123029206513311,53/146,0.015528672729774227,,x_gtex_signature_evidence.csv
-"Held-out labels, GTEx-derived signature",24,"CellAge, genes in >= 2 lines, mean raw score",AUROC,0.5861979839751874,53/146,0.06326542105611006,,x_gtex_signature_evidence.csv
-"Held-out labels, GTEx-derived signature",24,"CellAge, genes in >= 2 lines, proliferation shift alone",AUROC,0.6010597348213196,53/146,0.029439553116108425,,x_gtex_signature_evidence.csv
-"Held-out labels, GTEx-derived signature",24,"GenAge, all genes, R_rob (V1)",AUROC,0.5253518250343471,573/376,0.18598792590622637,,x_gtex_signature_evidence.csv
-"Held-out labels, GTEx-derived signature",24,"GenAge, all genes, mean raw score",AUROC,0.5437089228027181,573/376,0.022596695880536942,,x_gtex_signature_evidence.csv
-"Held-out labels, GTEx-derived signature",24,"GenAge, all genes, proliferation shift alone",AUROC,0.4230533540248871,573/376,5.966939710970909e-05,,x_gtex_signature_evidence.csv
-"Held-out labels, GTEx-derived signature",24,"GenAge, genes in >= 2 lines, R_rob (V1)",AUROC,0.625,197/88,0.000748255808780853,,x_gtex_signature_evidence.csv
-"Held-out labels, GTEx-derived signature",24,"GenAge, genes in >= 2 lines, mean raw score",AUROC,0.6080987540378403,197/88,0.003551978193243525,,x_gtex_signature_evidence.csv
-"Held-out labels, GTEx-derived signature",24,"GenAge, genes in >= 2 lines, proliferation shift alone",AUROC,0.4480849206447601,197/88,0.1614674270976485,,x_gtex_signature_evidence.csv
-"Held-out labels, GTEx-derived signature",24,"GenAge mammal-only, all genes, R_rob (V1)",AUROC,0.5461133069828722,23/66,0.5117972189772377,,x_gtex_signature_evidence.csv
-"Held-out labels, GTEx-derived signature",24,"GenAge mammal-only, all genes, mean raw score",AUROC,0.5296442687747036,23/66,0.6732139520792665,,x_gtex_signature_evidence.csv
-"Held-out labels, GTEx-derived signature",24,"GenAge mammal-only, all genes, proliferation shift alone",AUROC,0.5164690613746643,23/66,0.8147513264225494,,x_gtex_signature_evidence.csv
-"Held-out labels, GTEx-derived signature",24,"GenAge mammal-only, genes in >= 2 lines, R_rob (V1)",AUROC,0.5740740740740741,6/18,0.5938028572077024,,x_gtex_signature_evidence.csv
-"Held-out labels, GTEx-derived signature",24,"GenAge mammal-only, genes in >= 2 lines, mean raw score",AUROC,0.4814814814814814,6/18,0.8939297667527715,,x_gtex_signature_evidence.csv
-"Held-out labels, GTEx-derived signature",24,"GenAge mammal-only, genes in >= 2 lines, proliferation shift alone",AUROC,0.5,6/18,1.0,,x_gtex_signature_evidence.csv
-"Held-out labels, GTEx-derived signature",24,"GenAge without yeast, all genes, R_rob (V1)",AUROC,0.5162527844237275,391/372,0.43725318697392335,,x_gtex_signature_evidence.csv
-"Held-out labels, GTEx-derived signature",24,"GenAge without yeast, all genes, mean raw score",AUROC,0.5342862250089376,391/372,0.10125687822237649,,x_gtex_signature_evidence.csv
-"Held-out labels, GTEx-derived signature",24,"GenAge without yeast, all genes, proliferation shift alone",AUROC,0.420042335987091,391/372,0.00013250034640211852,,x_gtex_signature_evidence.csv
-"Held-out labels, GTEx-derived signature",24,"GenAge without yeast, genes in >= 2 lines, R_rob (V1)",AUROC,0.6053915488299016,139/87,0.007705395778334215,,x_gtex_signature_evidence.csv
-"Held-out labels, GTEx-derived signature",24,"GenAge without yeast, genes in >= 2 lines, mean raw score",AUROC,0.5881088232861986,139/87,0.025897988322525437,,x_gtex_signature_evidence.csv
-"Held-out labels, GTEx-derived signature",24,"GenAge without yeast, genes in >= 2 lines, proliferation shift alone",AUROC,0.4599354863166809,139/87,0.3110655633425401,,x_gtex_signature_evidence.csv
-"Held-out labels, CellAge by manipulation",18,"Discovery signature, all CellAge genes, R_rob (V1)",AUROC,0.5380019356495289,257/394,0.10089263103453948,,x_cellage_method.csv
-"Held-out labels, CellAge by manipulation",18,"Discovery signature, all CellAge genes, mean raw score",AUROC,0.5726658634379506,257/394,0.0017069698762954806,,x_cellage_method.csv
-"Held-out labels, CellAge by manipulation",18,"Discovery signature, all CellAge genes, proliferation shift alone",AUROC,0.5814059136068261,257/394,0.00044093309169966746,,x_cellage_method.csv
-"Held-out labels, CellAge by manipulation",18,"Discovery signature, loss-of-function evidence, R_rob (V1)",AUROC,0.5418446448346781,129/343,0.1609211847627665,,x_cellage_method.csv
-"Held-out labels, CellAge by manipulation",18,"Discovery signature, loss-of-function evidence, mean raw score",AUROC,0.5953849978529617,129/343,0.001394350227224895,,x_cellage_method.csv
-"Held-out labels, CellAge by manipulation",18,"Discovery signature, loss-of-function evidence, proliferation shift alone",AUROC,0.6049449680204307,129/343,0.0004379043642885272,,x_cellage_method.csv
-"Held-out labels, CellAge by manipulation",18,"Discovery signature, overexpression only, R_rob (V1)",AUROC,0.538296568627451,128/51,0.42433572064968983,,x_cellage_method.csv
-"Held-out labels, CellAge by manipulation",18,"Discovery signature, overexpression only, mean raw score",AUROC,0.5179227941176471,128/51,0.70848211507219,,x_cellage_method.csv
-"Held-out labels, CellAge by manipulation",18,"Discovery signature, overexpression only, proliferation shift alone",AUROC,0.5392156862745098,128/51,0.4133023795226216,,x_cellage_method.csv
-"Held-out labels, CellAge by manipulation",18,"GTEx-fibroblast signature, all CellAge genes, R_rob (V1)",AUROC,0.5753026921329673,257/394,0.001150754820972341,,x_cellage_method.csv
-"Held-out labels, CellAge by manipulation",18,"GTEx-fibroblast signature, all CellAge genes, mean raw score",AUROC,0.5498133480811392,257/394,0.03152046602562885,,x_cellage_method.csv
-"Held-out labels, CellAge by manipulation",18,"GTEx-fibroblast signature, all CellAge genes, proliferation shift alone",AUROC,0.5814059136068261,257/394,0.00044093309169966746,,x_cellage_method.csv
-"Held-out labels, CellAge by manipulation",18,"GTEx-fibroblast signature, loss-of-function evidence, R_rob (V1)",AUROC,0.5583881393088796,129/343,0.050434518570539114,,x_cellage_method.csv
-"Held-out labels, CellAge by manipulation",18,"GTEx-fibroblast signature, loss-of-function evidence, mean raw score",AUROC,0.5297534296110471,129/343,0.31882708644889024,,x_cellage_method.csv
-"Held-out labels, CellAge by manipulation",18,"GTEx-fibroblast signature, loss-of-function evidence, proliferation shift alone",AUROC,0.6049449680204307,129/343,0.0004379043642885272,,x_cellage_method.csv
-"Held-out labels, CellAge by manipulation",18,"GTEx-fibroblast signature, overexpression only, R_rob (V1)",AUROC,0.5958946078431373,128/51,0.0454462626038763,,x_cellage_method.csv
-"Held-out labels, CellAge by manipulation",18,"GTEx-fibroblast signature, overexpression only, mean raw score",AUROC,0.6047794117647058,128/51,0.02882656534506332,,x_cellage_method.csv
-"Held-out labels, CellAge by manipulation",18,"GTEx-fibroblast signature, overexpression only, proliferation shift alone",AUROC,0.5392156862745098,128/51,0.4133023795226216,,x_cellage_method.csv
-"Held-out labels, single screens",20,"CellAge, K562, raw score",AUROC,0.6160511656694863,37/131,0.015736796900961553,,results.json
-"Held-out labels, single screens",20,"CellAge, K562, R_adj (V1)",AUROC,0.6300804621415308,37/131,0.007947875903104681,,results.json
-"Held-out labels, single screens",20,"CellAge, K562gw, raw score",AUROC,0.5331729388817933,257/393,0.07619505775575104,,results.json
-"Held-out labels, single screens",20,"CellAge, K562gw, R_adj (V1)",AUROC,0.5384699161394442,257/393,0.04848790157490459,,results.json
-"Held-out labels, single screens",20,"CellAge, RPE1, raw score",AUROC,0.5606099767381753,53/146,0.09601787868932143,,results.json
-"Held-out labels, single screens",20,"CellAge, RPE1, R_adj (V1)",AUROC,0.4831997932282244,53/146,0.6418428403164187,,results.json
-"Held-out labels, single screens",20,"CellAge, HepG2, raw score",AUROC,0.548828125,48/128,0.15989480136762996,,results.json
-"Held-out labels, single screens",20,"CellAge, HepG2, R_adj (V1)",AUROC,0.5133463541666666,48/128,0.3932994438221761,,results.json
-"Held-out labels, single screens",20,"CellAge, Jurkat, raw score",AUROC,0.5472660608959031,51/123,0.16387743847189623,,results.json
-"Held-out labels, single screens",20,"CellAge, Jurkat, R_adj (V1)",AUROC,0.531324725011956,51/123,0.2584852273509288,,results.json
-"Held-out labels, single screens",20,"GenAge, K562, raw score",AUROC,0.43546462063086105,170/69,0.9410835552135162,,results.json
-"Held-out labels, single screens",20,"GenAge, K562, R_adj (V1)",AUROC,0.502387041773231,170/69,0.47736161320199116,,results.json
-"Held-out labels, single screens",20,"GenAge, K562gw, raw score",AUROC,0.4503128365081133,573/376,0.9952314563838228,,results.json
-"Held-out labels, single screens",20,"GenAge, K562gw, R_adj (V1)",AUROC,0.5035089673610338,573/376,0.4274252949312512,,results.json
-"Held-out labels, single screens",20,"GenAge, RPE1, raw score",AUROC,0.4864443931702815,197/88,0.642956809304935,,results.json
-"Held-out labels, single screens",20,"GenAge, RPE1, R_adj (V1)",AUROC,0.5535879095523766,197/88,0.0743003495560698,,results.json
-"Held-out labels, single screens",20,"GenAge, HepG2, raw score",AUROC,0.3813559322033898,177/82,0.9989355509618771,,results.json
-"Held-out labels, single screens",20,"GenAge, HepG2, R_adj (V1)",AUROC,0.5188783243764641,177/82,0.3128752233091659,,results.json
-"Held-out labels, single screens",20,"GenAge, Jurkat, raw score",AUROC,0.39598278335724535,187/82,0.9966992019829544,,results.json
-"Held-out labels, single screens",20,"GenAge, Jurkat, R_adj (V1)",AUROC,0.49093517673144643,187/82,0.5938637598632002,,results.json
-"Paired AUROC differences (DeLong), discovery signature",64,"CellAge, all genes: mean raw score minus proliferation shift alone",AUROC difference,-0.0087400742337108,257/394,0.5735187064436678,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"CellAge, all genes: R_rob (V0 raw) minus R_rob (V1 pre-specified)",AUROC difference,0.0348021884690592,257/394,0.0949110791220956,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"CellAge, all genes: R_rob (V0 raw) minus R_rob (V2 genes removed)",AUROC difference,-0.0071105492899325,257/394,0.3458359652357814,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"CellAge, all genes: R_rob (V0 raw) minus R_rob (V3 resid. (all 3))",AUROC difference,0.0412214343558039,257/394,0.0284334335916258,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"CellAge, all genes: R_rob (V0 raw) minus R_rob (V4 resid. (prolif.))",AUROC difference,0.051166327598807,257/394,0.0010196937657071,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"CellAge, all genes: R_rob (V0 raw) minus R_rob (V5 stratified)",AUROC difference,0.0610815935531019,257/394,0.0011528829737323,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"CellAge, all genes: R_rob (V0 raw) minus R_rob (V6 spline resid.)",AUROC difference,0.0366489561318611,257/394,0.0975283973615118,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"CellAge, all genes: R_rob (V0 raw) minus R_rob (V7 resid. (prolif. + identity))",AUROC difference,0.0306642438128345,257/394,0.1360049929581211,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"CellAge, genes in >= 2 lines: mean raw score minus proliferation shift alone",AUROC difference,-0.0298527045809473,53/146,0.3128936050113273,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"CellAge, genes in >= 2 lines: R_rob (V0 raw) minus R_rob (V1 pre-specified)",AUROC difference,0.0405789609718273,53/146,0.4027578825678397,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"CellAge, genes in >= 2 lines: R_rob (V0 raw) minus R_rob (V2 genes removed)",AUROC difference,-0.0134401654174205,53/146,0.2363901870211781,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"CellAge, genes in >= 2 lines: R_rob (V0 raw) minus R_rob (V3 resid. (all 3))",AUROC difference,0.0497544585164124,53/146,0.3188636243025057,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"CellAge, genes in >= 2 lines: R_rob (V0 raw) minus R_rob (V4 resid. (prolif.))",AUROC difference,0.0657792711294907,53/146,0.108329662983413,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"CellAge, genes in >= 2 lines: R_rob (V0 raw) minus R_rob (V5 stratified)",AUROC difference,0.08542258981649,53/146,0.0251159336825024,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"CellAge, genes in >= 2 lines: R_rob (V0 raw) minus R_rob (V6 spline resid.)",AUROC difference,0.0430343758077021,53/146,0.3662989698114964,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"CellAge, genes in >= 2 lines: R_rob (V0 raw) minus R_rob (V7 resid. (prolif. + identity))",AUROC difference,0.0263634013957094,53/146,0.5504384159700039,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"GenAge, all genes: mean raw score minus proliferation shift alone",AUROC difference,0.0143050804929548,573/376,0.2543471233072574,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"GenAge, all genes: R_rob (V0 raw) minus R_rob (V1 pre-specified)",AUROC difference,-0.0750575544911069,573/376,9.624367189800716e-06,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"GenAge, all genes: R_rob (V0 raw) minus R_rob (V2 genes removed)",AUROC difference,-0.0110421076083324,573/376,0.0695931992926499,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"GenAge, all genes: R_rob (V0 raw) minus R_rob (V3 resid. (all 3))",AUROC difference,-0.058413166982288,573/376,9.236331437297902e-05,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"GenAge, all genes: R_rob (V0 raw) minus R_rob (V4 resid. (prolif.))",AUROC difference,-0.0394387508818833,573/376,0.0011589337487224,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"GenAge, all genes: R_rob (V0 raw) minus R_rob (V5 stratified)",AUROC difference,-0.0448692956072926,573/376,0.0044327637207446,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"GenAge, all genes: R_rob (V0 raw) minus R_rob (V6 spline resid.)",AUROC difference,-0.0802188927258549,573/376,9.303936724593856e-06,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"GenAge, all genes: R_rob (V0 raw) minus R_rob (V7 resid. (prolif. + identity))",AUROC difference,-0.0727646578292673,573/376,1.41707027407627e-05,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"GenAge, genes in >= 2 lines: mean raw score minus proliferation shift alone",AUROC difference,-0.0087102090619267,197/88,0.6808880817138574,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"GenAge, genes in >= 2 lines: R_rob (V0 raw) minus R_rob (V1 pre-specified)",AUROC difference,-0.1113867097369635,197/88,0.0039713442187129,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"GenAge, genes in >= 2 lines: R_rob (V0 raw) minus R_rob (V2 genes removed)",AUROC difference,-0.0259575449930779,197/88,0.0010036057386795,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"GenAge, genes in >= 2 lines: R_rob (V0 raw) minus R_rob (V3 resid. (all 3))",AUROC difference,-0.0599330872173511,197/88,0.1167782505378644,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"GenAge, genes in >= 2 lines: R_rob (V0 raw) minus R_rob (V4 resid. (prolif.))",AUROC difference,-0.0185163820950622,197/88,0.5382470003233197,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"GenAge, genes in >= 2 lines: R_rob (V0 raw) minus R_rob (V5 stratified)",AUROC difference,-0.0333410244577757,197/88,0.2458058711861136,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"GenAge, genes in >= 2 lines: R_rob (V0 raw) minus R_rob (V6 spline resid.)",AUROC difference,-0.1158860175357636,197/88,0.0027602971857586,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"GenAge, genes in >= 2 lines: R_rob (V0 raw) minus R_rob (V7 resid. (prolif. + identity))",AUROC difference,-0.100196123673281,197/88,0.0065124457839296,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"GenAge mammal-only, all genes: mean raw score minus proliferation shift alone",AUROC difference,0.0507246145146637,23/66,0.1465637962023979,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"GenAge mammal-only, all genes: R_rob (V0 raw) minus R_rob (V1 pre-specified)",AUROC difference,0.0217391304347825,23/66,0.7743264308658219,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"GenAge mammal-only, all genes: R_rob (V0 raw) minus R_rob (V2 genes removed)",AUROC difference,0.0217391304347825,23/66,0.4203490235746293,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"GenAge mammal-only, all genes: R_rob (V0 raw) minus R_rob (V3 resid. (all 3))",AUROC difference,-0.0217391304347825,23/66,0.7350956479162916,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"GenAge mammal-only, all genes: R_rob (V0 raw) minus R_rob (V4 resid. (prolif.))",AUROC difference,-0.002635046113307,23/66,0.9614028401565616,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"GenAge mammal-only, all genes: R_rob (V0 raw) minus R_rob (V5 stratified)",AUROC difference,0.0441370223978919,23/66,0.5056639369162981,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"GenAge mammal-only, all genes: R_rob (V0 raw) minus R_rob (V6 spline resid.)",AUROC difference,0.0316205533596838,23/66,0.693298800066371,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"GenAge mammal-only, all genes: R_rob (V0 raw) minus R_rob (V7 resid. (prolif. + identity))",AUROC difference,0.0144927536231884,23/66,0.8449594307877384,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"GenAge mammal-only, genes in >= 2 lines: mean raw score minus proliferation shift alone",AUROC difference,0.0925925925925925,6/18,0.2179440504821415,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"GenAge mammal-only, genes in >= 2 lines: R_rob (V0 raw) minus R_rob (V1 pre-specified)",AUROC difference,0.1203703703703703,6/18,0.4309741357012636,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"GenAge mammal-only, genes in >= 2 lines: R_rob (V0 raw) minus R_rob (V2 genes removed)",AUROC difference,0.074074074074074,6/18,0.2856558699598734,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"GenAge mammal-only, genes in >= 2 lines: R_rob (V0 raw) minus R_rob (V3 resid. (all 3))",AUROC difference,0.0925925925925926,6/18,0.5852738195677178,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"GenAge mammal-only, genes in >= 2 lines: R_rob (V0 raw) minus R_rob (V4 resid. (prolif.))",AUROC difference,0.0833333333333333,6/18,0.6111496789452676,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"GenAge mammal-only, genes in >= 2 lines: R_rob (V0 raw) minus R_rob (V5 stratified)",AUROC difference,0.1481481481481481,6/18,0.3051823674356791,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"GenAge mammal-only, genes in >= 2 lines: R_rob (V0 raw) minus R_rob (V6 spline resid.)",AUROC difference,0.1296296296296296,6/18,0.4791040659939111,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"GenAge mammal-only, genes in >= 2 lines: R_rob (V0 raw) minus R_rob (V7 resid. (prolif. + identity))",AUROC difference,0.1296296296296296,6/18,0.3348362336236763,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"GenAge without yeast, all genes: mean raw score minus proliferation shift alone",AUROC difference,0.0181984582268076,391/372,0.1720917635002853,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"GenAge without yeast, all genes: R_rob (V0 raw) minus R_rob (V1 pre-specified)",AUROC difference,-0.076245084288975,391/372,6.627549927424372e-05,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"GenAge without yeast, all genes: R_rob (V0 raw) minus R_rob (V2 genes removed)",AUROC difference,-0.0097351703654813,391/372,0.1339656156496347,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"GenAge without yeast, all genes: R_rob (V0 raw) minus R_rob (V3 resid. (all 3))",AUROC difference,-0.0605148090091576,391/372,0.000403083752359,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"GenAge without yeast, all genes: R_rob (V0 raw) minus R_rob (V4 resid. (prolif.))",AUROC difference,-0.0476858345021037,391/372,0.00058775344376,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"GenAge without yeast, all genes: R_rob (V0 raw) minus R_rob (V5 stratified)",AUROC difference,-0.0490299205236091,391/372,0.0053947311241859,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"GenAge without yeast, all genes: R_rob (V0 raw) minus R_rob (V6 spline resid.)",AUROC difference,-0.0836083381459175,391/372,3.734078163547325e-05,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"GenAge without yeast, all genes: R_rob (V0 raw) minus R_rob (V7 resid. (prolif. + identity))",AUROC difference,-0.0741275472320765,391/372,8.147194635917084e-05,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"GenAge without yeast, genes in >= 2 lines: mean raw score minus proliferation shift alone",AUROC difference,0.0111634965659784,139/87,0.6139165586885067,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"GenAge without yeast, genes in >= 2 lines: R_rob (V0 raw) minus R_rob (V1 pre-specified)",AUROC difference,-0.122798313073679,139/87,0.0039537652407052,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"GenAge without yeast, genes in >= 2 lines: R_rob (V0 raw) minus R_rob (V2 genes removed)",AUROC difference,-0.0320846770859174,139/87,0.0002912414134281,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"GenAge without yeast, genes in >= 2 lines: R_rob (V0 raw) minus R_rob (V3 resid. (all 3))",AUROC difference,-0.0705366741089886,139/87,0.09611310658838,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"GenAge without yeast, genes in >= 2 lines: R_rob (V0 raw) minus R_rob (V4 resid. (prolif.))",AUROC difference,-0.0367981476887455,139/87,0.2557579139206718,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"GenAge without yeast, genes in >= 2 lines: R_rob (V0 raw) minus R_rob (V5 stratified)",AUROC difference,-0.0573058794343835,139/87,0.0688564187233868,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"GenAge without yeast, genes in >= 2 lines: R_rob (V0 raw) minus R_rob (V6 spline resid.)",AUROC difference,-0.1373521872157446,139/87,0.0012695690316347,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), discovery signature",64,"GenAge without yeast, genes in >= 2 lines: R_rob (V0 raw) minus R_rob (V7 resid. (prolif. + identity))",AUROC difference,-0.1147771438021996,139/87,0.0044141620333323,,rev3_scores_paired_auroc.csv
-"Paired AUROC differences (DeLong), GTEx-derived signature",16,"CellAge, all genes: mean raw score minus proliferation shift alone",AUROC difference,-0.0315925895905221,257/394,0.3244823532661236,,x_gtex_signature_paired_auroc.csv
-"Paired AUROC differences (DeLong), GTEx-derived signature",16,"CellAge, all genes: R_rob (V1) minus proliferation shift alone",AUROC difference,-0.0061032455386941,257/394,0.8405342243068301,,x_gtex_signature_paired_auroc.csv
-"Paired AUROC differences (DeLong), GTEx-derived signature",16,"CellAge, genes in >= 2 lines: mean raw score minus proliferation shift alone",AUROC difference,-0.0148617508461321,53/146,0.8284476739449417,,x_gtex_signature_paired_auroc.csv
-"Paired AUROC differences (DeLong), GTEx-derived signature",16,"CellAge, genes in >= 2 lines: R_rob (V1) minus proliferation shift alone",AUROC difference,0.0112431858300114,53/146,0.8606655652823132,,x_gtex_signature_paired_auroc.csv
-"Paired AUROC differences (DeLong), GTEx-derived signature",16,"GenAge, all genes: mean raw score minus proliferation shift alone",AUROC difference,0.120655568777831,573/376,2.0925278016293533e-05,,x_gtex_signature_paired_auroc.csv
-"Paired AUROC differences (DeLong), GTEx-derived signature",16,"GenAge, all genes: R_rob (V1) minus proliferation shift alone",AUROC difference,0.1022984710094599,573/376,0.0001593744316299,,x_gtex_signature_paired_auroc.csv
-"Paired AUROC differences (DeLong), GTEx-derived signature",16,"GenAge, genes in >= 2 lines: mean raw score minus proliferation shift alone",AUROC difference,0.1600138333930801,197/88,0.0125753199637208,,x_gtex_signature_paired_auroc.csv
-"Paired AUROC differences (DeLong), GTEx-derived signature",16,"GenAge, genes in >= 2 lines: R_rob (V1) minus proliferation shift alone",AUROC difference,0.1769150793552398,197/88,0.0030281416467779,,x_gtex_signature_paired_auroc.csv
-"Paired AUROC differences (DeLong), GTEx-derived signature",16,"GenAge mammal-only, all genes: mean raw score minus proliferation shift alone",AUROC difference,0.0131752074000393,23/66,0.8940862254693297,,x_gtex_signature_paired_auroc.csv
-"Paired AUROC differences (DeLong), GTEx-derived signature",16,"GenAge mammal-only, all genes: R_rob (V1) minus proliferation shift alone",AUROC difference,0.0296442456082078,23/66,0.7673809092825,,x_gtex_signature_paired_auroc.csv
-"Paired AUROC differences (DeLong), GTEx-derived signature",16,"GenAge mammal-only, genes in >= 2 lines: mean raw score minus proliferation shift alone",AUROC difference,-0.0185185185185185,6/18,0.9388396383272865,,x_gtex_signature_paired_auroc.csv
-"Paired AUROC differences (DeLong), GTEx-derived signature",16,"GenAge mammal-only, genes in >= 2 lines: R_rob (V1) minus proliferation shift alone",AUROC difference,0.074074074074074,6/18,0.7493396484233812,,x_gtex_signature_paired_auroc.csv
-"Paired AUROC differences (DeLong), GTEx-derived signature",16,"GenAge without yeast, all genes: mean raw score minus proliferation shift alone",AUROC difference,0.1142438890218465,391/372,0.0002695744641697,,x_gtex_signature_paired_auroc.csv
-"Paired AUROC differences (DeLong), GTEx-derived signature",16,"GenAge without yeast, all genes: R_rob (V1) minus proliferation shift alone",AUROC difference,0.0962104484366364,391/372,0.0012318473476492,,x_gtex_signature_paired_auroc.csv
-"Paired AUROC differences (DeLong), GTEx-derived signature",16,"GenAge without yeast, genes in >= 2 lines: mean raw score minus proliferation shift alone",AUROC difference,0.1281733369695177,139/87,0.0597616940662834,,x_gtex_signature_paired_auroc.csv
-"Paired AUROC differences (DeLong), GTEx-derived signature",16,"GenAge without yeast, genes in >= 2 lines: R_rob (V1) minus proliferation shift alone",AUROC difference,0.1454560625132207,139/87,0.0222511807193867,,x_gtex_signature_paired_auroc.csv
-Incremental logistic model (raw score added to proliferation),8,"CellAge, all genes",coefficient,0.0336014485892764,651,0.7935661899992817,,rev3_scores_logistic.csv
-Incremental logistic model (raw score added to proliferation),8,"CellAge, genes in >= 2 lines",coefficient,0.0774091004249311,199,0.765559735445624,,rev3_scores_logistic.csv
-Incremental logistic model (raw score added to proliferation),8,"GenAge, all genes",coefficient,-0.1111816419389586,949,0.3296156616012169,,rev3_scores_logistic.csv
-Incremental logistic model (raw score added to proliferation),8,"GenAge, genes in >= 2 lines",coefficient,-0.3801230016832818,285,0.1030156920115063,,rev3_scores_logistic.csv
-Incremental logistic model (raw score added to proliferation),8,"GenAge mammal-only, all genes",coefficient,0.4510650859338317,89,0.2670829145913482,,rev3_scores_logistic.csv
-Incremental logistic model (raw score added to proliferation),8,"GenAge mammal-only, genes in >= 2 lines",coefficient,0.4344889007754359,24,0.6699505707855868,,rev3_scores_logistic.csv
-Incremental logistic model (raw score added to proliferation),8,"GenAge without yeast, all genes",coefficient,-0.0867643073440894,763,0.4888759607039553,,rev3_scores_logistic.csv
-Incremental logistic model (raw score added to proliferation),8,"GenAge without yeast, genes in >= 2 lines",coefficient,-0.1927133679277352,226,0.4330666438914227,,rev3_scores_logistic.csv
-Label classes and essential genes (Fisher),8,"CellAge, DepMap_common_essential: Induces vs Inhibits",odds ratio,0.2833333333333333,,9.6295752927681e-11,,rev3_depmap_label_fisher.csv
-Label classes and essential genes (Fisher),8,"CellAge, CEGv2: Induces vs Inhibits",odds ratio,0.2458100558659217,,1.8551463475027949e-06,,rev3_depmap_label_fisher.csv
-Label classes and essential genes (Fisher),8,"GenAge, DepMap_common_essential: Anti vs Pro",odds ratio,1.3735914619012162,,0.0326436284757147,,rev3_depmap_label_fisher.csv
-Label classes and essential genes (Fisher),8,"GenAge, CEGv2: Anti vs Pro",odds ratio,1.2863081491257011,,0.2608458409283534,,rev3_depmap_label_fisher.csv
-Label classes and essential genes (Fisher),8,"GenAge mammal-only, DepMap_common_essential: Anti vs Pro",odds ratio,0.7414634146341463,,0.6262577129167213,,rev3_depmap_label_fisher.csv
-Label classes and essential genes (Fisher),8,"GenAge mammal-only, CEGv2: Anti vs Pro",odds ratio,0.2255434782608695,,0.1662239714925237,,rev3_depmap_label_fisher.csv
-Label classes and essential genes (Fisher),8,"GenAge without yeast, DepMap_common_essential: Anti vs Pro",odds ratio,1.3821552055320785,,0.042884008723745,,rev3_depmap_label_fisher.csv
-Label classes and essential genes (Fisher),8,"GenAge without yeast, CEGv2: Anti vs Pro",odds ratio,1.1361603149042765,,0.6529887325791213,,rev3_depmap_label_fisher.csv
+Family,Tests in family,Test,Statistic,Value,n,P,Holm P (within family),BH q (within family),Shown in
+Cohort agreement (permuted-age null),40,"F0 pre-specified vs GTEx fibroblasts, all genes",Spearman ρ,-0.2754168245456749,,0.1638361638361638,1.0,0.48647005168744295,Figure 1F; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),40,"F0 pre-specified vs GTEx fibroblasts, 200 strongest genes",Spearman ρ,-0.5547588689717243,,0.0109890109890109,0.4175824175824142,0.14652014652014533,Figure 1E; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),40,"F0 pre-specified vs GTEx skin, all genes",Spearman ρ,0.1460723614505741,,0.2797202797202797,1.0,0.48647005168744295,Figure 1F; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),40,"F0 pre-specified vs GTEx skin, 200 strongest genes",Spearman ρ,0.1863016575414385,,0.2547452547452547,1.0,0.48647005168744295,Figure 1E; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),40,"F1 ages 20-79 vs GTEx fibroblasts, all genes",Spearman ρ,-0.216976100523686,,0.2477522477522477,1.0,0.48647005168744295,Figure 1F; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),40,"F1 ages 20-79 vs GTEx fibroblasts, 200 strongest genes",Spearman ρ,-0.3271326783169579,,0.1518481518481518,1.0,0.48647005168744295,Figure 1E; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),40,"F1 ages 20-79 vs GTEx skin, all genes",Spearman ρ,-0.0363263714466472,,0.7262737262737263,1.0,0.7571915264222957,Figure 1F; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),40,"F1 ages 20-79 vs GTEx skin, 200 strongest genes",Spearman ρ,-0.2272556813920348,,0.1798201798201798,1.0,0.48647005168744295,Figure 1E; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),40,"F2 + platform, repository, site vs GTEx fibroblasts, all genes",Spearman ρ,-0.2625119057414459,,0.1908091908091908,1.0,0.48647005168744295,Figure 1F; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),40,"F2 + platform, repository, site vs GTEx fibroblasts, 200 strongest genes",Spearman ρ,-0.1861816545413635,,0.4135864135864135,1.0,0.5965463108320251,Figure 1E; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),40,"F2 + platform, repository, site vs GTEx skin, all genes",Spearman ρ,0.0979800746972772,,0.4395604395604395,1.0,0.6058457671360896,Figure 1F; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),40,"F2 + platform, repository, site vs GTEx skin, 200 strongest genes",Spearman ρ,0.0994524863121578,,0.5284715284715285,1.0,0.6217312099665041,Figure 1E; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),40,"F3 ages 20-79 + platform, repository, site vs GTEx fibroblasts, all genes",Spearman ρ,-0.2116199066938489,,0.2447552447552447,1.0,0.48647005168744295,Figure 1F; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),40,"F3 ages 20-79 + platform, repository, site vs GTEx fibroblasts, 200 strongest genes",Spearman ρ,-0.14254406360159,,0.5154845154845155,1.0,0.6217312099665041,Figure 1E; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),40,"F3 ages 20-79 + platform, repository, site vs GTEx skin, all genes",Spearman ρ,-0.0363118720697345,,0.7122877122877123,1.0,0.7571915264222957,Figure 1F; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),40,"F3 ages 20-79 + platform, repository, site vs GTEx skin, 200 strongest genes",Spearman ρ,-0.128929723243081,,0.4175824175824176,1.0,0.5965463108320251,Figure 1E; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),40,"F4 NextSeq only vs GTEx fibroblasts, all genes",Spearman ρ,-0.2856217529070616,,0.1778221778221778,1.0,0.48647005168744295,Figure 1F; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),40,"F4 NextSeq only vs GTEx fibroblasts, 200 strongest genes",Spearman ρ,-0.6088757218930474,,0.0069930069930069,0.279720279720276,0.14652014652014533,Figure 1E; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),40,"F4 NextSeq only vs GTEx skin, all genes",Spearman ρ,0.1512639693188622,,0.2787212787212787,1.0,0.48647005168744295,Figure 1F; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),40,"F4 NextSeq only vs GTEx skin, 200 strongest genes",Spearman ρ,0.1173194329858246,,0.4635364635364635,1.0,0.6058457671360896,Figure 1E; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),40,"F5 arm biopsies only vs GTEx fibroblasts, all genes",Spearman ρ,-0.2435219786240283,,0.2037962037962038,1.0,0.48647005168744295,Figure 1F; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),40,"F5 arm biopsies only vs GTEx fibroblasts, 200 strongest genes",Spearman ρ,-0.4123723093077328,,0.0739260739260739,1.0,0.48647005168744295,Figure 1E; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),40,"F5 arm biopsies only vs GTEx skin, all genes",Spearman ρ,0.139082362953532,,0.3226773226773227,1.0,0.49642665027280414,Figure 1F; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),40,"F5 arm biopsies only vs GTEx skin, 200 strongest genes",Spearman ρ,0.1128358208955224,,0.5014985014985015,1.0,0.6217312099665041,Figure 1E; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),40,"F6 expression filter 0.5 vs GTEx fibroblasts, all genes",Spearman ρ,-0.2721492393578826,,0.1708291708291708,1.0,0.48647005168744295,Figure 1F; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),40,"F6 expression filter 0.5 vs GTEx fibroblasts, 200 strongest genes",Spearman ρ,-0.5570299257481438,,0.0079920079920079,0.31168831168830813,0.14652014652014533,Figure 1E; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),40,"F6 expression filter 0.5 vs GTEx skin, all genes",Spearman ρ,0.1377342953674158,,0.2967032967032967,1.0,0.4945054945054945,Figure 1F; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),40,"F6 expression filter 0.5 vs GTEx skin, 200 strongest genes",Spearman ρ,0.1805235130878272,,0.2457542457542457,1.0,0.48647005168744295,Figure 1E; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),40,"F7 expression filter 2 vs GTEx fibroblasts, all genes",Spearman ρ,-0.261825251962952,,0.1898101898101898,1.0,0.48647005168744295,Figure 1F; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),40,"F7 expression filter 2 vs GTEx fibroblasts, 200 strongest genes",Spearman ρ,-0.5518007950198756,,0.0189810189810189,0.7022977022976993,0.189810189810189,Figure 1E; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),40,"F7 expression filter 2 vs GTEx skin, all genes",Spearman ρ,0.148301847094307,,0.3116883116883117,1.0,0.49642665027280414,Figure 1F; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),40,"F7 expression filter 2 vs GTEx skin, 200 strongest genes",Spearman ρ,0.1254361359033976,,0.4695304695304695,1.0,0.6058457671360896,Figure 1E; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),40,"F8 without AG donors aged 80 or older vs GTEx fibroblasts, all genes",Spearman ρ,-0.2149432237606894,,0.2697302697302697,1.0,0.48647005168744295,Figure 1F; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),40,"F8 without AG donors aged 80 or older vs GTEx fibroblasts, 200 strongest genes",Spearman ρ,-0.3739203480087003,,0.1088911088911089,1.0,0.48647005168744295,Figure 1E; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),40,"F8 without AG donors aged 80 or older vs GTEx skin, all genes",Spearman ρ,0.0204150596832845,,0.8511488511488512,1.0,0.8511488511488512,Figure 1F; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),40,"F8 without AG donors aged 80 or older vs GTEx skin, 200 strongest genes",Spearman ρ,0.0576134403360084,,0.7122877122877123,1.0,0.7571915264222957,Figure 1E; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),40,"F9 + 5 hidden factors vs GTEx fibroblasts, all genes",Spearman ρ,-0.2714093043259284,,0.2267732267732267,1.0,0.48647005168744295,Figure 1F; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),40,"F9 + 5 hidden factors vs GTEx fibroblasts, 200 strongest genes",Spearman ρ,-0.0758163954098852,,0.7382617382617382,1.0,0.7571915264222957,Figure 1E; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),40,"F9 + 5 hidden factors vs GTEx skin, all genes",Spearman ρ,0.1589028473261685,,0.2397602397602397,1.0,0.48647005168744295,Figure 1F; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),40,"F9 + 5 hidden factors vs GTEx skin, 200 strongest genes",Spearman ρ,0.0755013875346883,,0.6573426573426573,1.0,0.7512487512487512,Figure 1E; ⟨cohortsens⟩
+Sex positive control (permuted-sex null),6,"Sex effects, all genes, discovery vs GTEx fibroblasts",Spearman ρ,0.1866525650846374,,0.3116883116883117,0.7432567432567432,0.3676323676323676,Figure 1E; ⟨sexctrl⟩
+Sex positive control (permuted-sex null),6,"Sex effects, 200 most sex-biased genes, discovery vs GTEx fibroblasts",Spearman ρ,0.6482937073426837,,0.001998001998001998,0.011988011988011988,0.011988011988011988,Figure 1E; ⟨sexctrl⟩
+Sex positive control (permuted-sex null),6,"Sex effects, 200 most sex-biased autosomal genes, discovery vs GTEx fibroblasts",Spearman ρ,0.3422005550138753,,0.13586413586413587,0.5434565434565435,0.27172827172827174,Figure 1E; ⟨sexctrl⟩
+Sex positive control (permuted-sex null),6,"Sex effects, all genes, discovery vs GTEx skin",Spearman ρ,-0.1152510062322483,,0.3676323676323676,0.7432567432567432,0.3676323676323676,Figure 1E; ⟨sexctrl⟩
+Sex positive control (permuted-sex null),6,"Sex effects, 200 most sex-biased genes, discovery vs GTEx skin",Spearman ρ,0.3183994599864996,,0.056943056943056944,0.28471528471528473,0.17082917082917085,Figure 1E; ⟨sexctrl⟩
+Sex positive control (permuted-sex null),6,"Sex effects, 200 most sex-biased autosomal genes, discovery vs GTEx skin",Spearman ρ,-0.177862446561164,,0.24775224775224775,0.7432567432567432,0.3676323676323676,Figure 1E; ⟨sexctrl⟩
+Real signature vs 100 random signatures (one-sided empirical P),11,"median cross-line ρ, raw score",ρ,0.505600701116866,100,0.0099009900990099,0.1089108910891089,0.013613861386138612,Figures 2E and S6
+Real signature vs 100 random signatures (one-sided empirical P),11,"median cross-line ρ, R_adj",ρ,0.209717401450867,100,0.0099009900990099,0.1089108910891089,0.013613861386138612,Figures 2E and S6
+Real signature vs 100 random signatures (one-sided empirical P),11,"ρ(score, proliferation), K562 ess.",ρ,0.4464375958901607,100,0.0099009900990099,0.1089108910891089,0.013613861386138612,Figures 2E and S6
+Real signature vs 100 random signatures (one-sided empirical P),11,"ρ(score, proliferation), K562 gw",ρ,0.4669489649054755,100,0.0099009900990099,0.1089108910891089,0.013613861386138612,Figures 2E and S6
+Real signature vs 100 random signatures (one-sided empirical P),11,"ρ(score, proliferation), RPE1",ρ,0.8263808978005897,100,0.0099009900990099,0.1089108910891089,0.013613861386138612,Figures 2E and S6
+Real signature vs 100 random signatures (one-sided empirical P),11,"ρ(score, proliferation), HepG2",ρ,0.8511933158707667,100,0.0099009900990099,0.1089108910891089,0.013613861386138612,Figures 2E and S6
+Real signature vs 100 random signatures (one-sided empirical P),11,"ρ(score, proliferation), Jurkat",ρ,0.521707227848219,100,0.0099009900990099,0.1089108910891089,0.013613861386138612,Figures 2E and S6
+Real signature vs 100 random signatures (one-sided empirical P),11,"CellAge AUROC, raw R_rob",AUROC,0.5799146734085208,100,0.0099009900990099,0.1089108910891089,0.013613861386138612,Figures 2E and S6
+Real signature vs 100 random signatures (one-sided empirical P),11,"CellAge AUROC, V1 R_rob",AUROC,0.5380019356495289,100,0.0396039603960396,0.11881188118811879,0.048404840484048396,Figures 2E and S6
+Real signature vs 100 random signatures (one-sided empirical P),11,"GenAge AUROC, raw R_rob",AUROC,0.4477553748468308,100,0.9306930693069309,0.9306930693069309,0.9306930693069309,Figures 2E and S6
+Real signature vs 100 random signatures (one-sided empirical P),11,"GenAge AUROC, V1 R_rob",AUROC,0.5117708217296053,100,0.3168316831683168,0.6336633663366336,0.3485148514851485,Figures 2E and S6
+"Raw top 5% kept under V1 (binomial, against 5%)",5,K562 ess.,fraction kept,0.38235294117647056,102,1.861922130245278e-24,3.723844260490556e-24,2.3274026628065976e-24,Figure 2F
+"Raw top 5% kept under V1 (binomial, against 5%)",5,K562 gw,fraction kept,0.41379310344827586,493,9.053202677557926e-129,4.526601338778963e-128,4.526601338778963e-128,Figure 2F
+"Raw top 5% kept under V1 (binomial, against 5%)",5,RPE1,fraction kept,0.4789915966386555,119,1.336055000776514e-41,5.344220003106056e-41,3.3401375019412845e-41,Figure 2F
+"Raw top 5% kept under V1 (binomial, against 5%)",5,HepG2,fraction kept,0.3055555555555556,108,1.7273199764842895e-17,1.7273199764842895e-17,1.7273199764842895e-17,Figure 2F
+"Raw top 5% kept under V1 (binomial, against 5%)",5,Jurkat,fraction kept,0.4424778761061947,113,1.3881478019293892e-34,4.164443405788168e-34,2.3135796698823154e-34,Figure 2F
+"Network vs 500 randomized networks, rank (one-sided empirical P)",5,K562 ess.,Spearman ρ,0.2484092956203087,1823,0.001996007984031936,0.00998003992015968,0.001996007984031936,Figure 4B
+"Network vs mean of 500 randomized networks, absolute error (one-sided Wilcoxon)",5,K562 ess.,MAE,0.07282893976598458,1823,0.19889850865934489,0.39779701731868977,0.2486231358241811,Figure 4A
+"Network vs 500 randomized networks, rank (one-sided empirical P)",5,K562 gw,Spearman ρ,0.06541451516235655,8246,0.001996007984031936,0.00998003992015968,0.001996007984031936,Figure 4B
+"Network vs mean of 500 randomized networks, absolute error (one-sided Wilcoxon)",5,K562 gw,MAE,0.07311315252581302,8246,1.0,1.0,1.0,Figure 4A
+"Network vs 500 randomized networks, rank (one-sided empirical P)",5,RPE1,Spearman ρ,0.29428602967500167,2093,0.001996007984031936,0.00998003992015968,0.001996007984031936,Figure 4B
+"Network vs mean of 500 randomized networks, absolute error (one-sided Wilcoxon)",5,RPE1,MAE,0.08114281059550876,2093,0.011921747901088043,0.04768699160435217,0.029804369752720106,Figure 4A
+"Network vs 500 randomized networks, rank (one-sided empirical P)",5,HepG2,Spearman ρ,0.3291077295943609,1882,0.001996007984031936,0.00998003992015968,0.001996007984031936,Figure 4B
+"Network vs mean of 500 randomized networks, absolute error (one-sided Wilcoxon)",5,HepG2,MAE,0.07741582770317275,1882,0.00034270252971800385,0.0017135126485900193,0.001713512648590019,Figure 4A
+"Network vs 500 randomized networks, rank (one-sided empirical P)",5,Jurkat,Spearman ρ,0.22194874172316703,1965,0.001996007984031936,0.00998003992015968,0.001996007984031936,Figure 4B
+"Network vs mean of 500 randomized networks, absolute error (one-sided Wilcoxon)",5,Jurkat,MAE,0.06939596185164792,1965,0.04349716990492406,0.1304915097147722,0.07249528317487344,Figure 4A
+"Held-out labels, discovery signature",78,"CellAge, all genes, raw score",AUROC,0.5726658634379506,257/394,0.0017069698762954806,0.12119486121697913,0.016642956293880937,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"CellAge, all genes, proliferation shift alone",AUROC,0.5814059376716614,257/394,0.000440931367108496,0.03351078390024569,0.010934998692825196,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"CellAge, all genes, R_rob (V0, raw)",AUROC,0.5728041241185882,257/394,0.001672543778297028,0.12042315203738602,0.016642956293880937,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"CellAge, all genes, R_rob (V2)",AUROC,0.5799146734085208,257/394,0.0005607691637346254,0.0420576872800969,0.010934998692825196,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"CellAge, all genes, R_rob (V3)",AUROC,0.5315826897627842,257/394,0.17274924043179163,1.0,0.5389776301471898,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"CellAge, all genes, R_rob (V4)",AUROC,0.5216377965197811,257/394,0.3502510272309306,1.0,0.6829895031003147,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"CellAge, all genes, R_rob (V5)",AUROC,0.5117225305654862,257/394,0.6128138259983938,1.0,0.7940600626666223,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"CellAge, all genes, R_rob (V6)",AUROC,0.536155167986727,257/394,0.1185670243805377,1.0,0.4203739955309973,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"CellAge, all genes, R_rob (V7)",AUROC,0.5421398803057537,257/394,0.06888453355009042,1.0,0.2880322875570966,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"CellAge, genes in ≥ 2 lines, R_rob (V1)",AUROC,0.5376066166968209,53/146,0.4177587563988481,1.0,0.740572340888867,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"CellAge, genes in ≥ 2 lines, raw score",AUROC,0.5712070302403722,53/146,0.12495362763951812,1.0,0.4237557806905397,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"CellAge, genes in ≥ 2 lines, proliferation shift alone",AUROC,0.6010597348213196,53/146,0.029439553116108425,1.0,0.1640203673611755,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"CellAge, genes in ≥ 2 lines, R_rob (V0, raw)",AUROC,0.5781855776686482,53/146,0.09205091350598718,1.0,0.35899856267335006,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"CellAge, genes in ≥ 2 lines, R_rob (V2)",AUROC,0.5916257430860687,53/146,0.04835055867141179,1.0,0.23570897352313247,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"CellAge, genes in ≥ 2 lines, R_rob (V3)",AUROC,0.5284311191522357,53/146,0.5401343736580302,1.0,0.7660087480968427,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"CellAge, genes in ≥ 2 lines, R_rob (V4)",AUROC,0.5124063065391574,53/146,0.78922229483493,1.0,0.9168542009408892,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"CellAge, genes in ≥ 2 lines, R_rob (V5)",AUROC,0.4927629878521581,53/146,0.8760826477813797,1.0,0.9490895350964946,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"CellAge, genes in ≥ 2 lines, R_rob (V6)",AUROC,0.535151201860946,53/146,0.44880517378464513,1.0,0.7555326213394202,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"CellAge, genes in ≥ 2 lines, R_rob (V7)",AUROC,0.5518221762729387,53/146,0.2641565804655407,1.0,0.649982297252446,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge, all genes, raw score",AUROC,0.4373584345178419,573/376,0.0010836621848206917,0.0791073394919105,0.014087608402668992,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge, all genes, proliferation shift alone",AUROC,0.4230533540248871,573/376,5.966939710970909e-05,0.0046542129745573094,0.0046542129745573094,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge, all genes, R_rob (V0, raw)",AUROC,0.4367132672384984,573/376,0.0009616561454488682,0.07116255476321624,0.014087608402668992,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge, all genes, R_rob (V2)",AUROC,0.4477553748468308,573/376,0.006420968742974375,0.4366258745222575,0.04553050563200011,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge, all genes, R_rob (V3)",AUROC,0.4951264342207864,573/376,0.7993087905638522,1.0,0.9168542009408892,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge, all genes, R_rob (V4)",AUROC,0.4761520181203817,573/376,0.21346655950445548,1.0,0.5741514359085355,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge, all genes, R_rob (V5)",AUROC,0.4815825628457911,573/376,0.33665690408721904,1.0,0.6829895031003147,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge, all genes, R_rob (V6)",AUROC,0.5169321599643534,573/376,0.37706960487795016,1.0,0.6839867251274444,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge, all genes, R_rob (V7)",AUROC,0.5094779250677658,573/376,0.6209956900341533,1.0,0.7940600626666223,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge, genes in ≥ 2 lines, R_rob (V1)",AUROC,0.5442431933548685,197/88,0.23277462105993008,1.0,0.6052140147558182,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge, genes in ≥ 2 lines, raw score",AUROC,0.4393747115828334,197/88,0.10203475061091852,1.0,0.3789862165548402,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge, genes in ≥ 2 lines, proliferation shift alone",AUROC,0.4480849206447601,197/88,0.1614674270976485,1.0,0.5247691380673576,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge, genes in ≥ 2 lines, R_rob (V0, raw)",AUROC,0.4328564836179049,197/88,0.07016171107160045,1.0,0.2880322875570966,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge, genes in ≥ 2 lines, R_rob (V2)",AUROC,0.4588140286109829,197/88,0.2666594040010035,1.0,0.649982297252446,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge, genes in ≥ 2 lines, R_rob (V3)",AUROC,0.4927895708352561,197/88,0.8458111946976034,1.0,0.9292010307945502,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge, genes in ≥ 2 lines, R_rob (V4)",AUROC,0.4513728657129672,197/88,0.18969660490556395,1.0,0.5480124141716292,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge, genes in ≥ 2 lines, R_rob (V5)",AUROC,0.4661975080756806,197/88,0.3619500776884993,1.0,0.6839867251274444,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge, genes in ≥ 2 lines, R_rob (V6)",AUROC,0.5487425011536686,197/88,0.18864819895820328,1.0,0.5480124141716292,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge, genes in ≥ 2 lines, R_rob (V7)",AUROC,0.533052607291186,197/88,0.3726979419988734,1.0,0.6839867251274444,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge, mouse genes only, all genes, R_rob (V1)",AUROC,0.5447957839262187,23/66,0.5239309066730056,1.0,0.7660087480968427,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge, mouse genes only, all genes, raw score",AUROC,0.567193675889328,23/66,0.33909919018183354,1.0,0.6829895031003147,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge, mouse genes only, all genes, proliferation shift alone",AUROC,0.5164690613746643,23/66,0.8147513264225494,1.0,0.9210232385646211,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge, mouse genes only, all genes, R_rob (V0, raw)",AUROC,0.5665349143610013,23/66,0.3438555812038019,1.0,0.6829895031003147,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge, mouse genes only, all genes, R_rob (V2)",AUROC,0.5447957839262187,23/66,0.5239309066730056,1.0,0.7660087480968427,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge, mouse genes only, all genes, R_rob (V3)",AUROC,0.5882740447957839,23/66,0.2091698237248123,1.0,0.5741514359085355,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge, mouse genes only, all genes, R_rob (V4)",AUROC,0.5691699604743083,23/66,0.3250846730075089,1.0,0.6829895031003147,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge, mouse genes only, all genes, R_rob (V5)",AUROC,0.5223978919631094,23/66,0.7499927813461286,1.0,0.8863551052272428,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge, mouse genes only, all genes, R_rob (V6)",AUROC,0.5349143610013175,23/66,0.6193883677639634,1.0,0.7940600626666223,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge, mouse genes only, all genes, R_rob (V7)",AUROC,0.5520421607378129,23/66,0.459063354385865,1.0,0.7555326213394202,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge, mouse genes only, genes in ≥ 2 lines, R_rob (V1)",AUROC,0.4537037037037037,6/18,0.7388826803635273,1.0,0.8863551052272428,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge, mouse genes only, genes in ≥ 2 lines, raw score",AUROC,0.5925925925925926,6/18,0.504985075093846,1.0,0.7660087480968427,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge, mouse genes only, genes in ≥ 2 lines, proliferation shift alone",AUROC,0.5,6/18,1.0,1.0,1.0,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge, mouse genes only, genes in ≥ 2 lines, R_rob (V0, raw)",AUROC,0.5740740740740741,6/18,0.5938028572077024,1.0,0.7940600626666223,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge, mouse genes only, genes in ≥ 2 lines, R_rob (V2)",AUROC,0.5,6/18,1.0,1.0,1.0,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge, mouse genes only, genes in ≥ 2 lines, R_rob (V3)",AUROC,0.4814814814814814,6/18,0.8939297667527715,1.0,0.9551578329687147,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge, mouse genes only, genes in ≥ 2 lines, R_rob (V4)",AUROC,0.4907407407407407,6/18,0.9468470713992696,1.0,0.9717640995939872,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge, mouse genes only, genes in ≥ 2 lines, R_rob (V5)",AUROC,0.4259259259259259,6/18,0.5938028572077021,1.0,0.7940600626666223,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge, mouse genes only, genes in ≥ 2 lines, R_rob (V6)",AUROC,0.4444444444444444,6/18,0.6891565167793515,1.0,0.8399095048248347,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge, mouse genes only, genes in ≥ 2 lines, R_rob (V7)",AUROC,0.4444444444444444,6/18,0.6891565167793515,1.0,0.8399095048248347,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge without yeast, all genes, R_rob (V1)",AUROC,0.5142246239309188,391/372,0.49656823310751874,1.0,0.7660087480968427,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge without yeast, all genes, raw score",AUROC,0.4382407942138987,391/372,0.003157984038778781,0.2179008986757359,0.024632275502474495,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge without yeast, all genes, proliferation shift alone",AUROC,0.420042335987091,391/372,0.00013250034640211852,0.010202526672963126,0.005167513509682623,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge without yeast, all genes, R_rob (V0, raw)",AUROC,0.4379795396419437,391/372,0.003032605174379132,0.21228236220653923,0.024632275502474495,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge without yeast, all genes, R_rob (V2)",AUROC,0.4477147100074251,391/372,0.012450982015441906,0.8342157950346076,0.08093138310037239,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge without yeast, all genes, R_rob (V3)",AUROC,0.4984943486511013,391/372,0.9426288542433205,1.0,0.9717640995939872,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge without yeast, all genes, R_rob (V4)",AUROC,0.4856653741440475,391/372,0.4932447997467705,1.0,0.7660087480968427,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge without yeast, all genes, R_rob (V5)",AUROC,0.4870094601655529,391/372,0.5346566427203714,1.0,0.7660087480968427,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge without yeast, all genes, R_rob (V6)",AUROC,0.5215878777878613,391/372,0.3021455371853876,1.0,0.6829895031003147,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge without yeast, all genes, R_rob (V7)",AUROC,0.5121070868740203,391/372,0.5628006367240854,1.0,0.7839008868656904,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge without yeast, genes in ≥ 2 lines, R_rob (V1)",AUROC,0.5828991978830729,139/87,0.03608057651503557,1.0,0.18761899787818498,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge without yeast, genes in ≥ 2 lines, raw score",AUROC,0.4710989828826594,139/87,0.4649431515934894,1.0,0.7555326213394202,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge without yeast, genes in ≥ 2 lines, proliferation shift alone",AUROC,0.4599354863166809,139/87,0.3110655633425401,1.0,0.6829895031003147,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge without yeast, genes in ≥ 2 lines, R_rob (V0, raw)",AUROC,0.4601008848093939,139/87,0.3130673163265869,1.0,0.6829895031003147,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge without yeast, genes in ≥ 2 lines, R_rob (V2)",AUROC,0.4921855618953113,139/87,0.8433738636311898,1.0,0.9292010307945502,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge without yeast, genes in ≥ 2 lines, R_rob (V3)",AUROC,0.5306375589183825,139/87,0.4385535091467567,1.0,0.7555326213394202,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge without yeast, genes in ≥ 2 lines, R_rob (V4)",AUROC,0.4968990324981394,139/87,0.9375061582030877,1.0,0.9717640995939872,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge without yeast, genes in ≥ 2 lines, R_rob (V5)",AUROC,0.5174067642437774,139/87,0.6598563154636055,1.0,0.8301418162284069,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge without yeast, genes in ≥ 2 lines, R_rob (V6)",AUROC,0.5974530720251385,139/87,0.013739708716987497,0.9068207753211748,0.08243825230192499,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, discovery signature",78,"GenAge without yeast, genes in ≥ 2 lines, R_rob (V7)",AUROC,0.5748780286115935,139/87,0.05832975518014712,1.0,0.2676306414147927,Figures 5A and 5B; ⟨evidence⟩
+"Held-out labels, GTEx-derived signature",16,"CellAge, all genes, R_rob (V1)",AUROC,0.5753026921329673,257/394,0.001150754820972341,0.017261322314585114,0.009206038567778728,Figure S7B; ⟨evidence⟩
+"Held-out labels, GTEx-derived signature",16,"CellAge, all genes, raw score",AUROC,0.5498133480811392,257/394,0.03152046602562885,0.28368419423065966,0.0630409320512577,Figure S7B; ⟨evidence⟩
+"Held-out labels, GTEx-derived signature",16,"CellAge, genes in ≥ 2 lines, R_rob (V1)",AUROC,0.6123029206513311,53/146,0.015528672729774227,0.18634407275729073,0.049691752735277525,Figure S7B; ⟨evidence⟩
+"Held-out labels, GTEx-derived signature",16,"CellAge, genes in ≥ 2 lines, raw score",AUROC,0.5861979839751874,53/146,0.06326542105611006,0.5061233684488805,0.11247185965530677,Figure S7B; ⟨evidence⟩
+"Held-out labels, GTEx-derived signature",16,"GenAge, all genes, R_rob (V1)",AUROC,0.5253518250343471,573/376,0.18598792590622637,1.0,0.27052789222723833,Figure S7B; ⟨evidence⟩
+"Held-out labels, GTEx-derived signature",16,"GenAge, all genes, raw score",AUROC,0.5437089228027181,573/376,0.022596695880536942,0.24856365468590635,0.05919540188005814,Figure S7B; ⟨evidence⟩
+"Held-out labels, GTEx-derived signature",16,"GenAge, genes in ≥ 2 lines, R_rob (V1)",AUROC,0.625,197/88,0.000748255808780853,0.011972092940493648,0.009206038567778728,Figure S7B; ⟨evidence⟩
+"Held-out labels, GTEx-derived signature",16,"GenAge, genes in ≥ 2 lines, raw score",AUROC,0.6080987540378403,197/88,0.003551978193243525,0.049727694705409345,0.0189438836972988,Figure S7B; ⟨evidence⟩
+"Held-out labels, GTEx-derived signature",16,"GenAge, mouse genes only, all genes, R_rob (V1)",AUROC,0.5461133069828722,23/66,0.5117972189772377,1.0,0.6299042695104464,Figure S7B; ⟨evidence⟩
+"Held-out labels, GTEx-derived signature",16,"GenAge, mouse genes only, all genes, raw score",AUROC,0.5296442687747036,23/66,0.6732139520792665,1.0,0.7180948822178842,Figure S7B; ⟨evidence⟩
+"Held-out labels, GTEx-derived signature",16,"GenAge, mouse genes only, genes in ≥ 2 lines, R_rob (V1)",AUROC,0.5740740740740741,6/18,0.5938028572077024,1.0,0.6786318368088028,Figure S7B; ⟨evidence⟩
+"Held-out labels, GTEx-derived signature",16,"GenAge, mouse genes only, genes in ≥ 2 lines, raw score",AUROC,0.4814814814814814,6/18,0.8939297667527715,1.0,0.8939297667527715,Figure S7B; ⟨evidence⟩
+"Held-out labels, GTEx-derived signature",16,"GenAge without yeast, all genes, R_rob (V1)",AUROC,0.5162527844237275,391/372,0.43725318697392335,1.0,0.5830042492985644,Figure S7B; ⟨evidence⟩
+"Held-out labels, GTEx-derived signature",16,"GenAge without yeast, all genes, raw score",AUROC,0.5342862250089376,391/372,0.10125687822237649,0.7087981475566354,0.16201100515580238,Figure S7B; ⟨evidence⟩
+"Held-out labels, GTEx-derived signature",16,"GenAge without yeast, genes in ≥ 2 lines, R_rob (V1)",AUROC,0.6053915488299016,139/87,0.007705395778334215,0.1001701451183448,0.03082158311333686,Figure S7B; ⟨evidence⟩
+"Held-out labels, GTEx-derived signature",16,"GenAge without yeast, genes in ≥ 2 lines, raw score",AUROC,0.5881088232861986,139/87,0.025897988322525437,0.2589798832252544,0.05919540188005814,Figure S7B; ⟨evidence⟩
+"Held-out labels, CellAge by manipulation",15,"all CellAge genes, R_rob (V1) (Discovery signature)",AUROC,0.5380019356495289,257/394,0.10089263103453948,0.6053557862072368,0.15133894655180924,⟨evidence⟩
+"Held-out labels, CellAge by manipulation",15,"all CellAge genes, raw score (Discovery signature)",AUROC,0.5726658634379506,257/394,0.0017069698762954806,0.018776668639250288,0.005120909628886442,⟨evidence⟩
+"Held-out labels, CellAge by manipulation",15,"all CellAge genes, proliferation shift alone (both signatures)",AUROC,0.5814059136068261,257/394,0.00044093309169966746,0.006568565464327908,0.003306998187747506,⟨evidence⟩
+"Held-out labels, CellAge by manipulation",15,"loss-of-function evidence, R_rob (V1) (Discovery signature)",AUROC,0.5418446448346781,129/343,0.1609211847627665,0.8046059238138326,0.21943797922195435,⟨evidence⟩
+"Held-out labels, CellAge by manipulation",15,"loss-of-function evidence, raw score (Discovery signature)",AUROC,0.5953849978529617,129/343,0.001394350227224895,0.01673220272669874,0.005120909628886442,⟨evidence⟩
+"Held-out labels, CellAge by manipulation",15,"loss-of-function evidence, proliferation shift alone (both signatures)",AUROC,0.6049449680204307,129/343,0.0004379043642885272,0.006568565464327908,0.003306998187747506,⟨evidence⟩
+"Held-out labels, CellAge by manipulation",15,"overexpression only, R_rob (V1) (Discovery signature)",AUROC,0.538296568627451,128/51,0.42433572064968983,1.0,0.45464541498181055,⟨evidence⟩
+"Held-out labels, CellAge by manipulation",15,"overexpression only, raw score (Discovery signature)",AUROC,0.5179227941176471,128/51,0.70848211507219,1.0,0.70848211507219,⟨evidence⟩
+"Held-out labels, CellAge by manipulation",15,"overexpression only, proliferation shift alone (both signatures)",AUROC,0.5392156862745098,128/51,0.4133023795226216,1.0,0.45464541498181055,⟨evidence⟩
+"Held-out labels, CellAge by manipulation",15,"all CellAge genes, R_rob (V1) (GTEx-fibroblast signature)",AUROC,0.5753026921329673,257/394,0.001150754820972341,0.014959812672640434,0.005120909628886442,⟨evidence⟩
+"Held-out labels, CellAge by manipulation",15,"all CellAge genes, raw score (GTEx-fibroblast signature)",AUROC,0.5498133480811392,257/394,0.03152046602562885,0.2882656534506332,0.06754385576920467,⟨evidence⟩
+"Held-out labels, CellAge by manipulation",15,"loss-of-function evidence, R_rob (V1) (GTEx-fibroblast signature)",AUROC,0.5583881393088796,129/343,0.050434518570539114,0.3635701008310104,0.08405753095089853,⟨evidence⟩
+"Held-out labels, CellAge by manipulation",15,"loss-of-function evidence, raw score (GTEx-fibroblast signature)",AUROC,0.5297534296110471,129/343,0.31882708644889024,1.0,0.3985338580611128,⟨evidence⟩
+"Held-out labels, CellAge by manipulation",15,"overexpression only, R_rob (V1) (GTEx-fibroblast signature)",AUROC,0.5958946078431373,128/51,0.0454462626038763,0.3635701008310104,0.08405753095089853,⟨evidence⟩
+"Held-out labels, CellAge by manipulation",15,"overexpression only, raw score (GTEx-fibroblast signature)",AUROC,0.6047794117647058,128/51,0.02882656534506332,0.2882656534506332,0.06754385576920467,⟨evidence⟩
+"Held-out labels, single screens",20,"CellAge, K562 ess., raw score",AUROC,0.6160511656694863,37/131,0.015736796900961553,0.29899914111826953,0.15736796900961553,Figure S9
+"Held-out labels, single screens",20,"CellAge, K562 ess., R_adj (V1)",AUROC,0.6300804621415308,37/131,0.007947875903104681,0.15895751806209363,0.15736796900961553,Figure S9
+"Held-out labels, single screens",20,"CellAge, K562 gw, raw score",AUROC,0.5331729388817933,257/393,0.07619505775575104,1.0,0.30478023102300417,Figure S9
+"Held-out labels, single screens",20,"CellAge, K562 gw, R_adj (V1)",AUROC,0.5384699161394442,257/393,0.04848790157490459,0.8727822283482826,0.30478023102300417,Figure S9
+"Held-out labels, single screens",20,"CellAge, RPE1, raw score",AUROC,0.5606099767381753,53/146,0.09601787868932143,1.0,0.32005959563107145,Figure S9
+"Held-out labels, single screens",20,"CellAge, RPE1, R_adj (V1)",AUROC,0.4831997932282244,53/146,0.6418428403164187,1.0,0.8036960116311688,Figure S9
+"Held-out labels, single screens",20,"CellAge, HepG2, raw score",AUROC,0.548828125,48/128,0.15989480136762996,1.0,0.40969359617974055,Figure S9
+"Held-out labels, single screens",20,"CellAge, HepG2, R_adj (V1)",AUROC,0.5133463541666666,48/128,0.3932994438221761,1.0,0.7123754915520853,Figure S9
+"Held-out labels, single screens",20,"CellAge, Jurkat, raw score",AUROC,0.5472660608959031,51/123,0.16387743847189623,1.0,0.40969359617974055,Figure S9
+"Held-out labels, single screens",20,"CellAge, Jurkat, R_adj (V1)",AUROC,0.531324725011956,51/123,0.2584852273509288,1.0,0.5744116163353974,Figure S9
+"Held-out labels, single screens",20,"GenAge, K562 ess., raw score",AUROC,0.43546462063086105,170/69,0.9410835552135162,1.0,0.9989355509618771,Figure S9
+"Held-out labels, single screens",20,"GenAge, K562 ess., R_adj (V1)",AUROC,0.502387041773231,170/69,0.47736161320199116,1.0,0.7344024818492172,Figure S9
+"Held-out labels, single screens",20,"GenAge, K562 gw, raw score",AUROC,0.4503128365081133,573/376,0.9952314563838228,1.0,0.9989355509618771,Figure S9
+"Held-out labels, single screens",20,"GenAge, K562 gw, R_adj (V1)",AUROC,0.5035089673610338,573/376,0.4274252949312512,1.0,0.7123754915520853,Figure S9
+"Held-out labels, single screens",20,"GenAge, RPE1, raw score",AUROC,0.4864443931702815,197/88,0.642956809304935,1.0,0.8036960116311688,Figure S9
+"Held-out labels, single screens",20,"GenAge, RPE1, R_adj (V1)",AUROC,0.5535879095523766,197/88,0.0743003495560698,1.0,0.30478023102300417,Figure S9
+"Held-out labels, single screens",20,"GenAge, HepG2, raw score",AUROC,0.3813559322033898,177/82,0.9989355509618771,1.0,0.9989355509618771,Figure S9
+"Held-out labels, single screens",20,"GenAge, HepG2, R_adj (V1)",AUROC,0.5188783243764641,177/82,0.3128752233091659,1.0,0.6257504466183318,Figure S9
+"Held-out labels, single screens",20,"GenAge, Jurkat, raw score",AUROC,0.39598278335724535,187/82,0.9966992019829544,1.0,0.9989355509618771,Figure S9
+"Held-out labels, single screens",20,"GenAge, Jurkat, R_adj (V1)",AUROC,0.49093517673144643,187/82,0.5938637598632002,1.0,0.8036960116311688,Figure S9
+"Paired AUROC differences (DeLong), discovery signature",64,"CellAge, all genes: raw score minus proliferation shift alone",AUROC difference,-0.0087400742337108,257/394,0.5735187064436678,1.0,0.6673672220435407,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"CellAge, all genes: R_rob (V0, raw) minus R_rob (V1 pre-specified)",AUROC difference,0.0348021884690592,257/394,0.0949110791220956,1.0,0.2152350838323019,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"CellAge, all genes: R_rob (V0, raw) minus R_rob (V2)",AUROC difference,-0.0071105492899325,257/394,0.3458359652357814,1.0,0.4811630820671741,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"CellAge, all genes: R_rob (V0, raw) minus R_rob (V3)",AUROC difference,0.0412214343558039,257/394,0.0284334335916258,1.0,0.07582248957766881,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"CellAge, all genes: R_rob (V0, raw) minus R_rob (V4)",AUROC difference,0.051166327598807,257/394,0.0010196937657071,0.054194709888693,0.005297982851302401,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"CellAge, all genes: R_rob (V0, raw) minus R_rob (V5)",AUROC difference,0.0610815935531019,257/394,0.0011528829737323,0.059949914634079594,0.005297982851302401,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"CellAge, all genes: R_rob (V0, raw) minus R_rob (V6)",AUROC difference,0.0366489561318611,257/394,0.0975283973615118,1.0,0.2152350838323019,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"CellAge, all genes: R_rob (V0, raw) minus R_rob (V7)",AUROC difference,0.0306642438128345,257/394,0.1360049929581211,1.0,0.26376725907029547,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"CellAge, genes in ≥ 2 lines: raw score minus proliferation shift alone",AUROC difference,-0.0298527045809473,53/146,0.3128936050113273,1.0,0.4638016353490992,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"CellAge, genes in ≥ 2 lines: R_rob (V0, raw) minus R_rob (V1 pre-specified)",AUROC difference,0.0405789609718273,53/146,0.4027578825678397,1.0,0.5370105100904529,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"CellAge, genes in ≥ 2 lines: R_rob (V0, raw) minus R_rob (V2)",AUROC difference,-0.0134401654174205,53/146,0.2363901870211781,1.0,0.40889113430690266,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"CellAge, genes in ≥ 2 lines: R_rob (V0, raw) minus R_rob (V3)",AUROC difference,0.0497544585164124,53/146,0.3188636243025057,1.0,0.4638016353490992,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"CellAge, genes in ≥ 2 lines: R_rob (V0, raw) minus R_rob (V4)",AUROC difference,0.0657792711294907,53/146,0.108329662983413,1.0,0.23110328103128105,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"CellAge, genes in ≥ 2 lines: R_rob (V0, raw) minus R_rob (V5)",AUROC difference,0.08542258981649,53/146,0.0251159336825024,1.0,0.0698878154643545,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"CellAge, genes in ≥ 2 lines: R_rob (V0, raw) minus R_rob (V6)",AUROC difference,0.0430343758077021,53/146,0.3662989698114964,1.0,0.4987900865518249,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"CellAge, genes in ≥ 2 lines: R_rob (V0, raw) minus R_rob (V7)",AUROC difference,0.0263634013957094,53/146,0.5504384159700039,1.0,0.652371455964449,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"GenAge, all genes: raw score minus proliferation shift alone",AUROC difference,0.0143050804929548,573/376,0.2543471233072574,1.0,0.4092126622730749,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"GenAge, all genes: R_rob (V0, raw) minus R_rob (V1 pre-specified)",AUROC difference,-0.0750575544911069,573/376,9.624367189800716e-06,0.0006063351329574451,0.0003023083251362709,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"GenAge, all genes: R_rob (V0, raw) minus R_rob (V2)",AUROC difference,-0.0110421076083324,573/376,0.0695931992926499,1.0,0.171306336720369,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"GenAge, all genes: R_rob (V0, raw) minus R_rob (V3)",AUROC difference,-0.058413166982288,573/376,9.236331437297902e-05,0.005357072233632783,0.000844464588552951,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"GenAge, all genes: R_rob (V0, raw) minus R_rob (V4)",AUROC difference,-0.0394387508818833,573/376,0.0011589337487224,0.059949914634079594,0.005297982851302401,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"GenAge, all genes: R_rob (V0, raw) minus R_rob (V5)",AUROC difference,-0.0448692956072926,573/376,0.0044327637207446,0.2030514535332858,0.014184843906382718,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"GenAge, all genes: R_rob (V0, raw) minus R_rob (V6)",AUROC difference,-0.0802188927258549,573/376,9.303936724593856e-06,0.0005954519503740068,0.0003023083251362709,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"GenAge, all genes: R_rob (V0, raw) minus R_rob (V7)",AUROC difference,-0.0727646578292673,573/376,1.41707027407627e-05,0.0008785835699272874,0.0003023083251362709,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"GenAge, genes in ≥ 2 lines: raw score minus proliferation shift alone",AUROC difference,-0.0087102090619267,197/88,0.6808880817138574,1.0,0.7385904615201165,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"GenAge, genes in ≥ 2 lines: R_rob (V0, raw) minus R_rob (V1 pre-specified)",AUROC difference,-0.1113867097369635,197/88,0.0039713442187129,0.1897807315538496,0.01412033499986809,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"GenAge, genes in ≥ 2 lines: R_rob (V0, raw) minus R_rob (V2)",AUROC difference,-0.0259575449930779,197/88,0.0010036057386795,0.054194709888693,0.005297982851302401,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"GenAge, genes in ≥ 2 lines: R_rob (V0, raw) minus R_rob (V3)",AUROC difference,-0.0599330872173511,197/88,0.1167782505378644,1.0,0.24109058175559103,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"GenAge, genes in ≥ 2 lines: R_rob (V0, raw) minus R_rob (V4)",AUROC difference,-0.0185163820950622,197/88,0.5382470003233197,1.0,0.6499586418998577,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"GenAge, genes in ≥ 2 lines: R_rob (V0, raw) minus R_rob (V5)",AUROC difference,-0.0333410244577757,197/88,0.2458058711861136,1.0,0.4092126622730749,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"GenAge, genes in ≥ 2 lines: R_rob (V0, raw) minus R_rob (V6)",AUROC difference,-0.1158860175357636,197/88,0.0027602971857586,0.1352545621021714,0.0110411887430344,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"GenAge, genes in ≥ 2 lines: R_rob (V0, raw) minus R_rob (V7)",AUROC difference,-0.100196123673281,197/88,0.0065124457839296,0.28003516870897277,0.018945296825977016,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"GenAge, mouse genes only, all genes: raw score minus proliferation shift alone",AUROC difference,0.0507246145146637,23/66,0.1465637962023979,1.0,0.2758847928515725,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"GenAge, mouse genes only, all genes: R_rob (V0, raw) minus R_rob (V1 pre-specified)",AUROC difference,0.0217391304347825,23/66,0.7743264308658219,1.0,0.7993047028292355,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"GenAge, mouse genes only, all genes: R_rob (V0, raw) minus R_rob (V2)",AUROC difference,0.0217391304347825,23/66,0.4203490235746293,1.0,0.549027296097475,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"GenAge, mouse genes only, all genes: R_rob (V0, raw) minus R_rob (V3)",AUROC difference,-0.0217391304347825,23/66,0.7350956479162916,1.0,0.7712478928957813,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"GenAge, mouse genes only, all genes: R_rob (V0, raw) minus R_rob (V4)",AUROC difference,-0.002635046113307,23/66,0.9614028401565616,1.0,0.9614028401565616,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"GenAge, mouse genes only, all genes: R_rob (V0, raw) minus R_rob (V5)",AUROC difference,0.0441370223978919,23/66,0.5056639369162981,1.0,0.622355614666213,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"GenAge, mouse genes only, all genes: R_rob (V0, raw) minus R_rob (V6)",AUROC difference,0.0316205533596838,23/66,0.693298800066371,1.0,0.7395187200707958,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"GenAge, mouse genes only, all genes: R_rob (V0, raw) minus R_rob (V7)",AUROC difference,0.0144927536231884,23/66,0.8449594307877384,1.0,0.8583714852446866,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"GenAge, mouse genes only, genes in ≥ 2 lines: raw score minus proliferation shift alone",AUROC difference,0.0925925925925925,6/18,0.2179440504821415,1.0,0.3874560897460293,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"GenAge, mouse genes only, genes in ≥ 2 lines: R_rob (V0, raw) minus R_rob (V1 pre-specified)",AUROC difference,0.1203703703703703,6/18,0.4309741357012636,1.0,0.5516468936976174,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"GenAge, mouse genes only, genes in ≥ 2 lines: R_rob (V0, raw) minus R_rob (V2)",AUROC difference,0.074074074074074,6/18,0.2856558699598734,1.0,0.44590184579102193,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"GenAge, mouse genes only, genes in ≥ 2 lines: R_rob (V0, raw) minus R_rob (V3)",AUROC difference,0.0925925925925926,6/18,0.5852738195677178,1.0,0.668884365220249,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"GenAge, mouse genes only, genes in ≥ 2 lines: R_rob (V0, raw) minus R_rob (V4)",AUROC difference,0.0833333333333333,6/18,0.6111496789452676,1.0,0.6774251682080074,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"GenAge, mouse genes only, genes in ≥ 2 lines: R_rob (V0, raw) minus R_rob (V5)",AUROC difference,0.1481481481481481,6/18,0.3051823674356791,1.0,0.4638016353490992,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"GenAge, mouse genes only, genes in ≥ 2 lines: R_rob (V0, raw) minus R_rob (V6)",AUROC difference,0.1296296296296296,6/18,0.4791040659939111,1.0,0.6012286318354962,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"GenAge, mouse genes only, genes in ≥ 2 lines: R_rob (V0, raw) minus R_rob (V7)",AUROC difference,0.1296296296296296,6/18,0.3348362336236763,1.0,0.4762115322647841,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"GenAge without yeast, all genes: raw score minus proliferation shift alone",AUROC difference,0.0181984582268076,391/372,0.1720917635002853,1.0,0.31468208182909313,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"GenAge without yeast, all genes: R_rob (V0, raw) minus R_rob (V1 pre-specified)",AUROC difference,-0.076245084288975,391/372,6.627549927424372e-05,0.003976529956454623,0.000844464588552951,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"GenAge without yeast, all genes: R_rob (V0, raw) minus R_rob (V2)",AUROC difference,-0.0097351703654813,391/372,0.1339656156496347,1.0,0.26376725907029547,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"GenAge without yeast, all genes: R_rob (V0, raw) minus R_rob (V3)",AUROC difference,-0.0605148090091576,391/372,0.000403083752359,0.022572690132104,0.0028663733501084446,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"GenAge without yeast, all genes: R_rob (V0, raw) minus R_rob (V4)",AUROC difference,-0.0476858345021037,391/372,0.00058775344376,0.0323264394068,0.003761622040064,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"GenAge without yeast, all genes: R_rob (V0, raw) minus R_rob (V5)",AUROC difference,-0.0490299205236091,391/372,0.0053947311241859,0.2373681694641796,0.016441085330852267,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"GenAge without yeast, all genes: R_rob (V0, raw) minus R_rob (V6)",AUROC difference,-0.0836083381459175,391/372,3.734078163547325e-05,0.0022777876797638683,0.000597452506167572,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"GenAge without yeast, all genes: R_rob (V0, raw) minus R_rob (V7)",AUROC difference,-0.0741275472320765,391/372,8.147194635917084e-05,0.00480684483519108,0.000844464588552951,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"GenAge without yeast, genes in ≥ 2 lines: raw score minus proliferation shift alone",AUROC difference,0.0111634965659784,139/87,0.6139165586885067,1.0,0.6774251682080074,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"GenAge without yeast, genes in ≥ 2 lines: R_rob (V0, raw) minus R_rob (V1 pre-specified)",AUROC difference,-0.122798313073679,139/87,0.0039537652407052,0.1897807315538496,0.01412033499986809,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"GenAge without yeast, genes in ≥ 2 lines: R_rob (V0, raw) minus R_rob (V2)",AUROC difference,-0.0320846770859174,139/87,0.0002912414134281,0.0166007605654017,0.0023299313074248,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"GenAge without yeast, genes in ≥ 2 lines: R_rob (V0, raw) minus R_rob (V3)",AUROC difference,-0.0705366741089886,139/87,0.09611310658838,1.0,0.2152350838323019,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"GenAge without yeast, genes in ≥ 2 lines: R_rob (V0, raw) minus R_rob (V4)",AUROC difference,-0.0367981476887455,139/87,0.2557579139206718,1.0,0.4092126622730749,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"GenAge without yeast, genes in ≥ 2 lines: R_rob (V0, raw) minus R_rob (V5)",AUROC difference,-0.0573058794343835,139/87,0.0688564187233868,1.0,0.171306336720369,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"GenAge without yeast, genes in ≥ 2 lines: R_rob (V0, raw) minus R_rob (V6)",AUROC difference,-0.1373521872157446,139/87,0.0012695690316347,0.063478451581735,0.005416827868308053,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), discovery signature",64,"GenAge without yeast, genes in ≥ 2 lines: R_rob (V0, raw) minus R_rob (V7)",AUROC difference,-0.1147771438021996,139/87,0.0044141620333323,0.2030514535332858,0.014184843906382718,Figure 5C; ⟨evidence⟩
+"Paired AUROC differences (DeLong), GTEx-derived signature",16,"CellAge, all genes: raw score minus proliferation shift alone",AUROC difference,-0.0315925895905221,257/394,0.3244823532661236,1.0,0.5768575169175532,⟨evidence⟩
+"Paired AUROC differences (DeLong), GTEx-derived signature",16,"CellAge, all genes: R_rob (V1) minus proliferation shift alone",AUROC difference,-0.0061032455386941,257/394,0.8405342243068301,1.0,0.9388396383272865,⟨evidence⟩
+"Paired AUROC differences (DeLong), GTEx-derived signature",16,"CellAge, genes in ≥ 2 lines: raw score minus proliferation shift alone",AUROC difference,-0.0148617508461321,53/146,0.8284476739449417,1.0,0.9388396383272865,⟨evidence⟩
+"Paired AUROC differences (DeLong), GTEx-derived signature",16,"CellAge, genes in ≥ 2 lines: R_rob (V1) minus proliferation shift alone",AUROC difference,0.0112431858300114,53/146,0.8606655652823132,1.0,0.9388396383272865,⟨evidence⟩
+"Paired AUROC differences (DeLong), GTEx-derived signature",16,"GenAge, all genes: raw score minus proliferation shift alone",AUROC difference,0.120655568777831,573/376,2.0925278016293533e-05,0.00033480444826069653,0.00033480444826069653,⟨evidence⟩
+"Paired AUROC differences (DeLong), GTEx-derived signature",16,"GenAge, all genes: R_rob (V1) minus proliferation shift alone",AUROC difference,0.1022984710094599,573/376,0.0001593744316299,0.0023906164744485,0.0012749954530392,⟨evidence⟩
+"Paired AUROC differences (DeLong), GTEx-derived signature",16,"GenAge, genes in ≥ 2 lines: raw score minus proliferation shift alone",AUROC difference,0.1600138333930801,197/88,0.0125753199637208,0.13832851960092882,0.03353418656992214,⟨evidence⟩
+"Paired AUROC differences (DeLong), GTEx-derived signature",16,"GenAge, genes in ≥ 2 lines: R_rob (V1) minus proliferation shift alone",AUROC difference,0.1769150793552398,197/88,0.0030281416467779,0.0363376997613348,0.00969005326968928,⟨evidence⟩
+"Paired AUROC differences (DeLong), GTEx-derived signature",16,"GenAge, mouse genes only, all genes: raw score minus proliferation shift alone",AUROC difference,0.0131752074000393,23/66,0.8940862254693297,1.0,0.9388396383272865,⟨evidence⟩
+"Paired AUROC differences (DeLong), GTEx-derived signature",16,"GenAge, mouse genes only, all genes: R_rob (V1) minus proliferation shift alone",AUROC difference,0.0296442456082078,23/66,0.7673809092825,1.0,0.9388396383272865,⟨evidence⟩
+"Paired AUROC differences (DeLong), GTEx-derived signature",16,"GenAge, mouse genes only, genes in ≥ 2 lines: raw score minus proliferation shift alone",AUROC difference,-0.0185185185185185,6/18,0.9388396383272865,1.0,0.9388396383272865,⟨evidence⟩
+"Paired AUROC differences (DeLong), GTEx-derived signature",16,"GenAge, mouse genes only, genes in ≥ 2 lines: R_rob (V1) minus proliferation shift alone",AUROC difference,0.074074074074074,6/18,0.7493396484233812,1.0,0.9388396383272865,⟨evidence⟩
+"Paired AUROC differences (DeLong), GTEx-derived signature",16,"GenAge without yeast, all genes: raw score minus proliferation shift alone",AUROC difference,0.1142438890218465,391/372,0.0002695744641697,0.0037740424983758,0.0014377304755717332,⟨evidence⟩
+"Paired AUROC differences (DeLong), GTEx-derived signature",16,"GenAge without yeast, all genes: R_rob (V1) minus proliferation shift alone",AUROC difference,0.0962104484366364,391/372,0.0012318473476492,0.0160140155194396,0.0049273893905968,⟨evidence⟩
+"Paired AUROC differences (DeLong), GTEx-derived signature",16,"GenAge without yeast, genes in ≥ 2 lines: raw score minus proliferation shift alone",AUROC difference,0.1281733369695177,139/87,0.0597616940662834,0.5378552465965506,0.1195233881325668,⟨evidence⟩
+"Paired AUROC differences (DeLong), GTEx-derived signature",16,"GenAge without yeast, genes in ≥ 2 lines: R_rob (V1) minus proliferation shift alone",AUROC difference,0.1454560625132207,139/87,0.0222511807193867,0.22251180719386698,0.05085984164431245,⟨evidence⟩
+"Raw score added to proliferation (logistic, likelihood ratio)",8,"CellAge, all genes",coefficient,0.0336014485892764,651,0.7935661899992817,1.0,0.7935661899992817,⟨evidence⟩
+"Raw score added to proliferation (logistic, likelihood ratio)",8,"CellAge, genes in ≥ 2 lines",coefficient,0.0774091004249311,199,0.765559735445624,1.0,0.7935661899992817,⟨evidence⟩
+"Raw score added to proliferation (logistic, likelihood ratio)",8,"GenAge, all genes",coefficient,-0.1111816419389586,949,0.3296156616012169,1.0,0.7822015371263285,⟨evidence⟩
+"Raw score added to proliferation (logistic, likelihood ratio)",8,"GenAge, genes in ≥ 2 lines",coefficient,-0.3801230016832818,285,0.1030156920115063,0.8241255360920504,0.7822015371263285,⟨evidence⟩
+"Raw score added to proliferation (logistic, likelihood ratio)",8,"GenAge, mouse genes only, all genes",coefficient,0.4510650859338317,89,0.2670829145913482,1.0,0.7822015371263285,⟨evidence⟩
+"Raw score added to proliferation (logistic, likelihood ratio)",8,"GenAge, mouse genes only, genes in ≥ 2 lines",coefficient,0.4344889007754359,24,0.6699505707855868,1.0,0.7935661899992817,⟨evidence⟩
+"Raw score added to proliferation (logistic, likelihood ratio)",8,"GenAge without yeast, all genes",coefficient,-0.0867643073440894,763,0.4888759607039553,1.0,0.7822015371263285,⟨evidence⟩
+"Raw score added to proliferation (logistic, likelihood ratio)",8,"GenAge without yeast, genes in ≥ 2 lines",coefficient,-0.1927133679277352,226,0.4330666438914227,1.0,0.7822015371263285,⟨evidence⟩
+Label classes and essential genes (Fisher),8,"CellAge, DepMap common essentials: inducers vs inhibitors",odds ratio,0.2833333333333333,,9.6295752927681e-11,7.70366023421448e-10,7.70366023421448e-10,Figure 5D
+Label classes and essential genes (Fisher),8,"CellAge, Hart CEGv2 core essentials: inducers vs inhibitors",odds ratio,0.2458100558659217,,1.8551463475027949e-06,1.2986024432519564e-05,7.4205853900111794e-06,Figure 5D
+Label classes and essential genes (Fisher),8,"GenAge, DepMap common essentials: anti-longevity vs pro-longevity",odds ratio,1.3735914619012162,,0.0326436284757147,0.1958617708542882,0.08576801744749,Figure 5D
+Label classes and essential genes (Fisher),8,"GenAge, Hart CEGv2 core essentials: anti-longevity vs pro-longevity",odds ratio,1.2863081491257011,,0.2608458409283534,0.7825375227850602,0.34779445457113783,Figure 5D
+Label classes and essential genes (Fisher),8,"GenAge mammal-only, DepMap common essentials: anti-longevity vs pro-longevity",odds ratio,0.7414634146341463,,0.6262577129167213,1.0,0.6529887325791213,Figure 5D
+Label classes and essential genes (Fisher),8,"GenAge mammal-only, Hart CEGv2 core essentials: anti-longevity vs pro-longevity",odds ratio,0.2255434782608695,,0.1662239714925237,0.6648958859700947,0.2659583543880379,Figure 5D
+Label classes and essential genes (Fisher),8,"GenAge without yeast, DepMap common essentials: anti-longevity vs pro-longevity",odds ratio,1.3821552055320785,,0.042884008723745,0.21442004361872502,0.08576801744749,Figure 5D
+Label classes and essential genes (Fisher),8,"GenAge without yeast, Hart CEGv2 core essentials: anti-longevity vs pro-longevity",odds ratio,1.1361603149042765,,0.6529887325791213,1.0,0.6529887325791213,Figure 5D
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Myc Targets V2",overlap,7.0,7/57,4.839359142721763e-05,0.004839359142721763,0.004839359142721763,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: PI3K/AKT/mTOR Signaling",overlap,5.0,5/82,0.0129582258898275,1.0,0.647911294491375,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Hypoxia",overlap,6.0,6/151,0.0445531940167522,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Protein Secretion",overlap,4.0,4/89,0.065468542081788,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Apical Junction",overlap,5.0,5/132,0.0752298317949979,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Oxidative Phosphorylation",overlap,6.0,6/182,0.091252347108058,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Mitotic Spindle",overlap,6.0,6/186,0.0986921685592965,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Adipogenesis",overlap,5.0,5/172,0.1706263030308436,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Adipogenesis",overlap,5.0,5/172,0.1706263030308436,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: TGF-beta Signaling",overlap,2.0,2/50,0.209540104106949,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: heme Metabolism",overlap,4.0,4/144,0.2310646635042147,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Myc Targets V1",overlap,5.0,5/196,0.2428549400021321,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: TNF-alpha Signaling via NF-kB",overlap,4.0,4/150,0.2532171764775453,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Unfolded Protein Response",overlap,3.0,3/106,0.2705466549887609,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Notch Signaling",overlap,1.0,1/25,0.3496882318423498,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Complement",overlap,3.0,3/123,0.3498443599125498,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Estrogen Response Early",overlap,3.0,3/131,0.3870347071676677,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Allograft Rejection",overlap,2.0,2/81,0.4031098656851557,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Androgen Response",overlap,2.0,2/81,0.4031098656851557,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: DNA Repair",overlap,3.0,3/144,0.446263145760474,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Glycolysis",overlap,3.0,3/162,0.5241990249571389,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Reactive Oxygen Species Pathway",overlap,1.0,1/44,0.5313758779670099,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: KRAS Signaling Up",overlap,2.0,2/107,0.5474708498177534,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Apoptosis",overlap,2.0,2/124,0.627884345258817,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Myogenesis",overlap,2.0,2/126,0.6365829839830254,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Cholesterol Homeostasis",overlap,1.0,1/61,0.6506116765242447,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Coagulation",overlap,1.0,1/76,0.7304506013298451,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Coagulation",overlap,1.0,1/76,0.7304506013298451,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Pperoxisome",overlap,1.0,1/79,0.7440902608088971,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Allograft Rejection",overlap,1.0,1/81,0.7527995870760312,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: PI3K/AKT/mTOR Signaling",overlap,1.0,1/82,0.7570430067468571,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Glycolysis",overlap,2.0,2/162,0.7670756007445757,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: mTORC1 Signaling",overlap,2.0,2/185,0.8274390486411423,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: mTORC1 Signaling",overlap,2.0,2/185,0.8274390486411423,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: G2-M Checkpoint",overlap,2.0,2/188,0.8341861318198678,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: UV Response Up",overlap,1.0,1/114,0.8605071954259788,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Xenobiotic Metabolism",overlap,1.0,1/122,0.8786044417448824,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Complement",overlap,1.0,1/123,0.8806956658319647,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: IL-2/STAT5 Signaling",overlap,1.0,1/125,0.8847711829729552,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: IL-2/STAT5 Signaling",overlap,1.0,1/125,0.8847711829729552,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Myogenesis",overlap,1.0,1/126,0.8867566885648747,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Estrogen Response Late",overlap,1.0,1/126,0.8867566885648747,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Apical Junction",overlap,1.0,1/132,0.8979747843849881,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: heme Metabolism",overlap,1.0,1/144,0.9172007339692068,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: p53 Pathway",overlap,1.0,1/162,0.9394899969401332,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: p53 Pathway",overlap,1.0,1/162,0.9394899969401332,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Mitotic Spindle",overlap,1.0,1/186,0.9601988858721596,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Epithelial Mesenchymal Transition",overlap,1.0,1/188,0.9615658732351906,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: E2F Targets",overlap,1.0,1/197,0.9671615820246954,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Hypoxia",overlap,0.0,0/151,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Inflammatory Response",overlap,0.0,0/92,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Protein Secretion",overlap,0.0,0/89,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Interferon Gamma Response",overlap,0.0,0/132,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Interferon Alpha Response",overlap,0.0,0/73,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Apical Surface",overlap,0.0,0/23,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: TNF-alpha Signaling via NF-kB",overlap,0.0,0/150,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: IL-6/JAK/STAT3 Signaling",overlap,0.0,0/49,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: TGF-beta Signaling",overlap,0.0,0/50,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Wnt-beta Catenin Signaling",overlap,0.0,0/29,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Cholesterol Homeostasis",overlap,0.0,0/61,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: G2-M Checkpoint",overlap,0.0,0/188,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Apoptosis",overlap,0.0,0/124,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Estrogen Response Late",overlap,0.0,0/126,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Androgen Response",overlap,0.0,0/81,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Estrogen Response Early",overlap,0.0,0/131,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Notch Signaling",overlap,0.0,0/25,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: DNA Repair",overlap,0.0,0/144,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: IL-6/JAK/STAT3 Signaling",overlap,0.0,0/49,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: KRAS Signaling Dn",overlap,0.0,0/51,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Pancreas Beta Cells",overlap,0.0,0/11,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Wnt-beta Catenin Signaling",overlap,0.0,0/29,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: KRAS Signaling Up",overlap,0.0,0/107,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Angiogenesis",overlap,0.0,0/26,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Bile Acid Metabolism",overlap,0.0,0/60,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Fatty Acid Metabolism",overlap,0.0,0/118,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: UV Response Dn",overlap,0.0,0/134,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Spermatogenesis",overlap,0.0,0/56,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Hedgehog Signaling",overlap,0.0,0/17,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Epithelial Mesenchymal Transition",overlap,0.0,0/188,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Hedgehog Signaling",overlap,0.0,0/17,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Myc Targets V2",overlap,0.0,0/57,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Myc Targets V1",overlap,0.0,0/196,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: E2F Targets",overlap,0.0,0/197,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Unfolded Protein Response",overlap,0.0,0/106,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Interferon Alpha Response",overlap,0.0,0/73,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Interferon Gamma Response",overlap,0.0,0/132,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Inflammatory Response",overlap,0.0,0/92,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Xenobiotic Metabolism",overlap,0.0,0/122,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: UV Response Up",overlap,0.0,0/114,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Reactive Oxygen Species Pathway",overlap,0.0,0/44,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Fatty Acid Metabolism",overlap,0.0,0/118,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Oxidative Phosphorylation",overlap,0.0,0/182,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: UV Response Dn",overlap,0.0,0/134,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Angiogenesis",overlap,0.0,0/26,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Bile Acid Metabolism",overlap,0.0,0/60,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Apical Surface",overlap,0.0,0/23,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Pperoxisome",overlap,0.0,0/79,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Spermatogenesis",overlap,0.0,0/56,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: KRAS Signaling Dn",overlap,0.0,0/51,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Pancreas Beta Cells",overlap,0.0,0/11,1.0,1.0,1.0,⟨addstats⟩
+GTEx fibroblasts vs GTEx skin (permuted-age null),1,"age effects, all shared genes",Spearman ρ,0.06329098469596872,13684,0.5704295704295704,0.5704295704295704,0.5704295704295704,Results
