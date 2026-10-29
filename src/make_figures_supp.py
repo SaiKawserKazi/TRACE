@@ -167,7 +167,7 @@ def S7():
                 ("Donor-bootstrap median", R0["H5"]["median_rho"], R1["H5"]["median_rho"])]
     ax = a = fig.add_subplot(gs[0]); y = np.arange(len(rho_rows))
     ax.scatter([r[1] for r in rho_rows], y - 0.12, marker="o", color=COHORT_C["Discovery"], s=16, label="Discovery signature", zorder=3)
-    ax.scatter([r[2] for r in rho_rows], y + 0.12, marker="s", color=COHORT_C["GTEx fibroblasts"], s=16, label="GTEx-fibroblast signature", zorder=3)
+    ax.scatter([r[2] for r in rho_rows], y + 0.12, marker="s", color=COHORT_C["GTEx fibroblasts"], s=16, label="GTEx-derived signature", zorder=3)
     ax.set_yticks(y); ax.set_yticklabels([r[0] for r in rho_rows]); ax.invert_yaxis(); ax.set_xlim(0, 1); ax.set_xlabel("Spearman ρ"); gridx(ax)
     ax.legend(loc="lower left", bbox_to_anchor=(-0.05, 1.03), fontsize=6.5, frameon=False, ncol=1); title(ax, " ")
     ax = b = fig.add_subplot(G[1].subgridspec(1, 3, width_ratios=[0.25, 1, 0.08])[1]); progs = ["prolif", "stress", "oxphos", "magnitude", "identity"]
@@ -178,7 +178,7 @@ def S7():
     ax.axvline(4.5, color="white", lw=2.5)
     ax.set_xticks(range(10)); ax.set_xticklabels([SCREEN_L[c] for c in SC] * 2, rotation=45, ha="right", rotation_mode="anchor"); ax.set_yticks(range(5))
     ax.set_yticklabels(["proliferation", "stress", "oxidative\nphosphorylation", "response size", "identity"]); ax.spines[:].set_visible(False)
-    ax.text(2, -0.75, "Discovery signature", ha="center", fontsize=6.5); ax.text(7, -0.75, "GTEx-fibroblast signature", ha="center", fontsize=6.5)
+    ax.text(2, -0.75, "Discovery signature", ha="center", fontsize=6.5); ax.text(7, -0.75, "GTEx-derived signature", ha="center", fontsize=6.5)
     cb = fig.colorbar(im, ax=ax, fraction=0.03, pad=0.02, extend="both"); cb.set_label("Spearman ρ with score"); cb.outline.set_visible(False)
     cb.set_ticks([-0.6, 0, 0.6]); cb.set_ticklabels(["−0.6", "0", "0.6"])
     title(ax, " ")
@@ -195,7 +195,7 @@ def S7():
     ax.set_xlabel("AUROC (95% CI)"); ax.set_xlim(0.3, 0.8)
     ax.legend([Line2D([], [], marker="o", ls="none", color=INK), Line2D([], [], marker="D", ls="none", mfc="white", mec=INK),
                Line2D([], [], color=COHORT_C["Discovery"]), Line2D([], [], color=COHORT_C["GTEx fibroblasts"])],
-              [f"{RROB} (V1)", "proliferation only", "discovery signature", "GTEx-fibroblast signature"],
+              [f"{RROB} (V1)", "proliferation only", "discovery signature", "GTEx-derived signature"],
               loc="lower center", bbox_to_anchor=(0.45, 1.03), ncol=2, fontsize=6.5, frameon=False, columnspacing=0.6); title(ax, " ")
     src(PR, "FigS7C", index=False); src(pd.DataFrame(rows), "FigS7B", index=False); src(pd.DataFrame(rho_rows, columns=["statistic", "discovery", "gtex"]), "FigS7A", index=False)
     letters(fig, [[(a, "A"), (c_, "B")], [(b, "C", a.get_tightbbox(fig.canvas.get_renderer()).transformed(fig.transFigure.inverted()).x0)]]); save(fig, "FigS7")
