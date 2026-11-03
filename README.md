@@ -1,7 +1,7 @@
 # TRACE: Transferable Rejuvenation Assessment across Contexts and Evidence
 
 Code, pre-specified protocol, results and figures for the paper *"Rejuvenation rankings from CRISPRi screens change with the
-aging cohort and track cell growth programs"*. TRACE is a pre-specified audit of rankings that score gene knockdowns by how well they reverse an aging
+aging cohort and track cell growth programs"*. TRACE is a set of tests, fixed in part before analysis, for rankings that score gene knockdowns by how well they reverse an aging
 expression signature: it swaps the aging cohort, compares score definitions with random signatures and a proliferation-only
 baseline, compares lines and replicate screens, and tests rankings against held-out labels.
 
@@ -23,15 +23,15 @@ python run_all.py             # everything: download and check inputs, preproces
 python run_all.py --from x19  # resume at a step
 ```
 
-The audit summary is written to `results/trace_report.csv`: one row per check (cohort transfer with its power check, programs inside the
+The summary is written to `results/trace_report.csv`: one row per check (cohort transfer with its power check, programs inside the
 signature, random signatures, replicates, labels against a proliferation-only baseline, knockdown quality), with its value, the reference
-it is judged against, the rule and pass or fail.
+it is judged against and the result (pass, fail, flag or info), following Box 1 of the paper.
 
 Inputs (about 16 GB) are listed with URL, version, access date and SHA-256 in `DATA_MANIFEST.csv`; `src/download.py` fetches and
 checks them. Resample counts and seeds are in `src/config.py` with the paper's values as defaults. Set `TRACE_ROOT` to run from
 another folder. Each step prints its wall time; the analyses were run on one 8-core, 8 GB workstation.
 
-To audit another aging cohort, give `src/trace_analysis.py` two CSV files (genes × samples expression and a sample table with
+To check another aging cohort, give `src/trace_analysis.py` two CSV files (genes × samples expression and a sample table with
 `age` and `sex`): `TRACE_DISCOVERY=table TRACE_EXPR=expr.csv TRACE_META=meta.csv TRACE_RESULTS=results/my_run python src/trace_analysis.py`.
 
 ## Layout
@@ -40,7 +40,7 @@ To audit another aging cohort, give `src/trace_analysis.py` two CSV files (genes
 |---|---|
 | `RESEARCH_PROTOCOL.md` | Protocol v1.0, frozen at tag `protocol-v1.0` (commit `1eb8681`) before any knockdown was scored |
 | `PROTOCOL_FREEZE_RECORD.json` | Hashes and commit time of the frozen protocol |
-| `PROTOCOL_AMENDMENTS.md` | Deviations (D1–D11) and dated exploratory analyses (X01–X25) |
+| `PROTOCOL_AMENDMENTS.md` | Deviations (D1–D11) and dated exploratory analyses (X01–X33) |
 | `DATA_MANIFEST.csv` | Every input file with URL, version, access date, size and SHA-256 |
 | `src/config.py` | Paths, resample counts and seeds |
 | `src/download.py` | Cross-platform download and checksum check |

@@ -1,7 +1,7 @@
 """Catalog of every exploratory test with its P value, the size of its family, and Holm and Benjamini-Hochberg values
 within the family (Table: all exploratory tests).
 
-Pre-specified tests (H1-H5) are not listed. Each test appears once: proliferation-only baselines, which do not depend on
+Pre-specified tests (H1-H5) are not listed. Each test appears once (the CellAge-by-manipulation family lists the method subsets only): proliferation-only baselines, which do not depend on
 the signature, are listed under the discovery signature only. AUROC tests without a stored P value get a two-sided
 Mann-Whitney normal approximation from the AUROC and the class sizes. Supplementary-table references are written as ⟨key⟩ and numbered by the manuscript builder. Writes results/x_exploratory_tests.csv."""
 import json
@@ -28,7 +28,7 @@ def p_auroc(a, n1, n2):
 
 def score_name(s):
     s = SCORE.get(s, s)
-    return s.replace("R_rob (V0 raw)", "R_rob (V0, raw)").replace("(V2 genes removed)", "(V2)").replace("(V3 resid. (all 3))", "(V3)").replace(
+    return s.replace("R_rob (V0 raw)", "R_rob (V0, raw)").replace("(V1 pre-specified)", "(V1)").replace("(V2 genes removed)", "(V2)").replace("(V3 resid. (all 3))", "(V3)").replace(
         "(V4 resid. (prolif.))", "(V4)").replace("(V5 stratified)", "(V5)").replace("(V6 spline resid.)", "(V6)").replace("(V7 resid. (prolif. + identity))", "(V7)")
 
 
@@ -69,13 +69,15 @@ for _, r in CSV("x_gtex_signature_evidence.csv").iterrows():
     if r.score == "proliferation shift alone": continue
     add("Held-out labels, GTEx-derived signature", f"{LAB.get(r.labels, r.labels)}, {r.gene_set.replace('>=', '≥')}, {score_name(r.score)}", "AUROC", r.auroc,
         p_auroc(r.auroc, r.n_pos, r.n_neg), f"{r.n_pos}/{r.n_neg}", "Figure S7B; ⟨evidence⟩")
-# CellAge by manipulation (proliferation listed once)
+# CellAge by manipulation: the method subsets only (the all-genes rows are listed in the families above or are H4a);
+# proliferation listed once
 seen = set()
 for _, r in CSV("x_cellage_method.csv").iterrows():
+    if r.subset == "all CellAge genes": continue
     if r.score == "proliferation shift alone":
         if r.subset in seen: continue
         seen.add(r.subset); sig = "both signatures"
-    else: sig = r.signature
+    else: sig = r.signature.replace("GTEx-fibroblast signature", "GTEx-derived signature")
     add("Held-out labels, CellAge by manipulation", f"{r.subset}, {score_name(r.score)} ({sig})", "AUROC", r.auroc, p_auroc(r.auroc, r.n_pos, r.n_neg), f"{r.n_pos}/{r.n_neg}", "⟨evidence⟩")
 H4 = J("results.json")["H4"]
 for key, lab in [("H4a_cellage", "CellAge"), ("H4b_genage", "GenAge")]:

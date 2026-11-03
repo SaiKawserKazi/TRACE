@@ -40,9 +40,9 @@ CORR_LIM = 0.6                                                  # one diverging 
 VARS = ["V0 raw", "V1 pre-specified", "V2 genes removed", "V3 resid. (all 3)", "V4 resid. (prolif.)", "V5 stratified",
         "V6 spline resid.", "V7 resid. (prolif. + identity)"]
 VSHORT = {v: v.split(" ", 1)[0] for v in VARS}
-VLABEL = {"V0 raw": "V0 raw", "V1 pre-specified": "V1 pre-specified", "V2 genes removed": "V2 genes removed", "V3 resid. (all 3)": "V3 resid. (π, ι, μ)",
+VLABEL = {"V0 raw": "V0 raw", "V1 pre-specified": "V1 adjusted", "V2 genes removed": "V2 genes removed", "V3 resid. (all 3)": "V3 resid. (π, ι, μ)",
           "V4 resid. (prolif.)": "V4 resid. (π)", "V5 stratified": "V5 stratified", "V6 spline resid.": "V6 spline (π)", "V7 resid. (prolif. + identity)": "V7 resid. (π, ι)"}
-FSHORT = {"F0": "F0 pre-specified", "F1": "F1 ages 20–79", "F2": "F2 + platform, repository, site", "F3": "F3 = F1 + F2",
+FSHORT = {"F0": "F0 main", "F1": "F1 ages 20–79", "F2": "F2 + platform, repository, site", "F3": "F3 = F1 + F2",
           "F4": "F4 NextSeq only", "F5": "F5 arm biopsies only", "F6": "F6 expression filter 0.5", "F7": "F7 expression filter 2",
           "F8": "F8 without AG donors ≥80", "F9": "F9 + 5 hidden factors"}
 RADJ, RROB = "R$_\\mathregular{adj}$", "R$_\\mathregular{rob}$"
@@ -53,6 +53,16 @@ def fmt(x, d=2):
     s = f"{x:.{d}f}"
     if float(s) == 0: s = s.lstrip("-")
     return s.replace("-", "−")
+
+
+def text_on(rgba):
+    """One rule for text on heatmap cells: white on cells darker than 50% luminance, black otherwise."""
+    r, g, b = rgba[:3]; return "white" if 0.2126 * r + 0.7152 * g + 0.0722 * b < 0.5 else INK
+
+
+def heat_text(ax, x, y, v, cmap, vmin, vmax, txt=None, size=6.5):
+    c = plt.get_cmap(cmap)((np.clip(v, vmin, vmax) - vmin) / (vmax - vmin))
+    ax.text(x, y, txt if txt is not None else fmt(v), ha="center", va="center", fontsize=size, color=text_on(c))
 
 
 def EB(v, lo, hi):
@@ -78,7 +88,7 @@ def title(ax, text, kind=None, tag=None, pill=False):
     return t
 
 
-def letters(fig, rows, top_mm=1.2):
+def letters(fig, rows, top_mm=1.6):
     """rows: list of lists of (ax, letter). Letters sit at the left edge of each panel's tight box; in each row they share one
     baseline (the highest panel top in that row); panels in the same grid column share the x of the leftmost box in that column."""
     fig.canvas.draw(); r = fig.canvas.get_renderer(); inv = fig.transFigure.inverted()

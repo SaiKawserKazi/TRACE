@@ -1,4 +1,4 @@
-"""Exploratory (Amendment 1): network confidence intervals and evidence audit.
+"""Exploratory (Amendment 1): network confidence intervals and evidence checks.
 
 Network: bootstrap (over held-out knockdowns) 95% CIs for every predictor's MAE and Spearman rho, paired
 differences against the transfer-only and constant baselines, relative error change, and a check that the

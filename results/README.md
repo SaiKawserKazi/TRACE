@@ -37,6 +37,7 @@ Confirmatory results are in `results.json` only; everything else is exploratory 
 | `x_random_signature_v2.csv` | x_random_signature_v2.py | X26 | Random-signature null against the real signature without proliferation genes (V2 input) |
 | `x_topk_sweep.csv` | x_topk_sweep.py | X27 | Cross-cohort agreement among the k strongest discovery genes, k = 50 to 1,000 |
 | `x_gtex_pair_null.json` | x_gtex_pair_null.py | X28 | Permuted-age null for the agreement between GTEx fibroblasts and GTEx skin |
-| `trace_report.csv` | report.py | X29 | The audit report: one row per check with value, reference, rule and pass/fail |
+| `trace_report.csv` | report.py | X29, X33 | The report: one row per Box 1 check with value, threshold and result (pass, fail, flag or info) |
+| `x_cohort_checks_v2.json`, `x_cohort_topk_null.csv`, `x_cohort_planted_real.csv` | x_cohort_checks_v2.py | X30–X33 | Permuted-age nulls per k and for sign agreement, hidden factors after a sex-only model (F9b), planted effect added to the real data, VIF of age in the GTEx batch models |
 
 Figure source data (one CSV per panel, final numbering) are in `figures/source_data/`.

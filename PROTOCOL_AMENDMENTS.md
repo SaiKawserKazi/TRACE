@@ -16,7 +16,7 @@ Dates below come from the authors' records; the repository history shows when ea
 | D4 | 2026-10-12 | Before those screens' results | HepG2 and Jurkat pseudobulked by us; their non-targeting controls are 100 random groups of non-targeting cells | No processed release with the same format | Normalization may differ slightly from the published release |
 | D5 | 2026-10-12 | Before results | Ridge penalty λ = 1 for the H3 models | Protocol said "ridge" without λ | Untuned; may understate the combined model |
 | D6 | 2026-10-12 | After the first H4 results | A file-size check (files under 1,000 bytes were skipped) silently dropped the yeast ortholog table in the first H4b run; in the corrected run the table passed the check and H4b was rerun. The check now raises an error instead of skipping | Bug | H4b AUROC 0.52 (Holm P = 0.18) before, 0.51 (Holm P = 0.27) after; conclusion unchanged |
-| D7 | 2026-10-12 | After the pre-specified results | Early exploratory additions: 18–80-year sensitivity, adjusted within-K562 agreement, calibrated line-transfer model, single-screen evidence tests, on-target annotation | – | Labeled exploratory |
+| D7 | 2026-10-12 | After the pre-specified results | Early exploratory additions: early sensitivity run on ages 18 to 80 (replaced by F1, ages 20 to 79), adjusted within-K562 agreement, calibrated line-transfer model, single-screen evidence tests, on-target annotation | – | Labeled exploratory |
 | D8 | 2026-10-26 | After Amendment 2 results | In Amendments 1 and 2 the GTEx-skin G0 model also contained ischemic time by mistake. G0 is now age + sex for both GTEx tissues; ischemic time enters the skin models from G1 | Bug | Skin G0 values changed (0.21 to 0.15; fibroblasts versus skin 0.02 to 0.06). No pre-specified result changed |
 | D9 | 2026-10-26 | – | Exclusion flow written out: 143 GEO samples = 133 healthy donors + 10 progeria samples; 22 donors under 18 excluded, leaving 111 donors aged 19–96 years (GEO age field) | Clarity | None |
 | D10 | 2026-10-26 | – | Loader fix: the fibroblast loader read sample columns [8:-1] and dropped the last column (one donor aged 17). All sample columns are now read | Bug | None: the donor is under 18 and excluded by the pre-specified age filter |
@@ -38,16 +38,16 @@ Dates below come from the authors' records; the repository history shows when ea
 | ID | Analysis | Outputs |
 |---|---|---|
 | X05 | 2,000 donor bootstraps for every cohort specification (500 split halves) | results/rev_cohort_sensitivity.csv |
-| X06 | 2,000 donor bootstraps for H5 (the pre-specified 200 is kept as confirmatory) | results/rev_h5_boot.json |
-| X07 | 500 degree-preserving randomized networks for H3a (the pre-specified 10 are kept as confirmatory); 2,000 bootstrap resamples for all CIs; 10,000 label permutations | results/rev_network_null.json |
+| X06 | 2,000 donor bootstraps for H5 (the 200 bootstraps in the protocol give the main result) | results/rev_h5_boot.json |
+| X07 | 500 degree-preserving randomized networks for H3a (the 10 nulls in the protocol give the main result); 2,000 bootstrap resamples for all CIs; 10,000 label permutations | results/rev_network_null.json |
 
 ### Amendment 3 (26 to 27 October 2026)
 
 | ID | Analysis | Outputs |
 |---|---|---|
 | X08 | Sex as a positive control (all genes, autosomes, X/Y, top-200 genes); sign check of pre-named age genes and canonical sex genes | results/rev3_cohort_sensitivity.csv, rev3_cohort_known_genes.csv |
-| X09 | Permuted-age null (1,000 permutations, pre-specified model); power-matched 74-donor subsets; age per repository; variance inflation factor of age | results/rev3_cohort.json, rev3_cohort_permutations.csv |
-| X10 | F8 (without AG donors aged 80+), F9 and G3 (five hidden factors); 2,000 donor bootstraps for all specifications; bias-corrected intervals (27 October) | results/rev3_cohort_sensitivity*.csv |
+| X09 | Permuted-age null (1,000 permutations, main model); power-matched 74-donor subsets; age per repository; variance inflation factor of age | results/rev3_cohort.json, rev3_cohort_permutations.csv |
+| X10 | F8 (without AG donors aged 80 or older), F9 and G3 (five hidden factors); 2,000 donor bootstraps for all specifications; bias-corrected intervals (27 October) | results/rev3_cohort_sensitivity*.csv |
 | X11 | 100 random expression-matched signatures through H1, H2 and H4 | results/rev3_scores_random_signatures.csv |
 | X12 | Split-cell reliability (HepG2, Jurkat; 20 splits); test–retest reliability (two K562 screens); size-matched non-targeting groups; disattenuated agreement; proliferation measured in held-out cells | results/rev3_reliability*.csv |
 | X13 | Paired DeLong tests, incremental logistic regression, minimum detectable AUROC; GenAge mouse-only and without yeast; label overlap with Hart CEGv2 and (27 October) DepMap 24Q2 common essentials | results/rev3_scores_*.csv, rev3_depmap*.{json,csv} |
@@ -76,4 +76,13 @@ Dates below come from the authors' records; the repository history shows when ea
 | X26 | Random-signature null: every raw-score statistic compared with the real signature without proliferation genes (V2 input), with one-sided empirical P | results/x_random_signature_v2.csv |
 | X27 | Agreement among the k strongest discovery age genes, k = 50 to 1,000 (the choice k = 200 was made after the first results) | results/x_topk_sweep.csv |
 | X28 | Permuted-age null for the agreement between GTEx fibroblasts and GTEx skin | results/x_gtex_pair_null.json |
-| X29 | Per-family Holm and Benjamini–Hochberg values for every exploratory test; audit report with one row per check | results/x_exploratory_tests.csv, results/trace_report.csv |
+| X29 | Per-family Holm and Benjamini–Hochberg values for every exploratory test; report table with one row per check | results/x_exploratory_tests.csv, results/trace_report.csv |
+
+### Amendment 6 (3 November 2026)
+
+| ID | Analysis | Outputs |
+|---|---|---|
+| X30 | Permuted-age null (1,000 permutations) for agreement among the k strongest discovery genes at every k (50 to 1,000) and for the sign agreement of signature genes | results/x_cohort_topk_null.csv, x_cohort_checks_v2.json |
+| X31 | Hidden factors computed after a sex-only model (F9b), their correlation with age, and top-200 agreement with its own permuted-age null | results/x_cohort_checks_v2.json |
+| X32 | Planted shared effect added to the real (not permuted) data of both cohorts (planted part alone with an absolute t of about 4 and 6; 200 replicates each) | results/x_cohort_planted_real.csv, x_cohort_checks_v2.json |
+| X33 | Variance inflation factor of age in the GTEx batch models; Box 1 checks applied to this study (pass, fail or flag per check); duplicate rows removed from the exploratory-test table | results/x_cohort_checks_v2.json, trace_report.csv, x_exploratory_tests.csv |

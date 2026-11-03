@@ -5,7 +5,7 @@
     python run_all.py --from X     # start at the step whose name starts with X (for example --from x19)
 
 Resample counts and seeds are in src/config.py (the paper's values are the defaults). Each step prints its wall time.
-The audit summary (one row per check, with value, reference, rule and pass/fail) is written to results/trace_report.csv.
+The summary (one row per Box 1 check, with value, threshold and result) is written to results/trace_report.csv.
 The manuscript text itself is not built here; every number it reports is in results/ (see results/README.md)."""
 import os, subprocess, sys, time
 from pathlib import Path
@@ -43,6 +43,7 @@ STEPS = [
     ("x26-random-signatures-v2", ["src/x_random_signature_v2.py"], {}),
     ("x27-top-k-sweep", ["src/x_topk_sweep.py"], {}),
     ("x28-gtex-pair-null", ["src/x_gtex_pair_null.py"], {}),
+    ("x30-cohort-checks", ["src/x_cohort_checks_v2.py"], {}),
     ("x25-exploratory-tests", ["src/x_exploratory_tests.py"], {}),
     ("report", ["src/report.py"], {}),
     # figures (final numbering) and their source data
