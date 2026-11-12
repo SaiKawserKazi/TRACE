@@ -33,6 +33,8 @@ SCREEN_C = {"K562": "#0072B2", "K562gw": "#56B4E9", "RPE1": "#555555", "HepG2": 
 SCREEN_L = {"K562": "K562 ess.", "K562gw": "K562 gw", "RPE1": "RPE1", "HepG2": "HepG2", "Jurkat": "Jurkat"}
 SCREENS = ["K562", "K562gw", "RPE1", "HepG2", "Jurkat"]
 COHORT_C = {"Discovery": "#000000", "GTEx fibroblasts": "#CC79A7", "GTEx skin": "#E69F00"}
+COHORT_TXT = {"Discovery": "#000000", "GTEx fibroblasts": "#A85A88", "GTEx skin": "#9C6C00"}   # darker cohort colors for text on white
+BASELINE = "#7A8B99"                                            # baseline methods (calibrated line transfer); pure gray stays the null
 UP, DOWN = "#B2182B", "#2166AC"
 CORR_CMAP, COUNT_CMAP = "RdBu_r", "Blues"
 ACCENT = "#6A51A3"                                              # one accent for "real" values against gray nulls
@@ -55,9 +57,19 @@ def fmt(x, d=2):
     return s.replace("-", "−")
 
 
+TEXT_LUM_CUT = 0.14   # WCAG relative luminance; chosen in a gap of the plotted values so near-equal cells match
+_LUMLOG = []
+
+
+def rel_lum(rgba):
+    c = np.asarray(rgba[:3], float); c = np.where(c <= 0.03928, c / 12.92, ((c + 0.055) / 1.055) ** 2.4)
+    return float(0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2])
+
+
 def text_on(rgba):
-    """One rule for text on heatmap cells: white on cells darker than 50% luminance, black otherwise."""
-    r, g, b = rgba[:3]; return "white" if 0.2126 * r + 0.7152 * g + 0.0722 * b < 0.5 else INK
+    """One rule for text on every heatmap cell: white on cells darker than TEXT_LUM_CUT (WCAG relative luminance), black
+    otherwise."""
+    L = rel_lum(rgba); _LUMLOG.append(L); return "white" if L < TEXT_LUM_CUT else INK
 
 
 def heat_text(ax, x, y, v, cmap, vmin, vmax, txt=None, size=6.5):
@@ -108,7 +120,10 @@ def letters(fig, rows, top_mm=1.6):
         same = [q[2] for q in placed if abs(q[2] - p[2]) * W < 4]
         p[2] = fixed.get(p[1], min(same))
     for ax, L, x, y in placed:
-        fig.text(max(x, 0.002), min(y + 0.4 / H, 1 - top_mm / H), L, fontsize=9, fontweight="bold", ha="left", va="top" if y + 0.4 / H > 1 - top_mm / H else "bottom")
+        if L is None: continue          # baseline-only item (for example a row title on another axes)
+        # a bottom-anchored letter is about 3.3 mm tall; if it would reach the top margin, hang it from the margin instead
+        top = y + (0.4 + 3.3) / H > 1 - top_mm / H
+        fig.text(max(x, 1.0 / W), (1 - top_mm / H) if top else y + 0.4 / H, L, fontsize=9, fontweight="bold", ha="left", va="top" if top else "bottom")
 
 
 def save(fig, name):

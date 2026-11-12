@@ -1,6 +1,6 @@
 """Exploratory (Amendment 6, 3 November 2026): further checks of the gene-level cohort comparison.
 
-* X30 Permuted-age null per k: agreement among the k strongest discovery genes (k = 50 to 1,000) for F0 against GTEx G0,
+* X30 Permuted-age null per k (the same 1,000 age labelings as the per-specification null of x_cohort_nulls.py): agreement among the k strongest discovery genes (k = 50 to 1,000) for F0 against GTEx G0,
   both tissues, with the permuted-age 95% range at each k; and a permuted-age null for the sign agreement of the
   signature genes (age permuted in both cohorts; the signature is rebuilt from the permuted discovery fit, as in the
   observed analysis).
@@ -66,11 +66,15 @@ def _init():
 
 
 def _perm(b):
-    r = np.random.default_rng(70_000 + b); e, m = _W["f"]
+    """Permutation b reuses the age labelings of permutation b in x_cohort_nulls.py (same seed, same draw order: GTEx
+    fibroblasts, GTEx skin, then the F0 discovery cohort), so the top-200 null is one run in every table and figure."""
+    r = np.random.default_rng(60_000 + b); e, m = _W["f"]
+    G = {}
+    for coh, (eg, mg) in _W["g"].items():
+        m2 = mg.copy(); m2["age"] = r.permutation(m2.age.values); G[coh] = C.fit(eg, m2, ["sex"])
     m_ = m.copy(); m_["age"] = r.permutation(m_.age.values)
     tf = C.fit(e, m_, ["sex"]); tf9 = fit_extra(e, m_, ["sex"], _W["sv"]); out = []
-    for coh, (eg, mg) in _W["g"].items():
-        m2 = mg.copy(); m2["age"] = r.permutation(m2.age.values); tg = C.fit(eg, m2, ["sex"])
+    for coh, tg in G.items():
         sh = tf9.index.intersection(tg.index); top = tf9.t[sh].abs().nlargest(TOPK).index
         out.append({"b": b, "tissue": coh, **topk_stats(tf, tg), "F9b_top_rho": stats.spearmanr(tf9.t[top], tg.t[top])[0]})
     return out
@@ -124,17 +128,19 @@ def main():
         P = pd.DataFrame([row for res in pool.imap_unordered(_perm, range(NPERM), chunksize=4) for row in res]); log("permutations done")
         PL = pd.DataFrame(list(pool.imap_unordered(_plant, [(b, k) for k in PLANT_SIZES for b in range(NPLANT)], chunksize=2))); log("planted done")
     P.to_csv(os.path.join(RES, "x_cohort_topk_null.csv"), index=False); PL.to_csv(os.path.join(RES, "x_cohort_planted_real.csv"), index=False)
+    # correlations: two-sided about zero, as in x_cohort_nulls.py; sign agreement (null centred near 0.5): two-sided about the null median
+    emp0 = lambda o, n: float((1 + np.sum(np.abs(n[np.isfinite(n)]) >= abs(o))) / (1 + np.isfinite(n).sum()))
     emp = lambda o, n: float((1 + np.sum(np.abs(n - np.nanmedian(n)) >= abs(o - np.nanmedian(n)))) / (1 + np.isfinite(n).sum()))
     summ = {}
     for coh in G0:
         n = P[P.tissue == coh]; d = {}
         for k in KS:
             d[f"k{k}"] = {"rho": obs[coh][f"rho_k{k}"], "null_lo": float(n[f"rho_k{k}"].quantile(0.025)), "null_hi": float(n[f"rho_k{k}"].quantile(0.975)),
-                          "p": emp(obs[coh][f"rho_k{k}"], n[f"rho_k{k}"].values)}
+                          "p": emp0(obs[coh][f"rho_k{k}"], n[f"rho_k{k}"].values)}
         d["sig_sign_agree"] = {"obs": obs[coh]["sig_sign_agree"], "null_lo": float(n.sig_sign_agree.quantile(0.025)),
                                "null_hi": float(n.sig_sign_agree.quantile(0.975)), "p": emp(obs[coh]["sig_sign_agree"], n.sig_sign_agree.values)}
         d["F9b_top_rho"] = {"obs": obs[coh]["F9b_top_rho"], "null_lo": float(n.F9b_top_rho.quantile(0.025)), "null_hi": float(n.F9b_top_rho.quantile(0.975)),
-                            "p": emp(obs[coh]["F9b_top_rho"], n.F9b_top_rho.values)}
+                            "p": emp0(obs[coh]["F9b_top_rho"], n.F9b_top_rho.values)}
         summ[coh] = d
     out["nulls"] = summ
     pl = {}

@@ -17,9 +17,9 @@ Dates below come from the authors' records; the repository history shows when ea
 | D5 | 2026-10-12 | Before results | Ridge penalty λ = 1 for the H3 models | Protocol said "ridge" without λ | Untuned; may understate the combined model |
 | D6 | 2026-10-12 | After the first H4 results | A file-size check (files under 1,000 bytes were skipped) silently dropped the yeast ortholog table in the first H4b run; in the corrected run the table passed the check and H4b was rerun. The check now raises an error instead of skipping | Bug | H4b AUROC 0.52 (Holm P = 0.18) before, 0.51 (Holm P = 0.27) after; conclusion unchanged |
 | D7 | 2026-10-12 | After the pre-specified results | Early exploratory additions: early sensitivity run on ages 18 to 80 (replaced by F1, ages 20 to 79), adjusted within-K562 agreement, calibrated line-transfer model, single-screen evidence tests, on-target annotation | – | Labeled exploratory |
-| D8 | 2026-10-26 | After Amendment 2 results | In Amendments 1 and 2 the GTEx-skin G0 model also contained ischemic time by mistake. G0 is now age + sex for both GTEx tissues; ischemic time enters the skin models from G1 | Bug | Skin G0 values changed (0.21 to 0.15; fibroblasts versus skin 0.02 to 0.06). No pre-specified result changed |
+| D8 | 2026-10-26 | After Amendment 2 results | In the cohort analyses of 13 October 2026 (X01 and X05), the GTEx-skin G0 model also contained ischemic time by mistake. G0 is now age + sex for both GTEx tissues; ischemic time enters the skin models from G1 | Bug | Skin G0 values changed (0.21 to 0.15; fibroblasts versus skin 0.02 to 0.06). No main result changed |
 | D9 | 2026-10-26 | – | Exclusion flow written out: 143 GEO samples = 133 healthy donors + 10 progeria samples; 22 donors under 18 excluded, leaving 111 donors aged 19–96 years (GEO age field) | Clarity | None |
-| D10 | 2026-10-26 | – | Loader fix: the fibroblast loader read sample columns [8:-1] and dropped the last column (one donor aged 17). All sample columns are now read | Bug | None: the donor is under 18 and excluded by the pre-specified age filter |
+| D10 | 2026-10-26 | – | Loader fix: the fibroblast loader read all sample columns except the last and so dropped one column (one donor aged 17). All sample columns are now read | Bug | None: the donor is under 18 and excluded by the age filter |
 | D11 | 2026-10-28 | – | Identity genes: log-normalized gene mean of a line minus the mean of the other lines, among genes above that line's median expression, top 100 (protocol: z-score of the line's mean relative to the other lines on control expression). K562 and RPE1 use the gene means distributed with the Replogle release; HepG2 and Jurkat use non-targeting cells only | The code has used this rule since the first analysis; recorded here | Defines the identity program ι used by V1, V3 and V7 |
 
 ## B. Exploratory analyses (added after the pre-specified results were known)
@@ -86,3 +86,18 @@ Dates below come from the authors' records; the repository history shows when ea
 | X31 | Hidden factors computed after a sex-only model (F9b), their correlation with age, and top-200 agreement with its own permuted-age null | results/x_cohort_checks_v2.json |
 | X32 | Planted shared effect added to the real (not permuted) data of both cohorts (planted part alone with an absolute t of about 4 and 6; 200 replicates each) | results/x_cohort_planted_real.csv, x_cohort_checks_v2.json |
 | X33 | Variance inflation factor of age in the GTEx batch models; Box 1 checks applied to this study (pass, fail or flag per check); duplicate rows removed from the exploratory-test table | results/x_cohort_checks_v2.json, trace_report.csv, x_exploratory_tests.csv |
+
+### Amendment 7 (6 November 2026)
+
+| ID | Analysis | Outputs |
+|---|---|---|
+| X34 | Permuted-age null for the GTEx batch model G2: age permuted within nucleic-acid isolation batch in GTEx and across donors in the discovery cohort (1,000 permutations), G2 refitted, top-200 agreement for F0 | results/x_g2_null.json, x_g2_null.csv |
+| X35 | Box 1 cohort check for the GTEx-derived signature: the 200 strongest GTEx-fibroblast age genes against the discovery cohort, with the same 1,000 permuted age labelings as the F0 test | results/x_reverse_top200.json, x_reverse_top200_null.csv |
+| X36 | Box 1 report for both signatures; replicate rule changed to reliability of the adjusted score in every screen and adjusted between-line agreement above the random-signature null; F9 t-statistics on the F0 top 200 | results/trace_report.csv, x_topk_f9_check.json |
+
+### Amendment 8 (6 November 2026)
+
+| ID | Analysis | Outputs |
+|---|---|---|
+| X37 | Like-for-like cohort transfer: ranking rebuilt from discovery donors aged 20-79 (the GTEx age range) and compared with the GTEx-fibroblast ranking (no P value), with 100 donor bootstraps of the 20-79 subset as reference; Box 1 positive example: GTEx fibroblasts split into two random halves treated as two cohorts, with the cohort (200 permuted-age labelings), effect-size and stability (100 donor bootstraps) checks applied to split 0 and point estimates over 20 splits | results/x_box1_positive.json, x_box1_positive_splits.csv |
+| X38 | Box 1 report: label check for the GTEx-derived signature and the sex control use BH q within their Table S5 families instead of separately computed corrections, and the planted check is marked not run for the GTEx-derived signature (planted in the discovery direction only); results unchanged | results/trace_report.csv |

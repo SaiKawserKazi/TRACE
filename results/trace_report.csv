@@ -1,17 +1,18 @@
-item,check,value,threshold,result
-Cohorts,"Age effects, 200 strongest discovery genes, versus GTEx fibroblasts (Spearman ρ; main model, then G1 and G2)","-0.55 (G1 -0.46, G2 -0.17)",above the permuted-age 97.5th percentile (0.43) and positive under every replication model,fail
-Cohorts,Planted shared effect added to the real data (planted-only |t| about 4): runs with top-200 ρ above the null,1.00,at least 0.80,pass
-Cohorts,"Positive control: sex effects, 200 most sex-biased genes, versus GTEx fibroblasts (permuted-sex P)",ρ = 0.65; P = 0.002,P < 0.05,pass
-Cohorts,"Positive control: sex effects, 200 most sex-biased genes, versus GTEx skin (permuted-sex P)",ρ = 0.32; P = 0.057,P < 0.05,fail
-Programs,"Raw score versus proliferation shift (Spearman ρ, range over screens); real signature versus 100 random signatures",0.49 to 0.90; above all random signatures in every screen,flag if |ρ| ≥ 0.3 in any screen or the real signature exceeds 95% of random signatures,flag
-Replicates,Raw score: within-line minus between-line agreement (one-sided 95% bound); score reliability (range over screens),-0.04; 0.49 to 0.84,bound > 0 and reliability ≥ 0.5 in every screen,fail
-Replicates,Adjusted score (V1): reliability (range over screens),0.38 to 0.64,≥ 0.5 in every screen,fail
-Labels,"CellAge: Rrob (V1) AUROC, all genes (Holm P), and proliferation shift alone",0.54 (P = 0.10); baseline 0.58,AUROC above 0.5 (corrected P < 0.05) and above the proliferation-only AUROC (paired corrected P < 0.05),fail
-Labels,"GenAge: Rrob (V1) AUROC, all genes (Holm P), and proliferation shift alone",0.51 (P = 0.27); baseline 0.42,AUROC above 0.5 (corrected P < 0.05) and above the proliferation-only AUROC (paired corrected P < 0.05),fail
-Power,"Minimum detectable AUROC at 80% power, CellAge",0.56,a label test above 0.60 is reported as uninformative,info
-Power,"Minimum detectable AUROC at 80% power, GenAge",0.55,a label test above 0.60 is reported as uninformative,info
-Power,"Minimum detectable AUROC at 80% power, GenAge, mouse genes only",0.67,a label test above 0.60 is reported as uninformative,uninformative
-Effect sizes,Top-5% overlap between the discovery ranking and the ranking from GTEx fibroblasts,0.04,at least half the overlap between donor bootstraps (0.47 / 2 = 0.23),fail
-Effect sizes,Top-5% overlap between the discovery ranking and the ranking from GTEx skin,0.11,at least half the overlap between donor bootstraps (0.47 / 2 = 0.23),fail
-Knockdown quality,Pareto-front genes with weak or unmeasured on-target knockdown before filtering; front after filtering,6 of 16; 15 genes after filtering,"report the share, then rank only after filtering",info
-Stability,Median donor-bootstrap ρ of the ranking (all genes; genes in ≥ 2 lines),0.779; 0.856,≥ 0.8,fail (all genes); pass (genes in ≥ 2 lines)
+item,check,value,threshold,result,value_gtex,result_gtex
+Cohorts,"Age effects, 200 strongest genes of the signature's cohort, versus the other fibroblast cohort (Spearman ρ; main model; for the discovery signature G1 and G2 for information)","-0.55 (G1 -0.46, G2 -0.17); null 97.5th percentile 0.43",above the permuted-age 97.5th percentile under the main model,fail,-0.11; null 97.5th percentile 0.46,fail
+Cohorts,Planted shared effect added to the real data: median |t| of the planted part alone (against the median |t| of the observed top 200); runs with top-200 ρ above the null,|t| 4.0 (observed 6.2); 1.00,"planted |t| no larger than the observed median |t|, recovered in at least 0.80 of runs",pass,–,not run
+Cohorts,"Positive control: sex effects, 200 most sex-biased genes, versus GTEx fibroblasts (permuted-sex P; BH q within the sex-control family, Table S5)",ρ = 0.65; P = 0.002; q = 0.012,corrected P < 0.05,pass,same cohorts and pipeline,pass
+Cohorts,"Positive control: sex effects, 200 most sex-biased genes, versus GTEx skin (permuted-sex P; BH q within the sex-control family, Table S5)",ρ = 0.32; P = 0.057; q = 0.17,corrected P < 0.05,fail,same cohorts and pipeline,fail
+Programs,"Raw score versus proliferation shift (Spearman ρ, range over screens); real signature versus 100 random signatures (discovery only)",0.49 to 0.90; above all random signatures in every screen,flag if |ρ| ≥ 0.3 in any screen or the real signature exceeds 95% of random signatures,flag,-0.39 to 0.07,flag
+Replicates,"Raw score: within-line (two K562 screens) and mean between-line agreement, side by side (one-sided 95% bound of the difference)",0.50 and 0.51 (-0.04),reported,info,0.45 and 0.33 (0.08),info
+Replicates,"Adjusted score (V1): reliability (range over screens; split cells in HepG2 and Jurkat, test–retest in K562)",0.38 to 0.64,≥ 0.5 in every screen,fail,K562 test–retest 0.44 (one screen only); split cells not run,fail
+Replicates,Adjusted score: median between-line agreement against 100 random signatures (real signature without proliferation genes; one-sided empirical P),0.21 (null maximum 0.18; P = 0.010),above the random-signature null (P < 0.05),pass,–,not run
+Labels,"CellAge: Rrob (V1) AUROC, all genes, and proliferation shift alone (discovery: Holm P, fixed in advance; GTEx-derived: BH q, exploratory, with paired DeLong q)",0.54 (P = 0.10); baseline 0.58,"AUROC above 0.5 (corrected P < 0.05) and above the proliferation-only AUROC (paired DeLong, corrected P < 0.05)",fail,0.58 (q = 0.0092); baseline 0.58 (paired q = 0.94),fail
+Labels,"GenAge: Rrob (V1) AUROC, all genes, and proliferation shift alone (discovery: Holm P, fixed in advance; GTEx-derived: BH q, exploratory, with paired DeLong q)",0.51 (P = 0.27); baseline 0.42,"AUROC above 0.5 (corrected P < 0.05) and above the proliferation-only AUROC (paired DeLong, corrected P < 0.05)",fail,0.53 (q = 0.27); baseline 0.42 (paired q = 0.0013),fail
+Power,"Minimum detectable AUROC at 80% power, CellAge",0.56,a label test above 0.60 is reported as uninformative,info,0.56,info
+Power,"Minimum detectable AUROC at 80% power, GenAge",0.55,a label test above 0.60 is reported as uninformative,info,0.55,info
+Power,"Minimum detectable AUROC at 80% power, GenAge, mouse genes only",0.67,a label test above 0.60 is reported as uninformative,uninformative,0.67,uninformative
+Effect sizes,Top-5% overlap between the ranking and the ranking from the other fibroblast cohort,0.04 (bootstraps 0.47),at least half the overlap between donor bootstraps of one cohort,fail,0.04 (bootstraps 0.40),fail
+Effect sizes,Top-5% overlap between the ranking and the ranking from GTEx skin,0.11,at least half the overlap between donor bootstraps of one cohort,fail,0.04,fail
+Knockdown quality,Pareto-front genes with weak or unmeasured on-target knockdown before filtering; front after filtering,6 of 16; 15 genes after filtering,"report the share, then rank only after filtering",info,16 of 47; filtering not run,info
+Stability,Median donor-bootstrap ρ of the ranking (all genes; genes in ≥ 2 lines),0.779; 0.856,≥ 0.8,fail (all genes); pass (genes in ≥ 2 lines),0.671; not run,fail (all genes)

@@ -53,9 +53,11 @@ def spec_heat(ax, metric, p, pcol, tcol):
     for ii, f_ in enumerate(specs):
         for jj, coh in [(0, "fibroblasts"), (3, "skin")]:
             r_ = p[(p.spec == f_) & (p.tissue == coh)]
-            if len(r_) and r_[pcol].iloc[0] < 0.05: ax.add_patch(Rectangle((xpos[jj] - 0.45, ii - 0.45), 0.9, 0.9, fill=False, ec="black", lw=1.1))
+            if len(r_) and r_[pcol].iloc[0] < 0.05:
+                ax.add_patch(Rectangle((xpos[jj] - 0.5, ii - 0.5), 1.0, 1.0, fill=False, ec="black", lw=0.75, zorder=4))
+                ax.add_patch(Rectangle((xpos[jj] - 0.46, ii - 0.43), 0.92, 0.86, fill=False, ec="#F0E442", lw=1.0, zorder=5))
     for x0, coh in [(1, "fibroblasts"), (4.4, "skin")]:
-        ax.text(x0, -0.85, f"GTEx {coh}", ha="center", va="center", fontsize=6.5, color=COHORT_C[f"GTEx {coh}"], fontweight="bold")
+        ax.text(x0, -0.85, f"GTEx {coh}", ha="center", va="center", fontsize=6.5, color=COHORT_TXT[f"GTEx {coh}"], fontweight="bold")
     ax.set_xlim(-0.6, 6.0); ax.set_ylim(len(specs) - 0.5, -1.25)
     ax.set_xticks(xpos); ax.set_xticklabels(["G0", "G1", "G2"] * 2); ax.set_yticks(range(len(specs)))
     ax.spines[:].set_visible(False); ax.tick_params(length=0)
@@ -91,11 +93,11 @@ def fig1():
     for i in range(3): ax.add_patch(Rectangle((i - 0.5, i - 0.5), 1, 1, fill=False, ec="black", lw=0.8))
     nm3 = ["Disc.", "GTEx\nfibro.", "GTEx\nskin"]
     ax.set_xticks(range(3)); ax.set_xticklabels(nm3); ax.set_yticks(range(3)); ax.set_yticklabels(nm3); ax.spines[:].set_visible(False)
-    cbar(fig, im, ax, "", ticks=[-0.6, 0, 0.6], frac=0.06, ticklabels=["−0.6", "0", "0.6"], extend="both")
+    cbar(fig, im, ax, "Spearman ρ", ticks=[-0.6, 0, 0.6], frac=0.06, ticklabels=["−0.6", "0", "0.6"], extend="both")
     title(ax, "Age effects,\nall genes")
     src(pd.DataFrame(M, index=["Discovery", "GTEx fibroblasts", "GTEx skin"], columns=["Discovery", "GTEx fibroblasts", "GTEx skin"]), "Fig1C")
     # D 200 strongest genes: age and sex, permuted-age band, planted effect (black triangle); key at the right
-    ax = Dp = mm_ax(fig, 122, 53, 24, 30)
+    ax = Dp = mm_ax(fig, 127, 53, 23, 30)
     NU = J("x_cohort_nulls.json"); PB = CSV("x_cohort_perm_by_spec.csv"); f0n = PB[PB.spec == F0]; rows = []
     for i, (coh, gk) in enumerate([("fibroblasts", G("fibroblasts", "G0")), ("skin", G("skin", "G0"))]):
         b = bcrow(F0, gk); nn = f0n[f0n.tissue == coh]
@@ -106,7 +108,9 @@ def fig1():
             rows.append({"tissue": coh, "metric": key, "estimate": b[key], "bc_lo": b[f"{key}_bc_lo"], "bc_hi": b[f"{key}_bc_hi"]})
     PLN = NU["planted"]["0.2"]
     for i, coh in enumerate(["fibroblasts", "skin"]):
-        ax.scatter(PLN[coh]["median_top_rho"], i - 0.22, marker="v", s=16, color=INK, zorder=4, label="planted effect" if i == 0 else None)
+        ax.scatter(PLN[coh]["median_top_rho"], i - 0.22, marker="v", s=16, color=INK, zorder=4, label="planted, null" if i == 0 else None)
+        ax.scatter(J("x_cohort_checks_v2.json")["planted_real"]["0.38"][coh]["median_top_rho"], i + 0.22, marker="v", s=16, facecolor="white", edgecolor=INK, lw=0.8, zorder=4,
+                   label="planted, real" if i == 0 else None)
     ax.axvline(0, **REF); ax.set_yticks([0, 1]); ax.set_yticklabels(["GTEx\nfibro.", "GTEx\nskin"]); ax.invert_yaxis()
     ax.set_xlim(-0.9, 1.0); ax.set_xticks([-0.5, 0, 0.5, 1]); ax.set_xticklabels(["−0.5", "0", "0.5", "1"]); ax.set_xlabel("Spearman ρ (95% CI)")
     hh, ll = ax.get_legend_handles_labels(); hh.append(Rectangle((0, 0), 1, 1, fc="#e6e6e6")); ll.append("permuted age")
@@ -164,7 +168,7 @@ def fig2():
     Hf = 180
     fig = plt.figure(figsize=(W2, Hf * MM))
     A = fig.add_axes([0, 1 - 41 / Hf, 1, 40 / Hf]); schematics.fig2a(A)
-    gs = fig.add_gridspec(3, 1, height_ratios=[44, 52, 40], hspace=0.6, left=0.145, right=0.985, top=1 - 58 / Hf, bottom=0.055)
+    gs = fig.add_gridspec(3, 1, height_ratios=[44, 52, 40], hspace=0.78, left=0.145, right=0.985, top=1 - 57 / Hf, bottom=0.055)
     gb = gs[0].subgridspec(1, 5, wspace=0.12); axes_b = []
     for i, c in enumerate(SC):
         ax = fig.add_subplot(gb[i]); axes_b.append(ax); s = scores(c)
@@ -205,7 +209,7 @@ def fig2():
     ax.set_xticks(range(5)); ax.set_xticklabels([VSHORT[v] for v in V6[:5]]); ax.set_yticks(range(5)); ax.set_yticklabels([VSHORT[v] for v in V6[1:]])
     ax.spines[:].set_visible(False)
     cbar(fig, im, ax, "Fraction of\ntop 5% shared", ticks=[0, 0.5, 1], frac=0.06)
-    ax.set_xlabel(f"Definition (top 5% = {RS['k_top5']} of 2,393\ngenes in ≥ 2 lines)")
+    ax.set_xlabel(f"Definition (top 5%, k = {RS['k_top5']})")
     title(ax, "Shared top 5%", "exp")
     src(pd.DataFrame(sub, index=V6[1:], columns=V6[:5]), "Fig2D")
     # E random-signature null against the real signature without proliferation genes (V2)
@@ -233,9 +237,9 @@ def fig2():
     ax.axhline(5, **REF); ax.text(4.4, 6.5, "chance", fontsize=6.5, ha="right", color=GRAY)
     ax.set_xticks(range(5)); ax.set_xticklabels([f"{SCREEN_L[c]}\nk = {k}" for c, k in zip(SC, ks)], fontsize=6.5); ax.set_xlim(-0.5, 4.5)
     ax.set_ylim(0, 60); ax.set_ylabel("Raw top 5% kept by V1 (%)"); gridy(ax)
-    title(ax, "Kept after adjustment", "exp")
+    ax.set_title("Kept after adjustment", pad=15)                       # same baseline as the 2E title, whose key sits under it
     src(pd.DataFrame({"screen": SC, "k": ks, "kept_pct": vals, "lo": los, "hi": his}), "Fig2F", index=False)
-    letters(fig, [[(A, "A", 0.003)], [(axes_b[0], "B", 0.003)], [(Cx, "C", 0.003), (D, "D")], [(E, "E", 0.003), (Fr, "F")]])
+    letters(fig, [[(A, "A", 0.003)], [(axes_b[0], "B", 0.003), (axes_b[2], None)], [(Cx, "C", 0.003), (D, "D")], [(E, "E", 0.003), (Fr, "F")]])
     save(fig, "Fig2")
 
 
@@ -281,8 +285,9 @@ def fig3():
     ax.set_ylim(0, 0.8); ax.set_ylabel("Spearman ρ"); ax.set_xlabel("Score definition (n = 1,852–2,270 knockdowns per pair)"); gridy(ax)
     ax.legend([Line2D([], [], marker="o", ls="none", color="#cbc9e2", ms=2.5), Line2D([], [], color=ACCENT, lw=1.6), Line2D([], [], color=ACCENT, lw=0.9, ls=":"),
                Line2D([], [], marker="s", ls="none", mfc="white", mec=SCREEN_C["K562"], ms=3.5)],
-              ["six line pairs", "median", "median, reliability-corrected", "within K562 (two screens)"], ncol=2, loc="upper right", fontsize=6.5)
-    title(ax, "Line versus experiment agreement")
+              ["six line pairs", "median", "median, reliability-corrected", "within K562 (two screens)"], ncol=2, loc="lower center", bbox_to_anchor=(0.5, 1.0),
+              fontsize=6.5, frameon=False, columnspacing=0.8, handletextpad=0.3)
+    ax.set_title("Line versus experiment agreement", pad=26)
     src(pd.DataFrame(rowsb), "Fig3B", index=False)
     # C reliability heatmap
     ax = Cx = fig.add_subplot(gs[1, 0]); rel = CSV("rev3_reliability_summary.csv")
@@ -296,12 +301,12 @@ def fig3():
     # D donor bootstraps: three rows sharing x
     ax = D = fig.add_subplot(gs[1, 1])
     b2000 = CSV("rev_h5_boot.csv").rho; b200 = CSV("h5_boot_rho.csv", index_col=0).iloc[:, 0]; bm = CSV("rev3_h5_multiline.csv").rho_multi
-    sets = [("all genes,\n200 bootstraps", b200), ("all genes,\n2,000", b2000), ("genes in ≥2\nlines, 2,000", bm)]
+    sets = [("all genes,\nn = 200", b200), ("all genes,\nn = 2,000", b2000), ("genes in ≥2\nlines, n = 2,000", bm)]
     vp = ax.violinplot([s_.values for _, s_ in sets], positions=[0, 1, 2], orientation="horizontal", widths=0.8, showextrema=False)
     for k, b_ in enumerate(vp["bodies"]): b_.set_facecolor([ACCENT, "#cbc9e2", "#cbc9e2"][k]); b_.set_edgecolor("none"); b_.set_alpha(1)
     for k, (_, s_) in enumerate(sets): ax.plot([s_.median()] * 2, [k - 0.32, k + 0.32], color=INK, lw=1.2)
-    ax.axvline(0.8, color=INK, ls="--", lw=0.6); ax.text(0.81, -0.45, "threshold 0.8", fontsize=6.5, ha="left", va="center")
-    ax.set_yticks(range(3)); ax.set_yticklabels([s for s, _ in sets]); ax.invert_yaxis(); ax.set_xlim(0.45, 0.97)
+    ax.axvline(0.8, color=INK, ls="--", lw=0.6); ax.text(0.815, -0.45, "threshold 0.8", fontsize=6.5, ha="left", va="center")
+    ax.set_yticks(range(3)); ax.set_yticklabels([s for s, _ in sets]); ax.invert_yaxis(); ax.set_xlim(np.floor((min(s_.min() for _, s_ in sets) - 0.02) * 20) / 20, 0.97)   # violins end at the data minimum, inside the axes
     ax.set_xlabel(f"ρ(bootstrap {RROB}, full {RROB})")
     title(ax, "Donor bootstraps", "pre"); ax.set_ylim(2.6, -0.75)
     src(pd.DataFrame({"rho_all_2000": b2000.values}), "Fig3D", index=False)
@@ -313,7 +318,7 @@ def fig3():
             pre = (v == "V1 pre-specified" and k == 0)
             ax.errorbar(x, r_, yerr=EB([r_], [lo], [hi]), fmt="o", ms=3.4, color=COHORT_C[coh], mfc=COHORT_C[coh] if pre else "white", mec=COHORT_C[coh], elinewidth=0.75)
             rowse.append({"definition": v, "cohort": coh, "rho": r_, "lo": lo, "hi": hi, "n": n})
-    ax.axhline(0, **REF); ax.set_xticks(range(6)); ax.set_xticklabels([VSHORT[v] for v in V6]); ax.set_ylim(-0.25, 0.62)
+    ax.axhline(0, **REF); ax.set_xticks(range(6)); ax.set_xticklabels([VSHORT[v] for v in V6]); ax.set_ylim(-0.25, 0.62); ax.set_xlim(-0.6, 5.6)
     ax.set_ylabel(f"ρ with Discovery-signature {RROB}"); gridy(ax)
     ax.legend([Line2D([], [], marker="o", ls="none", mfc="white", mec=COHORT_C[c]) for c in ("GTEx fibroblasts", "GTEx skin")],
               ["GTEx fibroblasts", "GTEx skin"], loc="upper left", fontsize=6.5, labelspacing=0.2, borderpad=0.2)
@@ -327,13 +332,13 @@ def fig3():
 # ================================================================== FIGURE 4
 PRED = [("constant", "constant", "o", "white", "#999999"), ("gene_covariates", "gene covariates", "^", "white", GRAY), ("network", "STRING", "s", "white", INK),
         ("physical_network", "STRING physical", "s", "#bdbdbd", "#7f7f7f"), ("knn_other_lines", "nearest neighbors, other lines", "v", "white", INK),
-        ("transfer_calibrated", "calibrated line transfer", "D", "#7f7f7f", "#7f7f7f"), ("transfer_plus_network", "line transfer + network", "D", ACCENT, ACCENT),
+        ("transfer_calibrated", "calibrated line transfer", "D", BASELINE, BASELINE), ("transfer_plus_network", "line transfer + network", "D", ACCENT, ACCENT),
         ("knn_response", "nearest neighbors, own profile", "x", INK, INK)]
 
 
 def fig4():
-    fig = plt.figure(figsize=(W2, 142 * MM))
-    gs = fig.add_gridspec(2, 3, width_ratios=[1, 1, 1], hspace=0.85, wspace=0.42, left=0.08, right=0.985, top=0.88, bottom=0.1)
+    fig = plt.figure(figsize=(W2, 140 * MM))
+    gs = fig.add_gridspec(2, 3, width_ratios=[1, 1, 1], hspace=0.62, wspace=0.42, left=0.08, right=0.985, top=0.88, bottom=0.09)
     NET = CSV("rev_network.csv"); ND = CSV("rev_network_null_dist.csv"); NJ = J("rev_network_null.json"); h3c = R["H3"]["contexts"]; x = np.arange(5)
     n3a = {c: int(h3c[c]["h3a_n"]) for c in SC}
     xl = [SCREEN_L[c].replace(" ", "\n") + f"\n{n3a[c]:,}" for c in SC]
@@ -343,7 +348,7 @@ def fig4():
     ax.bar(x - 0.2, d10, 0.38, color=ACCENT, label="10 nulls"); ax.bar(x + 0.2, d500, 0.38, color="white", ec=ACCENT, hatch="////", label="500 nulls")
     ax.axhline(0, color=INK, lw=0.5); ax.set_xticks(x); ax.set_xticklabels(xl, fontsize=6.5); ax.set_ylim(-6.5, 9)
     ax.set_ylabel("Network vs null mean,\nchange in MAE (%)"); ax.legend(fontsize=6.5, loc="lower center", bbox_to_anchor=(0.5, 1.0), ncol=2, frameon=False, columnspacing=0.6, handletextpad=0.3); gridy(ax)
-    ax.set_title("Absolute error", pad=15)
+    ax.set_title("Absolute error", pad=24)
     src(pd.DataFrame({"screen": SC, "n": [n3a[c] for c in SC], "dmae_10": d10, "dmae_500": d500}), "Fig4A", index=False)
     ax = B = fig.add_subplot(gs[0, 1])
     vp = ax.violinplot([ND[ND.screen == c].rho.values for c in SC], positions=x, widths=0.7, showextrema=False)
@@ -354,12 +359,12 @@ def fig4():
     ax.set_ylabel("Spearman ρ, predicted vs observed"); gridy(ax)
     ax.legend([Line2D([], [], marker="D", ls="none", color=ACCENT), Rectangle((0, 0), 1, 1, fc=LIGHT)], ["STRING network", "500 randomized"], loc="lower center",
               bbox_to_anchor=(0.5, 1.0), ncol=2, fontsize=6.5, frameon=False, columnspacing=0.6, handletextpad=0.3)
-    ax.set_title("Rank agreement", pad=15)
+    ax.set_title("Rank agreement", pad=24)
     src(ND, "Fig4B", index=False)
     NS = CSV("rev3_network_summary.csv"); BB = CSV("rev3_network_block_bootstrap.csv").set_index("screen").reindex(SC)
     nn = {c: int(BB.n[c]) for c in SC}; xl2 = [SCREEN_L[c].replace(" ", "\n") + f"\n{nn[c]:,}" for c in SC]
     ax = C = fig.add_subplot(gs[0, 2])
-    for k, (p, lab, col) in enumerate([("transfer_calibrated", "calibrated line transfer", "#9e9e9e"), ("transfer_plus_network", "line transfer + network", ACCENT)]):
+    for k, (p, lab, col) in enumerate([("transfer_calibrated", "calibrated line transfer", BASELINE), ("transfer_plus_network", "line transfer + network", ACCENT)]):
         d = NS[NS.predictor == p].set_index("screen").reindex(SC)
         ax.bar(x + (k - 0.5) * 0.38, d.rho, 0.38, color=col, label=lab, yerr=d.rho_sd, error_kw=dict(elinewidth=0.6, ecolor=GRAY))
     ax.set_xticks(x); ax.set_xticklabels(xl2, fontsize=6.5); ax.set_ylim(0, 0.5); ax.set_ylabel("Spearman ρ, held-out"); ax.legend(fontsize=6.5, loc="lower center", bbox_to_anchor=(0.5, 1.0), ncol=1, frameon=False, handletextpad=0.3, labelspacing=0.2); gridy(ax)
@@ -376,19 +381,28 @@ def fig4():
               bbox_to_anchor=(0.5, 1.0), ncol=2, fontsize=6.5, frameon=False, columnspacing=0.6, handletextpad=0.3)
     ax.set_title("Network increment", pad=15)
     src(BB.reset_index(), "Fig4D", index=False)
-    ax = E = fig.add_subplot(gs[1, 1:])
-    for k, (p, lab, mk, fc, ec) in enumerate(PRED):
-        if p == "constant" or p not in set(NS.predictor): continue
-        d = NS[NS.predictor == p].set_index("screen").reindex(SC)
-        ax.scatter(d.r2, x + (k - 4) * 0.13, marker=mk, s=16, facecolor=fc, edgecolor=ec, lw=0.8, label=lab, zorder=3)
+    sub = gs[1, 1:].subgridspec(1, 4, width_ratios=[0.66, 1, 0.03, 0.13], wspace=0.04)
+    ax = E = fig.add_subplot(sub[1]); cax = fig.add_subplot(sub[2])
+    preds = [p for p in PRED if p[0] != "constant" and p[0] in set(NS.predictor)]
+    M4 = np.array([[NS[(NS.screen == c) & (NS.predictor == p[0])].r2.iloc[0] for p in preds] for c in SC])
     ceil = NS[NS.predictor == "constant"].set_index("screen").reindex(SC).get("reliability_ceiling_r2")
-    if ceil is not None:
-        for xi, v in zip(x, ceil):
-            if np.isfinite(v): ax.plot([v, v], [xi - 0.35, xi + 0.35], color=INK, lw=1.8, zorder=2)
-    ax.axvline(0, **REF); ax.set_yticks(x); ax.set_yticklabels(xl2, fontsize=6.5); ax.invert_yaxis(); ax.set_xlabel(f"Held-out R² of {RADJ}")
-    hs, ls = ax.get_legend_handles_labels(); hs.append(Line2D([], [], color=INK, lw=1.8)); ls.append("reliability ceiling")
-    ax.legend(hs, ls, ncol=3, loc="lower center", bbox_to_anchor=(0.45, 1.0), fontsize=6.5, columnspacing=0.8, handletextpad=0.5, handlelength=1.6, frameon=False)
-    gridx(ax); ax.set_title("Held-out R²", pad=38)
+    # predictors as rows (labels on one horizontal line), screens as columns; the reference row (ceiling) set apart by a gap
+    ys = list(range(len(preds))) + [len(preds) + 0.45]
+    for j, c in enumerate(SC):
+        for i, yp in enumerate(ys):
+            v = M4[j, i] if i < len(preds) else (ceil[c] if ceil is not None else np.nan)
+            if np.isfinite(v):
+                col = plt.get_cmap(CORR_CMAP)((np.clip(v, -CORR_LIM, CORR_LIM) + CORR_LIM) / (2 * CORR_LIM))
+                ax.add_patch(Rectangle((j - 0.5, yp - 0.5), 1, 1, fc=col, ec="white", lw=0.6)); ax.text(j, yp, fmt(v), ha="center", va="center", fontsize=6.5, color=text_on(col))
+            else:
+                ax.add_patch(Rectangle((j - 0.5, yp - 0.5), 1, 1, fc="#f2f2f2", ec="white", lw=0.6)); ax.text(j, yp, "–", ha="center", va="center", fontsize=6.5, color=GRAY)
+    ax.set_xlim(-0.5, len(SC) - 0.5); ax.set_ylim(ys[-1] + 0.5, -0.5)
+    ax.set_yticks(ys); ax.set_yticklabels([p[1].replace("nearest neighbors, own profile", "nearest neighbors, own profile (reference)") for p in preds] + ["reliability ceiling (reference)"])
+    ax.set_xticks(range(len(SC))); ax.set_xticklabels([SCREEN_L[c].replace(" ", "\n") + f"\n{nn[c]:,}" for c in SC]); ax.spines[:].set_visible(False); ax.tick_params(length=0)
+    sm = plt.cm.ScalarMappable(cmap=CORR_CMAP, norm=plt.Normalize(-CORR_LIM, CORR_LIM)); sm.set_array([])
+    cb = fig.colorbar(sm, cax=cax); cb.ax.tick_params(labelsize=6.5, width=0.4, length=1.5); cb.outline.set_linewidth(0.4)
+    cb.set_label("Held-out R²", fontsize=6.5); cb.set_ticks([-0.6, 0, 0.6]); cb.set_ticklabels(["−0.6", "0", "0.6"])
+    ax.set_title(f"Held-out R² of {RADJ}", pad=15)
     src(NS, "Fig4E", index=False)
     letters(fig, [[(A, "A"), (B, "B"), (C, "C")], [(Dx, "D"), (E, "E")]])
     save(fig, "Fig4")
@@ -432,22 +446,22 @@ def fig5():
     ax.set_yticks([t for t, _ in ticks]); ax.set_yticklabels([l for _, l in ticks])
     for tl, (_, short) in zip(ax.get_yticklabels(), ticks): tl.set_color({f"{RROB} (V1)": ACCENT, "raw score": INK, "proliferation only": "#4d4d4d"}[short])
     ax.set_xlim(0.1, 0.9); ax.set_ylim(y + 0.45, 0.4); ax.set_xlabel("AUROC (95% CI)")
-    ax.text(1.03, 1.0, "n (MDA)", transform=ax.transAxes, fontsize=6.5, va="bottom", fontweight="bold")
+    ax.annotate("n (MDA)", (1.03, 1.0), xycoords="axes fraction", xytext=(0, 11), textcoords="offset points", fontsize=6.5, va="bottom", fontweight="bold")
     ax.legend([Line2D([], [], marker="o", ls="none", mfc="white", mec=INK), Line2D([], [], marker="o", ls="none", mfc="white", mec="#a6a6a6")], ["all genes", "genes in ≥2 lines"],
               loc="upper center", bbox_to_anchor=(0.5, -0.06), ncol=2, fontsize=6.5, frameon=False, columnspacing=0.6, handletextpad=0.2)
-    title(ax, "Held-out labels")
+    ax.set_title("Held-out labels", pad=14)
     src(pd.DataFrame(rows), "Fig5A", index=False)
     ax = Bx = fig.add_subplot(gs[0, 1]); rowsb = []
     for k, (lab, mk) in enumerate([("CellAge", "o"), ("GenAge", "s")]):
         for xi, v in enumerate(VARS):
             nm = "R_rob (V1, pre-specified)" if v == "V1 pre-specified" else f"R_rob ({v})"
             r = ev(lab, "all genes", nm); se = hanley_se(r.auroc, int(r.n_pos), int(r.n_neg)); col = INK if v == "V0 raw" else ACCENT
-            ax.errorbar(xi + (k - 0.5) * 0.3, r.auroc, yerr=1.96 * se, fmt=mk, ms=3, color=col, mfc=col if lab == "CellAge" else "white", elinewidth=0.75)
+            ax.errorbar(xi + (k - 0.5) * 0.3, r.auroc, yerr=1.96 * se, fmt=mk, ms=3, color=col, mfc=col if v == "V1 pre-specified" else "white", elinewidth=0.75)   # filled = test in Table 1, as in (A)
             rowsb.append(dict(labels=lab, definition=v, auroc=r.auroc, se=se, n_pos=int(r.n_pos), n_neg=int(r.n_neg)))
     ax.axhline(0.5, **REF); ax.set_xticks(range(len(VARS))); ax.set_xticklabels([VSHORT[v] for v in VARS]); ax.get_xticklabels()[1].set_fontweight("bold")
     ax.set_ylabel("AUROC (95% CI)"); ax.set_ylim(0.36, 0.66); gridy(ax)
-    ax.legend([Line2D([], [], marker="o", ls="none", color=ACCENT), Line2D([], [], marker="s", ls="none", mfc="white", mec=ACCENT)], ["CellAge", "GenAge"],
-              loc="lower center", bbox_to_anchor=(0.5, 1.0), ncol=2, fontsize=6.5, frameon=False, columnspacing=0.8)
+    ax.legend([Line2D([], [], marker="o", ls="none", mfc="white", mec=ACCENT), Line2D([], [], marker="s", ls="none", mfc="white", mec=ACCENT), Line2D([], [], marker="o", ls="none", color=ACCENT)],
+              ["CellAge", "GenAge", "test in Table 1"], loc="lower center", bbox_to_anchor=(0.5, 1.0), ncol=3, fontsize=6.5, frameon=False, columnspacing=0.8, handletextpad=0.2)
     ax.set_xlabel("Definition (n = 257/394; 573/376)")
     title(ax, " "); ax.text(0.5, 1.2, "By definition", transform=ax.transAxes, ha="center", va="bottom", fontsize=7)
     src(pd.DataFrame(rowsb), "Fig5B", index=False)
@@ -458,7 +472,7 @@ def fig5():
     rowsc = []
     for yi, (lab, a, b, short) in enumerate(comps):
         r = PA[(PA.labels == lab) & (PA.gene_set == "all genes") & (PA.a == a) & (PA.b == b)].iloc[0]
-        mk, fc = ("o", ACCENT) if lab == "CellAge" else ("s", "white")             # same code as (B)
+        mk, fc = ("o", "white") if lab == "CellAge" else ("s", "white")            # shape = label set as in (B); open = exploratory, as in (A)
         ax.errorbar(r.diff_a_minus_b, yi, xerr=[[r.diff_a_minus_b - r.lo], [r.hi - r.diff_a_minus_b]], fmt=mk, ms=3, color=ACCENT, mfc=fc, mec=ACCENT, elinewidth=0.75)
         ptxt = "< 0.001" if r.p_two_sided < 0.001 else f"{float(f'{r.p_two_sided:.2g}'):g}"
         ax.text(1.04, yi, ptxt, transform=ax.get_yaxis_transform(), fontsize=6.5, va="center", ha="left", color=INK)
@@ -473,7 +487,7 @@ def fig5():
     sel = [("CellAge", "Induces", "CellAge inducers"), ("CellAge", "Inhibits", "CellAge inhibitors"), ("GenAge", "Anti", "GenAge anti-longevity"), ("GenAge", "Pro", "GenAge pro-longevity")]
     for i_, (a, b, l) in enumerate(sel):
         r = OV[(OV.labels == a) & (OV["class"] == b)].iloc[0]
-        ax.barh(i_, 100 * r.frac_DepMap_common_essential, color="#9ecae1" if i_ % 2 == 0 else "#2171b5", height=0.6)
+        ax.barh(i_, 100 * r.frac_DepMap_common_essential, color="#D9C3A5" if i_ % 2 == 0 else "#8C6D46", height=0.6)
         ax.plot([100 * r.frac_CEGv2] * 2, [i_ - 0.3, i_ + 0.3], color=INK, lw=1.4, ls=":")
         ax.text(100 * r.frac_DepMap_common_essential + 0.6, i_, f"{100 * r.frac_DepMap_common_essential:.0f}% of {int(r.n)}", va="center", fontsize=6.5)
     yt = ax.get_yaxis_transform()
@@ -484,7 +498,7 @@ def fig5():
         ax.text(1.08, 2 * k + 0.5, f"OR {f_.odds_ratio:.2f}\n{ptxt}", transform=yt, fontsize=6.5, va="center", ha="left")
     ax.set_yticks(range(4)); ax.set_yticklabels([s[2] for s in sel]); ax.invert_yaxis(); ax.set_xlim(0, 40)
     ax.set_xlabel("DepMap common-essential genes (%)")
-    ax.legend([Rectangle((0, 0), 1, 1, fc="#9ecae1"), Rectangle((0, 0), 1, 1, fc="#2171b5"), Line2D([], [], color=INK, ls=":", lw=1.4)],
+    ax.legend([Rectangle((0, 0), 1, 1, fc="#D9C3A5"), Rectangle((0, 0), 1, 1, fc="#8C6D46"), Line2D([], [], color=INK, ls=":", lw=1.4)],
               ["positive class", "negative class", "Hart CEGv2"], loc="upper center", bbox_to_anchor=(0.45, -0.32), ncol=3, fontsize=6.5,
               handlelength=1.0, columnspacing=0.6, frameon=False)
     title(ax, "Essential genes")

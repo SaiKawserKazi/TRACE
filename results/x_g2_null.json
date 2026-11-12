@@ -1,0 +1,31 @@
+{
+ "n_perm": 1000,
+ "topk": 200,
+ "design": "age permuted across donors (discovery, F0) and within nucleic-acid isolation batch (GTEx); G2 refitted",
+ "fibroblasts": {
+  "top_rho": -0.16628515712892827,
+  "fdr05_gtex": 515,
+  "n_na_batches": 72,
+  "single_donor_batches": 28,
+  "null_lo": -0.43587302182554566,
+  "null_hi": 0.4370206255156379,
+  "p": 0.39760239760239763,
+  "null_fdr05_gtex_median": 0.0,
+  "null_fdr05_gtex_q95": 0.0,
+  "null_fdr05_gtex_max": 3607,
+  "frac_null_fdr05_ge_obs": 0.005
+ },
+ "skin": {
+  "top_rho": 0.1347543688592215,
+  "fdr05_gtex": 31,
+  "n_na_batches": 243,
+  "single_donor_batches": 73,
+  "null_lo": -0.29411467786694667,
+  "null_hi": 0.31486158403960096,
+  "p": 0.3806193806193806,
+  "null_fdr05_gtex_median": 0.0,
+  "null_fdr05_gtex_q95": 0.0,
+  "null_fdr05_gtex_max": 1006,
+  "frac_null_fdr05_ge_obs": 0.005
+ }
+}

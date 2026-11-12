@@ -22,6 +22,14 @@ def add(family, test, stat_name, stat, p, n="", where=""):
     rows.append({"Family": family, "Test": test, "Statistic": stat_name, "Value": stat, "n": n, "P": p, "Shown in": where})
 
 
+def hallmark_name(s):
+    """Hallmark set names in the text style (E2F targets, G2M checkpoint, TNF-α signaling via NF-κB)."""
+    s = " ".join(str(s).split()).replace("Pperoxisome", "Peroxisome").replace("G2-M", "G2M").replace("TNF-alpha", "TNF-α").replace("NF-kB", "NF-κB").replace(
+        "Wnt-beta Catenin", "Wnt/β-catenin").replace("TGF-beta", "TGF-β")
+    w = s.split(" ")
+    return " ".join([w[0][0].upper() + w[0][1:]] + [x if (any(ch.isdigit() for ch in x) or sum(ch.isupper() for ch in x) > 1) else x.lower() for x in w[1:]])
+
+
 def p_auroc(a, n1, n2):
     se = np.sqrt((n1 + n2 + 1) / (12 * n1 * n2)); return float(2 * stats.norm.sf(abs(a - 0.5) / se))
 
@@ -35,15 +43,38 @@ def score_name(s):
 SPEC = lambda s: s.replace("F8 without NIA donors aged 80+", "F8 without AG donors aged 80 or older").replace(" (age 18+; age + sex)", "").replace(" (GTEx range)", "")
 
 # cohort agreement: permuted-age null per discovery specification (G0)
+COH = "Cohort agreement (permuted-age null)"
 for _, r in CSV("x_cohort_perm_p.csv").iterrows():
-    add("Cohort agreement (permuted-age null)", f"{SPEC(r.spec)} vs GTEx {r.tissue}, all genes", "Spearman ρ", r.rho_all, r.p_rho_all, where="Figure 1F; ⟨cohortsens⟩")
-    add("Cohort agreement (permuted-age null)", f"{SPEC(r.spec)} vs GTEx {r.tissue}, 200 strongest genes", "Spearman ρ", r.top_rho, r.p_top_rho, where="Figure 1E; ⟨cohortsens⟩")
+    add(COH, f"{SPEC(r.spec)} vs GTEx {r.tissue}, all genes", "Spearman ρ", r.rho_all, r.p_rho_all, where="Figure 1E; ⟨cohortsens⟩")
+    add(COH, f"{SPEC(r.spec)} vs GTEx {r.tissue}, 200 strongest genes", "Spearman ρ", r.top_rho, r.p_top_rho,
+        where=("Figures 1D and 1F; ⟨cohortsens⟩" if r.spec.startswith("F0") and r.tissue == "fibroblasts" else "Figure 1F; ⟨cohortsens⟩"))
+# same permuted-age run (x_cohort_checks_v2.py): F9b and the sign agreement of signature genes
+CK = J("x_cohort_checks_v2.json")
+for t in ("fibroblasts", "skin"):
+    v = CK["nulls"][t]["F9b_top_rho"]
+    add(COH, f"F9b factors after a sex-only model vs GTEx {t}, 200 strongest genes", "Spearman ρ", v["obs"], v["p"], where="⟨addstats⟩")
+for t in ("fibroblasts", "skin"):
+    v = CK["nulls"][t]["sig_sign_agree"]
+    add(COH, f"F0 pre-specified vs GTEx {t}, signature genes with the same age direction", "fraction", v["obs"], v["p"], where="Figure S2; ⟨addstats⟩")
+# G2 model with age permuted within nucleic-acid isolation batch (x_g2_null.py)
+G2N = J("x_g2_null.json")
+for t in ("fibroblasts", "skin"):
+    add(COH, f"F0 pre-specified vs GTEx {t}, 200 strongest genes, G2 model (age permuted within nucleic-acid isolation batch)", "Spearman ρ", G2N[t]["top_rho"], G2N[t]["p"], where="⟨addstats⟩ (1)")
+# the 200 strongest GTEx-fibroblast genes against the discovery cohort (x_reverse_top200.py; Box 1, GTEx-derived signature)
+RV = J("x_reverse_top200.json")
+add(COH, "200 strongest GTEx-fibroblast genes vs discovery (F0)", "Spearman ρ", RV["rho"], RV["p"], where="⟨boxcheck⟩; ⟨addstats⟩ (1)")
+# top-k sweep: the F0 top-200 test repeated at other k (k = 200 is listed above), same permuted-age run
+for t in ("fibroblasts", "skin"):
+    for k in CK["ks"]:
+        if k == 200: continue
+        v = CK["nulls"][t][f"k{k}"]
+        add("Top-k sweep (F0 test at other k, permuted-age null)", f"F0 pre-specified vs GTEx {t}, {k:,} strongest genes", "Spearman ρ", v["rho"], v["p"], where="Figure S1E; ⟨addstats⟩")
 # sex control
 SEXN = {"sex_rho_all": "all genes", "sex_top_rho": "200 most sex-biased genes", "sex_top_autosomal_rho": "200 most sex-biased autosomal genes"}
 for k, v in J("x_cohort_nulls.json")["sex_perm"].items():
     if isinstance(v, dict):
         base, tissue = k.rsplit("_", 1)
-        add("Sex positive control (permuted-sex null)", f"Sex effects, {SEXN[base]}, discovery vs GTEx {tissue}", "Spearman ρ", v["observed"], v["p"], where="Figure 1E; ⟨sexctrl⟩")
+        add("Sex positive control (permuted-sex null)", f"Sex effects, {SEXN[base]}, discovery vs GTEx {tissue}", "Spearman ρ", v["observed"], v["p"], where="Figure 1D; ⟨sexctrl⟩")
 # random signatures (real side without proliferation genes)
 RSN = {"H1_median_rho_raw": "median cross-line ρ, raw score", "H1_median_rho_adj": "median cross-line ρ, R_adj", "H4_CellAge_auroc_raw": "CellAge AUROC, raw R_rob",
        "H4_CellAge_auroc_adj": "CellAge AUROC, V1 R_rob", "H4_GenAge_auroc_raw": "GenAge AUROC, raw R_rob", "H4_GenAge_auroc_adj": "GenAge AUROC, V1 R_rob"}
@@ -76,8 +107,8 @@ for _, r in CSV("x_cellage_method.csv").iterrows():
     if r.subset == "all CellAge genes": continue
     if r.score == "proliferation shift alone":
         if r.subset in seen: continue
-        seen.add(r.subset); sig = "both signatures"
-    else: sig = r.signature.replace("GTEx-fibroblast signature", "GTEx-derived signature")
+        seen.add(r.subset); sig = "same for both signatures"
+    else: sig = r.signature.replace("GTEx-fibroblast signature", "GTEx-derived signature").replace("Discovery signature", "discovery signature")
     add("Held-out labels, CellAge by manipulation", f"{r.subset}, {score_name(r.score)} ({sig})", "AUROC", r.auroc, p_auroc(r.auroc, r.n_pos, r.n_neg), f"{r.n_pos}/{r.n_neg}", "⟨evidence⟩")
 H4 = J("results.json")["H4"]
 for key, lab in [("H4a_cellage", "CellAge"), ("H4b_genage", "GenAge")]:
@@ -102,12 +133,12 @@ for _, r in CSV("rev3_depmap_label_fisher.csv").iterrows():
         "odds ratio", r.odds_ratio, r.fisher_p_two_sided, where="Figure 5D")
 # hidden factors of the discovery cohort: Hallmark enrichment of the loadings
 for _, r in CSV("x_cohort_hidden_factor_hallmark.csv").iterrows():
-    add("Hidden-factor loadings, Hallmark enrichment (hypergeometric)", f"Factor {r.factor}, {r.direction} loadings: {' '.join(r.set.split())}", "overlap", r.overlap, r.p, f"{r.overlap}/{r['size']}", "⟨addstats⟩")
+    add("Hidden-factor loadings, Hallmark enrichment (hypergeometric)", f"Factor {r.factor}, {r.direction} loadings: {hallmark_name(r.set)}", "overlap", r.overlap, r.p, f"{r.overlap}/{r['size']}", "⟨addstats⟩")
 # GTEx fibroblasts vs skin
 gp = RES / "x_gtex_pair_null.json"
 if gp.exists():
     g = J("x_gtex_pair_null.json")
-    add("GTEx fibroblasts vs GTEx skin (permuted-age null)", "age effects, all shared genes", "Spearman ρ", g["observed_rho"], g["p_two_sided"], g["n_genes"], "Results")
+    add("GTEx fibroblasts vs GTEx skin (permuted-age null)", "age effects, all shared genes", "Spearman ρ", g["observed_rho"], g["p_two_sided"], g["n_genes"], "⟨addstats⟩ (1)")
 
 T = pd.DataFrame(rows)
 T["Tests in family"] = T.groupby("Family").Test.transform("size")

@@ -44,6 +44,9 @@ STEPS = [
     ("x27-top-k-sweep", ["src/x_topk_sweep.py"], {}),
     ("x28-gtex-pair-null", ["src/x_gtex_pair_null.py"], {}),
     ("x30-cohort-checks", ["src/x_cohort_checks_v2.py"], {}),
+    ("x34-g2-null", ["src/x_g2_null.py"], {}),
+    ("x35-gtex-top200-null", ["src/x_reverse_top200.py"], {}),
+    ("x37-box1-positive", ["src/x_box1_positive.py"], {}),
     ("x25-exploratory-tests", ["src/x_exploratory_tests.py"], {}),
     ("report", ["src/report.py"], {}),
     # figures (final numbering) and their source data

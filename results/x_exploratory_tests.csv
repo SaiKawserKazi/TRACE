@@ -1,50 +1,67 @@
 Family,Tests in family,Test,Statistic,Value,n,P,Holm P (within family),BH q (within family),Shown in
-Cohort agreement (permuted-age null),40,"F0 pre-specified vs GTEx fibroblasts, all genes",Spearman ρ,-0.2754168245456749,,0.1638361638361638,1.0,0.48647005168744295,Figure 1F; ⟨cohortsens⟩
-Cohort agreement (permuted-age null),40,"F0 pre-specified vs GTEx fibroblasts, 200 strongest genes",Spearman ρ,-0.5547588689717243,,0.0109890109890109,0.4175824175824142,0.14652014652014533,Figure 1E; ⟨cohortsens⟩
-Cohort agreement (permuted-age null),40,"F0 pre-specified vs GTEx skin, all genes",Spearman ρ,0.1460723614505741,,0.2797202797202797,1.0,0.48647005168744295,Figure 1F; ⟨cohortsens⟩
-Cohort agreement (permuted-age null),40,"F0 pre-specified vs GTEx skin, 200 strongest genes",Spearman ρ,0.1863016575414385,,0.2547452547452547,1.0,0.48647005168744295,Figure 1E; ⟨cohortsens⟩
-Cohort agreement (permuted-age null),40,"F1 ages 20-79 vs GTEx fibroblasts, all genes",Spearman ρ,-0.216976100523686,,0.2477522477522477,1.0,0.48647005168744295,Figure 1F; ⟨cohortsens⟩
-Cohort agreement (permuted-age null),40,"F1 ages 20-79 vs GTEx fibroblasts, 200 strongest genes",Spearman ρ,-0.3271326783169579,,0.1518481518481518,1.0,0.48647005168744295,Figure 1E; ⟨cohortsens⟩
-Cohort agreement (permuted-age null),40,"F1 ages 20-79 vs GTEx skin, all genes",Spearman ρ,-0.0363263714466472,,0.7262737262737263,1.0,0.7571915264222957,Figure 1F; ⟨cohortsens⟩
-Cohort agreement (permuted-age null),40,"F1 ages 20-79 vs GTEx skin, 200 strongest genes",Spearman ρ,-0.2272556813920348,,0.1798201798201798,1.0,0.48647005168744295,Figure 1E; ⟨cohortsens⟩
-Cohort agreement (permuted-age null),40,"F2 + platform, repository, site vs GTEx fibroblasts, all genes",Spearman ρ,-0.2625119057414459,,0.1908091908091908,1.0,0.48647005168744295,Figure 1F; ⟨cohortsens⟩
-Cohort agreement (permuted-age null),40,"F2 + platform, repository, site vs GTEx fibroblasts, 200 strongest genes",Spearman ρ,-0.1861816545413635,,0.4135864135864135,1.0,0.5965463108320251,Figure 1E; ⟨cohortsens⟩
-Cohort agreement (permuted-age null),40,"F2 + platform, repository, site vs GTEx skin, all genes",Spearman ρ,0.0979800746972772,,0.4395604395604395,1.0,0.6058457671360896,Figure 1F; ⟨cohortsens⟩
-Cohort agreement (permuted-age null),40,"F2 + platform, repository, site vs GTEx skin, 200 strongest genes",Spearman ρ,0.0994524863121578,,0.5284715284715285,1.0,0.6217312099665041,Figure 1E; ⟨cohortsens⟩
-Cohort agreement (permuted-age null),40,"F3 ages 20-79 + platform, repository, site vs GTEx fibroblasts, all genes",Spearman ρ,-0.2116199066938489,,0.2447552447552447,1.0,0.48647005168744295,Figure 1F; ⟨cohortsens⟩
-Cohort agreement (permuted-age null),40,"F3 ages 20-79 + platform, repository, site vs GTEx fibroblasts, 200 strongest genes",Spearman ρ,-0.14254406360159,,0.5154845154845155,1.0,0.6217312099665041,Figure 1E; ⟨cohortsens⟩
-Cohort agreement (permuted-age null),40,"F3 ages 20-79 + platform, repository, site vs GTEx skin, all genes",Spearman ρ,-0.0363118720697345,,0.7122877122877123,1.0,0.7571915264222957,Figure 1F; ⟨cohortsens⟩
-Cohort agreement (permuted-age null),40,"F3 ages 20-79 + platform, repository, site vs GTEx skin, 200 strongest genes",Spearman ρ,-0.128929723243081,,0.4175824175824176,1.0,0.5965463108320251,Figure 1E; ⟨cohortsens⟩
-Cohort agreement (permuted-age null),40,"F4 NextSeq only vs GTEx fibroblasts, all genes",Spearman ρ,-0.2856217529070616,,0.1778221778221778,1.0,0.48647005168744295,Figure 1F; ⟨cohortsens⟩
-Cohort agreement (permuted-age null),40,"F4 NextSeq only vs GTEx fibroblasts, 200 strongest genes",Spearman ρ,-0.6088757218930474,,0.0069930069930069,0.279720279720276,0.14652014652014533,Figure 1E; ⟨cohortsens⟩
-Cohort agreement (permuted-age null),40,"F4 NextSeq only vs GTEx skin, all genes",Spearman ρ,0.1512639693188622,,0.2787212787212787,1.0,0.48647005168744295,Figure 1F; ⟨cohortsens⟩
-Cohort agreement (permuted-age null),40,"F4 NextSeq only vs GTEx skin, 200 strongest genes",Spearman ρ,0.1173194329858246,,0.4635364635364635,1.0,0.6058457671360896,Figure 1E; ⟨cohortsens⟩
-Cohort agreement (permuted-age null),40,"F5 arm biopsies only vs GTEx fibroblasts, all genes",Spearman ρ,-0.2435219786240283,,0.2037962037962038,1.0,0.48647005168744295,Figure 1F; ⟨cohortsens⟩
-Cohort agreement (permuted-age null),40,"F5 arm biopsies only vs GTEx fibroblasts, 200 strongest genes",Spearman ρ,-0.4123723093077328,,0.0739260739260739,1.0,0.48647005168744295,Figure 1E; ⟨cohortsens⟩
-Cohort agreement (permuted-age null),40,"F5 arm biopsies only vs GTEx skin, all genes",Spearman ρ,0.139082362953532,,0.3226773226773227,1.0,0.49642665027280414,Figure 1F; ⟨cohortsens⟩
-Cohort agreement (permuted-age null),40,"F5 arm biopsies only vs GTEx skin, 200 strongest genes",Spearman ρ,0.1128358208955224,,0.5014985014985015,1.0,0.6217312099665041,Figure 1E; ⟨cohortsens⟩
-Cohort agreement (permuted-age null),40,"F6 expression filter 0.5 vs GTEx fibroblasts, all genes",Spearman ρ,-0.2721492393578826,,0.1708291708291708,1.0,0.48647005168744295,Figure 1F; ⟨cohortsens⟩
-Cohort agreement (permuted-age null),40,"F6 expression filter 0.5 vs GTEx fibroblasts, 200 strongest genes",Spearman ρ,-0.5570299257481438,,0.0079920079920079,0.31168831168830813,0.14652014652014533,Figure 1E; ⟨cohortsens⟩
-Cohort agreement (permuted-age null),40,"F6 expression filter 0.5 vs GTEx skin, all genes",Spearman ρ,0.1377342953674158,,0.2967032967032967,1.0,0.4945054945054945,Figure 1F; ⟨cohortsens⟩
-Cohort agreement (permuted-age null),40,"F6 expression filter 0.5 vs GTEx skin, 200 strongest genes",Spearman ρ,0.1805235130878272,,0.2457542457542457,1.0,0.48647005168744295,Figure 1E; ⟨cohortsens⟩
-Cohort agreement (permuted-age null),40,"F7 expression filter 2 vs GTEx fibroblasts, all genes",Spearman ρ,-0.261825251962952,,0.1898101898101898,1.0,0.48647005168744295,Figure 1F; ⟨cohortsens⟩
-Cohort agreement (permuted-age null),40,"F7 expression filter 2 vs GTEx fibroblasts, 200 strongest genes",Spearman ρ,-0.5518007950198756,,0.0189810189810189,0.7022977022976993,0.189810189810189,Figure 1E; ⟨cohortsens⟩
-Cohort agreement (permuted-age null),40,"F7 expression filter 2 vs GTEx skin, all genes",Spearman ρ,0.148301847094307,,0.3116883116883117,1.0,0.49642665027280414,Figure 1F; ⟨cohortsens⟩
-Cohort agreement (permuted-age null),40,"F7 expression filter 2 vs GTEx skin, 200 strongest genes",Spearman ρ,0.1254361359033976,,0.4695304695304695,1.0,0.6058457671360896,Figure 1E; ⟨cohortsens⟩
-Cohort agreement (permuted-age null),40,"F8 without AG donors aged 80 or older vs GTEx fibroblasts, all genes",Spearman ρ,-0.2149432237606894,,0.2697302697302697,1.0,0.48647005168744295,Figure 1F; ⟨cohortsens⟩
-Cohort agreement (permuted-age null),40,"F8 without AG donors aged 80 or older vs GTEx fibroblasts, 200 strongest genes",Spearman ρ,-0.3739203480087003,,0.1088911088911089,1.0,0.48647005168744295,Figure 1E; ⟨cohortsens⟩
-Cohort agreement (permuted-age null),40,"F8 without AG donors aged 80 or older vs GTEx skin, all genes",Spearman ρ,0.0204150596832845,,0.8511488511488512,1.0,0.8511488511488512,Figure 1F; ⟨cohortsens⟩
-Cohort agreement (permuted-age null),40,"F8 without AG donors aged 80 or older vs GTEx skin, 200 strongest genes",Spearman ρ,0.0576134403360084,,0.7122877122877123,1.0,0.7571915264222957,Figure 1E; ⟨cohortsens⟩
-Cohort agreement (permuted-age null),40,"F9 + 5 hidden factors vs GTEx fibroblasts, all genes",Spearman ρ,-0.2714093043259284,,0.2267732267732267,1.0,0.48647005168744295,Figure 1F; ⟨cohortsens⟩
-Cohort agreement (permuted-age null),40,"F9 + 5 hidden factors vs GTEx fibroblasts, 200 strongest genes",Spearman ρ,-0.0758163954098852,,0.7382617382617382,1.0,0.7571915264222957,Figure 1E; ⟨cohortsens⟩
-Cohort agreement (permuted-age null),40,"F9 + 5 hidden factors vs GTEx skin, all genes",Spearman ρ,0.1589028473261685,,0.2397602397602397,1.0,0.48647005168744295,Figure 1F; ⟨cohortsens⟩
-Cohort agreement (permuted-age null),40,"F9 + 5 hidden factors vs GTEx skin, 200 strongest genes",Spearman ρ,0.0755013875346883,,0.6573426573426573,1.0,0.7512487512487512,Figure 1E; ⟨cohortsens⟩
-Sex positive control (permuted-sex null),6,"Sex effects, all genes, discovery vs GTEx fibroblasts",Spearman ρ,0.1866525650846374,,0.3116883116883117,0.7432567432567432,0.3676323676323676,Figure 1E; ⟨sexctrl⟩
-Sex positive control (permuted-sex null),6,"Sex effects, 200 most sex-biased genes, discovery vs GTEx fibroblasts",Spearman ρ,0.6482937073426837,,0.001998001998001998,0.011988011988011988,0.011988011988011988,Figure 1E; ⟨sexctrl⟩
-Sex positive control (permuted-sex null),6,"Sex effects, 200 most sex-biased autosomal genes, discovery vs GTEx fibroblasts",Spearman ρ,0.3422005550138753,,0.13586413586413587,0.5434565434565435,0.27172827172827174,Figure 1E; ⟨sexctrl⟩
-Sex positive control (permuted-sex null),6,"Sex effects, all genes, discovery vs GTEx skin",Spearman ρ,-0.1152510062322483,,0.3676323676323676,0.7432567432567432,0.3676323676323676,Figure 1E; ⟨sexctrl⟩
-Sex positive control (permuted-sex null),6,"Sex effects, 200 most sex-biased genes, discovery vs GTEx skin",Spearman ρ,0.3183994599864996,,0.056943056943056944,0.28471528471528473,0.17082917082917085,Figure 1E; ⟨sexctrl⟩
-Sex positive control (permuted-sex null),6,"Sex effects, 200 most sex-biased autosomal genes, discovery vs GTEx skin",Spearman ρ,-0.177862446561164,,0.24775224775224775,0.7432567432567432,0.3676323676323676,Figure 1E; ⟨sexctrl⟩
+Cohort agreement (permuted-age null),47,"F0 pre-specified vs GTEx fibroblasts, all genes",Spearman ρ,-0.2754168245456749,,0.1638361638361638,1.0,0.5056481979558902,Figure 1E; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),47,"F0 pre-specified vs GTEx fibroblasts, 200 strongest genes",Spearman ρ,-0.5547588689717243,,0.0109890109890109,0.4945054945054905,0.17216117216117077,Figures 1D and 1F; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),47,"F0 pre-specified vs GTEx skin, all genes",Spearman ρ,0.1460723614505741,,0.2797202797202797,1.0,0.5056481979558902,Figure 1E; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),47,"F0 pre-specified vs GTEx skin, 200 strongest genes",Spearman ρ,0.1863016575414385,,0.2547452547452547,1.0,0.5056481979558902,Figure 1F; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),47,"F1 ages 20-79 vs GTEx fibroblasts, all genes",Spearman ρ,-0.216976100523686,,0.2477522477522477,1.0,0.5056481979558902,Figure 1E; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),47,"F1 ages 20-79 vs GTEx fibroblasts, 200 strongest genes",Spearman ρ,-0.3271326783169579,,0.1518481518481518,1.0,0.5056481979558902,Figure 1F; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),47,"F1 ages 20-79 vs GTEx skin, all genes",Spearman ρ,-0.0363263714466472,,0.7262737262737263,1.0,0.771073371073371,Figure 1E; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),47,"F1 ages 20-79 vs GTEx skin, 200 strongest genes",Spearman ρ,-0.2272556813920348,,0.1798201798201798,1.0,0.5056481979558902,Figure 1F; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),47,"F2 + platform, repository, site vs GTEx fibroblasts, all genes",Spearman ρ,-0.2625119057414459,,0.1908091908091908,1.0,0.5056481979558902,Figure 1E; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),47,"F2 + platform, repository, site vs GTEx fibroblasts, 200 strongest genes",Spearman ρ,-0.1861816545413635,,0.4135864135864135,1.0,0.5947385947385947,Figure 1F; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),47,"F2 + platform, repository, site vs GTEx skin, all genes",Spearman ρ,0.0979800746972772,,0.4395604395604395,1.0,0.6076276664511957,Figure 1E; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),47,"F2 + platform, repository, site vs GTEx skin, 200 strongest genes",Spearman ρ,0.0994524863121578,,0.5284715284715285,1.0,0.6368759445682523,Figure 1F; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),47,"F3 ages 20-79 + platform, repository, site vs GTEx fibroblasts, all genes",Spearman ρ,-0.2116199066938489,,0.2447552447552447,1.0,0.5056481979558902,Figure 1E; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),47,"F3 ages 20-79 + platform, repository, site vs GTEx fibroblasts, 200 strongest genes",Spearman ρ,-0.14254406360159,,0.5154845154845155,1.0,0.6368759445682523,Figure 1F; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),47,"F3 ages 20-79 + platform, repository, site vs GTEx skin, all genes",Spearman ρ,-0.0363118720697345,,0.7122877122877123,1.0,0.771073371073371,Figure 1E; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),47,"F3 ages 20-79 + platform, repository, site vs GTEx skin, 200 strongest genes",Spearman ρ,-0.128929723243081,,0.4175824175824176,1.0,0.5947385947385947,Figure 1F; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),47,"F4 NextSeq only vs GTEx fibroblasts, all genes",Spearman ρ,-0.2856217529070616,,0.1778221778221778,1.0,0.5056481979558902,Figure 1E; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),47,"F4 NextSeq only vs GTEx fibroblasts, 200 strongest genes",Spearman ρ,-0.6088757218930474,,0.0069930069930069,0.3286713286713243,0.17216117216117077,Figure 1F; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),47,"F4 NextSeq only vs GTEx skin, all genes",Spearman ρ,0.1512639693188622,,0.2787212787212787,1.0,0.5056481979558902,Figure 1E; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),47,"F4 NextSeq only vs GTEx skin, 200 strongest genes",Spearman ρ,0.1173194329858246,,0.4635364635364635,1.0,0.612998112998113,Figure 1F; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),47,"F5 arm biopsies only vs GTEx fibroblasts, all genes",Spearman ρ,-0.2435219786240283,,0.2037962037962038,1.0,0.5056481979558902,Figure 1E; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),47,"F5 arm biopsies only vs GTEx fibroblasts, 200 strongest genes",Spearman ρ,-0.4123723093077328,,0.0739260739260739,1.0,0.43431568431568424,Figure 1F; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),47,"F5 arm biopsies only vs GTEx skin, all genes",Spearman ρ,0.139082362953532,,0.3226773226773227,1.0,0.5229597988218678,Figure 1E; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),47,"F5 arm biopsies only vs GTEx skin, 200 strongest genes",Spearman ρ,0.1128358208955224,,0.5014985014985015,1.0,0.6368759445682523,Figure 1F; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),47,"F6 expression filter 0.5 vs GTEx fibroblasts, all genes",Spearman ρ,-0.2721492393578826,,0.1708291708291708,1.0,0.5056481979558902,Figure 1E; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),47,"F6 expression filter 0.5 vs GTEx fibroblasts, 200 strongest genes",Spearman ρ,-0.5570299257481438,,0.0079920079920079,0.3676323676323634,0.17216117216117077,Figure 1F; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),47,"F6 expression filter 0.5 vs GTEx skin, all genes",Spearman ρ,0.1377342953674158,,0.2967032967032967,1.0,0.5164835164835164,Figure 1E; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),47,"F6 expression filter 0.5 vs GTEx skin, 200 strongest genes",Spearman ρ,0.1805235130878272,,0.2457542457542457,1.0,0.5056481979558902,Figure 1F; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),47,"F7 expression filter 2 vs GTEx fibroblasts, all genes",Spearman ρ,-0.261825251962952,,0.1898101898101898,1.0,0.5056481979558902,Figure 1E; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),47,"F7 expression filter 2 vs GTEx fibroblasts, 200 strongest genes",Spearman ρ,-0.5518007950198756,,0.0189810189810189,0.8351648351648316,0.1784215784215784,Figure 1F; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),47,"F7 expression filter 2 vs GTEx skin, all genes",Spearman ρ,0.148301847094307,,0.3116883116883117,1.0,0.5229597988218678,Figure 1E; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),47,"F7 expression filter 2 vs GTEx skin, 200 strongest genes",Spearman ρ,0.1254361359033976,,0.4695304695304695,1.0,0.612998112998113,Figure 1F; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),47,"F8 without AG donors aged 80 or older vs GTEx fibroblasts, all genes",Spearman ρ,-0.2149432237606894,,0.2697302697302697,1.0,0.5056481979558902,Figure 1E; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),47,"F8 without AG donors aged 80 or older vs GTEx fibroblasts, 200 strongest genes",Spearman ρ,-0.3739203480087003,,0.1088911088911089,1.0,0.5056481979558902,Figure 1F; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),47,"F8 without AG donors aged 80 or older vs GTEx skin, all genes",Spearman ρ,0.0204150596832845,,0.8511488511488512,1.0,0.8696520870433915,Figure 1E; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),47,"F8 without AG donors aged 80 or older vs GTEx skin, 200 strongest genes",Spearman ρ,0.0576134403360084,,0.7122877122877123,1.0,0.771073371073371,Figure 1F; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),47,"F9 + 5 hidden factors vs GTEx fibroblasts, all genes",Spearman ρ,-0.2714093043259284,,0.2267732267732267,1.0,0.5056481979558902,Figure 1E; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),47,"F9 + 5 hidden factors vs GTEx fibroblasts, 200 strongest genes",Spearman ρ,-0.0758163954098852,,0.7382617382617382,1.0,0.771073371073371,Figure 1F; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),47,"F9 + 5 hidden factors vs GTEx skin, all genes",Spearman ρ,0.1589028473261685,,0.2397602397602397,1.0,0.5056481979558902,Figure 1E; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),47,"F9 + 5 hidden factors vs GTEx skin, 200 strongest genes",Spearman ρ,0.0755013875346883,,0.6573426573426573,1.0,0.7535391437830461,Figure 1F; ⟨cohortsens⟩
+Cohort agreement (permuted-age null),47,"F9b factors after a sex-only model vs GTEx fibroblasts, 200 strongest genes",Spearman ρ,-0.40112802820070503,,0.01898101898101898,0.8351648351648316,0.1784215784215784,⟨addstats⟩
+Cohort agreement (permuted-age null),47,"F9b factors after a sex-only model vs GTEx skin, 200 strongest genes",Spearman ρ,-0.31348533713342835,,0.027972027972027972,1.0,0.21911421911421913,⟨addstats⟩
+Cohort agreement (permuted-age null),47,"F0 pre-specified vs GTEx fibroblasts, signature genes with the same age direction",fraction,0.2205240174672489,,0.04995004995004995,1.0,0.3353789068074783,Figure S2; ⟨addstats⟩
+Cohort agreement (permuted-age null),47,"F0 pre-specified vs GTEx skin, signature genes with the same age direction",fraction,0.5066079295154186,,0.938061938061938,1.0,0.938061938061938,Figure S2; ⟨addstats⟩
+Cohort agreement (permuted-age null),47,"F0 pre-specified vs GTEx fibroblasts, 200 strongest genes, G2 model (age permuted within nucleic-acid isolation batch)",Spearman ρ,-0.16628515712892827,,0.39760239760239763,1.0,0.5947385947385947,⟨addstats⟩ (1)
+Cohort agreement (permuted-age null),47,"F0 pre-specified vs GTEx skin, 200 strongest genes, G2 model (age permuted within nucleic-acid isolation batch)",Spearman ρ,0.1347543688592215,,0.3806193806193806,1.0,0.5947385947385947,⟨addstats⟩ (1)
+Cohort agreement (permuted-age null),47,200 strongest GTEx-fibroblast genes vs discovery (F0),Spearman ρ,-0.10738618465461638,,0.6043956043956044,1.0,0.7101648351648351,⟨boxcheck⟩; ⟨addstats⟩ (1)
+"Top-k sweep (F0 test at other k, permuted-age null)",10,"F0 pre-specified vs GTEx fibroblasts, 50 strongest genes",Spearman ρ,-0.5035774309723889,,0.04495504495504495,0.2697302697302697,0.0899100899100899,Figure S1E; ⟨addstats⟩
+"Top-k sweep (F0 test at other k, permuted-age null)",10,"F0 pre-specified vs GTEx fibroblasts, 100 strongest genes",Spearman ρ,-0.5263486348634863,,0.022977022977022976,0.16083916083916083,0.05744255744255744,Figure S1E; ⟨addstats⟩
+"Top-k sweep (F0 test at other k, permuted-age null)",10,"F0 pre-specified vs GTEx fibroblasts, 300 strongest genes",Spearman ρ,-0.5673596373293036,,0.006993006993006993,0.06993006993006994,0.03996003996003996,Figure S1E; ⟨addstats⟩
+"Top-k sweep (F0 test at other k, permuted-age null)",10,"F0 pre-specified vs GTEx fibroblasts, 500 strongest genes",Spearman ρ,-0.5687915231660926,,0.008991008991008992,0.08091908091908093,0.03996003996003996,Figure S1E; ⟨addstats⟩
+"Top-k sweep (F0 test at other k, permuted-age null)",10,"F0 pre-specified vs GTEx fibroblasts, 1,000 strongest genes",Spearman ρ,-0.5453097893097895,,0.011988011988011988,0.0959040959040959,0.03996003996003996,Figure S1E; ⟨addstats⟩
+"Top-k sweep (F0 test at other k, permuted-age null)",10,"F0 pre-specified vs GTEx skin, 50 strongest genes",Spearman ρ,0.25935174069627853,,0.21078921078921078,0.9290709290709291,0.30112744398458685,Figure S1E; ⟨addstats⟩
+"Top-k sweep (F0 test at other k, permuted-age null)",10,"F0 pre-specified vs GTEx skin, 100 strongest genes",Spearman ρ,0.2333153315331533,,0.18581418581418582,0.9290709290709291,0.30112744398458685,Figure S1E; ⟨addstats⟩
+"Top-k sweep (F0 test at other k, permuted-age null)",10,"F0 pre-specified vs GTEx skin, 300 strongest genes",Spearman ρ,0.1423798042200469,,0.3786213786213786,1.0,0.47327672327672327,Figure S1E; ⟨addstats⟩
+"Top-k sweep (F0 test at other k, permuted-age null)",10,"F0 pre-specified vs GTEx skin, 500 strongest genes",Spearman ρ,0.1035762543050172,,0.5024975024975025,1.0,0.5583305583305583,Figure S1E; ⟨addstats⟩
+"Top-k sweep (F0 test at other k, permuted-age null)",10,"F0 pre-specified vs GTEx skin, 1,000 strongest genes",Spearman ρ,0.08209304209304209,,0.5924075924075924,1.0,0.5924075924075924,Figure S1E; ⟨addstats⟩
+Sex positive control (permuted-sex null),6,"Sex effects, all genes, discovery vs GTEx fibroblasts",Spearman ρ,0.1866525650846374,,0.3116883116883117,0.7432567432567432,0.3676323676323676,Figure 1D; ⟨sexctrl⟩
+Sex positive control (permuted-sex null),6,"Sex effects, 200 most sex-biased genes, discovery vs GTEx fibroblasts",Spearman ρ,0.6482937073426837,,0.001998001998001998,0.011988011988011988,0.011988011988011988,Figure 1D; ⟨sexctrl⟩
+Sex positive control (permuted-sex null),6,"Sex effects, 200 most sex-biased autosomal genes, discovery vs GTEx fibroblasts",Spearman ρ,0.3422005550138753,,0.13586413586413587,0.5434565434565435,0.27172827172827174,Figure 1D; ⟨sexctrl⟩
+Sex positive control (permuted-sex null),6,"Sex effects, all genes, discovery vs GTEx skin",Spearman ρ,-0.1152510062322483,,0.3676323676323676,0.7432567432567432,0.3676323676323676,Figure 1D; ⟨sexctrl⟩
+Sex positive control (permuted-sex null),6,"Sex effects, 200 most sex-biased genes, discovery vs GTEx skin",Spearman ρ,0.3183994599864996,,0.056943056943056944,0.28471528471528473,0.17082917082917085,Figure 1D; ⟨sexctrl⟩
+Sex positive control (permuted-sex null),6,"Sex effects, 200 most sex-biased autosomal genes, discovery vs GTEx skin",Spearman ρ,-0.177862446561164,,0.24775224775224775,0.7432567432567432,0.3676323676323676,Figure 1D; ⟨sexctrl⟩
 Real signature vs 100 random signatures (one-sided empirical P),11,"median cross-line ρ, raw score",ρ,0.505600701116866,100,0.0099009900990099,0.1089108910891089,0.013613861386138612,Figures 2E and S6
 Real signature vs 100 random signatures (one-sided empirical P),11,"median cross-line ρ, R_adj",ρ,0.209717401450867,100,0.0099009900990099,0.1089108910891089,0.013613861386138612,Figures 2E and S6
 Real signature vs 100 random signatures (one-sided empirical P),11,"ρ(score, proliferation), K562 ess.",ρ,0.4464375958901607,100,0.0099009900990099,0.1089108910891089,0.013613861386138612,Figures 2E and S6
@@ -165,12 +182,12 @@ Real signature vs 100 random signatures (one-sided empirical P),11,"GenAge AUROC
 "Held-out labels, GTEx-derived signature",16,"GenAge without yeast, all genes, raw score",AUROC,0.5342862250089376,391/372,0.10125687822237649,0.7087981475566354,0.16201100515580238,Figure S7B; ⟨evidence⟩
 "Held-out labels, GTEx-derived signature",16,"GenAge without yeast, genes in ≥ 2 lines, R_rob (V1)",AUROC,0.6053915488299016,139/87,0.007705395778334215,0.1001701451183448,0.03082158311333686,Figure S7B; ⟨evidence⟩
 "Held-out labels, GTEx-derived signature",16,"GenAge without yeast, genes in ≥ 2 lines, raw score",AUROC,0.5881088232861986,139/87,0.025897988322525437,0.2589798832252544,0.05919540188005814,Figure S7B; ⟨evidence⟩
-"Held-out labels, CellAge by manipulation",10,"loss-of-function evidence, R_rob (V1) (Discovery signature)",AUROC,0.5418446448346781,129/343,0.1609211847627665,0.8046059238138326,0.26820197460461087,⟨evidence⟩
-"Held-out labels, CellAge by manipulation",10,"loss-of-function evidence, raw score (Discovery signature)",AUROC,0.5953849978529617,129/343,0.001394350227224895,0.012549152045024055,0.006971751136124475,⟨evidence⟩
-"Held-out labels, CellAge by manipulation",10,"loss-of-function evidence, proliferation shift alone (both signatures)",AUROC,0.6049449680204307,129/343,0.0004379043642885272,0.004379043642885272,0.004379043642885272,⟨evidence⟩
-"Held-out labels, CellAge by manipulation",10,"overexpression only, R_rob (V1) (Discovery signature)",AUROC,0.538296568627451,128/51,0.42433572064968983,1.0,0.4714841340552109,⟨evidence⟩
-"Held-out labels, CellAge by manipulation",10,"overexpression only, raw score (Discovery signature)",AUROC,0.5179227941176471,128/51,0.70848211507219,1.0,0.70848211507219,⟨evidence⟩
-"Held-out labels, CellAge by manipulation",10,"overexpression only, proliferation shift alone (both signatures)",AUROC,0.5392156862745098,128/51,0.4133023795226216,1.0,0.4714841340552109,⟨evidence⟩
+"Held-out labels, CellAge by manipulation",10,"loss-of-function evidence, R_rob (V1) (discovery signature)",AUROC,0.5418446448346781,129/343,0.1609211847627665,0.8046059238138326,0.26820197460461087,⟨evidence⟩
+"Held-out labels, CellAge by manipulation",10,"loss-of-function evidence, raw score (discovery signature)",AUROC,0.5953849978529617,129/343,0.001394350227224895,0.012549152045024055,0.006971751136124475,⟨evidence⟩
+"Held-out labels, CellAge by manipulation",10,"loss-of-function evidence, proliferation shift alone (same for both signatures)",AUROC,0.6049449680204307,129/343,0.0004379043642885272,0.004379043642885272,0.004379043642885272,⟨evidence⟩
+"Held-out labels, CellAge by manipulation",10,"overexpression only, R_rob (V1) (discovery signature)",AUROC,0.538296568627451,128/51,0.42433572064968983,1.0,0.4714841340552109,⟨evidence⟩
+"Held-out labels, CellAge by manipulation",10,"overexpression only, raw score (discovery signature)",AUROC,0.5179227941176471,128/51,0.70848211507219,1.0,0.70848211507219,⟨evidence⟩
+"Held-out labels, CellAge by manipulation",10,"overexpression only, proliferation shift alone (same for both signatures)",AUROC,0.5392156862745098,128/51,0.4133023795226216,1.0,0.4714841340552109,⟨evidence⟩
 "Held-out labels, CellAge by manipulation",10,"loss-of-function evidence, R_rob (V1) (GTEx-derived signature)",AUROC,0.5583881393088796,129/343,0.050434518570539114,0.3181238382271341,0.10086903714107823,⟨evidence⟩
 "Held-out labels, CellAge by manipulation",10,"loss-of-function evidence, raw score (GTEx-derived signature)",AUROC,0.5297534296110471,129/343,0.31882708644889024,1.0,0.4554672663555575,⟨evidence⟩
 "Held-out labels, CellAge by manipulation",10,"overexpression only, R_rob (V1) (GTEx-derived signature)",AUROC,0.5958946078431373,128/51,0.0454462626038763,0.3181238382271341,0.10086903714107823,⟨evidence⟩
@@ -291,104 +308,104 @@ Label classes and essential genes (Fisher),8,"GenAge mammal-only, DepMap common 
 Label classes and essential genes (Fisher),8,"GenAge mammal-only, Hart CEGv2 core essentials: anti-longevity vs pro-longevity",odds ratio,0.2255434782608695,,0.1662239714925237,0.6648958859700947,0.2659583543880379,Figure 5D
 Label classes and essential genes (Fisher),8,"GenAge without yeast, DepMap common essentials: anti-longevity vs pro-longevity",odds ratio,1.3821552055320785,,0.042884008723745,0.21442004361872502,0.08576801744749,Figure 5D
 Label classes and essential genes (Fisher),8,"GenAge without yeast, Hart CEGv2 core essentials: anti-longevity vs pro-longevity",odds ratio,1.1361603149042765,,0.6529887325791213,1.0,0.6529887325791213,Figure 5D
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Myc Targets V2",overlap,7.0,7/57,4.839359142721763e-05,0.004839359142721763,0.004839359142721763,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: PI3K/AKT/mTOR Signaling",overlap,5.0,5/82,0.0129582258898275,1.0,0.647911294491375,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Myc targets V2",overlap,7.0,7/57,4.839359142721763e-05,0.004839359142721763,0.004839359142721763,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: PI3K/AKT/mTOR signaling",overlap,5.0,5/82,0.0129582258898275,1.0,0.647911294491375,⟨addstats⟩
 "Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Hypoxia",overlap,6.0,6/151,0.0445531940167522,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Protein Secretion",overlap,4.0,4/89,0.065468542081788,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Apical Junction",overlap,5.0,5/132,0.0752298317949979,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Oxidative Phosphorylation",overlap,6.0,6/182,0.091252347108058,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Mitotic Spindle",overlap,6.0,6/186,0.0986921685592965,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Protein secretion",overlap,4.0,4/89,0.065468542081788,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Apical junction",overlap,5.0,5/132,0.0752298317949979,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Oxidative phosphorylation",overlap,6.0,6/182,0.091252347108058,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Mitotic spindle",overlap,6.0,6/186,0.0986921685592965,1.0,1.0,⟨addstats⟩
 "Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Adipogenesis",overlap,5.0,5/172,0.1706263030308436,1.0,1.0,⟨addstats⟩
 "Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Adipogenesis",overlap,5.0,5/172,0.1706263030308436,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: TGF-beta Signaling",overlap,2.0,2/50,0.209540104106949,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: heme Metabolism",overlap,4.0,4/144,0.2310646635042147,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Myc Targets V1",overlap,5.0,5/196,0.2428549400021321,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: TNF-alpha Signaling via NF-kB",overlap,4.0,4/150,0.2532171764775453,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Unfolded Protein Response",overlap,3.0,3/106,0.2705466549887609,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Notch Signaling",overlap,1.0,1/25,0.3496882318423498,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: TGF-β signaling",overlap,2.0,2/50,0.209540104106949,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Heme metabolism",overlap,4.0,4/144,0.2310646635042147,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Myc targets V1",overlap,5.0,5/196,0.2428549400021321,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: TNF-α signaling via NF-κB",overlap,4.0,4/150,0.2532171764775453,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Unfolded protein response",overlap,3.0,3/106,0.2705466549887609,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Notch signaling",overlap,1.0,1/25,0.3496882318423498,1.0,1.0,⟨addstats⟩
 "Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Complement",overlap,3.0,3/123,0.3498443599125498,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Estrogen Response Early",overlap,3.0,3/131,0.3870347071676677,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Allograft Rejection",overlap,2.0,2/81,0.4031098656851557,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Androgen Response",overlap,2.0,2/81,0.4031098656851557,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: DNA Repair",overlap,3.0,3/144,0.446263145760474,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Estrogen response early",overlap,3.0,3/131,0.3870347071676677,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Allograft rejection",overlap,2.0,2/81,0.4031098656851557,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Androgen response",overlap,2.0,2/81,0.4031098656851557,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: DNA repair",overlap,3.0,3/144,0.446263145760474,1.0,1.0,⟨addstats⟩
 "Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Glycolysis",overlap,3.0,3/162,0.5241990249571389,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Reactive Oxygen Species Pathway",overlap,1.0,1/44,0.5313758779670099,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: KRAS Signaling Up",overlap,2.0,2/107,0.5474708498177534,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Reactive oxygen species pathway",overlap,1.0,1/44,0.5313758779670099,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: KRAS signaling up",overlap,2.0,2/107,0.5474708498177534,1.0,1.0,⟨addstats⟩
 "Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Apoptosis",overlap,2.0,2/124,0.627884345258817,1.0,1.0,⟨addstats⟩
 "Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Myogenesis",overlap,2.0,2/126,0.6365829839830254,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Cholesterol Homeostasis",overlap,1.0,1/61,0.6506116765242447,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Cholesterol homeostasis",overlap,1.0,1/61,0.6506116765242447,1.0,1.0,⟨addstats⟩
 "Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Coagulation",overlap,1.0,1/76,0.7304506013298451,1.0,1.0,⟨addstats⟩
 "Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Coagulation",overlap,1.0,1/76,0.7304506013298451,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Pperoxisome",overlap,1.0,1/79,0.7440902608088971,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Allograft Rejection",overlap,1.0,1/81,0.7527995870760312,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: PI3K/AKT/mTOR Signaling",overlap,1.0,1/82,0.7570430067468571,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Peroxisome",overlap,1.0,1/79,0.7440902608088971,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Allograft rejection",overlap,1.0,1/81,0.7527995870760312,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: PI3K/AKT/mTOR signaling",overlap,1.0,1/82,0.7570430067468571,1.0,1.0,⟨addstats⟩
 "Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Glycolysis",overlap,2.0,2/162,0.7670756007445757,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: mTORC1 Signaling",overlap,2.0,2/185,0.8274390486411423,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: mTORC1 Signaling",overlap,2.0,2/185,0.8274390486411423,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: G2-M Checkpoint",overlap,2.0,2/188,0.8341861318198678,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: UV Response Up",overlap,1.0,1/114,0.8605071954259788,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Xenobiotic Metabolism",overlap,1.0,1/122,0.8786044417448824,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: MTORC1 signaling",overlap,2.0,2/185,0.8274390486411423,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: MTORC1 signaling",overlap,2.0,2/185,0.8274390486411423,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: G2M checkpoint",overlap,2.0,2/188,0.8341861318198678,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: UV response up",overlap,1.0,1/114,0.8605071954259788,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Xenobiotic metabolism",overlap,1.0,1/122,0.8786044417448824,1.0,1.0,⟨addstats⟩
 "Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Complement",overlap,1.0,1/123,0.8806956658319647,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: IL-2/STAT5 Signaling",overlap,1.0,1/125,0.8847711829729552,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: IL-2/STAT5 Signaling",overlap,1.0,1/125,0.8847711829729552,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: IL-2/STAT5 signaling",overlap,1.0,1/125,0.8847711829729552,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: IL-2/STAT5 signaling",overlap,1.0,1/125,0.8847711829729552,1.0,1.0,⟨addstats⟩
 "Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Myogenesis",overlap,1.0,1/126,0.8867566885648747,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Estrogen Response Late",overlap,1.0,1/126,0.8867566885648747,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Apical Junction",overlap,1.0,1/132,0.8979747843849881,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: heme Metabolism",overlap,1.0,1/144,0.9172007339692068,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: p53 Pathway",overlap,1.0,1/162,0.9394899969401332,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: p53 Pathway",overlap,1.0,1/162,0.9394899969401332,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Mitotic Spindle",overlap,1.0,1/186,0.9601988858721596,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Epithelial Mesenchymal Transition",overlap,1.0,1/188,0.9615658732351906,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: E2F Targets",overlap,1.0,1/197,0.9671615820246954,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Estrogen response late",overlap,1.0,1/126,0.8867566885648747,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Apical junction",overlap,1.0,1/132,0.8979747843849881,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Heme metabolism",overlap,1.0,1/144,0.9172007339692068,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: P53 pathway",overlap,1.0,1/162,0.9394899969401332,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: P53 pathway",overlap,1.0,1/162,0.9394899969401332,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Mitotic spindle",overlap,1.0,1/186,0.9601988858721596,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Epithelial mesenchymal transition",overlap,1.0,1/188,0.9615658732351906,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: E2F targets",overlap,1.0,1/197,0.9671615820246954,1.0,1.0,⟨addstats⟩
 "Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Hypoxia",overlap,0.0,0/151,1.0,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Inflammatory Response",overlap,0.0,0/92,1.0,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Protein Secretion",overlap,0.0,0/89,1.0,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Interferon Gamma Response",overlap,0.0,0/132,1.0,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Interferon Alpha Response",overlap,0.0,0/73,1.0,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Apical Surface",overlap,0.0,0/23,1.0,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: TNF-alpha Signaling via NF-kB",overlap,0.0,0/150,1.0,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: IL-6/JAK/STAT3 Signaling",overlap,0.0,0/49,1.0,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: TGF-beta Signaling",overlap,0.0,0/50,1.0,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Wnt-beta Catenin Signaling",overlap,0.0,0/29,1.0,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Cholesterol Homeostasis",overlap,0.0,0/61,1.0,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: G2-M Checkpoint",overlap,0.0,0/188,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Inflammatory response",overlap,0.0,0/92,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Protein secretion",overlap,0.0,0/89,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Interferon gamma response",overlap,0.0,0/132,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Interferon alpha response",overlap,0.0,0/73,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Apical surface",overlap,0.0,0/23,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: TNF-α signaling via NF-κB",overlap,0.0,0/150,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: IL-6/JAK/STAT3 signaling",overlap,0.0,0/49,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: TGF-β signaling",overlap,0.0,0/50,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Wnt/β-catenin signaling",overlap,0.0,0/29,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Cholesterol homeostasis",overlap,0.0,0/61,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: G2M checkpoint",overlap,0.0,0/188,1.0,1.0,1.0,⟨addstats⟩
 "Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Apoptosis",overlap,0.0,0/124,1.0,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Estrogen Response Late",overlap,0.0,0/126,1.0,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Androgen Response",overlap,0.0,0/81,1.0,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Estrogen Response Early",overlap,0.0,0/131,1.0,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Notch Signaling",overlap,0.0,0/25,1.0,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: DNA Repair",overlap,0.0,0/144,1.0,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: IL-6/JAK/STAT3 Signaling",overlap,0.0,0/49,1.0,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: KRAS Signaling Dn",overlap,0.0,0/51,1.0,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Pancreas Beta Cells",overlap,0.0,0/11,1.0,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Wnt-beta Catenin Signaling",overlap,0.0,0/29,1.0,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: KRAS Signaling Up",overlap,0.0,0/107,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Estrogen response late",overlap,0.0,0/126,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Androgen response",overlap,0.0,0/81,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Estrogen response early",overlap,0.0,0/131,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Notch signaling",overlap,0.0,0/25,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: DNA repair",overlap,0.0,0/144,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: IL-6/JAK/STAT3 signaling",overlap,0.0,0/49,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: KRAS signaling dn",overlap,0.0,0/51,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Pancreas beta cells",overlap,0.0,0/11,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Wnt/β-catenin signaling",overlap,0.0,0/29,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: KRAS signaling up",overlap,0.0,0/107,1.0,1.0,1.0,⟨addstats⟩
 "Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Angiogenesis",overlap,0.0,0/26,1.0,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Bile Acid Metabolism",overlap,0.0,0/60,1.0,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Fatty Acid Metabolism",overlap,0.0,0/118,1.0,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: UV Response Dn",overlap,0.0,0/134,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Bile acid metabolism",overlap,0.0,0/60,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Fatty acid metabolism",overlap,0.0,0/118,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: UV response dn",overlap,0.0,0/134,1.0,1.0,1.0,⟨addstats⟩
 "Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Spermatogenesis",overlap,0.0,0/56,1.0,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Hedgehog Signaling",overlap,0.0,0/17,1.0,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Epithelial Mesenchymal Transition",overlap,0.0,0/188,1.0,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Hedgehog Signaling",overlap,0.0,0/17,1.0,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Myc Targets V2",overlap,0.0,0/57,1.0,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Myc Targets V1",overlap,0.0,0/196,1.0,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: E2F Targets",overlap,0.0,0/197,1.0,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Unfolded Protein Response",overlap,0.0,0/106,1.0,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Interferon Alpha Response",overlap,0.0,0/73,1.0,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Interferon Gamma Response",overlap,0.0,0/132,1.0,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Inflammatory Response",overlap,0.0,0/92,1.0,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Xenobiotic Metabolism",overlap,0.0,0/122,1.0,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: UV Response Up",overlap,0.0,0/114,1.0,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Reactive Oxygen Species Pathway",overlap,0.0,0/44,1.0,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Fatty Acid Metabolism",overlap,0.0,0/118,1.0,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Oxidative Phosphorylation",overlap,0.0,0/182,1.0,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: UV Response Dn",overlap,0.0,0/134,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Hedgehog signaling",overlap,0.0,0/17,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, positive loadings: Epithelial mesenchymal transition",overlap,0.0,0/188,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Hedgehog signaling",overlap,0.0,0/17,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Myc targets V2",overlap,0.0,0/57,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Myc targets V1",overlap,0.0,0/196,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: E2F targets",overlap,0.0,0/197,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Unfolded protein response",overlap,0.0,0/106,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Interferon alpha response",overlap,0.0,0/73,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Interferon gamma response",overlap,0.0,0/132,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Inflammatory response",overlap,0.0,0/92,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Xenobiotic metabolism",overlap,0.0,0/122,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: UV response up",overlap,0.0,0/114,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Reactive oxygen species pathway",overlap,0.0,0/44,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Fatty acid metabolism",overlap,0.0,0/118,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Oxidative phosphorylation",overlap,0.0,0/182,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: UV response dn",overlap,0.0,0/134,1.0,1.0,1.0,⟨addstats⟩
 "Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Angiogenesis",overlap,0.0,0/26,1.0,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Bile Acid Metabolism",overlap,0.0,0/60,1.0,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Apical Surface",overlap,0.0,0/23,1.0,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Pperoxisome",overlap,0.0,0/79,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Bile acid metabolism",overlap,0.0,0/60,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Apical surface",overlap,0.0,0/23,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Peroxisome",overlap,0.0,0/79,1.0,1.0,1.0,⟨addstats⟩
 "Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Spermatogenesis",overlap,0.0,0/56,1.0,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: KRAS Signaling Dn",overlap,0.0,0/51,1.0,1.0,1.0,⟨addstats⟩
-"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Pancreas Beta Cells",overlap,0.0,0/11,1.0,1.0,1.0,⟨addstats⟩
-GTEx fibroblasts vs GTEx skin (permuted-age null),1,"age effects, all shared genes",Spearman ρ,0.06329098469596872,13684,0.5704295704295704,0.5704295704295704,0.5704295704295704,Results
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: KRAS signaling dn",overlap,0.0,0/51,1.0,1.0,1.0,⟨addstats⟩
+"Hidden-factor loadings, Hallmark enrichment (hypergeometric)",100,"Factor 1, negative loadings: Pancreas beta cells",overlap,0.0,0/11,1.0,1.0,1.0,⟨addstats⟩
+GTEx fibroblasts vs GTEx skin (permuted-age null),1,"age effects, all shared genes",Spearman ρ,0.06329098469596872,13684,0.5704295704295704,0.5704295704295704,0.5704295704295704,⟨addstats⟩ (1)
